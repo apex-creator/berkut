@@ -1,0 +1,69 @@
+
+span.nok, span.high {
+    color: red;
+}
+
+span.mid {
+    color: blue;
+}
+
+span.ok, span.low {
+    color: green;
+}
+
+span.note {
+    color: darkslateblue;
+    font-weight: bold;
+    text-decoration: underline;
+    display: inline-block;
+}
+
+code {
+    color: darkslateblue;
+}
+
+dl.note {
+    background-color: lightgoldenrodyellow;
+}
+
+dl.warning, dl.attention {
+    background-color: #FFDDDD;
+}
+
+tr.attention, tr.warning {
+    background-color: #FFDDDD;
+}
+
+tr.note {
+    background-color: lightgoldenrodyellow;
+}
+
+tr.special {
+    background-color: #E6F0FF;
+}
+
+tr.bad {
+    background-color: #D1D1E0;
+}
+
+body {
+    margin: 0;
+}
+
+.styledtable {
+    border: 1px solid rgb(23, 3, 79);
+    border-collapse:collapse;
+    padding: 5px;
+}
+
+.styledtable td, tr, th, tr {
+    border: 1px solid rgb(23, 3, 79);
+    border-collapse:collapse;
+    padding: 5px;
+}
+
+th {
+    background: #30456E;
+    color: #F5F5F5;
+}
+

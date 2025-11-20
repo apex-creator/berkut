@@ -1,0 +1,180 @@
+/*
+ * Copyright (c) 2018-2020, Texas Instruments Incorporated - http://www.ti.com
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ *
+ * *  Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ * *  Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * *  Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+ * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO,
+ * THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE,
+ * EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ */
+
+ %%{
+    let module = system.modules['/drivers/power/power'];
+    let instance = module.$instances[0];
+    let config = module.getInstanceConfig(instance);
+
+    function ramRetentionMask()
+    {
+      let mask = config.ramRetentionMaskLPDS;
+      if (mask.length == 0) {
+          return 0;
+      }
+      return "PRCM_" +  mask.join("|PRCM_");
+    }
+
+    let pinParkDefs               = 'parkInfo';
+    let parkPins                  = config.parkPins;
+    let numParkedPins             = 0;
+
+    let pinTable = ["AA","AB","AC","AD","AE","AF","AG","AH","AI","AJ","AK","AL","AM","AN","AO","AP","AQ","AR","AS","AT","AU","AV","AW","AX"];
+
+    for (let i = 0; i < pinTable.length; ++i) {
+      let istring = pinTable[i];
+      let name = 'PAD_'+ istring;
+      if (parkPins.hasOwnProperty(name)) {
+          numParkedPins += 1;
+          pinTable[i] = name;
+      }
+    }
+%%}
+
+
+/*
+ *  =============================== Power ===============================
+ */
+#include <drivers/power.h>
+#include <drivers/power_xwrLx4xx.h>
+#include <drivers/prcm.h>
+
+
+% for(let i = 0; i < module.$instances.length; i++) {
+% let instance = module.$instances[i];
+% let config = module.getInstanceConfig(instance);
+% if (config.policyInitFunction !== 'NULL') {
+%if(config.policyInitFunction == "Custom"){
+extern void `config.policyInitCustomFunction`(void);
+% } else{
+extern void `config.policyInitFunction`(void);
+%}
+% }
+% if (config.policyFunction !== 'NULL') {
+%if(config.policyFunction == "Custom"){
+extern void `config.policyCustomFunction`(unsigned long long sleepTimeus);
+% } else{
+extern void `config.policyFunction`(unsigned long long sleepTimeus);
+%}
+% }
+% if (config.enterLPDSHookFunction !== 'NULL' && config.enterLPDSHookFunction !== '') {
+extern void `config.enterLPDSHookFunction`(void);
+% }
+% if (config.resumeLPDSHookFunction !== 'NULL' && config.resumeLPDSHookFunction !== '') {
+extern void `config.resumeLPDSHookFunction`(void);
+% }
+% if (config.enteridle3HookFunction !== 'NULL' && config.enteridle3HookFunction !== '') {
+extern void `config.enteridle3HookFunction`(void);
+% }
+% if (config.resumeidle3HookFunction !== 'NULL' && config.resumeidle3HookFunction !== '') {
+extern void `config.resumeidle3HookFunction`(void);
+% }
+% if (numParkedPins) {
+Power_ParkInfo `pinParkDefs`[];
+% }
+
+%}
+
+/*
+ *  This structure defines the configuration for the Power Manager.
+ */
+const Power_ConfigV1 Power_config = {
+    % for(let i = 0; i < module.$instances.length; i++) {
+    % let instance = module.$instances[i];
+    % let config = module.getInstanceConfig(instance);
+    %if(config.policyInitFunction == "Custom"){
+    .policyInitFxn             = `config.policyInitCustomFunction`,
+    % } else{
+    .policyInitFxn             = `config.policyInitFunction`,
+    % }
+    %if(config.policyFunction == "Custom"){
+    .policyFxn                 = `config.policyCustomFunction`,
+    % } else{
+    .policyFxn                 = `config.policyFunction`,
+    %}
+    .enterLPDSHookFxn          = `config.enterLPDSHookFunction`,
+    .resumeLPDSHookFxn         = `config.resumeLPDSHookFunction`,
+    .enteridle3HookFxn          = `config.enteridle3HookFunction`,
+    .resumeidle3HookFxn         = `config.resumeidle3HookFunction`,
+    .enablePolicy                   = `config.enablePolicy`,
+    .enableSleepCounterWakeupLPDS   = `config.enableSleepCounterWakeupLPDS`,
+    .enableUARTWakeupLPDS           = `config.enableUartWakeupLPDS`,
+    .enableSPICSWakeupLPDS          = `config.enableSpicsWakeupLPDS`,
+    .enableRTCWakeupLPDS            = `config.enableRtcWakeupLPDS`,
+    .enableFRCWakeupLPDS            = `config.enableFrcWakeupLPDS`,
+    .enableGPIOSyncIOWakeupLPDS           = `config.enableGPIOSYNCINWakeupLPDS`,
+    %if(config.enableGPIOSYNCINWakeupLPDS==true){
+    .selectGpioSyncIOLpds          = `config.selectGpioSyncioLPDS`,
+    %}
+    %if(config.enableGpioSyncioLPDS=="GPIO"){
+    .wakeupGPIOEdgeLPDS             = PRCM_LPDS_`config.wakeupGPIOEdgeLPDS`,
+    %}else{
+    .wakeupSyncIOEdgeLPDS           = PRCM_LPDS_`config.wakeupSYNCIOEdgeLPDS`,
+    %}
+    %if(config.enableSpicsWakeupLPDS){
+    .wakeupSpiEdgeLPDS             = PRCM_LPDS_`config.wakeupSpiEdgeLPDS`,
+    %}
+    %if(config.enableUartWakeupLPDS){
+    .wakeupUartEdgeLPDS             = PRCM_LPDS_`config.wakeupUartEdgeLPDS`,
+    %}
+    .LPDSThreshold                   = `config.thresholdForLPDS`,
+    .totalLatencyForLPDS                 = `config.totalLatencyForLPDS`,
+    .sleepThreshold                   = `config.thresholdForSleep`,
+    .totalLatencyForSleep                 = `config.totalLatencyForSleep`,
+    .idleThreshold                   = `config.thresholdForIdle`,
+    .totalLatencyForIdle                 = `config.totalLatencyForIdle`,
+    .ramRetentionMaskLPDS           = `ramRetentionMask()`,
+    % if (numParkedPins > 0) {
+    .pinParkDefs                    = `pinParkDefs`,
+    % } else {
+    .pinParkDefs                    = NULL,
+    % }
+    .numPins                        = `numParkedPins`
+    % }
+};
+
+Power_ParkInfo parkInfo[] = {
+/*        PIN                    PARK STATE              Pin Alias
+   -----------------  ------------------------------     ---------------*/
+
+% for(let i = 0; i < module.$instances.length; i++) {
+% let instance = module.$instances[i];
+% let config = module.getInstanceConfig(instance);
+%    for (let i = 0; i < pinTable.length; ++i) {
+%      let name = pinTable[i];
+%      let s = config.parkPins[name];
+   {POWER_PIN_`name`, POWER_`s`},   /*PIN_`name`*/
+
+% }
+%}
+};

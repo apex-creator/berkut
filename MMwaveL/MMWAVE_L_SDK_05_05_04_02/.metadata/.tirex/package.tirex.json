@@ -1,0 +1,18 @@
+[
+    {
+        "metadataVersion": "3.01.00",
+        "id": "MMWAVE-L-SDK",
+        "name": "mmWave low-power SDK",
+        "rootCategory": [ "MMWAVE-L-SDK", "mmWave low-power SDK" ],
+        "version": "05.05.04.02",
+        "type": "software",
+        "image": "./mcu_plus_sdk.png",
+        "devices": ["AWRL6432","AWRL1432","IWRL6432","IWRL1432"],
+        "tags": ["SDK", "Baremetal", "FreeRTOS", "NORTOS"],
+        "description": "Welcome to mmWave low-power SDK for xWRL6432/xWRL1432. This SDK contains examples, libraries and tools to develop RTOS and no-RTOS based applications for ARM M4F CPUs and related peripherals.",
+        "dependencies": [
+            { "packageId": "sysconfig", "version": "1.20.0", "require": "mandatory" },
+            { "packageId": "ti_cgt_tiarmclang", "version": "3.2.2", "require": "mandatory" }
+        ]
+    }
+]

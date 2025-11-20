@@ -1,0 +1,34 @@
+Worker mqueue #[4554760] - start 
+Worker mqueue #[4554912] - start 
+Worker mqueue #[4555064] - start 
+Worker mqueue #[4555216] - start 
+Dispatcher thread - start 
+Dispatcher iteration #[0] -- Sending msg to worker mqueue #[4554760]. 
+Dispatcher iteration #[1] -- Sending msg to worker mqueue #[4554912]. 
+Dispatcher iteration #[2] -- Sending msg to worker mqueue #[4555064]. 
+Dispatcher iteration #[3] -- Sending msg to worker mqueue #[4555216]. 
+Dispatcher iteration #[4] -- Sending msg to worker mqueue #[4554760]. 
+Worker thread #[4555368] -- Received eWORKER_CTRL_MSG_CONTINUE 
+Worker thread #[4559784] -- Received eWORKER_CTRL_MSG_CONTINUE 
+Worker thread #[4564200] -- Received eWORKER_CTRL_MSG_CONTINUE 
+Worker thread #[4568616] -- Received eWORKER_CTRL_MSG_CONTINUE 
+Dispatcher iteration #[5] -- Sending msg to worker mqueue #[4554912]. 
+Dispatcher iteration #[6] -- Sending msg to worker mqueue #[4555064]. 
+Dispatcher iteration #[7] -- Sending msg to worker mqueue #[4555216]. 
+Dispatcher iteration #[8] -- Sending msg to worker mqueue #[4554760]. 
+Worker thread #[4555368] -- Received eWORKER_CTRL_MSG_CONTINUE 
+Worker thread #[4559784] -- Received eWORKER_CTRL_MSG_CONTINUE 
+Worker thread #[4564200] -- Received eWORKER_CTRL_MSG_CONTINUE 
+Worker thread #[4568616] -- Received eWORKER_CTRL_MSG_CONTINUE 
+Dispatcher iteration #[9] -- Sending msg to worker mqueue #[4554912]. 
+Dispatcher [0] -- Sending eWORKER_CTRL_MSG_EXIT to worker thread #[4554760]. 
+Worker thread #[4555368] -- Received eWORKER_CTRL_MSG_CONTINUE 
+Worker thread #[4559784] -- Received eWORKER_CTRL_MSG_CONTINUE 
+Dispatcher [1] -- Sending eWORKER_CTRL_MSG_EXIT to worker thread #[4554912]. 
+Dispatcher [2] -- Sending eWORKER_CTRL_MSG_EXIT to worker thread #[4555064]. 
+Dispatcher [3] -- Sending eWORKER_CTRL_MSG_EXIT to worker thread #[4555216]. 
+Worker thread #[4555368] -- Finished. Exit now. 
+Worker thread #[4559784] -- Finished. Exit now. 
+Worker thread #[4564200] -- Finished. Exit now. 
+Worker thread #[4568616] -- Finished. Exit now. 
+All tests have passed!! 

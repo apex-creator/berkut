@@ -1,0 +1,22 @@
+[2J[;H
+[ LIN RESPONDER ] LIN External Responder Interrupts, application started ...
+[ LIN RESPONDER ] 
+[ LIN RESPONDER ] New Frame Received 0x2F(ID) D7 83 99 F6 73 
+[ LIN RESPONDER ] 
+[ LIN RESPONDER ] Request 0x23h(ID) response frame sent 12 34 56 78 
+[ LIN RESPONDER ] 
+[ LIN RESPONDER ] Request 0x15h(ID) response frame sent 15 76 98 45 FA FE 
+[ LIN RESPONDER ] 
+[ LIN RESPONDER ] Request 0x30h(ID) response frame sent 30 A4 D3 CC F4 67 FF 7D 
+[ LIN RESPONDER ] 
+[ LIN RESPONDER ] New Frame Received 0x3C(ID) 00 FF FF FF FF FF FF 7D 
+[ LIN RESPONDER ] Sleep Frame Received. Going to sleep ...
+[ LIN RESPONDER ] 
+[ LIN RESPONDER ] Wakeup detected. Lin now active.
+[ LIN RESPONDER ] New Frame Received 0x1A(ID) 45 45 56 
+[ LIN RESPONDER ] 
+[ LIN RESPONDER ] New Frame Received 0x1E(ID) D0 AC FE DC BA FD FF FF 
+[ LIN RESPONDER ] 
+[ LIN RESPONDER ] New Frame Received 0x12(ID) F2 3B 
+[ LIN RESPONDER ] 
+[ LIN RESPONDER ] All tests have PASSED!!

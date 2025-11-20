@@ -1,0 +1,4 @@
+This is uart echo test blocking mode
+Receives 8 characters then echo's back. Please input..
+12345678
+All tests have passed!!

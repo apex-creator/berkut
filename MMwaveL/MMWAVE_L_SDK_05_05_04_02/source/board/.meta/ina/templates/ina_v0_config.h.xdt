@@ -1,0 +1,32 @@
+%%{
+    let module = system.modules['/board/ina/ina'];
+%%}
+
+void mmwDemo_PowerMeasurement(I2C_Handle i2cHandle, uint16_t *ptrPwrMeasured);
+
+void SensorConfig(I2C_Handle i2cHandle);
+
+/*
+ * INA
+ */
+%let cnt = 1;
+% for(let i = 0; i < module.$instances.length; i++) {
+    % let instance = module.$instances[i];
+    % let config = module.getInstanceConfig(instance); 
+    % let currLsb = Number(config.maxCurrent) / Math.pow(2,19);
+    % let creg = Math.floor(13107.2 * currLsb * config.shuntRes * Math.pow(10,-3))
+% if (config.deviceType == "INA228") {
+% if (cnt==1) {
+#define INA228
+% cnt = cnt+1;
+% } 
+#define INA_CONFIG`i`_DIE_ID_REG_VALUE         INA228_DIE_ID_REG_VALUE
+#define INA_CONFIG`i`_CURRENT_LSB              `currLsb`
+#define INA_CONFIG`i`_CALIB_REG_VALUE          `creg`
+#define INA_CONFIG`i`_SHUNT_TEMP_REG_VALUE     `config.shuntTempCoeff`
+#define INA_CONFIG`i`_TARGET_ADDRESS           `config.customI2CTargetAddress`
+#define INA_CONFIG`i`_REG0_VALUE               `config.reg0`
+#define INA_CONFIG`i`_REG1_VALUE               `config.reg1`
+% }
+% }
+

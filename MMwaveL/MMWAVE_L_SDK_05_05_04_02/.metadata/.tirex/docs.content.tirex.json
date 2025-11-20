@@ -1,0 +1,65 @@
+[
+    {
+        "resourceType": "file",
+        "fileType": ".pdf",
+        "resourceClass": [
+            "document"
+        ],
+        "name": "Low Power Visualizer User Guide",
+        "location": "../../docs/Low_Power_Visualizer_User_Guide.pdf",
+        "devtools": [
+            "AWRL6432BOOST",
+            "IWRL6432BOOST",
+            "AWRL1432BOOST",
+            "IWRL1432BOOST",
+            "IWRL6432AOPEVM"
+        ],
+        "mainCategories": [
+            [
+                "Documents"
+            ]
+        ]
+    },
+    {
+        "resourceType": "file",
+        "fileType": ".pdf",
+        "resourceClass": [
+            "document"
+        ],
+        "name": "Motion Presence Detection Demo Group Tracker Tuning Guide",
+        "location": "../../docs/Motion_Presence_Detection_Demo_Group_Tracker_Tuning_Guide.pdf",
+        "devtools": [
+            "AWRL6432BOOST",
+            "IWRL6432BOOST",
+            "AWRL1432BOOST",
+            "IWRL1432BOOST",
+            "IWRL6432AOPEVM"
+        ],
+        "mainCategories": [
+            [
+                "Documents"
+            ]
+        ]
+    },
+    {
+        "resourceType": "file",
+        "fileType": ".pdf",
+        "resourceClass": [
+            "document"
+        ],
+        "name": "Motion Presence Detection Demo Tuning Guide",
+        "location": "../../docs/Motion_Presence_Detection_Demo_Tuning_Guide.pdf",
+        "devtools": [
+            "AWRL6432BOOST",
+            "IWRL6432BOOST",
+            "AWRL1432BOOST",
+            "IWRL1432BOOST",
+            "IWRL6432AOPEVM"
+        ],
+        "mainCategories": [
+            [
+                "Documents"
+            ]
+        ]
+    }
+]

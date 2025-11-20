@@ -1,0 +1,5 @@
+var group__HWA__SAMPLES__FORMAT =
+[
+    [ "HWA_SAMPLES_FORMAT_COMPLEX", "group__HWA__SAMPLES__FORMAT.html#ga7bd70109d8b5344a8aa9f24988dca26e", null ],
+    [ "HWA_SAMPLES_FORMAT_REAL", "group__HWA__SAMPLES__FORMAT.html#ga4d10c90435236e262bfe8cb980668a2a", null ]
+];

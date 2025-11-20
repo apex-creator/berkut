@@ -1,0 +1,95 @@
+var group__DRV__SOC__RCM__MODULE =
+[
+    [ "SOC_RCM_FREQ_HZ2MHZ", "group__DRV__SOC__RCM__MODULE.html#ga654ac031dfce1d47c7194c7702dc05a8", null ],
+    [ "SOC_RCM_FREQ_MHZ2HZ", "group__DRV__SOC__RCM__MODULE.html#gac33a59116f8b58485550e0b766423c0a", null ],
+    [ "SOC_RCM_MEMINIT_APPSS_RAM1A_INIT", "group__DRV__SOC__RCM__MODULE.html#ga5ddcac7dcc56a5060efde572bc765db3", null ],
+    [ "SOC_RCM_MEMINIT_APPSS_RAM2A_INIT", "group__DRV__SOC__RCM__MODULE.html#gaa4681f245ad704cb4a27daba26aaf9d7", null ],
+    [ "SOC_RCM_MEMINIT_APPSS_RAM3A_INIT", "group__DRV__SOC__RCM__MODULE.html#ga458224916935f5a6e3493480ac2cdbbe", null ],
+    [ "SOC_RCM_MEMINIT_APPSS_ALL_INIT", "group__DRV__SOC__RCM__MODULE.html#ga9f0a510f087eb51b2cee58c6381b8681", null ],
+    [ "SOC_RCM_MEMINIT_APPSS_SHRAM0_INIT", "group__DRV__SOC__RCM__MODULE.html#ga3c23abed4488762536480472803b8b0d", null ],
+    [ "SOC_RCM_MEMINIT_APPSS_SHRAM1_INIT", "group__DRV__SOC__RCM__MODULE.html#ga146106fe3bb438c1cc6a68cdb9a3c9af", null ],
+    [ "SOC_RCM_MEMINIT_HWA_SHRAM_INIT", "group__DRV__SOC__RCM__MODULE.html#ga37482e871785fd5f0e0580af08f627ac", null ],
+    [ "SOC_RCM_MEMINIT_FECSS_SHRAM_INIT", "group__DRV__SOC__RCM__MODULE.html#ga68a94a1bd738a5a023e466771b0db4d8", null ],
+    [ "SOC_RCM_MEMINIT_TPCCA_INIT", "group__DRV__SOC__RCM__MODULE.html#ga808c6df4cfed94d67a5b2ad118ce9067", null ],
+    [ "SOC_RCM_MEMINIT_TPCCB_INIT", "group__DRV__SOC__RCM__MODULE.html#gaee125bc2d2597ee49ebff801c775c557", null ],
+    [ "SOC_RCM_EFUSEROM_VER_2", "group__DRV__SOC__RCM__MODULE.html#gaff989be66da01623eac0eb40fa1abc54", null ],
+    [ "SOC_rcmM4ClockSrc", "group__DRV__SOC__RCM__MODULE.html#ga1a2583730d31738c430a4638ce95bc96", [
+      [ "SOC_rcmM4ClockSrc_OSC_CLK", "group__DRV__SOC__RCM__MODULE.html#gga1a2583730d31738c430a4638ce95bc96a2a2c2053da97c711394334fcc442ae24", null ],
+      [ "SOC_rcmM4ClockSrc_SLOW_CLK", "group__DRV__SOC__RCM__MODULE.html#gga1a2583730d31738c430a4638ce95bc96a7fe51e5f140d1ef87e01e963276ac1bf", null ],
+      [ "SOC_rcmM4ClockSrc_MDLL_CLK", "group__DRV__SOC__RCM__MODULE.html#gga1a2583730d31738c430a4638ce95bc96ac7dfbabe40cde0d4d2fc1aec8523d161", null ],
+      [ "SOC_rcmM4ClockSrc_FAST_CLK", "group__DRV__SOC__RCM__MODULE.html#gga1a2583730d31738c430a4638ce95bc96a97ad893c023322433a2af01e3ffd4e56", null ]
+    ] ],
+    [ "SOC_RcmResetCause", "group__DRV__SOC__RCM__MODULE.html#ga19acd855965ae532f63559e744f74bbe", [
+      [ "SOC_RcmResetCause_POWER_CAUSE_CLEAR", "group__DRV__SOC__RCM__MODULE.html#gga19acd855965ae532f63559e744f74bbea69281aae57a206b1aff81c010acc27b1", null ],
+      [ "SOC_RcmResetCause_POWER_ON_RESET", "group__DRV__SOC__RCM__MODULE.html#gga19acd855965ae532f63559e744f74bbea9050433c318fbe8f154564a2a9e302ba", null ],
+      [ "SOC_RcmResetCause_WARM_RESET", "group__DRV__SOC__RCM__MODULE.html#gga19acd855965ae532f63559e744f74bbea58f64ecda6a3a874b2bda9ed05b65236", null ],
+      [ "SOC_RcmResetCause_STC_RESET", "group__DRV__SOC__RCM__MODULE.html#gga19acd855965ae532f63559e744f74bbeafbaa51176317af51774e3433ea06df7a", null ],
+      [ "SOC_RcmResetCause_CPU_ONLY_RESET", "group__DRV__SOC__RCM__MODULE.html#gga19acd855965ae532f63559e744f74bbea616b2aa703aa4a300409d558f61f60a7", null ],
+      [ "SOC_RcmResetCause_CORE_RESET", "group__DRV__SOC__RCM__MODULE.html#gga19acd855965ae532f63559e744f74bbea65a82bdd1bbba5ecc8bec35b36d7ca7f", null ],
+      [ "SOC_RcmResetCause_MAX_VALUE", "group__DRV__SOC__RCM__MODULE.html#gga19acd855965ae532f63559e744f74bbea1893111f8e05dd6e83b4cc2ee57855d7", null ]
+    ] ],
+    [ "SOC_RcmPeripheralId", "group__DRV__SOC__RCM__MODULE.html#ga6674bb5c28889ff80f5a352030bfd78f", [
+      [ "SOC_RcmPeripheralId_APPSS_MCAN", "group__DRV__SOC__RCM__MODULE.html#gga6674bb5c28889ff80f5a352030bfd78fa7cba5029b2e5a6fdb6cf68c5866cd44c", null ],
+      [ "SOC_RcmPeripheralId_APPSS_LIN", "group__DRV__SOC__RCM__MODULE.html#gga6674bb5c28889ff80f5a352030bfd78fa62593193aff0fae3c43990cd8479df04", null ],
+      [ "SOC_RcmPeripheralId_APPSS_QSPI", "group__DRV__SOC__RCM__MODULE.html#gga6674bb5c28889ff80f5a352030bfd78fa2a8786300fc6210e8dcceb613d183772", null ],
+      [ "SOC_RcmPeripheralId_APPSS_RTI", "group__DRV__SOC__RCM__MODULE.html#gga6674bb5c28889ff80f5a352030bfd78fac3e621aafd91c1db1b0676226a868fe9", null ],
+      [ "SOC_RcmPeripheralId_APPSS_WDT", "group__DRV__SOC__RCM__MODULE.html#gga6674bb5c28889ff80f5a352030bfd78fa4fc5001c6ed6d69b6464a2877ca2d757", null ],
+      [ "SOC_RcmPeripheralId_APPSS_MCSPIA", "group__DRV__SOC__RCM__MODULE.html#gga6674bb5c28889ff80f5a352030bfd78fa24071f73a3311d437e557154e6aca22f", null ],
+      [ "SOC_RcmPeripheralId_APPSS_MCSPIB", "group__DRV__SOC__RCM__MODULE.html#gga6674bb5c28889ff80f5a352030bfd78fad2680cade7460bc5ec1a239d146a4a10", null ],
+      [ "SOC_RcmPeripheralId_APPSS_I2C", "group__DRV__SOC__RCM__MODULE.html#gga6674bb5c28889ff80f5a352030bfd78fa9dbe76d538e72d1aff2bfdd72fe5bf8b", null ],
+      [ "SOC_RcmPeripheralId_APPSS_UART0", "group__DRV__SOC__RCM__MODULE.html#gga6674bb5c28889ff80f5a352030bfd78faac84842a4497874936b7f0aa218977ba", null ],
+      [ "SOC_RcmPeripheralId_APPSS_UART1", "group__DRV__SOC__RCM__MODULE.html#gga6674bb5c28889ff80f5a352030bfd78faafca9232c5c75f1a2d330d300bf64290", null ],
+      [ "SOC_RcmPeripheralId_APPSS_ESM", "group__DRV__SOC__RCM__MODULE.html#gga6674bb5c28889ff80f5a352030bfd78fafd9eac8503d18285743d7ef7c83aca5b", null ],
+      [ "SOC_RcmPeripheralId_APPSS_EDMA", "group__DRV__SOC__RCM__MODULE.html#gga6674bb5c28889ff80f5a352030bfd78fa32538bd6e595f8937070dbdeac164500", null ],
+      [ "SOC_RcmPeripheralId_APPSS_CRC", "group__DRV__SOC__RCM__MODULE.html#gga6674bb5c28889ff80f5a352030bfd78fa48b089e48470692b7c0f50e55e2f24c1", null ],
+      [ "SOC_RcmPeripheralId_APPSS_PWM", "group__DRV__SOC__RCM__MODULE.html#gga6674bb5c28889ff80f5a352030bfd78fa3af0091eb3cfb866418a8c92fc6942d0", null ],
+      [ "SOC_RcmPeripheralId_APPSS_GIO", "group__DRV__SOC__RCM__MODULE.html#gga6674bb5c28889ff80f5a352030bfd78fa89d23913e6e1d1ac47c509304d656aa2", null ],
+      [ "SOC_RcmPeripheralId_HWASS", "group__DRV__SOC__RCM__MODULE.html#gga6674bb5c28889ff80f5a352030bfd78fa47b08747520d158ee937e8d665598a73", null ],
+      [ "SOC_RcmPeripheralId_MAX_VALUE", "group__DRV__SOC__RCM__MODULE.html#gga6674bb5c28889ff80f5a352030bfd78fa155fc162676d289b53de4e89f8d60fa9", null ]
+    ] ],
+    [ "SOC_RcmPeripheralClockSource", "group__DRV__SOC__RCM__MODULE.html#ga049fd9d8d05991ff7c58545e744fa8b6", [
+      [ "SOC_RcmPeripheralClockSource_OSC_CLK", "group__DRV__SOC__RCM__MODULE.html#gga049fd9d8d05991ff7c58545e744fa8b6a94ba9949cdc6b5ddf4f3b9b5c6661c24", null ],
+      [ "SOC_RcmPeripheralClockSource_SLOW_CLK", "group__DRV__SOC__RCM__MODULE.html#gga049fd9d8d05991ff7c58545e744fa8b6abfef07a52438f3f60e1ff39724350ea9", null ],
+      [ "SOC_RcmPeripheralClockSource_MDLL_CLK", "group__DRV__SOC__RCM__MODULE.html#gga049fd9d8d05991ff7c58545e744fa8b6aa31b3efb18722d0f5e0df598b7dd358b", null ],
+      [ "SOC_RcmPeripheralClockSource_FAST_CLK", "group__DRV__SOC__RCM__MODULE.html#gga049fd9d8d05991ff7c58545e744fa8b6a6a604e6a743e6e4b71888e350f27bc42", null ],
+      [ "SOC_RcmPeripheralClockSource_XREF_IN_CLK", "group__DRV__SOC__RCM__MODULE.html#gga049fd9d8d05991ff7c58545e744fa8b6a736b52cef86c95244031dd7d9712ad07", null ],
+      [ "SOC_RcmPeripheralClockSource_OSC_CLKX2", "group__DRV__SOC__RCM__MODULE.html#gga049fd9d8d05991ff7c58545e744fa8b6aeaf831b3894bb50e5b00f3cc835f4ff6", null ],
+      [ "SOC_RcmPeripheralClockSource_RC_CLK_10M", "group__DRV__SOC__RCM__MODULE.html#gga049fd9d8d05991ff7c58545e744fa8b6aaccbd0130a34493b3a9886f954caa74c", null ],
+      [ "SOC_RcmPeripheralClockSource_RCCLK32K", "group__DRV__SOC__RCM__MODULE.html#gga049fd9d8d05991ff7c58545e744fa8b6a7c683e3218aba1ad2cfc3eee9c03df3e", null ],
+      [ "SOC_RcmPeripheralClockSource_MAX_VALUE", "group__DRV__SOC__RCM__MODULE.html#gga049fd9d8d05991ff7c58545e744fa8b6adc11ad768af77b8d046062400712e6c1", null ]
+    ] ],
+    [ "SOC_RcmM4ClockSource", "group__DRV__SOC__RCM__MODULE.html#ga99b468b7ee60817e4407ff6556a7d10f", [
+      [ "SOC_RcmM4ClockSource_OSC_CLK", "group__DRV__SOC__RCM__MODULE.html#gga99b468b7ee60817e4407ff6556a7d10fac46366ee42db553ebcd880497a84d4cc", null ],
+      [ "SOC_RcmM4ClockSource_SLOW_CLK", "group__DRV__SOC__RCM__MODULE.html#gga99b468b7ee60817e4407ff6556a7d10fa2e957b54f16f79cddf687304163ede58", null ],
+      [ "SOC_RcmM4ClockSource_MDLL_CLK", "group__DRV__SOC__RCM__MODULE.html#gga99b468b7ee60817e4407ff6556a7d10fa4da3a7a4b3f39510a4650479d9434866", null ],
+      [ "SOC_RcmM4ClockSource_FAST_CLK", "group__DRV__SOC__RCM__MODULE.html#gga99b468b7ee60817e4407ff6556a7d10fabce2bb2bb4acb17769bcc0ac15746248", null ],
+      [ "SOC_RcmM4ClockSource_MAX_VALUE", "group__DRV__SOC__RCM__MODULE.html#gga99b468b7ee60817e4407ff6556a7d10fae104531d63b60d2b58e745c9ca5ebc06", null ]
+    ] ],
+    [ "SOC_RcmQspiClockFreqId", "group__DRV__SOC__RCM__MODULE.html#ga2a6e2b2275c1514fa513373392b4ad01", [
+      [ "SOC_RcmQspiClockFreqId_CLK_40MHZ", "group__DRV__SOC__RCM__MODULE.html#gga2a6e2b2275c1514fa513373392b4ad01a618cceb12b73d1cf7425e1d1981983a5", null ],
+      [ "SOC_RcmQspiClockFreqId_CLK_60MHZ", "group__DRV__SOC__RCM__MODULE.html#gga2a6e2b2275c1514fa513373392b4ad01abf633d867ee471aea141f2db41bfe6cb", null ],
+      [ "SOC_RcmQspiClockFreqId_CLK_80MHZ", "group__DRV__SOC__RCM__MODULE.html#gga2a6e2b2275c1514fa513373392b4ad01a735db0e83a64e3e6d54fa6d21ccd5a1b", null ],
+      [ "SOC_RcmQspiClockFreqId_MAX_VALUE", "group__DRV__SOC__RCM__MODULE.html#gga2a6e2b2275c1514fa513373392b4ad01ae21654cc941bd9ad3e4303e6a176bc68", null ]
+    ] ],
+    [ "SOC_RcmPeripheralClockGate", "group__DRV__SOC__RCM__MODULE.html#ga2402c1aac740465f2da011d54a2618ab", [
+      [ "SOC_RcmPeripheralClockGateEnable", "group__DRV__SOC__RCM__MODULE.html#gga2402c1aac740465f2da011d54a2618aba0686484ade65bf026e26da6bf1c95f84", null ],
+      [ "SOC_RcmPeripheralClockGateDisable", "group__DRV__SOC__RCM__MODULE.html#gga2402c1aac740465f2da011d54a2618abadffc070a44f9dbccb0d933d864ebcc6c", null ]
+    ] ],
+    [ "SOC_rcmEnableADPLLClock", "group__DRV__SOC__RCM__MODULE.html#ga433911efbaa13da80f64fc518c12802b", null ],
+    [ "SOC_rcmSetM4Clock", "group__DRV__SOC__RCM__MODULE.html#ga1a70888c8c934c8256c78159ab79f15c", null ],
+    [ "SOC_rcmSetM4ClockSrc", "group__DRV__SOC__RCM__MODULE.html#gac6c0aad4ea44553fa2d093a9e105d098", null ],
+    [ "SOC_rcmGetM4Clock", "group__DRV__SOC__RCM__MODULE.html#gafec534bdfc0b004bb4c0da9c9af1eee1", null ],
+    [ "SOC_rcmSetPeripheralClock", "group__DRV__SOC__RCM__MODULE.html#ga08cdd8c1e06346ff8b94a4c1b052976a", null ],
+    [ "SOC_rcmGetPeripheralClock", "group__DRV__SOC__RCM__MODULE.html#gad5321c5e65db382b13f6aad8a9505147", null ],
+    [ "SOC_rcmGetResetCause", "group__DRV__SOC__RCM__MODULE.html#ga21709bdf9c7d935e15bac2564c417981", null ],
+    [ "SOC_rcmEnablePeripheralClock", "group__DRV__SOC__RCM__MODULE.html#ga305b6ae043f69f05eaf73879ebe47ab3", null ],
+    [ "SOC_rcmStartInitSharedRam", "group__DRV__SOC__RCM__MODULE.html#ga0f31bc0d8086614eead18cccab9b20a1", null ],
+    [ "SOC_rcmWaitMemInitSharedRam", "group__DRV__SOC__RCM__MODULE.html#ga6dd4aa909d93fe616912be79b9782f13", null ],
+    [ "SOC_rcmStartMemInitTpcc", "group__DRV__SOC__RCM__MODULE.html#gadcaaca559b8604664ee367f232f2d68c", null ],
+    [ "SOC_rcmWaitMemInitTpcc", "group__DRV__SOC__RCM__MODULE.html#gafea4bef17769a00b98b086ae6487ff08", null ],
+    [ "SOC_getEfuseRomVersion", "group__DRV__SOC__RCM__MODULE.html#gafe3ac96aa323d5b18afe49291d2f634e", null ],
+    [ "SOC_rcmReadSynthTrimValid", "group__DRV__SOC__RCM__MODULE.html#ga4362d1a4ff8f01e82c33b6c2417ec7fa", null ],
+    [ "SOC_rcmReadAPLLCalibTrimValid", "group__DRV__SOC__RCM__MODULE.html#ga460fb8bd7bcd524b5648da5e06e58662", null ],
+    [ "SOC_getEfusePgVersion", "group__DRV__SOC__RCM__MODULE.html#gaf30eeaacbce972cf46806ad18ca84086", null ],
+    [ "SOC_isDeviceAOP", "group__DRV__SOC__RCM__MODULE.html#ga90063925d5a98658ca0be9759f775b58", null ]
+];

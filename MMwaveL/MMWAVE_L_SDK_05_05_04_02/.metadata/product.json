@@ -1,0 +1,35 @@
+{
+    "name": "MMWAVE-L-SDK",
+    "displayName": "MMWAVE L SDK",
+    "version": "05.05.04",
+    "documentationPath": "../docs",
+    "includePaths": [
+        "../source",
+    ],
+    "components": [
+        "/kernel/dpl",
+        "/drivers/drivers",
+        "/board/board",
+        "/demo/demo",
+    ],
+    "devices": [
+        "XWRL64XX",
+        "XWRL14XX",
+    ],
+    "contexts": {
+        "XWRL64XX": [
+            "m4fss0-0",
+        ],
+        "XWRL14XX": [
+            "m4fss0-0",
+        ]
+    },
+    "pinmuxUIOptions": {
+        "group": "merged",
+        "hidePeripheralTab": false,
+        "showPinTable": true,
+        "showSignals": true,
+        "showUsed": true
+    },
+    "minToolVersion" : "1.20.0"
+}

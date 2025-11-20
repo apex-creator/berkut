@@ -1,0 +1,9 @@
+[MCSPI] Loopback example DMA mode started ...
+----------------------------------------------------------
+McSPI Clock 1000000 Hz
+----------------------------------------------------------
+Data Width 	Data Length 	Transfer Time (micro sec)
+8		128		1208.70
+----------------------------------------------------------
+
+All tests have passed!!

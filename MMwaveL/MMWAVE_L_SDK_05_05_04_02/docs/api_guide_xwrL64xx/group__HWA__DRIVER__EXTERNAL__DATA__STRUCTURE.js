@@ -1,0 +1,208 @@
+var group__HWA__DRIVER__EXTERNAL__DATA__STRUCTURE =
+[
+    [ "HWA_MACROS", "group__HWA__MACROS.html", "group__HWA__MACROS" ],
+    [ "HWA_Attrs", "structHWA__Attrs.html", [
+      [ "instanceNum", "structHWA__Attrs.html#aad227e825a06c5f2b763d289310139b7", null ],
+      [ "ctrlBaseAddr", "structHWA__Attrs.html#a7fb8724f94ac73dd21eaf94e769fec47", null ],
+      [ "paramBaseAddr", "structHWA__Attrs.html#a1398be0bc6b354c405e54d43bfd31421", null ],
+      [ "ramBaseAddr", "structHWA__Attrs.html#a1dce23633739761dfd975d84c06510f2", null ],
+      [ "dssBaseAddr", "structHWA__Attrs.html#a17cdbd5fc56e2c1bfa154362d170921e", null ],
+      [ "numHwaParamSets", "structHWA__Attrs.html#a88527c303cd079fd04d2a2310b95dddb", null ],
+      [ "intNumParamSet", "structHWA__Attrs.html#a011059b0b49e0cef05615fd8634163f8", null ],
+      [ "intNumDone", "structHWA__Attrs.html#a8cb008f17c109ca7b5fd34f997fa5f3e", null ],
+      [ "numDmaChannels", "structHWA__Attrs.html#add4ad72f2980bf9a03f3f9dd44347ba1", null ],
+      [ "accelMemBaseAddr", "structHWA__Attrs.html#a09a19b36dd56ad9d4804f28782bb70e7", null ],
+      [ "accelMemSize", "structHWA__Attrs.html#ab42a1829cf3ea4d9a945eee6ccb72b51", null ],
+      [ "isConcurrentAccessAllowed", "structHWA__Attrs.html#a9b5d3a2918675b3ea7f605c2d051b01e", null ],
+      [ "isCompressionEnginePresent", "structHWA__Attrs.html#ac29a7bc01a6424864684c69064760128", null ]
+    ] ],
+    [ "HWA_RAMAttrs", "structHWA__RAMAttrs.html", [
+      [ "ramBaseAddress", "structHWA__RAMAttrs.html#aef6b2499204d38b996d48b593429590f", null ],
+      [ "ramSizeInBytes", "structHWA__RAMAttrs.html#a103b8128e20adfb4071fb042886ddb8d", null ]
+    ] ],
+    [ "HWA_SrcDMAConfig", "structHWA__SrcDMAConfig.html", [
+      [ "srcAddr", "structHWA__SrcDMAConfig.html#ab5a90acc3a4f303909c3a662155e783a", null ],
+      [ "destAddr", "structHWA__SrcDMAConfig.html#a8f925fff7a850bfdd33b438ee3cce2c5", null ],
+      [ "aCnt", "structHWA__SrcDMAConfig.html#af33fe55caf98ac80aacd8d70aea02eb8", null ],
+      [ "bCnt", "structHWA__SrcDMAConfig.html#a92b30f3ebf46f5f2a86de0d7bf6fd5de", null ],
+      [ "cCnt", "structHWA__SrcDMAConfig.html#a9859157c8e855ad3f3bd3ea02c6bd035", null ]
+    ] ],
+    [ "HWA_CommonConfig", "structHWA__CommonConfig.html", [
+      [ "configMask", "structHWA__CommonConfig.html#ae3df73bafa07bdf84bd236b946375109", null ],
+      [ "numLoops", "structHWA__CommonConfig.html#a39bea11abca362dd58eb80b98007c645", null ],
+      [ "paramStartIdx", "structHWA__CommonConfig.html#a1f53f83a14cdbabedfe00a7344e54c03", null ],
+      [ "paramStopIdx", "structHWA__CommonConfig.html#a78378e843204d757f380c6d271b30dbf", null ],
+      [ "fft1DEnable", "structHWA__CommonConfig.html#af74baa3ecff3fe3a6c1fdd277fd3eee3", null ],
+      [ "bpmRate", "structHWA__CommonConfig.html#ab329d6dde74f71ea7410d4413fc62cb3", null ],
+      [ "bpmPattern", "structHWA__CommonConfig.html#af47bbf433e0404a5642944b1af75ea91", null ],
+      [ "interferenceThreshold", "structHWA__CommonConfig.html#a5f64454c96bdf7ee9a4c0678c9ecf7dc", null ],
+      [ "twidDitherEnable", "structHWA__CommonConfig.html#a6aab1107ee91e85a5cdcc647d09e549f", null ],
+      [ "lfsrSeed", "structHWA__CommonConfig.html#ab9f93942cafd7384fed2b2be561ac2af", null ],
+      [ "fftSumDiv", "structHWA__CommonConfig.html#a46afea8b47b3c7dd9b95be2f254328ce", null ],
+      [ "fftConfig", "structHWA__CommonConfig.html#aaeedbc4c9b6098c6bb09732abd24e2ba", null ],
+      [ "scale", "structHWA__CommonConfig.html#ae524a7939214cb7b633073b21d8bf991", null ],
+      [ "shift", "structHWA__CommonConfig.html#af16accd037eed50c1e2fa6336cb3e318", null ],
+      [ "dcEstimateConfig", "structHWA__CommonConfig.html#a027e7c8af47907953ce15dc3d3a945d4", null ],
+      [ "swIVal", "structHWA__CommonConfig.html#a9c35cdd133d3cdf15cfe9649fb18a577", null ],
+      [ "swQVal", "structHWA__CommonConfig.html#a6a5694530cfccdcfd84f20928d19f93f", null ],
+      [ "dcSubtractConfig", "structHWA__CommonConfig.html#ac2bbfcc090ed0cd6bd1acd8cf39b2bb6", null ],
+      [ "thresholdMagSw", "structHWA__CommonConfig.html#abb3448a06f6cc5ca7ad1b06b4cca6e17", null ],
+      [ "thresholdMagDiffSw", "structHWA__CommonConfig.html#a153ee1a709d88e82829ecb0d30253013", null ],
+      [ "sumMagScale", "structHWA__CommonConfig.html#ac20b32c7615d01b4360878cb0824d323", null ],
+      [ "sumMagShift", "structHWA__CommonConfig.html#adec820b0135a0d774ba69f47199b4f8b", null ],
+      [ "sumMagDiffScale", "structHWA__CommonConfig.html#a047bcf99cda468c8c565bbaa031a0d8c", null ],
+      [ "sumMagDiffShift", "structHWA__CommonConfig.html#ad215a5e5a98d573219a0a2c4afb9a4ec", null ],
+      [ "interfConfig", "structHWA__CommonConfig.html#a4b59f71d40109801504a960b2ac72e3b", null ],
+      [ "Iscale", "structHWA__CommonConfig.html#a20d3cecb0656d18e356f0373f2d7be97", null ],
+      [ "Qscale", "structHWA__CommonConfig.html#ac95a8ddcd568f6f1b9e4aebcdc9ebdb3", null ],
+      [ "twiddleDeltaFrac", "structHWA__CommonConfig.html#ad82134d74e0f894d233ea6f75372ee50", null ],
+      [ "recWindowReset", "structHWA__CommonConfig.html#a173ba38146c8d351c176dece7092fcd5", null ],
+      [ "complexMultiplyConfig", "structHWA__CommonConfig.html#a8992177f0222843cf3ede71ef474a9e1", null ],
+      [ "cfarThresholdScale", "structHWA__CommonConfig.html#a6dc1ec5570c28d419375db98ecf106a1", null ],
+      [ "cfarConfig", "structHWA__CommonConfig.html#aa0b2c6a18988811de14837340df5a9f6", null ],
+      [ "cfarDetthreshold", "structHWA__CommonConfig.html#a78f72d39d615c7235afdd60130b572f5", null ],
+      [ "cfarDetThresConfig", "structHWA__CommonConfig.html#a3b50f257d23e8a8c3c7a471bc6dd7871", null ],
+      [ "i_cmult_scale", "structHWA__CommonConfig.html#a88e53f65d88243db9a71f53d14425d3a", null ],
+      [ "q_cmult_scale", "structHWA__CommonConfig.html#afb728350e872d0ee418c401ca33bf788", null ],
+      [ "scalarMult", "structHWA__CommonConfig.html#aef663618adad57faad0390896c08c237", null ],
+      [ "EGEKparam", "structHWA__CommonConfig.html#a726e673d7bb09b3949c94b2d40d55a30", null ],
+      [ "compressMode", "structHWA__CommonConfig.html#afec024d8ae872edc6e6661b1769a9fe2", null ]
+    ] ],
+    [ "HWA_SourceConfig", "structHWA__SourceConfig.html", [
+      [ "srcAddr", "structHWA__SourceConfig.html#aa6d0f7a00b22097474e20b31d104210e", null ],
+      [ "srcAcnt", "structHWA__SourceConfig.html#a30b720570e36b7a53b90f9471f3fa72a", null ],
+      [ "srcAIdx", "structHWA__SourceConfig.html#acc946171fa0b6e13e55ac55027dfe640", null ],
+      [ "srcBcnt", "structHWA__SourceConfig.html#a28aff781ca02251eb71c83681cdfb18e", null ],
+      [ "srcBIdx", "structHWA__SourceConfig.html#a48c979d21bbf3b5d07a2af8ff7679058", null ],
+      [ "srcShift", "structHWA__SourceConfig.html#a5426f28361a10231711b9ab1207bce71", null ],
+      [ "srcCircShiftWrap", "structHWA__SourceConfig.html#ae7405d798aa8ff9299c99617dc40f947", null ],
+      [ "srcRealComplex", "structHWA__SourceConfig.html#a20c06454c74b986e783c0db06c5bd355", null ],
+      [ "srcWidth", "structHWA__SourceConfig.html#a6e544827941bfb137a72650a11241ae1", null ],
+      [ "srcSign", "structHWA__SourceConfig.html#ab7dc120f80cc13df4504bfb03047a1ca", null ],
+      [ "srcConjugate", "structHWA__SourceConfig.html#ae00aec6e1d5cf54bc20b1afb5a589da6", null ],
+      [ "srcScale", "structHWA__SourceConfig.html#adcd99468959e6d7b7cb5ed77fe7c1687", null ],
+      [ "bpmEnable", "structHWA__SourceConfig.html#a2e9939c9e861bd8fcd2adc7136c8ef15", null ],
+      [ "bpmPhase", "structHWA__SourceConfig.html#a9bf43d346334df0a7c26cc770d5bdf36", null ]
+    ] ],
+    [ "HWA_DestConfig", "structHWA__DestConfig.html", [
+      [ "dstAddr", "structHWA__DestConfig.html#a228b2ef2b4323c2dd05994e1f25cdc00", null ],
+      [ "dstAcnt", "structHWA__DestConfig.html#a7ed4d5d5d9568a781b4f572fa73b2d32", null ],
+      [ "dstAIdx", "structHWA__DestConfig.html#ac6ed1ec39465bc3c1469eded267ffa72", null ],
+      [ "dstBIdx", "structHWA__DestConfig.html#a605e1a3d473d318c92fcfaf8624f2349", null ],
+      [ "dstRealComplex", "structHWA__DestConfig.html#a1b189268405a510ddbd285d790580094", null ],
+      [ "dstWidth", "structHWA__DestConfig.html#a68553e482c93e78f83dd0f8402db48ea", null ],
+      [ "dstSign", "structHWA__DestConfig.html#abcdab2fc916e6791630175757afdce30", null ],
+      [ "dstConjugate", "structHWA__DestConfig.html#a47e84b5d649e5242902bb50498cc327c", null ],
+      [ "dstScale", "structHWA__DestConfig.html#a9fc53dc2e583b2bdb6c278121015f1c4", null ],
+      [ "dstSkipInit", "structHWA__DestConfig.html#ace46a984f0adabf8ca16f91ae520410d", null ]
+    ] ],
+    [ "HWA_AccelModeFFT", "structHWA__AccelModeFFT.html", [
+      [ "fftEn", "structHWA__AccelModeFFT.html#a46e721d9295b65a357a4b3089fea952a", null ],
+      [ "fftSize", "structHWA__AccelModeFFT.html#a0c823df05174f25bb86857cb850e6045", null ],
+      [ "butterflyScaling", "structHWA__AccelModeFFT.html#a78765c8366a77a8c642e2fa39f5925cb", null ],
+      [ "interfZeroOutEn", "structHWA__AccelModeFFT.html#a0324bc78866e5694c8e6ab27e123bff8", null ],
+      [ "windowEn", "structHWA__AccelModeFFT.html#a002ffb87ec49b23ab25d997ddfc53938", null ],
+      [ "windowStart", "structHWA__AccelModeFFT.html#aa9623dac3144a77b9a4a77685ee8e5a5", null ],
+      [ "winSymm", "structHWA__AccelModeFFT.html#af80f56558709861f649c906045ab22d5", null ],
+      [ "winInterpolateMode", "structHWA__AccelModeFFT.html#a89d90511ebc8f8cdd7e55b3fcc9fab29", null ],
+      [ "magLogEn", "structHWA__AccelModeFFT.html#adac5ef91e74125963d9687d15e754161", null ],
+      [ "fftOutMode", "structHWA__AccelModeFFT.html#ac3f2fd5232558228c4900f31f97f6ddf", null ]
+    ] ],
+    [ "HWA_AccelModeCompress", "structHWA__AccelModeCompress.html", [
+      [ "compressDecompress", "structHWA__AccelModeCompress.html#acb331441d9b6a2e62f8b543e4cdc9751", null ],
+      [ "method", "structHWA__AccelModeCompress.html#ab3b2ff1b38c9284fb6ff008818a55147", null ],
+      [ "ditherEnable", "structHWA__AccelModeCompress.html#a6e5947920011f25f89c2fe82e9381d87", null ],
+      [ "passSelect", "structHWA__AccelModeCompress.html#a49aba6850b8deb868bce80d2658a198c", null ],
+      [ "headerEnable", "structHWA__AccelModeCompress.html#a6b4d914f51b15ce1cb3b50f596bc11f6", null ],
+      [ "scaleFactorBW", "structHWA__AccelModeCompress.html#a50f425488a1f29d3d0e325b409ad679f", null ],
+      [ "BFPMantissaBW", "structHWA__AccelModeCompress.html#ad6e60dda8d69b5083b7624e223960ce0", null ],
+      [ "scaleFactor", "structHWA__AccelModeCompress.html#a77c3de4ef471743a66e01eb426a9b9b2", null ],
+      [ "EGEKarrayLength", "structHWA__AccelModeCompress.html#a5f149e6ee76c0c5b3cd34187b06e8527", null ]
+    ] ],
+    [ "HWA_ComplexMultiply", "structHWA__ComplexMultiply.html", [
+      [ "mode", "structHWA__ComplexMultiply.html#ac702d54fbbb1a62fb5040aa7700e9d94", null ],
+      [ "twidIncrement", "structHWA__ComplexMultiply.html#a6c94c6cd82d23d32aadb2049fdde40ea", null ],
+      [ "startFreq", "structHWA__ComplexMultiply.html#a3f5c2251bab413505466d83eeb8e3b1e", null ],
+      [ "freqIncrement", "structHWA__ComplexMultiply.html#a2748b26b7c6e7ff54ddd926b26d3f1d8", null ],
+      [ "dft", "structHWA__ComplexMultiply.html#a9a8b45bcaee389978f66a3478674fceb", null ],
+      [ "twidFactorPattern", "structHWA__ComplexMultiply.html#a67616b1df83b2c8ca84d8b142cca9feb", null ],
+      [ "cmpMulArgs", "structHWA__ComplexMultiply.html#a0a8294d9aba3fff0979d6deacc4c27aa", null ]
+    ] ],
+    [ "HWA_PreProcessing", "structHWA__PreProcessing.html", [
+      [ "dcEstResetMode", "structHWA__PreProcessing.html#a069b0642285a4ae4c67a011453d0d7b8", null ],
+      [ "dcSubEnable", "structHWA__PreProcessing.html#a9509f77bd51e9cd3583a35c268d73823", null ],
+      [ "dcSubSelect", "structHWA__PreProcessing.html#af5f8928e0c28c99a90082f6f5ae54f33", null ],
+      [ "thresholdEnable", "structHWA__PreProcessing.html#a61d809ff730baac1805ef26d7f1ef36c", null ],
+      [ "thresholdMode", "structHWA__PreProcessing.html#a7a61b3ee1f0055325dc364fb6d4fac76", null ],
+      [ "thresholdSelect", "structHWA__PreProcessing.html#a87fb8ca08de832e757446a6626214f74", null ],
+      [ "interfLocalize", "structHWA__PreProcessing.html#a1e929cb3f7d3814c0662ef47d704f7cd", null ],
+      [ "resetMode", "structHWA__PreProcessing.html#a2158f09775a5955a59c9e3dc4902d8c7", null ],
+      [ "interfStat", "structHWA__PreProcessing.html#a216125345d781a79ba7398adf5b2e3c6", null ]
+    ] ],
+    [ "HWA_AccelModeCFAR", "structHWA__AccelModeCFAR.html", [
+      [ "numNoiseSamplesLeft", "structHWA__AccelModeCFAR.html#adeb44d5c68a6d3f4ae969c27481e7194", null ],
+      [ "numNoiseSamplesRight", "structHWA__AccelModeCFAR.html#aa3d358da925424f7774a12ce464e1495", null ],
+      [ "numGuardCells", "structHWA__AccelModeCFAR.html#a9f10776071df038318756771462a55e3", null ],
+      [ "nAvgDivFactor", "structHWA__AccelModeCFAR.html#aa5435d378cb254d4faf7e8741a103a37", null ],
+      [ "nAvgMode", "structHWA__AccelModeCFAR.html#a3fef0ccb3444ef4d4b405529a46cbb3d", null ],
+      [ "cfarOsKvalue", "structHWA__AccelModeCFAR.html#aa966130c7879843c04e56785dbfb374e", null ],
+      [ "cfarOsEdgeKScaleEn", "structHWA__AccelModeCFAR.html#ae9ff929389779ae3a19fbd7d491f6c92", null ],
+      [ "operMode", "structHWA__AccelModeCFAR.html#a33438f29ca2721a673086c3d4123b54b", null ],
+      [ "outputMode", "structHWA__AccelModeCFAR.html#af2d8318afbedaa2b517e37571b81d14f", null ],
+      [ "cfarAdvOutMode", "structHWA__AccelModeCFAR.html#aa8d1b562f3d9e709bbae04f7b235aa59", null ],
+      [ "peakGroupEn", "structHWA__AccelModeCFAR.html#a0bbce295bbdb46f086e002a99925f046", null ],
+      [ "cyclicModeEn", "structHWA__AccelModeCFAR.html#a0dfcd57c8f9fbb34713ff80686a96783", null ]
+    ] ],
+    [ "HWA_ParamConfig", "structHWA__ParamConfig.html", [
+      [ "triggerMode", "structHWA__ParamConfig.html#a05f9207453e47fdca530d0c771fb21ac", null ],
+      [ "dmaTriggerSrc", "structHWA__ParamConfig.html#a757d4ecd45a4ee51ff54900f3f2ba676", null ],
+      [ "accelMode", "structHWA__ParamConfig.html#a31c160094bc72f0b22c5d163f853fe58", null ],
+      [ "source", "structHWA__ParamConfig.html#af9f364db2931b9295b7102144db202de", null ],
+      [ "dest", "structHWA__ParamConfig.html#a0064f765366ecdbb7c3d1a0a4d3d8199", null ],
+      [ "fftMode", "structHWA__ParamConfig.html#ae52661234c78dd3baf1a15c24518122e", null ],
+      [ "cfarMode", "structHWA__ParamConfig.html#ad819507b7e249466381ebff179ed9f5a", null ],
+      [ "compressMode", "structHWA__ParamConfig.html#a9cdec02ff8f4a445abe82ec623e6e948", null ],
+      [ "accelModeArgs", "structHWA__ParamConfig.html#adb73e7866d9a6c77ad8076538a235c2a", null ],
+      [ "complexMultiply", "structHWA__ParamConfig.html#a7d885fbde0f1ba41ddb66048b36a521b", null ],
+      [ "preProcCfg", "structHWA__ParamConfig.html#a1dc7bc6b608882c434b2ce9c3abe2b9d", null ]
+    ] ],
+    [ "HWA_InterruptConfig", "structHWA__InterruptConfig.html", [
+      [ "interruptTypeFlag", "structHWA__InterruptConfig.html#afc5e75e8bc755e13978f5855f5dfae32", null ],
+      [ "callbackFn", "structHWA__InterruptConfig.html#a76444b55f392328ef517cab6546565b2", null ],
+      [ "callbackArg", "structHWA__InterruptConfig.html#a589d0456b3acabc1901da30033461113", null ],
+      [ "cpu", "structHWA__InterruptConfig.html#a2149b8d48060a806a27cdc198df44c78", null ],
+      [ "dstChannel", "structHWA__InterruptConfig.html#a6ac3d2af5fc265a4b99330cb98825b24", null ],
+      [ "dma", "structHWA__InterruptConfig.html#a7811cb095936e4223ff8e62bd67061a5", null ]
+    ] ],
+    [ "HWA_Stats", "structHWA__Stats.html", [
+      [ "maxValue", "structHWA__Stats.html#a54c69d5a91c189021f295cc9545c3dc4", null ],
+      [ "maxIndex", "structHWA__Stats.html#a5890dc97cf6ae4e9db0909193d9aa464", null ],
+      [ "iSumMSB", "structHWA__Stats.html#aed2a61601488d38c7b9089056f41ebce", null ],
+      [ "qSumMSB", "structHWA__Stats.html#ae0fb1332bcac6fb1ca3ff40fb8654307", null ],
+      [ "iSumLSB", "structHWA__Stats.html#a478b9b967c5bed86dd3ca2b644cba89a", null ],
+      [ "qSumLSB", "structHWA__Stats.html#af7ac6d8c685870ef9d73c86c9a6fd86d", null ]
+    ] ],
+    [ "HWA_DebugStats", "structHWA__DebugStats.html", [
+      [ "currentParamSet", "structHWA__DebugStats.html#ad31c9712980d869613327aff0da560cf", null ],
+      [ "currentLoopCount", "structHWA__DebugStats.html#ad406360e6f7e27198ca180153dcbf158", null ],
+      [ "dmaTrigStatus", "structHWA__DebugStats.html#a3d04a3fd846ec7bce887c00921d36cae", null ],
+      [ "dfePingPongStatus", "structHWA__DebugStats.html#abda01d3bd8bb8998237aac7f84f05259", null ],
+      [ "swTrigStatus", "structHWA__DebugStats.html#abbc1e835c7eae7a98bf7049216a97273", null ]
+    ] ],
+    [ "HWA_MemInfo", "structHWA__MemInfo.html", [
+      [ "baseAddress", "structHWA__MemInfo.html#acc86030206b1e8acfbc7a47b37185927", null ],
+      [ "bankSize", "structHWA__MemInfo.html#a9969cff8e79ba4a3786ca8087a85db4c", null ],
+      [ "numBanks", "structHWA__MemInfo.html#af0b6be1ebaf95d078886eb577e43aaed", null ]
+    ] ],
+    [ "HWA_InterruptPriority", "structHWA__InterruptPriority.html", [
+      [ "backgroundDone", "structHWA__InterruptPriority.html#a587ac72cf089f61cb07f10f4a1d89b2b", null ],
+      [ "paramsetDone1", "structHWA__InterruptPriority.html#a9319fbfeaa2df3fd735dabd53a832bb7", null ],
+      [ "paramsetDone2", "structHWA__InterruptPriority.html#ab0099346a93ab78002eaef8804ec1853", null ]
+    ] ],
+    [ "HWA_OpenConfig", "structHWA__OpenConfig.html", [
+      [ "interruptPriority", "structHWA__OpenConfig.html#a45821789b4b89f068136c8a5bddd8929", null ]
+    ] ],
+    [ "HWA_Handle", "group__HWA__DRIVER__EXTERNAL__DATA__STRUCTURE.html#ga8e524d8b150b4352899c82fa00dcfa47", null ],
+    [ "HWA_ParamDone_IntHandlerFuncPTR", "group__HWA__DRIVER__EXTERNAL__DATA__STRUCTURE.html#gaec205d9c8ca3adb1af65acf72c0a431a", null ],
+    [ "HWA_Done_IntHandlerFuncPTR", "group__HWA__DRIVER__EXTERNAL__DATA__STRUCTURE.html#ga11aa14c0866c24cbd1e3d63623d50725", null ]
+];

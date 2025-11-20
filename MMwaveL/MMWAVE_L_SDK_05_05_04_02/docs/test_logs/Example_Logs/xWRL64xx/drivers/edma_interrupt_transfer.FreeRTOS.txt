@@ -1,0 +1,3 @@
+[Cortex_M4_0] [EDMA] Interrupt Transfer Test Started...
+[EDMA] Interrupt Transfer Test Completed!!
+All tests have passed!!

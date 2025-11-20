@@ -1,0 +1,31 @@
+[Cortex_M4_0] INFO: mmwave_example_main:302: ******************************************
+INFO: mmwave_example_main:303: Debug: Launching mmwave
+INFO: mmwave_example_main:304: ******************************************
+INFO: MMWave_deviceGetVersion:833: RF MMWave LIB Version    : 03.01.05.00
+INFO: MMWave_deviceGetVersion:835: RF MMWave LIB Version Date    : 22.06.23
+INFO: MMWave_deviceGetVersion:839: RF FECSS LIB Version    : 03.01.05.00
+INFO: MMWave_deviceGetVersion:841: RF FECSS LIB Version Date    : 22.06.23
+INFO: MMWave_deviceGetVersion:845: RFS ROM Version Version    : 03.01.05.00
+INFO: MMWave_deviceGetVersion:847: RFS ROM Version Version Date    : 24.06.23
+INFO: MMWave_deviceGetVersion:851: RF RFS Patch Version    : 00.00.00.00
+INFO: MMWave_deviceGetVersion:853: RF RFS Patch Version Date    : 00.00.00
+INFO: Mmwave_Test:147: MMWave MSS Initialization
+INFO: Mmwave_Test:162: MMWave RF POWER ON/OFF Done
+Feature: MMWave Add Profile: Passed
+Feature: MMWave Get Number Profile: Passed
+Feature: MMWave Get Profile Handle: Passed
+Feature: MMWave Get Profile: Passed
+Feature: MMWave Add Chirp: Passed
+Feature: MMWave Get Number of Chirps: Passed
+Feature: MMWave Get Chirp Handle: Passed
+Feature: MMWave Get Chirp Configuration: Passed
+INFO: Mmwave_Test:195: MMWave MSS Open done.
+INFO: MMWave_configLink:551: rlSetFrameConfig...
+INFO: MMWave_configLink:564: rlTempMeasConfig...
+INFO: Mmwave_Test:208: MMWave MSS Configuration done
+INFO: Mmwave_Test:231: MMWave MSS Start done
+INFO: Mmwave_Test:260: MMWave MSS Stop done.
+Feature: MMWave MSS Close: Passed
+INFO: Mmwave_Test:273: MMWave MSS close done.
+Feature: MMWave MSS Deinitialized: Passed
+INFO: mmwave_example_main:316: --- Test Completed ---

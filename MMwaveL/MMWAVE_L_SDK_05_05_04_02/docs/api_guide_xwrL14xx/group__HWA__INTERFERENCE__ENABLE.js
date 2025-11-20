@@ -1,0 +1,5 @@
+var group__HWA__INTERFERENCE__ENABLE =
+[
+    [ "HWA_INTERFERENCE_ENABLE", "group__HWA__INTERFERENCE__ENABLE.html#ga677562ce2a6dc5bb199ab36058df92f1", null ],
+    [ "HWA_INTERFERENCE_DISABLE", "group__HWA__INTERFERENCE__ENABLE.html#ga8d9a840f8e8ae5fa15e81fb9823bc381", null ]
+];

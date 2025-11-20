@@ -1,0 +1,3 @@
+[Cortex_M4_0] CRC Full CPU Test Started ...
+Full CPU mode CRC Test Passed!!
+All tests have passed!!

@@ -1,0 +1,32 @@
+DPU Test Started 
+Reading Data From File.. 50 percent
+Reading Data From File.. 100 percent
+Measured processing time (Capon Beamforming) = CPU cycles = 11584 !!!
+Test case 1 passed!
+
+Reading Data From File.. 50 percent
+Reading Data From File.. 100 percent
+Measured processing time (Capon Beamforming) = CPU cycles = 11872 !!!
+Test case 2 passed!
+
+Reading Data From File.. 50 percent
+Reading Data From File.. 100 percent
+Measured processing time (Capon Beamforming) = CPU cycles = 11872 !!!
+Test case 3 passed!
+
+Reading Data From File.. 50 percent
+Reading Data From File.. 100 percent
+Measured processing time (Capon Beamforming) = CPU cycles = 11872 !!!
+Test case 4 passed!
+
+Reading Data From File.. 50 percent
+Reading Data From File.. 100 percent
+Measured processing time (Capon Beamforming) = CPU cycles = 11904 !!!
+Test case 5 passed!
+
+Reading Data From File.. 50 percent
+Reading Data From File.. 100 percent
+Measured processing time (Capon Beamforming) = CPU cycles = 11904 !!!
+Test case 6 passed!
+
+All test cases passed!

@@ -1,0 +1,12 @@
+DPU Test Started 
+numTxAntennas = 1
+numRangeBins = 256
+numChirpsPerFrame = 1
+
+
+... DPU Finish, Check Cube data ....  : 
+
+Test #0 finished!
+
+[Zoomproc] Test Completed!!
+All tests have passed!!

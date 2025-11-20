@@ -1,0 +1,49 @@
+%%{
+    let module = system.modules['/board/ina/ina'];
+%%}
+
+#include <board/ina.h>
+#include <math.h>
+
+void SensorConfig(I2C_Handle i2cHandle)
+{
+    % for(let i = 0; i < module.$instances.length; i++) {
+    % let instance = module.$instances[i];
+    % let config = module.getInstanceConfig(instance); 
+
+    % if (config.deviceType == "INA228") {
+    // Configure the INA228
+    SensorConfig228(i2cHandle, INA_CONFIG`i`_TARGET_ADDRESS, INA_CONFIG`i`_REG0_VALUE, INA_CONFIG`i`_REG1_VALUE, INA_CONFIG`i`_SHUNT_TEMP_REG_VALUE, INA_CONFIG`i`_CALIB_REG_VALUE);
+    % }
+
+    % }
+}
+
+void mmwDemo_PowerMeasurement(I2C_Handle i2cHandle, uint16_t *ptrPwrMeasured)
+{
+    float current;
+    % for(let i = 0; i < module.$instances.length; i++) {
+    % let instance = module.$instances[i];
+    % let config = module.getInstanceConfig(instance); 
+    % if (config.deviceType == "INA228") {
+    % if (config.I2CTargetAddress == "0x40") {
+    current = currentRead228(i2cHandle,`config.customI2CTargetAddress`,INA_CONFIG`i`_CURRENT_LSB);
+    ptrPwrMeasured[0] =  (current == (float)0xFFFFFFFF) ? 0xFFFF : (uint16_t) round(current * 18000.0);  //Rail 1.8V, current reading in mA, power measurement in 100 uW
+    % }
+    % else if (config.I2CTargetAddress == "0x41") {
+    current = currentRead228(i2cHandle,`config.customI2CTargetAddress`,INA_CONFIG`i`_CURRENT_LSB);
+    ptrPwrMeasured[2] = (current== (float)0xFFFFFFFF) ? 0xFFFF : (uint16_t) round(current * 12000.0);  //Rail 1.2V, current reading in mA, power measurement in 100uW
+    % }
+    % else if (config.I2CTargetAddress == "0x44"){
+    current = currentRead228(i2cHandle,`config.customI2CTargetAddress`,INA_CONFIG`i`_CURRENT_LSB);
+    ptrPwrMeasured[3] = (current == (float)0xFFFFFFFF) ? 0xFFFF : (uint16_t) round(current * 12000.0);  //Rail RF 1.2V, current reading in mA, power measurement in 100 uW
+    % }
+    % else {
+    current = currentRead228(i2cHandle,`config.customI2CTargetAddress`,INA_CONFIG`i`_CURRENT_LSB);
+    ptrPwrMeasured[1] = (current == (float)0xFFFFFFFF) ? 0xFFFF : (uint16_t) round(current * 33000.0);  //Rail RF 3.3V, current reading in mA, power measurement in 100 uW
+    % }
+    %}
+
+    %}
+}
+

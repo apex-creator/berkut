@@ -1,0 +1,3 @@
+[Cortex_M4_0] HWA Test Started 
+[EDMA-HWA] Test Completed!!
+All tests have passed!!

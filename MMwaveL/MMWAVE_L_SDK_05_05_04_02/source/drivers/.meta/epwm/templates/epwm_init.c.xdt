@@ -1,0 +1,11 @@
+%%{
+    let module = system.modules['/drivers/epwm/epwm'];
+    let common = system.getScript("/common");
+%%}
+    /* EPWM */
+    {
+        /* Enable time base clock for the selected ePWM */
+    % if((["xwrL64xx"].includes(common.getSocName())) || (["xwrL14xx"].includes(common.getSocName()))){
+        SOC_setEpwmTbClk(TRUE); 
+    % }
+    }

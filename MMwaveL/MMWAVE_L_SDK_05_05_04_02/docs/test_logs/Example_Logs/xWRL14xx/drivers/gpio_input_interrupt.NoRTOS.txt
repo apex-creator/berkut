@@ -1,0 +1,14 @@
+GPIO Input Interrupt Test Started ...
+Press and release S3 button on EVM to trigger GPIO interrupt ...
+Key is pressed 0 times
+Key is pressed 0 times
+Key is pressed 0 times
+Key is pressed 0 times
+Key is pressed 0 times
+Key is pressed 2 times
+Key is pressed 3 times
+Key is pressed 4 times
+Key is pressed 5 times
+Key is pressed 5 times
+GPIO Input Interrupt Test Passed!!
+All tests have passed!!

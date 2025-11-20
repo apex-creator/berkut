@@ -1,0 +1,3 @@
+Watchdog interrupt Mode Test Started ...
+Watchdog Driver NMI received
+All tests have passed!!

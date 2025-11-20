@@ -1,0 +1,918 @@
+Feature Extraction Test Started!
+Benchmark data generation started: heap free size = 102336 bytes
+Number of available features: 16
+numRangeBins: 64
+numDopplerBins: 128
+maxNumRangeBins: 40
+minNumRangeBins: 1
+numFrames for correlation: 20
+noOfPts for which angle estimation happens: 50
+azimuthFFTSize: 32
+elevationFFTSize: 32
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 35232 !!!
+Frame 1/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 35232 !!!
+Frame 2/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 35232 !!!
+Frame 3/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 35232 !!!
+Frame 4/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 35232 !!!
+Frame 5/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 35248 !!!
+Frame 6/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 35232 !!!
+Frame 7/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 35248 !!!
+Frame 8/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 35232 !!!
+Frame 9/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 35232 !!!
+Frame 10/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 35248 !!!
+Frame 11/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 35200 !!!
+Frame 12/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 35232 !!!
+Frame 13/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 35232 !!!
+Frame 14/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 35232 !!!
+Frame 15/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 35200 !!!
+Frame 16/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 35232 !!!
+Frame 17/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 35232 !!!
+Frame 18/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 35232 !!!
+Frame 19/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 44000 !!!
+Frame 20/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 43984 !!!
+Frame 21/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 43968 !!!
+Frame 22/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 43872 !!!
+Frame 23/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 43936 !!!
+Frame 24/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 43952 !!!
+Frame 25/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 43936 !!!
+Frame 26/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 43952 !!!
+Frame 27/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 44016 !!!
+Frame 28/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 43904 !!!
+Frame 29/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 43920 !!!
+Frame 30/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 43952 !!!
+Frame 31/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 43936 !!!
+Frame 32/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 43936 !!!
+Frame 33/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 43952 !!!
+Frame 34/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 43904 !!!
+Frame 35/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 43936 !!!
+Frame 36/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 43920 !!!
+Frame 37/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 43984 !!!
+Frame 38/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 43936 !!!
+Frame 39/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 44016 !!!
+Frame 40/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 43952 !!!
+Frame 41/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 43904 !!!
+Frame 42/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 43936 !!!
+Frame 43/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 43952 !!!
+Frame 44/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 43952 !!!
+Frame 45/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 43968 !!!
+Frame 46/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 43984 !!!
+Frame 47/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 44016 !!!
+Frame 48/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 44048 !!!
+Frame 49/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 43952 !!!
+Frame 50/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 43872 !!!
+Frame 51/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 43936 !!!
+Frame 52/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 44000 !!!
+Frame 53/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 43984 !!!
+Frame 54/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 43984 !!!
+Frame 55/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 44032 !!!
+Frame 56/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 44016 !!!
+Frame 57/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 44064 !!!
+Frame 58/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 44016 !!!
+Frame 59/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 44064 !!!
+Frame 60/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 43968 !!!
+Frame 61/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 44016 !!!
+Frame 62/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 44000 !!!
+Frame 63/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 44000 !!!
+Frame 64/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 43984 !!!
+Frame 65/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 44048 !!!
+Frame 66/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 44032 !!!
+Frame 67/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 43968 !!!
+Frame 68/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 44000 !!!
+Frame 69/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 43984 !!!
+Frame 70/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 43968 !!!
+Frame 71/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 44016 !!!
+Frame 72/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 43968 !!!
+Frame 73/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 44032 !!!
+Frame 74/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 44016 !!!
+Frame 75/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 44000 !!!
+Frame 76/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 44016 !!!
+Frame 77/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 43968 !!!
+Frame 78/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 44048 !!!
+Frame 79/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 43968 !!!
+Frame 80/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 44000 !!!
+Frame 81/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 43968 !!!
+Frame 82/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 43936 !!!
+Frame 83/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 43920 !!!
+Frame 84/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 43952 !!!
+Frame 85/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 43968 !!!
+Frame 86/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 43936 !!!
+Frame 87/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 43968 !!!
+Frame 88/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 43952 !!!
+Frame 89/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 43936 !!!
+Frame 90/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 43984 !!!
+Frame 91/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 43968 !!!
+Frame 92/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 43984 !!!
+Frame 93/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 43968 !!!
+Frame 94/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 44064 !!!
+Frame 95/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 43984 !!!
+Frame 96/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 43984 !!!
+Frame 97/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 44032 !!!
+Frame 98/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 44016 !!!
+Frame 99/100 is processed...
+Reading Detection Matrix From File.. 0 percent
+Reading Detection Matrix From File.. 15 percent
+Reading Detection Matrix From File.. 31 percent
+Reading Detection Matrix From File.. 46 percent
+Reading Detection Matrix From File.. 62 percent
+Reading Detection Matrix From File.. 78 percent
+Reading Detection Matrix From File.. 93 percent
+Measured processing time (featExtract_compute) = CPU cycles = 44000 !!!
+Frame 100/100 is processed...
+Benchmark data generation ended: heap free size = 102336 bytes
+Benchmark validation started!
+Total features compared: 1600!!
+Total features failed: 1!!
+Overal test performance: %99.94!!
+Benchmark validation ended!
+Feature Extraction Test Ended!

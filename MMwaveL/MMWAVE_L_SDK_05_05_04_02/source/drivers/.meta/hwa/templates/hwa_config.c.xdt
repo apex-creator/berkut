@@ -1,0 +1,42 @@
+%%{
+    let module = system.modules['/drivers/hwa/hwa'];
+%%}
+/*
+ * HWA
+ */
+/* HWA atrributes */
+HWA_Attrs gHwaAttrs[CONFIG_HWA_NUM_INSTANCES] =
+{
+% for(let i = 0; i < module.$instances.length; i++) {
+    % let instance = module.$instances[i];
+    % let config = module.getInstanceConfig(instance);
+    {
+        .instanceNum                = `i`U,
+        .ctrlBaseAddr               = `config.ctrlBaseAddr`,
+        .paramBaseAddr              = `config.paramBaseAddr`,
+        .ramBaseAddr                = `config.ramBaseAddr`,
+        .numHwaParamSets            = `config.numHwaParamSets`,
+        .intNumParamSet             = `config.intNumParamSet`,
+        .intNumDone                 = `config.intNumDone`,
+        .numDmaChannels             = `config.numDmaChannels`,
+        .accelMemBaseAddr           = `config.accelMemBaseAddr`,
+        .accelMemSize               = `config.accelMemSize`,
+        .isConcurrentAccessAllowed  = `config.isConcurrentAccessAllowed`,
+        .isCompressionEnginePresent = `config.isCompressionEnginePresent`,
+    },
+% }
+};
+/* HWA RAM atrributes */
+HWA_RAMAttrs gHwaRamCfg[HWA_NUM_RAMS] =
+{
+    {CSL_APP_HWA_WINDOW_RAM_U_BASE, CSL_APP_HWA_WINDOW_RAM_U_SIZE},
+    {CSL_APP_HWA_MC_PING_RAM_U_BASE, CSL_APP_HWA_MC_PING_RAM_U_SIZE},
+    {CSL_APP_HWA_MC_PONG_RAM_U_BASE, CSL_APP_HWA_MC_PONG_RAM_U_SIZE}
+};
+
+/* HWA objects - initialized by the driver */
+HWA_Object gHwaObject[CONFIG_HWA_NUM_INSTANCES];
+/* HWA objects - storage for HWA driver object handles */
+HWA_Object *gHwaObjectPtr[CONFIG_HWA_NUM_INSTANCES] = { NULL };
+/* HWA objects count */
+uint32_t gHwaConfigNum = CONFIG_HWA_NUM_INSTANCES;

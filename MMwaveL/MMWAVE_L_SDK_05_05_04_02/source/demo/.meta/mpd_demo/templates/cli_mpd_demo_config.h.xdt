@@ -1,0 +1,242 @@
+%%{
+    let module = system.modules['/demo/mpd_demo/mpd_demo'];
+%%}
+
+/*
+ * MPD_DEMO
+ */
+% for(let i = 0; i < module.$instances.length; i++) {
+    % let instance = module.$instances[i];
+    % let config = module.getInstanceConfig(instance); 
+
+#define CLI_REMOVAL                 `config.CLI`
+% if (config.CLI=="1"){
+#define SPI_ADC_DATA_STREAMING    0
+#define QUICK_START               0
+#define DYNAMIC_RECONFIG          0
+#define ENABLE_MONITORS           0
+#define MPD_ENABLE                `config.MPD_ENABLE`
+#define TRACKER_CLASSIFIER_ENABLE `config.TRACKER_CLASSIFIER_ENABLE`
+% }
+% else {
+#define SPI_ADC_DATA_STREAMING    `config.SPI_ADC_DATA_STREAMING`
+#define QUICK_START               `config.QUICK_START`
+#define DYNAMIC_RECONFIG          `config.DYNAMIC_RECONFIG`
+#define ENABLE_MONITORS           `config.ENABLE_MONITORS`
+#define MPD_ENABLE                0
+#define TRACKER_CLASSIFIER_ENABLE 0
+% }
+% if (config.CLI=="1"){
+#define CLI_LOW_POWER_MODE   `config.lowPowerCfg_enable`
+
+#define CLI_NUM_CHIRPS_PER_BURST        `config.frameCfg_numOfChirpsInBurst`
+#define CLI_NUM_CHIRPS_ACCUM            `config.frameCfg_numOfChirpsAccum`
+#define CLI_BURST_PERIOD                `config.frameCfg_burstPeriodicity`
+#define CLI_W_BURST_PERIOD              (10.0 * `config.frameCfg_burstPeriodicity`) 
+#define CLI_NUM_BURSTS_PER_FRAME        `config.frameCfg_numOfBurstsInFrame`
+#define CLI_FRAME_PERIOD                (((float)(`config.frameCfg_framePeriodicity`) * 40000000.0)/1000.0)        
+#define CLI_NUM_FRAMES                  `config.frameCfg_numOfFrames`
+
+#define CLI_CHIRP_IDLE_TIME             (10.0 * `config.chirpTimingCfg_chirpIdleTime`)
+#define CLI_CHIRP_ADC_START_TIME        (`config.chirpTimingCfg_chirpAdcSkipSamples` << 10) 
+#define CLI_CHIRP_TX_START_TIME         (50.0 * `config.chirpTimingCfg_chirpTxStartTime`) 
+#define CLI_CHIRP_SLOPE                 `config.chirpTimingCfg_chirpRfFreqSlope`
+
+% if (config.DEVICE=="0"){
+#define CLI_START_FREQ              `config.chirpTimingCfg_chirpRfFreqStart_64xx`
+#define CLI_CHIRP_FREQ_SLOPE        ((`config.chirpTimingCfg_chirpRfFreqSlope` * 1048576.0)/(3* 100 * 100)) 
+#define CLI_CHIRP_START_FREQ        ((`config.chirpTimingCfg_chirpRfFreqStart_64xx` * 1000.0 * 256.0)/(300)) 
+% }
+
+% if (config.DEVICE=="1"){
+#define CLI_START_FREQ              `config.chirpTimingCfg_chirpRfFreqStart_14xx`
+#define CLI_CHIRP_FREQ_SLOPE        ((`config.chirpTimingCfg_chirpRfFreqSlope` * 1048576.0)/(4* 100 * 100))
+#define CLI_CHIRP_START_FREQ        ((`config.chirpTimingCfg_chirpRfFreqStart_14xx` * 1000.0 * 256.0)/(400))
+% }
+
+#define CLI_CHA_CFG_RX_BITMASK          `config.channelCfg_rxChCtrlBitMask`
+#define CLI_CHA_CFG_TX_BITMASK          `config.channelCfg_txChCtrlBitMask`
+#define CLI_CHA_CFG_MISC_CTRL           `config.channelCfg_miscCtrl`
+
+#define CLI_DIG_OUT_SAMPLING_RATE       `config.chirpComnCfg_digOutputSampRate`           
+#define CLI_DIG_OUT_BITS_SEL            `config.chirpComnCfg_digOutputBitsSel`
+#define CLI_DFE_FIR_SEL                 `config.chirpComnCfg_dfeFirSel`
+#define CLI_NUM_ADC_SAMPLES             `config.chirpComnCfg_numOfAdcSamples`
+#define CLI_MIMO_SEL                    `config.chirpComnCfg_chirpTxMimoPatSel`
+#define CLI_CHIRP_RAMP_END_TIME         (10.0 * `config.chirpComnCfg_chirpRampEndTime`) 
+#define CLI_CHIRP_RX_HPF_SEL            `config.chirpComnCfg_chirpRxHpfSel`
+
+#define CLI_C_MISC_SETTINGS             0
+#define CLI_HPF_FAST_INIT_DURATION      15U
+#define CLI_ADC_SAMPLING_RATE           (100.0/`config.chirpComnCfg_digOutputSampRate`)
+#define CLI_NUM_RBINS                   (mathUtils_pow2roundup(`config.chirpComnCfg_numOfAdcSamples`)/2)
+
+% if (config.chirpComnCfg_chirpTxMimoPatSel == 4){
+#define CLI_BPM_ENABLE              1
+% }
+% else {
+#define CLI_BPM_ENABLE              0
+%}
+
+#define CLI_ANT0_ROW                  `config.antGeometryCfg_vAnt0_row`
+#define CLI_ANT0_COL                  `config.antGeometryCfg_vAnt0_col`
+#define CLI_ANT1_ROW                  `config.antGeometryCfg_vAnt1_row`
+#define CLI_ANT1_COL                  `config.antGeometryCfg_vAnt1_col`
+#define CLI_ANT2_ROW                  `config.antGeometryCfg_vAnt2_row`
+#define CLI_ANT2_COL                  `config.antGeometryCfg_vAnt2_col`
+#define CLI_ANT3_ROW                  `config.antGeometryCfg_vAnt3_row`
+#define CLI_ANT3_COL                  `config.antGeometryCfg_vAnt3_col`
+#define CLI_ANT4_ROW                  `config.antGeometryCfg_vAnt4_row`
+#define CLI_ANT4_COL                  `config.antGeometryCfg_vAnt4_col`
+#define CLI_ANT5_ROW                  `config.antGeometryCfg_vAnt5_row`
+#define CLI_ANT5_COL                  `config.antGeometryCfg_vAnt5_col`
+#define CLI_ANT_XDIST                 `config.antGeometryCfg_antDistX` * 1e-3
+#define CLI_ANT_ZDIST                 `config.antGeometryCfg_antDistZ` * 1e-3
+
+#define CLI_SIGPROC_AZ_FFT_SIZE         `config.sigProcChainCfg_azimuthFftSize`
+#define CLI_SIGPROC_EL_FFT_SIZE         `config.sigProcChainCfg_elevationFftSize`
+#define CLI_SIGPROC_MOTDETMODE          `config.sigProcChainCfg_motDetMode`
+#define CLI_SIGPROC_COHERENT_DOPP       `config.sigProcChainCfg_coherentDoppler`
+#define CLI_SIGPROC_NUM_FRAMES_MINORMOT `config.sigProcChainCfg_numFrmPerMinorMotProc`
+#define CLI_SIGPROC_NUM_CHIRPS_MINORMOT `config.sigProcChainCfg_numMinorMotionChirpsPerFrame`
+#define CLI_SIGPROC_MM_ZERO_VELOCITY    `config.sigProcChainCfg_forceMinorMotionVelocityToZero`
+#define CLI_SIGPROC_MM_VELOCITY_THRESH  `config.sigProcChainCfg_minorMotionVelocityInclusionThr`
+#define CLI_DOPELEV_DIM_REDUCT_ORDER    `config.sigProcChainCfg_dopElevDimReductOrder`
+
+% if (config.sigProcChainCfg_motDetMode == 1){
+#define CLI_SIGPROC_MAJORMOT_EN         1
+#define CLI_SIGPROC_MINORMOT_EN         0
+% }
+
+% if (config.sigProcChainCfg_motDetMode == 2) {
+#define CLI_SIGPROC_MAJORMOT_EN         0
+#define CLI_SIGPROC_MINORMOT_EN         1
+% }
+% if (config.sigProcChainCfg_motDetMode == 3) {
+#define CLI_SIGPROC_MAJORMOT_EN         1
+#define CLI_SIGPROC_MINORMOT_EN         1
+%}
+
+#define CLI_CFARCFG_AVGMODE             `config.cfarCfg_averageMode`
+#define CLI_CFARCFG_WINLEN              `config.cfarCfg_winLen`
+#define CLI_CFARCFG_GUARDLEN            `config.cfarCfg_guardLen`
+#define CLI_CFARCFG_NOISEDIVSHIFT       `config.cfarCfg_noiseDiv`
+#define CLI_CFARCFG_CYCLICMODE          `config.cfarCfg_cyclicMode`
+#define CLI_CFARCFG_THRESHOLD           `config.cfarCfg_thresholdScale`
+#define CLI_CFARCFG_PEAKGROUP_EN        `config.cfarCfg_peakGroupingEn`
+#define CLI_CFARCFG_SIDELOBE_THRESH     (int16_t)(`config.cfarCfg_sideLobeThreshold` * (1<<8)) 
+#define CLI_CFARCFG_LOCMAX_RNG_EN       `config.cfarCfg_enableLocalMaxRange`
+#define CLI_CFARCFG_LOCMAX_AZI_EN       `config.cfarCfg_enableLocalMaxAzimuth`
+#define CLI_CFARCFG_INTERP_RNG_EN       `config.cfarCfg_interpolateRange`  
+#define CLI_CFARCFG_INTERP_AZI_EN       `config.cfarCfg_interpolateAzimuth`
+#define CLI_CFARCFG_LUT_CORRECT_AZI_EN  `config.cfarCfg_lookUpTableCorrectAzimuthDom`
+
+#define CLI_AOACFG_MIN_AZ               `config.aoaFovCfg_minAzimuthDeg`
+#define CLI_AOACFG_MAX_AZ               `config.aoaFovCfg_maxAzimuthDeg`
+#define CLI_AOACFG_MIN_EL               `config.aoaFovCfg_minElevationDeg`
+#define CLI_AOACFG_MAX_EL               `config.aoaFovCfg_maxElevationDeg`
+
+#define CLI_COMP_RANGE_BIAS             `config.compRangeBiasAndRxChanPhase_rangeBias`
+
+#define CLI_STATIC_CLUTTER_REM_EN       `config.clutterRemoval_enabled`
+
+#define CLI_RANGE_SEL_MIN               `config.rangeSelCfg_minMeters`
+#define CLI_RANGE_SEL_MAX               `config.rangeSelCfg_maxMeters`
+
+#define CLI_GUIMON_POINTCLOUD_EN        `config.guiMonitor_pointCloud`
+#define CLI_GUIMON_RNGPROFILE_EN        `config.guiMonitor_rangeProfile`
+#define CLI_GUIMON_NOISEPROFILE_EN      `config.guiMonitor_noiseProfile`
+#define CLI_GUIMON_RNGAZHEATMAP_EN      `config.guiMonitor_rangeAzimuthHeatMap`
+#define CLI_GUIMON_RNGDOPPHEATMAP_EN    `config.guiMonitor_rangeDopplerHeatMap`
+#define CLI_GUIMON_STATSINFO_EN         `config.guiMonitor_statsInfo`
+#define CLI_GUIMON_PRESENCEINFO_EN      `config.guiMonitor_presenceInfo`
+#define CLI_GUIMON_ADCSAMPLES_EN        `config.guiMonitor_adcSamples`
+#define CLI_GUIMON_TRACKERINFO_EN       `config.guiMonitor_trackerInfo`
+#define CLI_GUIMON_MDINFO_EN            `config.guiMonitor_microDopplerInfo`
+#define CLI_GUIMON_CLASSIFIERINFO_EN    `config.guiMonitor_classifierInfo`
+#define CLI_GUIMON_QUICKEVAL_EN         `config.guiMonitor_quickEvalInfo`
+#define CLI_GUIMON_POINTCLOUD_ANTENNA_SYMBOLS_EN `config.guiMonitor_pointCloudAntennaSymbols`
+
+#define CLI_STEERVEC_DPU_EN             `config.steerVecCorr_enableAntSymbGen` 
+#define CLI_STEERVEC_CORRECTION_EN      `config.steerVecCorr_enableSteeringVectorCorrection`
+#define CLI_STEERVEC_INTERPOLATION_EN   `config.steerVecCorr_enableAngleInterpolation`
+
+#define CLI_RANGECOMP_EN                `config.rangeCompCfg_enable`
+#define CLI_RANGECOMP_IDX               `config.rangeCompCfg_detectionRangeIdx`
+#define CLI_RANGECOMP_SNR               `config.rangeCompCfg_detectionSNR`
+#define CLI_RANGECOMP_MINCOMPRANGE      `config.rangeCompCfg_minCompRange`
+#define CLI_RANGECOMP_MAXCOMPRANGE      `config.rangeCompCfg_maxCompRange`
+#define CLI_RANGECOMP_MINCOMPANGLE1     `config.rangeCompCfg_minCompAngle1`
+#define CLI_RANGECOMP_MAXCOMPANGLE1     `config.rangeCompCfg_maxCompAngle1`
+#define CLI_RANGECOMP_MINCOMPANGLE2     `config.rangeCompCfg_minCompAngle2`
+#define CLI_RANGECOMP_MAXCOMPANGLE2     `config.rangeCompCfg_maxCompAngle2`
+#define CLI_RANGECOMP_SNRDROP           `config.rangeCompCfg_snrDropfromAngle1ToAngle2`
+
+#define CLI_FACCALCFG_SAVE_EN           `config.factoryCalibCfg_saveEnable`
+#define CLI_FACCALCFG_RES_EN            `config.factoryCalibCfg_restoreEnable`
+#define CLI_FACCALCFG_RX_GAIN           `config.factoryCalibCfg_rxGain`
+#define CLI_FACCALCFG_TX_BACKOFF_SEL    `config.factoryCalibCfg_txBackoff` * 2
+#define CLI_FACCALCFG_FLASH_OFFSET      `config.factoryCalibCfg_flashOffset`
+
+#define CLI_SENSOR_START_FRM_TRIG       `config.sensorStart_frameTrigMode`
+#define CLI_SENSOR_START_LB_EN          `config.sensorStart_chirpStartSigLbEn`
+#define CLI_SENSOR_START_MON_EN         `config.sensorStart_frameLivMonEn`
+#define CLI_SENSOR_START_TRIG_TIMER     `config.sensorStart_frameTrigTimerVal`
+
+% if (config.MPD_ENABLE == "1"){
+
+#define CLI_NUM_MPD_BOUNDARY_BOX        `config.mpd_boundary_box_num`U
+#define CLI_MPD_BOUNDARY_BOX1           "`config.mpd_boundary_box1` \r\n"
+#define CLI_MPD_BOUNDARY_BOX2           "`config.mpd_boundary_box2` \r\n"
+#define CLI_MPD_BOUNDARY_BOX3           "`config.mpd_boundary_box3` \r\n"
+#define CLI_MPD_BOUNDARY_BOX4           "`config.mpd_boundary_box4` \r\n"
+#define CLI_MPD_BOUNDARY_BOX5           "`config.mpd_boundary_box5` \r\n"
+#define CLI_MPD_BOUNDARY_BOX6           "`config.mpd_boundary_box6` \r\n"
+#define CLI_MPD_BOUNDARY_BOX7           "`config.mpd_boundary_box7` \r\n"
+#define CLI_MPD_BOUNDARY_BOX8           "`config.mpd_boundary_box8` \r\n"
+#define CLI_MPD_BOUNDARY_BOX9           "`config.mpd_boundary_box9` \r\n"
+#define CLI_MPD_BOUNDARY_BOX10          "`config.mpd_boundary_box10` \r\n"
+#define CLI_MPD_BOUNDARY_BOX11          "`config.mpd_boundary_box11` \r\n"
+#define CLI_MPD_BOUNDARY_BOX12          "`config.mpd_boundary_box12` \r\n"
+
+% if (config.minorStateCfg_en == "1"){
+#define CLI_MINOR_STATE_CFG_EN           `config.minorStateCfg_en`
+#define CLI_MINOR_STATE_POINT_THRE1      `config.minorStateCfg_point_thre1`
+#define CLI_MINOR_STATE_POINT_THRE2      `config.minorStateCfg_point_thre2`
+#define CLI_MINOR_STATE_SNR_THRE2        `config.minorStateCfg_snr_thre2`
+#define CLI_MINOR_STATE_POINTHIST_THRE1  `config.minorStateCfg_pointhist_thre1`
+#define CLI_MINOR_STATE_POINTHIST_THRE2  `config.minorStateCfg_pointhist_thre2`
+#define CLI_MINOR_STATE_SNRHIST_THRE2    `config.minorStateCfg_snrhist_thre2`
+#define CLI_MINOR_STATE_HISTBUFF_SIZE    `config.minorStateCfg_histbuff_size`
+#define CLI_MINOR_STATE_EXIT_THRE        `config.minorStateCfg_exit_thre`
+% }
+
+% if (config.majorStateCfg_en == "1"){
+#define CLI_MAJOR_STATE_CFG_EN           `config.majorStateCfg_en`
+#define CLI_MAJOR_STATE_POINT_THRE1      `config.majorStateCfg_point_thre1`
+#define CLI_MAJOR_STATE_POINT_THRE2      `config.majorStateCfg_point_thre2`
+#define CLI_MAJOR_STATE_SNR_THRE2        `config.majorStateCfg_snr_thre2`
+#define CLI_MAJOR_STATE_POINTHIST_THRE1  `config.majorStateCfg_pointhist_thre1`
+#define CLI_MAJOR_STATE_POINTHIST_THRE2  `config.majorStateCfg_pointhist_thre2`
+#define CLI_MAJOR_STATE_SNRHIST_THRE2    `config.majorStateCfg_snrhist_thre2`
+#define CLI_MAJOR_STATE_HISTBUFF_SIZE    `config.majorStateCfg_histbuff_size`
+#define CLI_MAJOR_STATE_EXIT_THRE        `config.majorStateCfg_exit_thre`
+% }
+
+#define CLI_SENSOR_POS_X     `config.sensorPosition_x`
+#define CLI_SENSOR_POS_Y     `config.sensorPosition_y`
+#define CLI_SENSOR_POS_Z     `config.sensorPosition_z`
+#define CLI_SENSOR_POS_AZI   `config.sensorPosition_az`
+#define CLI_SENSOR_POS_ELE   `config.sensorPosition_el`
+
+#define CLI_CLUSTER_ENABLE     `config.clusterCfg_enable`
+#define CLI_CLUSTER_RADIUS     `config.clusterCfg_radius`
+#define CLI_CLUSTER_MIN_POINTS `config.clusterCfg_minpoints`
+
+% }
+
+% }
+
+% }
+
+

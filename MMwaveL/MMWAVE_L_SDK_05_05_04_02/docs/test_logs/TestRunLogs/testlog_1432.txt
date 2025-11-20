@@ -1,0 +1,229 @@
+1. CRC
+Unit tests started ...
+../../../test_crc.c:128:test_crc16Bit:MMWLPSDK-420:PASS
+../../../test_crc.c:129:test_crc32Bit:MMWLPSDK-421:PASS
+../../../test_crc.c:130:test_crc64Bit:MMWLPSDK-422:PASS
+
+-----------------------
+3 Tests 0 Failures 0 Ignored
+All tests have passed
+
+
+2. EDMA
+Unit tests started ...
+../../../test_edma.c:112:test_qdmaTransfer:MMWLPSDK-434:PASS
+../../../test_edma.c:113:test_edmaATransfer:MMWLPSDK-435:PASS
+../../../test_edma.c:114:test_edmaABTransfer:MMWLPSDK-436:PASS
+../../../test_edma.c:115:test_edmaChainTransfer:MMWLPSDK-437:PASS
+../../../test_edma.c:116:test_edmaLinkTransfer:MMWLPSDK-438:PASS
+../../../test_edma.c:117:test_edmaInterruptTransfer:MMWLPSDK-439:PASS
+../../../test_edma.c:118:test_edmaPollingTransfer:MMWLPSDK-440:PASS
+
+-----------------------
+7 Tests 0 Failures 0 Ignored
+All tests have passed
+
+
+3. ESM
+Unit tests started ...
+../../../test_esm_notify.c:86:test_esm_notify:MMWLPSDK-423:PASS
+
+-----------------------
+1 Tests 0 Failures 0 Ignored
+All tests have passed
+
+
+4. GPIO
+Unit tests started ...
+../../../test_gpio.c:102:test_gpio_output:MMWLPSDK-424:PASS
+../../../test_gpio.c:103:test_gpio_macros:MMWLPSDK-425:PASS
+../../../test_gpio.c:104:test_gpio_trigger:MMWLPSDK-426:PASS
+../../../test_gpio.c:105:test_gpio_led_blink:MMWLPSDK-427:PASS
+
+-----------------------
+4 Tests 0 Failures 0 Ignored
+All tests have passed
+
+
+5. I2C
+Unit tests started ...
+../../../test_i2c.c:121:test_i2c_read:MMWLPSDK-433:PASS
+../../../test_i2c.c:122:test_i2c_temperature:MMWLPSDK-432:PASS
+../../../test_i2c.c:126:test_i2c_probe:MMWLPSDK-428:PASS
+../../../test_i2c.c:128:test_i2c_callback_mode:MMWLPSDK-429:PASS
+../../../test_i2c.c:129:test_i2c_open_close:MMWLPSDK-430:PASS
+../../../test_i2c.c:130:test_i2c_timeout:MMWLPSDK-431:PASS
+
+-----------------------
+6 Tests 0 Failures 0 Ignored
+All tests have passed
+
+
+6. UART
+This is uart echo test blocking mode
+Receives 8 characters then echo's back. Please input..
+qqqqqqqq
+This is uart echo test callback mode
+Receives 8 characters then echo's back. Please input..
+qqqqqqqq
+This is read write cancel test, enter less than 8 char. Please input..
+
+Previous read canceled
+Receives 8 characters then echo's back. Please input..
+qqqqqqqq
+This is write cancel test
+
+This is uart interrupt disable read write test
+Receives 8 characters then echo's back. Please input..
+qqqqqqqq
+This is uart timeout test
+wait for 10 seconds to timeout read
+
+All tests have passed!!
+
+
+7. SOC
+Unit tests started ...▒
+Unit tests started ...
+
+Unit tests started ...
+../../../test_soc.c:76:test_socdriver:MMWLPSDK-458:PASS
+
+-----------------------
+1 Tests 0 Failures 0 Ignored
+All tests have passed
+
+
+8. POWER
+Unit tests started ...
+▒H▒../../../test_power.c:88:test_idle_mode:MMWLPSDK-445:PASS
+▒../../../test_power.c:89:test_lpds_mode:MMWLPSDK-444:PASS
+▒H▒../../../test_power.c:90:test_idle_mode:MMWLPSDK-445:PASS
+▒../../../test_power.c:91:test_lpds_mode:MMWLPSDK-444:PASS
+▒H▒../../../test_power.c:92:test_idle_mode:MMWLPSDK-445:PASS
+▒../../../test_power.c:93:test_lpds_mode:MMWLPSDK-444:PASS
+
+-----------------------
+6 Tests 0 Failures 0 Ignored
+All tests have passed
+
+
+9. LIN
+Unit tests started ...
+../../../test_lin.c:167:LIN_setLINModeCheck:MMWLPSDK-441:PASS
+../../../test_lin.c:168:LIN_setMaximumBaudRateCheck:MMWLPSDK-441:PASS
+../../../test_lin.c:169:LIN_setMessageFilteringCheck:MMWLPSDK-441:PASS
+../../../test_lin.c:170:LIN_enableParityCheck:MMWLPSDK-441:PASS
+../../../test_lin.c:171:LIN_disableParityCheck:MMWLPSDK-441:PASS
+../../../test_lin.c:172:LIN_setIDByteCheck:MMWLPSDK-441:PASS
+../../../test_lin.c:173:LIN_setIDResponderTaskCheck:MMWLPSDK-441:PASS
+../../../test_lin.c:174:LIN_sendWakeupSignalCheck:MMWLPSDK-441:PASS
+../../../test_lin.c:175:LIN_enterSleepCheck:MMWLPSDK-441:PASS
+../../../test_lin.c:176:LIN_sendChecksumCheck:MMWLPSDK-441:PASS
+../../../test_lin.c:177:LIN_setFrameLengthCheck:MMWLPSDK-441:PASS
+../../../test_lin.c:178:LIN_setCommModeCheck:MMWLPSDK-441:PASS
+../../../test_lin.c:180:LIN_isSCISpaceAvailableCheck:MMWLPSDK-441:PASS
+../../../test_lin.c:183:LIN_writeSCICharNonBlockingCheck:MMWLPSDK-441:PASS
+../../../test_lin.c:184:LIN_writeSCICharBlockingCheck:MMWLPSDK-441:PASS
+../../../test_lin.c:185:LIN_enableSCIInterruptCheck:MMWLPSDK-441:PASS
+../../../test_lin.c:186:LIN_disableSCIInterruptCheck:MMWLPSDK-441:PASS
+../../../test_lin.c:188:LIN_setSCIInterruptLevel0Check:MMWLPSDK-441:PASS
+../../../test_lin.c:189:LIN_setSCIInterruptLevel1Check:MMWLPSDK-441:PASS
+../../../test_lin.c:190:LIN_getSCITxFrameTypeCheck:MMWLPSDK-441:PASS
+../../../test_lin.c:191:LIN_getSCIRxFrameTypeCheck:MMWLPSDK-441:PASS
+../../../test_lin.c:192:LIN_isSCIBreakDetectedCheck:MMWLPSDK-441:PASS
+../../../test_lin.c:193:LIN_enableModuleCheck:MMWLPSDK-441:PASS
+../../../test_lin.c:194:LIN_disableModuleCheck:MMWLPSDK-441:PASS
+../../../test_lin.c:195:LIN_setBaudRatePrescalerCheck:MMWLPSDK-441:PASS
+../../../test_lin.c:197:LIN_enableDataTransmitterCheck:MMWLPSDK-441:PASS
+../../../test_lin.c:198:LIN_disableDataTransmitterCheck:MMWLPSDK-441:PASS
+../../../test_lin.c:199:LIN_enableDataReceiverCheck:MMWLPSDK-441:PASS
+../../../test_lin.c:200:LIN_disableDataReceiverCheck:MMWLPSDK-441:PASS
+../../../test_lin.c:201:LIN_performSoftwareResetCheck:MMWLPSDK-441:PASS
+../../../test_lin.c:202:LIN_enterSoftwareResetCheck:MMWLPSDK-441:PASS
+../../../test_lin.c:203:LIN_exitSoftwareResetCheck:MMWLPSDK-441:PASS
+../../../test_lin.c:204:LIN_isBusBusyCheck:MMWLPSDK-441:PASS
+../../../test_lin.c:205:LIN_isTxBufferEmptyCheck:MMWLPSDK-441:PASS
+../../../test_lin.c:206:LIN_enableExtLoopbackCheck:MMWLPSDK-441:PASS
+../../../test_lin.c:207:LIN_disableExtLoopbackCheck:MMWLPSDK-441:PASS
+../../../test_lin.c:208:LIN_enableIntLoopbackCheck:MMWLPSDK-441:PASS
+../../../test_lin.c:209:LIN_getInterruptStatusCheck:MMWLPSDK-441:PASS
+../../../test_lin.c:210:LIN_getInterruptLevelCheck:MMWLPSDK-441:PASS
+../../../test_lin.c:213:LIN_enableMultibufferModeCheck:MMWLPSDK-441:PASS
+../../../test_lin.c:214:LIN_disableMultibufferModeCheck:MMWLPSDK-441:PASS
+../../../test_lin.c:215:LIN_setTransmitDelayCheck:MMWLPSDK-441:PASS
+../../../test_lin.c:216:LIN_setPinSampleMaskCheck:MMWLPSDK-441:PASS
+../../../test_lin.c:218:LIN_setDebugSuspendModeCheck:MMWLPSDK-441:PASS
+../../../test_lin.c:219:LIN_setCheckSumCheck:MMWLPSDK-441:PASS
+../../../test_lin.c:220:LIN_sendDataCheck:MMWLPSDK-441:PASS
+../../../test_lin.c:221:LIN_generateParityIDCheck:MMWLPSDK-441:PASS
+
+-----------------------
+47 Tests 0 Failures 0 Ignored
+All tests have passed
+
+
+10. MCAN
+Unit tests started ...
+../../../test_mcan.c:78:mcanRunTestcase:MMWLPSDK-471:PASS
+../../../test_mcan.c:78:mcanRunTestcase:MMWLPSDK-472:PASS
+../../../test_mcan.c:78:mcanRunTestcase:MMWLPSDK-473:PASS
+../../../test_mcan.c:78:mcanRunTestcase:MMWLPSDK-474:PASS
+../../../test_mcan.c:78:mcanRunTestcase:MMWLPSDK-475:PASS
+../../../test_mcan.c:78:mcanRunTestcase:MMWLPSDK-476:PASS
+../../../test_mcan.c:78:mcanRunTestcase:MMWLPSDK-477:PASS
+../../../test_mcan.c:78:mcanRunTestcase:MMWLPSDK-478:PASS
+../../../test_mcan.c:78:mcanRunTestcase:MMWLPSDK-479:PASS
+../../../test_mcan.c:78:mcanRunTestcase:MMWLPSDK-480:PASS
+../../../test_mcan.c:78:mcanRunTestcase:MMWLPSDK-481:PASS
+../../../test_mcan.c:78:mcanRunTestcase:MMWLPSDK-482:PASS
+../../../test_mcan.c:78:mcanRunTestcase:MMWLPSDK-483:PASS
+../../../test_mcan.c:78:mcanRunTestcase:MMWLPSDK-484:PASS
+../../../test_mcan.c:78:mcanRunTestcase:MMWLPSDK-485:PASS
+../../../test_mcan.c:78:mcanRunTestcase:MMWLPSDK-486:PASS
+../../../test_mcan.c:78:mcanRunTestcase:MMWLPSDK-487:PASS
+../../../test_mcan.c:78:mcanRunTestcase:MMWLPSDK-488:PASS
+../../../test_mcan.c:78:mcanRunTestcase:MMWLPSDK-489:PASS
+../../../test_mcan.c:78:mcanRunTestcase:MMWLPSDK-490:PASS
+../../../test_mcan.c:78:mcanRunTestcase:MMWLPSDK-491:PASS
+../../../test_mcan.c:78:mcanRunTestcase:MMWLPSDK-492:PASS
+../../../test_mcan.c:78:mcanRunTestcase:MMWLPSDK-493:PASS
+../../../test_mcan.c:78:mcanRunTestcase:MMWLPSDK-494:PASS
+../../../test_mcan.c:78:mcanRunTestcase:MMWLPSDK-495:PASS
+../../../test_mcan.c:78:mcanRunTestcase:MMWLPSDK-496:PASS
+../../../test_mcan.c:78:mcanRunTestcase:MMWLPSDK-497:PASS
+../../../test_mcan.c:78:mcanRunTestcase:MMWLPSDK-498:PASS
+../../../test_mcan.c:78:mcanRunTestcase:MMWLPSDK-499:PASS
+../../../test_mcan.c:78:mcanRunTestcase:MMWLPSDK-500:PASS
+
+../../../test_mcan.c:78:mcanRunTestcase:MMWLPSDK-501:PASS
+../../../test_mcan.c:78:mcanRunTestcase:MMWLPSDK-502:PASS
+../../../test_mcan.c:78:mcanRunTestcase:MMWLPSDK-503:PASS
+../../../test_mcan.c:78:mcanRunTestcase:MMWLPSDK-504:PASS
+../../../test_mcan.c:78:mcanRunTestcase:MMWLPSDK-505:PASS
+../../../test_mcan.c:78:mcanRunTestcase:MMWLPSDK-506:PASS
+
+-----------------------
+36 Tests 0 Failures 0 Ignored
+All tests have passed
+
+
+11. McSPI
+Unit tests started ...
+../../../test_mcspi.c:76:test_loopback:MMWLPSDK-523:PASS
+../../../test_mcspi.c:78:test_loopback:MMWLPSDK-524:PASS
+
+-----------------------
+2 Tests 0 Failures 0 Ignored
+All tests have passed
+
+
+12. HWA
+Unit tests started ...
+../../../test_hwa.c:160:hwa_compression:MMWLPSDK-452:PASS
+../../../test_hwa.c:161:hwa_real_fft:MMWLPSDK-453:PASS
+../../../test_hwa.c:162:hwa_slow_dft:MMWLPSDK-467:PASS
+
+-----------------------
+3 Tests 0 Failures 0 Ignored
+All tests have passed

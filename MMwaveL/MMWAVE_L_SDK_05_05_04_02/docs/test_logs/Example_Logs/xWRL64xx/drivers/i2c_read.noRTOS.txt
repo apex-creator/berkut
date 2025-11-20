@@ -1,0 +1,22 @@
+[Cortex_M4_0] [I2C] Read data ... !!!
+[I2C] Sample 0: 255
+[I2C] Sample 1: 255
+[I2C] Sample 2: 255
+[I2C] Sample 3: 255
+[I2C] Sample 4: 255
+[I2C] Sample 5: 255
+[I2C] Sample 6: 255
+[I2C] Sample 7: 255
+[I2C] Sample 8: 255
+[I2C] Sample 9: 255
+[I2C] Sample 10: 255
+[I2C] Sample 11: 255
+[I2C] Sample 12: 255
+[I2C] Sample 13: 255
+[I2C] Sample 14: 255
+[I2C] Sample 15: 255
+[I2C] Sample 16: 255
+[I2C] Sample 17: 255
+[I2C] Sample 18: 255
+[I2C] Sample 19: 255
+[I2C] Read data ... DONE !!!All tests have passed!!

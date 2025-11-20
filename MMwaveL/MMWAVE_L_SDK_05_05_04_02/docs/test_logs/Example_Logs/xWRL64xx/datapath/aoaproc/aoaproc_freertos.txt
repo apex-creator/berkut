@@ -1,0 +1,79 @@
+DPU Test Started 
+numTxAntennas = 2
+numRxAntennas = 3
+numRangeBins = 64
+numDopplerChirps = 128
+numFrames = 1
+
+Frame 0 data read started
+Reading 1D-FFT Data From File.. 0 percent
+Reading 1D-FFT Data From File.. 7 percent
+Reading 1D-FFT Data From File.. 15 percent
+Reading 1D-FFT Data From File.. 23 percent
+Reading 1D-FFT Data From File.. 31 percent
+Reading 1D-FFT Data From File.. 39 percent
+Reading 1D-FFT Data From File.. 46 percent
+Reading 1D-FFT Data From File.. 54 percent
+Reading 1D-FFT Data From File.. 62 percent
+Reading 1D-FFT Data From File.. 70 percent
+Reading 1D-FFT Data From File.. 78 percent
+Reading 1D-FFT Data From File.. 85 percent
+Reading 1D-FFT Data From File.. 93 percent
+Doppler processing for frame 0 done
+AoA processing for frame 0 done
+Measured processing time (AoAProc-Doppler) = CPU cycles = 38176 !!!
+Measured processing time (AoAProc-AoA) = CPU cycles = 57024 !!!
+At 0 th index difference: elev_idx=15 , azim_idx=8 
+At 1 th index difference: elev_idx=14 , azim_idx=8 
+At 2 th index difference: elev_idx=15 , azim_idx=8 
+At 3 th index difference: elev_idx=15 , azim_idx=8 
+At 4 th index difference: elev_idx=16 , azim_idx=8 
+At 5 th index difference: elev_idx=15 , azim_idx=8 
+At 6 th index difference: elev_idx=16 , azim_idx=8 
+At 7 th index difference: elev_idx=16 , azim_idx=8 
+At 8 th index difference: elev_idx=15 , azim_idx=8 
+At 9 th index difference: elev_idx=18 , azim_idx=26 
+At 10 th index difference: elev_idx=18 , azim_idx=26 
+At 11 th index difference: elev_idx=30 , azim_idx=17 
+At 12 th index difference: elev_idx=16 , azim_idx=9 
+At 13 th index difference: elev_idx=17 , azim_idx=8 
+At 14 th index difference: elev_idx=16 , azim_idx=8 
+At 15 th index difference: elev_idx=17 , azim_idx=8 
+At 16 th index difference: elev_idx=31 , azim_idx=17 
+At 17 th index difference: elev_idx=14 , azim_idx=9 
+At 18 th index difference: elev_idx=17 , azim_idx=8 
+At 19 th index difference: elev_idx=16 , azim_idx=8 
+At 20 th index difference: elev_idx=16 , azim_idx=8 
+At 21 th index difference: elev_idx=15 , azim_idx=9 
+At 22 th index difference: elev_idx=16 , azim_idx=8 
+At 23 th index difference: elev_idx=16 , azim_idx=8 
+At 24 th index difference: elev_idx=15 , azim_idx=8 
+At 25 th index difference: elev_idx=15 , azim_idx=9 
+At 26 th index difference: elev_idx=28 , azim_idx=17 
+At 27 th index difference: elev_idx=27 , azim_idx=17 
+At 28 th index difference: elev_idx=15 , azim_idx=8 
+At 29 th index difference: elev_idx=16 , azim_idx=8 
+At 30 th index difference: elev_idx=16 , azim_idx=9 
+At 31 th index difference: elev_idx=28 , azim_idx=17 
+At 32 th index difference: elev_idx=16 , azim_idx=8 
+At 33 th index difference: elev_idx=28 , azim_idx=17 
+At 34 th index difference: elev_idx=15 , azim_idx=8 
+At 35 th index difference: elev_idx=15 , azim_idx=8 
+At 36 th index difference: elev_idx=29 , azim_idx=17 
+At 37 th index difference: elev_idx=26 , azim_idx=17 
+At 38 th index difference: elev_idx=16 , azim_idx=8 
+At 39 th index difference: elev_idx=15 , azim_idx=8 
+At 40 th index difference: elev_idx=16 , azim_idx=8 
+At 41 th index difference: elev_idx=15 , azim_idx=8 
+At 42 th index difference: elev_idx=15 , azim_idx=8 
+At 43 th index difference: elev_idx=15 , azim_idx=8 
+At 44 th index difference: elev_idx=16 , azim_idx=8 
+At 45 th index difference: elev_idx=16 , azim_idx=8 
+At 46 th index difference: elev_idx=19 , azim_idx=22 
+At 47 th index difference: elev_idx=18 , azim_idx=23 
+At 48 th index difference: elev_idx=18 , azim_idx=22 
+At 49 th index difference: elev_idx=18 , azim_idx=22 
+The number of points differing from 50 points are: 50 points 
+Test #0 finished!
+
+All tests have passed!!

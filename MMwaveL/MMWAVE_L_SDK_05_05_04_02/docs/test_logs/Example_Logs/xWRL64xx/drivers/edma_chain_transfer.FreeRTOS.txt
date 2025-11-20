@@ -1,0 +1,3 @@
+[Cortex_M4_0] [EDMA] Chain Transfer Test Started...
+[EDMA] Chain Transfer Test Completed!!
+All tests have passed!!

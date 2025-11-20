@@ -1,0 +1,187 @@
+{
+    "channelCfg":
+    {
+        "rxChCtrlBitMask": "7",
+        "txChCtrlBitMask": "3",
+        "miscCtrl":        "0"
+    },
+    "chirpComnCfg":
+    {
+        "digOutputSampRate": "8",
+        "digOutputBitsSel":  "0",
+        "dfeFirSel":         "0",
+        "numOfAdcSamples":   "256",
+        "chirpTxMimoPatSel": "4",
+        "chirpRampEndTime":  "23",
+        "chirpRxHpfSel":     "2"
+    },
+    "chirpTimingCfg":
+    {
+        "chirpIdleTime":       "6",
+        "chirpAdcSkipSamples": "24",
+        "chirpTxStartTime":    "0",
+        "chirpRfFreqSlope":    "75",
+        "chirpRfFreqStart":    "60.5"
+    },
+    "frameCfg":
+    {
+        "numOfChirpsInBurst": "2",
+        "numOfChirpsAccum":   "4",
+        "burstPeriodicity":   "600",
+        "numOfBurstsInFrame": "4",
+        "framePeriodicity":   "250.0",
+        "numOfFrames":        "0"
+    },
+    "antGeometryCfg":
+    {
+        "vAnt0_row": "0",
+        "vAnt0_col": "0",
+        "vAnt1_row": "1",
+        "vAnt1_col": "1",
+        "vAnt2_row": "0",
+        "vAnt2_col": "2",
+        "vAnt3_row": "0",
+        "vAnt3_col": "1",
+        "vAnt4_row": "1",
+        "vAnt4_col": "2",
+        "vAnt5_row": "0",
+        "vAnt5_col": "3",
+        "antDistX":  "2.418",
+        "antDistZ":  "2.418"
+    },
+    "guiMonitor":
+    {
+        "pointCloud":          "0",
+        "rangeProfile":        "0",
+        "noiseProfile":        "0",
+        "rangeAzimuthHeatMap": "0",
+        "rangeDopplerHeatMap": "0",
+        "statsInfo":           "1",
+        "presenceInfo":        "1",
+        "adcSamples":          "0",
+        "trackerInfo":         "0",
+        "microDopplerInfo":    "0",
+        "classifierInfo":      "0",
+        "quickEvalInfo":       "0",
+        "pointCloudAntennaSymbols":  "0"
+    },
+    "sigProcChainCfg":
+    {
+        "azimuthFftSize":                  "64",
+        "elevationFftSize":                "4",
+        "motDetMode":                      "2",
+        "coherentDoppler":                 "2",
+        "numFrmPerMinorMotProc":           "4",
+        "numMinorMotionChirpsPerFrame":    "4",
+        "forceMinorMotionVelocityToZero":  "0",
+        "minorMotionVelocityInclusionThr": "0.5",
+        "dopElevDimReductOrder":         "0"
+    },
+    "cfarCfg":
+    {
+        "averageMode":           "2",
+        "winLen":                "8",
+        "guardLen":              "4",
+        "noiseDiv":              "3",
+        "cyclicMode":            "0",
+        "thresholdScale":        "15.0",
+        "peakGroupingEn":        "0",
+        "sideLobeThreshold":     "0.5",
+        "enableLocalMaxRange":   "0",
+        "enableLocalMaxAzimuth": "1",
+        "interpolateRange":      "1",
+        "interpolateAzimuth":    "1"
+    },
+    "aoaFovCfg":
+    {
+        "minAzimuthDeg":   "-70",
+        "maxAzimuthDeg":   "70",
+        "minElevationDeg": "-60",
+        "maxElevationDeg": "60"
+    },
+    "rangeSelCfg":
+    {
+        "minMeters": "0.25",
+        "maxMeters": "7.5"
+    },
+    "clutterRemoval":
+    {
+        "enabled": "1"
+    },
+    "compRangeBiasAndRxChanPhase":
+    {
+        "rangeBias":     "0.0"
+    },
+    "lowPowerCfg":
+    {
+        "enable": "1"
+    },
+    "factoryCalibCfg":
+    {
+        "saveEnable":    "1",
+        "restoreEnable": "0",
+        "rxGain":        "36",
+        "txBackoff":     "3",
+        "flashOffset":   "0x1FF000"
+    },
+    "rangeCompCfg":
+    {
+        "enabled": "1",
+        "compensationRange": "5",
+        "compensationSNR": "11",
+        "minimumCompensationDistance": "5",
+        "maximumCompensationDistance": "6",
+        "minimumCompensationAngle": "-20",
+        "maximumCompensationAngle": "20",
+        "secondaryMinimumCompensationAngle": "-90",
+        "secondaryMaximumCompensationAngle": "90",
+        "secondaryCompensationSNRDelta": "3"
+    },
+    "mpdBoundaryBox":
+    [
+        {
+            "cmd": "mpdBoundaryBox 1 -3.5 0 0 3.5 0 3"
+        },
+        {
+            "cmd": "mpdBoundaryBox 2 -3.5 0 3.51 7 0 3"
+        },
+        {
+            "cmd": "mpdBoundaryBox 3 0.01 3.5 0 3.5 0 3"
+        },
+        {
+            "cmd": "mpdBoundaryBox 4 0.01 3.5 3.51 7 0 3"
+        }
+    ],
+    "minorStateCfg":
+    {
+        "pointthre1": "4",
+        "pointthre2": "3",
+        "snrthre2": "12",
+        "pointhistthre1": "8",
+        "pointhistthre2": "5",
+        "snrhistthre2": "20",
+        "histbuffsize": "4",
+        "exitthre": "20"
+    },
+    "sensorposition":
+    {
+        "x": "0",
+        "y": "0",
+        "z": "1.5",
+        "az": "0",
+        "el": "0"
+    },
+    "clusterCfg":
+    {
+        "enable": "1",
+        "radius": "1",
+        "minpoints": "2"
+    },
+    "sensorStart":
+    {
+        "frameTrigMode":     "0",
+        "chirpStartSigLbEn": "0",
+        "frameLivMonEn":     "0",
+        "frameTrigTimerVal": "0"
+    }
+}

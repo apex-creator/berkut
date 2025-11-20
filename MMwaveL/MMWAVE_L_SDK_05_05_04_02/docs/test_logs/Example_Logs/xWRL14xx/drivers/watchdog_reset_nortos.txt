@@ -1,0 +1,40 @@
+Watchdog reset Mode Test Started ...
+Servicing WDT for few iterations
+Watchdog triggers warm reset in 3000 (ms)
+All tests have passed!!
+Prints will be stopped after reset
+Prints will be stopped after reset
+Prints will be stopped after reset
+Prints will be stopped after reset
+Prints will be stopped after reset
+Prints will be stopped after reset
+Prints will be stopped after reset
+Prints will be stopped after reset
+Prints will be stopped after reset
+Prints will be stopped after reset
+Prints will be stopped after reset
+Prints will be stopped after reset
+Prints will be stopped after reset
+Prints will be stopped after reset
+Prints will be stopped after reset
+Prints will be stopped after reset
+Prints will be stopped after reset
+Prints will be stopped after reset
+Prints will be stopped after reset
+Prints will be stopped after reset
+Prints will be stopped after reset
+Prints will be stopped after reset
+Prints will be stopped after reset
+Prints will be stopped after reset
+Prints will be stopped after reset
+Prints will be stopped after reset
+Prints will be stopped after reset
+Prints will be stopped after reset
+Prints will be stopped after reset
+Prints will be stopped after reset
+Prints will be stopped after reset
+Prints will be stopped after reset
+Prints will be stopped after reset
+Prints will be stopped after reset
+Prints will be stopped after reset
+Prints will be stopped after reset

@@ -1,0 +1,3 @@
+[Cortex_M4_0] [MCAN] Loopback DMA mode, application started ...
+[MCAN] Internal loopback testing for 9 iterations Passed
+All tests have passed!!

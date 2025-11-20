@@ -1,0 +1,18 @@
+[FreeRTOS] ping task ... start !!!
+
+execution time for task switches = 49 us
+number of task switches = 10 
+time per task switch (semaphore give/take) = 4900 ns
+
+execution time for task switches = 38 us
+number of task switches = 10 
+time per task switch (direct-to-task notification give/take) = 3800 ns
+
+execution time for task - ISR - task - task switches = 48 us
+number of ISRs = 10 
+time per task - ISR - task switch (semaphore give/take) = 4800 ns
+
+[FreeRTOS] ping task ... done !!!
+
+All tests have passed!!
+

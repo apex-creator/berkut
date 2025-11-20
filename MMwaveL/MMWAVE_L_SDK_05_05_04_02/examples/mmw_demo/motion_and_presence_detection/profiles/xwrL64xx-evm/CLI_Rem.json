@@ -1,0 +1,132 @@
+{
+    "channelCfg":
+    {
+        "rxChCtrlBitMask": "7",
+        "txChCtrlBitMask": "3",
+        "miscCtrl":        "0"
+    },
+    "chirpComnCfg":
+    {
+        "digOutputSampRate": "20",
+        "digOutputBitsSel":  "0",
+        "dfeFirSel":         "0",
+        "numOfAdcSamples":   "128",
+        "chirpTxMimoPatSel": "4",
+        "chirpRampEndTime":  "30",
+        "chirpRxHpfSel":     "0"
+    },
+    "chirpTimingCfg":
+    {
+        "chirpIdleTime":       "6",
+        "chirpAdcSkipSamples": "28",
+        "chirpTxStartTime":    "0",
+        "chirpRfFreqSlope":    "90",
+        "chirpRfFreqStart":    "59.75"
+    },
+    "frameCfg":
+    {
+        "numOfChirpsInBurst": "8",
+        "numOfChirpsAccum":   "0",
+        "burstPeriodicity":   "403",
+        "numOfBurstsInFrame": "1",
+        "framePeriodicity":   "250.0",
+        "numOfFrames":        "0"
+    },
+    "antGeometryCfg":
+    {
+        "vAnt0_row": "0",
+        "vAnt0_col": "0",
+        "vAnt1_row": "1",
+        "vAnt1_col": "1",
+        "vAnt2_row": "0",
+        "vAnt2_col": "2",
+        "vAnt3_row": "0",
+        "vAnt3_col": "1",
+        "vAnt4_row": "1",
+        "vAnt4_col": "2",
+        "vAnt5_row": "0",
+        "vAnt5_col": "3",
+        "antDistX":  "2.418",
+        "antDistZ":  "2.418"
+    },
+    "guiMonitor":
+    {
+        "pointCloud":          "2",
+        "rangeProfile":        "2",
+        "noiseProfile":        "0",
+        "rangeAzimuthHeatMap": "0",
+        "rangeDopplerHeatMap": "0",
+        "statsInfo":           "1",
+        "presenceInfo":        "0",
+        "adcSamples":          "0",
+        "trackerInfo":         "0",
+        "microDopplerInfo":    "0",
+        "classifierInfo":      "0",
+        "quickEvalInfo":       "0"
+    },
+    "sigProcChainCfg":
+    {
+        "azimuthFftSize":                  "64",
+        "elevationFftSize":                "8",
+        "motDetMode":                      "2",
+        "coherentDoppler":                 "0",
+        "numFrmPerMinorMotProc":           "4",
+        "numMinorMotionChirpsPerFrame":    "4",
+        "forceMinorMotionVelocityToZero":  "0",
+        "minorMotionVelocityInclusionThr": "0.5"
+    },
+    "cfarCfg":
+    {
+        "averageMode":           "2",
+        "winLen":                "4",
+        "guardLen":              "3",
+        "noiseDiv":              "2",
+        "cyclicMode":            "0",
+        "thresholdScale":        "12.0",
+        "peakGroupingEn":        "0",
+        "sideLobeThreshold":     "0.5",
+        "enableLocalMaxRange":   "0",
+        "enableLocalMaxAzimuth": "1",
+        "interpolateRange":      "1",
+        "interpolateAzimuth":    "1"
+    },
+    "aoaFovCfg":
+    {
+        "minAzimuthDeg":   "-60",
+        "maxAzimuthDeg":   "60",
+        "minElevationDeg": "-40",
+        "maxElevationDeg": "40"
+    },
+    "rangeSelCfg":
+    {
+        "minMeters": "0.1",
+        "maxMeters": "4.0"
+    },
+    "clutterRemoval":
+    {
+        "enabled": "1"
+    },
+    "compRangeBiasAndRxChanPhase":
+    {
+        "rangeBias":     "0.0"
+    },
+    "lowPowerCfg":
+    {
+        "enable": "1"
+    },
+    "factoryCalibCfg":
+    {
+        "saveEnable":    "1",
+        "restoreEnable": "0",
+        "rxGain":        "40",
+        "txBackoff":     "0",
+        "flashOffset":   "0x1FF000"
+    },
+    "sensorStart":
+    {
+        "frameTrigMode":     "0",
+        "chirpStartSigLbEn": "0",
+        "frameLivMonEn":     "0",
+        "frameTrigTimerVal": "0"
+    }
+}

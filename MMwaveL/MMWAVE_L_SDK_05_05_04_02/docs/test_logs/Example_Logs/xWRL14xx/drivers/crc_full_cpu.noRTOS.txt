@@ -1,0 +1,3 @@
+CRC Full CPU Test Started ...
+Full CPU mode CRC Test Passed!!
+All tests have passed!!

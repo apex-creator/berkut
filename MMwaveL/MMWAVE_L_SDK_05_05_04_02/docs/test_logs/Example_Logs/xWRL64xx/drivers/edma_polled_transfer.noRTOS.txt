@@ -1,0 +1,3 @@
+[Cortex_M4_0] [EDMA] Polled Transfer Test Started...
+[EDMA] Polled Transfer Test Completed!!
+All tests have passed!!

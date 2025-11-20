@@ -1,0 +1,26 @@
+[Cortex_M4_0] [LIN] Loopback Interrupt mode, application started ...
+[LIN] Transmitted : 12 
+[LIN] Received    : 12 
+[LIN] 
+[LIN] Transmitted : 13 34 
+[LIN] Received    : 13 34 
+[LIN] 
+[LIN] Transmitted : 14 34 56 
+[LIN] Received    : 14 34 56 
+[LIN] 
+[LIN] Transmitted : 15 34 56 78 
+[LIN] Received    : 15 34 56 78 
+[LIN] 
+[LIN] Transmitted : 16 34 56 78 9A 
+[LIN] Received    : 16 34 56 78 9A 
+[LIN] 
+[LIN] Transmitted : 17 34 56 78 9A AB 
+[LIN] Received    : 17 34 56 78 9A AB 
+[LIN] 
+[LIN] Transmitted : 18 34 56 78 9A AB CD 
+[LIN] Received    : 18 34 56 78 9A AB CD 
+[LIN] 
+[LIN] Transmitted : 19 34 56 78 9A AB CD EF 
+[LIN] Received    : 19 34 56 78 9A AB CD EF 
+[LIN] 
+[LIN] All tests have passed!!

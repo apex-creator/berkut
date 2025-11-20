@@ -1,0 +1,3 @@
+[Cortex_M4_0] [EDMA] Link Transfer Test Started...
+[EDMA] Link Transfer Test Completed!!
+All tests have passed!!

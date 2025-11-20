@@ -1,0 +1,10 @@
+[DPL] Hwi post ...
+[DPL] Hwi post ... DONE !!!
+[DPL] Sleep for 100 msecs ... 
+[DPL] Sleep ... DONE (Measured time = 99564 usecs, Frame Timer cycles (Runs at Oscillator Freq) = 3982448 ) !!!
+[DPL] Running cache operations ...
+[DPL] Running cache operations ... DONE !!!
+[DPL] Heap free size = 1984 bytes
+[DPL] Allocated 1023 bytes @ 0x00405240, heap free size = 896 bytes
+[DPL] Free'ed 1023 bytes @ 0x00405240, heap free size = 1984 bytes
+All tests have passed!!

@@ -1,0 +1,2706 @@
+/********************************************************************
+ * Copyright (C) 2021 Texas Instruments Incorporated.
+ *
+ *  Redistribution and use in source and binary forms, with or without
+ *  modification, are permitted provided that the following conditions
+ *  are met:
+ *
+ *    Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ *
+ *    Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the
+ *    distribution.
+ *
+ *    Neither the name of Texas Instruments Incorporated nor the names of
+ *    its contributors may be used to endorse or promote products derived
+ *    from this software without specific prior written permission.
+ *
+ *  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+ *  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+ *  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+ *  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+ *  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+ *  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ *  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+ *  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+ *  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ *  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ *  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ *  Name        : cslr_top_prcm.h
+*/
+#ifndef CSLR_TOP_PRCM_H_
+#define CSLR_TOP_PRCM_H_
+
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+#include <drivers/hw_include/cslr.h>
+#include <stdint.h>
+
+/**************************************************************************
+* Hardware Region  :
+**************************************************************************/
+
+
+/**************************************************************************
+* Register Overlay Structure
+**************************************************************************/
+
+typedef struct {
+    volatile uint32_t PID;
+    volatile uint32_t CLK_REQ_PARAM;
+    volatile uint32_t APP_PWR_REQ_PARAM;
+    volatile uint32_t FEC_PWR_REQ_PARAM;
+    volatile uint32_t HWA_PWR_REQ_PARAM;
+    volatile uint32_t APP_CORE_SYSRESET_PARAM;
+    volatile uint32_t FEC_CORE_SYSRESET_PARAM;
+    volatile uint32_t RELEASE_PAUSE;
+    volatile uint32_t WU_COUNTER_END;
+    volatile uint32_t WU_COUNTER_START;
+    volatile uint32_t WU_COUNTER_PAUSE;
+    volatile uint32_t GTS_COUNTER_END;
+    volatile uint32_t SLEEP_COUNTER_END;
+    volatile uint32_t WU_SOURCE_EN;
+    volatile uint32_t UART_RTS_CLEAR;
+    volatile uint32_t RADAR_WAKEUP_STATUS;
+    volatile uint32_t RTC_COMPARE_LSB;
+    volatile uint32_t RTC_COMPARE_MSB;
+    volatile uint32_t RTC_COMPARE_EN;
+    volatile uint32_t RTC_COUNT_LSB;
+    volatile uint32_t RTC_COUNT_MSB;
+    volatile uint32_t PC_REGISTER1;
+    volatile uint32_t PC_REGISTER2;
+    volatile uint32_t PC_REGISTER3;
+    volatile uint32_t PC_REGISTER4;
+    volatile uint32_t PC_REGISTER5;
+    volatile uint32_t PC_REGISTER6;
+    volatile uint32_t PC_REGISTER7;
+    volatile uint32_t PC_REGISTER8;
+    volatile uint32_t WAKEUP_IO_MUX_SEL;
+    volatile uint32_t WAKEUP_INT_SOURCE_EN;
+    volatile uint32_t PMS_POWER_MODE;
+    volatile uint32_t PMS_SRAM_GO_TO_SLEEP_DELAY;
+    volatile uint8_t  Resv_1024[892];
+    volatile uint32_t PMS_SRAM_GO_TO_SLEEP_TIME;
+    volatile uint32_t PMS_SRAM_WAKEUP_DELAY;
+    volatile uint32_t PMS_SRAM_WAKEUP_TIME;
+    volatile uint32_t PMS_SRAM_LDO_EN;
+    volatile uint32_t PMS_SLEEP_NO_RTA_CFG;
+    volatile uint32_t PMS_SRAM_LDO_TRIM;
+    volatile uint32_t PMS_SRAM_KA_TRIM;
+    volatile uint32_t PMS_DIG_GO_TO_SLEEP_DELAY;
+    volatile uint32_t PMS_DIG_GO_TO_SLEEP_TIME;
+    volatile uint32_t PMS_DIG_WAKEUP_DELAY;
+    volatile uint32_t PMS_DIG_WAKEUP_TIME;
+    volatile uint32_t PMS_DIG_LDO_EN;
+    volatile uint32_t PMS_DIG_LDO_TRIM;
+    volatile uint32_t PMS_DIG_KA_TRIM;
+    volatile uint32_t PMS_PSCON_EN_WAIT_DELAY;
+    volatile uint32_t PMS_BGAP_DIS_HIBERNATE;
+    volatile uint32_t PMS_BGAP_DELAY1;
+    volatile uint32_t PMS_BGAP_DELAY2;
+    volatile uint32_t PMS_BGAP_EN_OVERRIDE;
+    volatile uint32_t PMS_BGAP_CAP_OVERRIDE1;
+    volatile uint32_t PMS_BGAP_CAP_OVERRIDE2;
+    volatile uint32_t PSCON_APP_PD_EN;
+    volatile uint32_t PSCON_FEC_PD_EN;
+    volatile uint32_t PSCON_HWA_PD_EN;
+    volatile uint32_t PSCON_TEST_DBG_PD_EN;
+    volatile uint32_t PSCON_APP_PD_RAM_STATE;
+    volatile uint32_t PSCON_APP_PD_RAM_GRP1_STATE;
+    volatile uint32_t PSCON_APP_PD_RAM_GRP2_STATE;
+    volatile uint32_t PSCON_HWA_PD_RAM_GRP3_STATE;
+    volatile uint32_t PSCON_FEC_PD_RAM_STATE;
+    volatile uint32_t PSCON_FEC_PD_RAM_GRP4_STATE;
+    volatile uint32_t PSCON_RAM_FORCE_SWITCH_EN;
+    volatile uint32_t PSCON_RAM_SWITCH_EN_OVERRIDE1;
+    volatile uint32_t PSCON_RAM_SWITCH_EN_OVERRIDE2;
+    volatile uint32_t PSCOM_RAM_SWITCH_DELAY;
+    volatile uint32_t PSCON_DFTRTA_OVERRIDE;
+    volatile uint32_t PSCON_VNWA_SWITCH_EN1;
+    volatile uint32_t PSCON_VNWA_SWITCH_EN2;
+    volatile uint32_t PSCON_SRAM_LDO_WEAK_PROCESS;
+    volatile uint32_t CLKM_OSC_CLK_REQ;
+    volatile uint32_t CLKM_OVERRIDE1;
+    volatile uint32_t CLKM_OVERRIDE2;
+    volatile uint32_t CLKM_OVERRIDE3;
+    volatile uint32_t CLKM_OUTPUT_HOST_CLK_REQ_OVERRIDE;
+    volatile uint32_t CLKM_SEL_OV_XT_DRIVE;
+    volatile uint32_t CLKM_DELAY1;
+    volatile uint32_t CLKM_DELAY2;
+    volatile uint32_t CLKM_HOST_CLK_REQ_DELAY;
+    volatile uint32_t RST_OVERRIDE;
+    volatile uint32_t RST_SOFT_RESET;
+    volatile uint32_t RST_WDT_RESET_EN;
+    volatile uint32_t RST_APP_PD_SOFT_RESET;
+    volatile uint32_t RST_FEC_PD_SOFT_RESET;
+    volatile uint32_t RST_HWA_PD_SOFT_RESET;
+    volatile uint32_t RST_SOFT_APP_CORE_SYSRESET_REQ;
+    volatile uint32_t RST_SOFT_FEC_CORE_SYSRESET_REQ;
+    volatile uint32_t SYS_RST_CAUSE;
+    volatile uint32_t DUBUGSS_DISABLE;
+    volatile uint32_t SLOW_CLK_CLKCTL;
+    volatile uint32_t DEBUGSS_CLK_CLKCTL;
+    volatile uint32_t EFUSE_10M_OSC_DISABLE;
+    volatile uint32_t DEBUGSS_CLK_AUTOSWITCH;
+    volatile uint32_t RADAR_SAFTY_ERROR_REG;
+    volatile uint32_t RELEASEFROMWIR_REG;
+    volatile uint32_t HWA_PD_MEM_SHARE_REG;
+    volatile uint32_t FRC_OSC_CLK_GATE;
+    volatile uint32_t MEMSWAP_REG;
+    volatile uint32_t LIMP_MODE_STATUS;
+    volatile uint32_t RTI_CLOCK_GATE_SLEEP_STATE;
+    volatile uint32_t TOP_3318_LDO_EN_CTRL;
+    volatile uint32_t RFANA_TOP_LDO_EN;
+    volatile uint32_t RFANA_TOP_ISO_CTRL;
+    volatile uint32_t CLK_CTRL_REG1_LDO_CLKTOP;
+    volatile uint32_t CLK_CTRL_REG1_XO_SLICER;
+    volatile uint32_t TOP_LDO_3318_CTRL_REG0;
+    volatile uint32_t TOP_LDO_3318_CTRL_REG1;
+    volatile uint32_t TOP_LDO_DIG_CTRL_REG0;
+    volatile uint32_t TOP_LDO_DIG_CTRL_REG1;
+    volatile uint32_t TOP_LDO_SRAM_CTRL_REG0;
+    volatile uint32_t TOP_LDO_SRAM_CTRL_REG1;
+    volatile uint8_t  Resv_4104[2760];
+    volatile uint32_t LOCK0_KICK0;
+    volatile uint32_t LOCK0_KICK1;
+    volatile uint32_t INTR_RAW_STATUS;
+    volatile uint32_t INTR_ENABLED_STATUS_CLEAR;
+    volatile uint32_t INTR_ENABLE;
+    volatile uint32_t INTR_ENABLE_CLEAR;
+    volatile uint32_t EOI;
+    volatile uint32_t FAULT_ADDRESS;
+    volatile uint32_t FAULT_TYPE_STATUS;
+    volatile uint32_t FAULT_ATTR_STATUS;
+    volatile uint32_t FAULT_CLEAR;
+    volatile uint8_t  Resv_7168[3020];
+    volatile uint32_t MCUCLKOUT_CLKCTL;
+    volatile uint32_t MCUCLKOUT_CLKSTAT;
+    volatile uint32_t DCDC_CTRL_REG1;
+    volatile uint32_t DCDC_CTRL_REG2;
+    volatile uint32_t DCDC_CTRL_REG3;
+    volatile uint32_t DCDC_SLOPE_REG;
+    volatile uint32_t APP_CPU_CLKCTL;
+} CSL_top_prcmRegs;
+
+
+/**************************************************************************
+* Register Macros
+**************************************************************************/
+
+#define CSL_TOP_PRCM_PID                                                       (0x00000000U)
+#define CSL_TOP_PRCM_CLK_REQ_PARAM                                             (0x00000004U)
+#define CSL_TOP_PRCM_APP_PWR_REQ_PARAM                                         (0x00000008U)
+#define CSL_TOP_PRCM_FEC_PWR_REQ_PARAM                                         (0x0000000CU)
+#define CSL_TOP_PRCM_HWA_PWR_REQ_PARAM                                         (0x00000010U)
+#define CSL_TOP_PRCM_APP_CORE_SYSRESET_PARAM                                   (0x00000014U)
+#define CSL_TOP_PRCM_FEC_CORE_SYSRESET_PARAM                                   (0x00000018U)
+#define CSL_TOP_PRCM_RELEASE_PAUSE                                             (0x0000001CU)
+#define CSL_TOP_PRCM_WU_COUNTER_END                                            (0x00000020U)
+#define CSL_TOP_PRCM_WU_COUNTER_START                                          (0x00000024U)
+#define CSL_TOP_PRCM_WU_COUNTER_PAUSE                                          (0x00000028U)
+#define CSL_TOP_PRCM_GTS_COUNTER_END                                           (0x0000002CU)
+#define CSL_TOP_PRCM_SLEEP_COUNTER_END                                         (0x00000030U)
+#define CSL_TOP_PRCM_WU_SOURCE_EN                                              (0x00000034U)
+#define CSL_TOP_PRCM_UART_RTS_CLEAR                                            (0x00000038U)
+#define CSL_TOP_PRCM_RADAR_WAKEUP_STATUS                                       (0x0000003CU)
+#define CSL_TOP_PRCM_RTC_COMPARE_LSB                                           (0x00000040U)
+#define CSL_TOP_PRCM_RTC_COMPARE_MSB                                           (0x00000044U)
+#define CSL_TOP_PRCM_RTC_COMPARE_EN                                            (0x00000048U)
+#define CSL_TOP_PRCM_RTC_COUNT_LSB                                             (0x0000004CU)
+#define CSL_TOP_PRCM_RTC_COUNT_MSB                                             (0x00000050U)
+#define CSL_TOP_PRCM_PC_REGISTER1                                              (0x00000054U)
+#define CSL_TOP_PRCM_PC_REGISTER2                                              (0x00000058U)
+#define CSL_TOP_PRCM_PC_REGISTER3                                              (0x0000005CU)
+#define CSL_TOP_PRCM_PC_REGISTER4                                              (0x00000060U)
+#define CSL_TOP_PRCM_PC_REGISTER5                                              (0x00000064U)
+#define CSL_TOP_PRCM_PC_REGISTER6                                              (0x00000068U)
+#define CSL_TOP_PRCM_PC_REGISTER7                                              (0x0000006CU)
+#define CSL_TOP_PRCM_PC_REGISTER8                                              (0x00000070U)
+#define CSL_TOP_PRCM_WAKEUP_IO_MUX_SEL                                         (0x00000074U)
+#define CSL_TOP_PRCM_WAKEUP_INT_SOURCE_EN                                      (0x00000078U)
+#define CSL_TOP_PRCM_PMS_POWER_MODE                                            (0x0000007CU)
+#define CSL_TOP_PRCM_PMS_SRAM_GO_TO_SLEEP_DELAY                                (0x00000080U)
+#define CSL_TOP_PRCM_PMS_SRAM_GO_TO_SLEEP_TIME                                 (0x00000400U)
+#define CSL_TOP_PRCM_PMS_SRAM_WAKEUP_DELAY                                     (0x00000404U)
+#define CSL_TOP_PRCM_PMS_SRAM_WAKEUP_TIME                                      (0x00000408U)
+#define CSL_TOP_PRCM_PMS_SRAM_LDO_EN                                           (0x0000040CU)
+#define CSL_TOP_PRCM_PMS_SLEEP_NO_RTA_CFG                                      (0x00000410U)
+#define CSL_TOP_PRCM_PMS_SRAM_LDO_TRIM                                         (0x00000414U)
+#define CSL_TOP_PRCM_PMS_SRAM_KA_TRIM                                          (0x00000418U)
+#define CSL_TOP_PRCM_PMS_DIG_GO_TO_SLEEP_DELAY                                 (0x0000041CU)
+#define CSL_TOP_PRCM_PMS_DIG_GO_TO_SLEEP_TIME                                  (0x00000420U)
+#define CSL_TOP_PRCM_PMS_DIG_WAKEUP_DELAY                                      (0x00000424U)
+#define CSL_TOP_PRCM_PMS_DIG_WAKEUP_TIME                                       (0x00000428U)
+#define CSL_TOP_PRCM_PMS_DIG_LDO_EN                                            (0x0000042CU)
+#define CSL_TOP_PRCM_PMS_DIG_LDO_TRIM                                          (0x00000430U)
+#define CSL_TOP_PRCM_PMS_DIG_KA_TRIM                                           (0x00000434U)
+#define CSL_TOP_PRCM_PMS_PSCON_EN_WAIT_DELAY                                   (0x00000438U)
+#define CSL_TOP_PRCM_PMS_BGAP_DIS_HIBERNATE                                    (0x0000043CU)
+#define CSL_TOP_PRCM_PMS_BGAP_DELAY1                                           (0x00000440U)
+#define CSL_TOP_PRCM_PMS_BGAP_DELAY2                                           (0x00000444U)
+#define CSL_TOP_PRCM_PMS_BGAP_EN_OVERRIDE                                      (0x00000448U)
+#define CSL_TOP_PRCM_PMS_BGAP_CAP_OVERRIDE1                                    (0x0000044CU)
+#define CSL_TOP_PRCM_PMS_BGAP_CAP_OVERRIDE2                                    (0x00000450U)
+#define CSL_TOP_PRCM_PSCON_APP_PD_EN                                           (0x00000454U)
+#define CSL_TOP_PRCM_PSCON_FEC_PD_EN                                           (0x00000458U)
+#define CSL_TOP_PRCM_PSCON_HWA_PD_EN                                           (0x0000045CU)
+#define CSL_TOP_PRCM_PSCON_TEST_DBG_PD_EN                                      (0x00000460U)
+#define CSL_TOP_PRCM_PSCON_APP_PD_RAM_STATE                                    (0x00000464U)
+#define CSL_TOP_PRCM_PSCON_APP_PD_RAM_GRP1_STATE                               (0x00000468U)
+#define CSL_TOP_PRCM_PSCON_APP_PD_RAM_GRP2_STATE                               (0x0000046CU)
+#define CSL_TOP_PRCM_PSCON_HWA_PD_RAM_GRP3_STATE                               (0x00000470U)
+#define CSL_TOP_PRCM_PSCON_FEC_PD_RAM_STATE                                    (0x00000474U)
+#define CSL_TOP_PRCM_PSCON_FEC_PD_RAM_GRP4_STATE                               (0x00000478U)
+#define CSL_TOP_PRCM_PSCON_RAM_FORCE_SWITCH_EN                                 (0x0000047CU)
+#define CSL_TOP_PRCM_PSCON_RAM_SWITCH_EN_OVERRIDE1                             (0x00000480U)
+#define CSL_TOP_PRCM_PSCON_RAM_SWITCH_EN_OVERRIDE2                             (0x00000484U)
+#define CSL_TOP_PRCM_PSCOM_RAM_SWITCH_DELAY                                    (0x00000488U)
+#define CSL_TOP_PRCM_PSCON_DFTRTA_OVERRIDE                                     (0x0000048CU)
+#define CSL_TOP_PRCM_PSCON_VNWA_SWITCH_EN1                                     (0x00000490U)
+#define CSL_TOP_PRCM_PSCON_VNWA_SWITCH_EN2                                     (0x00000494U)
+#define CSL_TOP_PRCM_PSCON_SRAM_LDO_WEAK_PROCESS                               (0x00000498U)
+#define CSL_TOP_PRCM_CLKM_OSC_CLK_REQ                                          (0x0000049CU)
+#define CSL_TOP_PRCM_CLKM_OVERRIDE1                                            (0x000004A0U)
+#define CSL_TOP_PRCM_CLKM_OVERRIDE2                                            (0x000004A4U)
+#define CSL_TOP_PRCM_CLKM_OVERRIDE3                                            (0x000004A8U)
+#define CSL_TOP_PRCM_CLKM_OUTPUT_HOST_CLK_REQ_OVERRIDE                         (0x000004ACU)
+#define CSL_TOP_PRCM_CLKM_SEL_OV_XT_DRIVE                                      (0x000004B0U)
+#define CSL_TOP_PRCM_CLKM_DELAY1                                               (0x000004B4U)
+#define CSL_TOP_PRCM_CLKM_DELAY2                                               (0x000004B8U)
+#define CSL_TOP_PRCM_CLKM_HOST_CLK_REQ_DELAY                                   (0x000004BCU)
+#define CSL_TOP_PRCM_RST_OVERRIDE                                              (0x000004C0U)
+#define CSL_TOP_PRCM_RST_SOFT_RESET                                            (0x000004C4U)
+#define CSL_TOP_PRCM_RST_WDT_RESET_EN                                          (0x000004C8U)
+#define CSL_TOP_PRCM_RST_APP_PD_SOFT_RESET                                     (0x000004CCU)
+#define CSL_TOP_PRCM_RST_FEC_PD_SOFT_RESET                                     (0x000004D0U)
+#define CSL_TOP_PRCM_RST_HWA_PD_SOFT_RESET                                     (0x000004D4U)
+#define CSL_TOP_PRCM_RST_SOFT_APP_CORE_SYSRESET_REQ                            (0x000004D8U)
+#define CSL_TOP_PRCM_RST_SOFT_FEC_CORE_SYSRESET_REQ                            (0x000004DCU)
+#define CSL_TOP_PRCM_SYS_RST_CAUSE                                             (0x000004E0U)
+#define CSL_TOP_PRCM_DUBUGSS_DISABLE                                           (0x000004E4U)
+#define CSL_TOP_PRCM_SLOW_CLK_CLKCTL                                           (0x000004E8U)
+#define CSL_TOP_PRCM_DEBUGSS_CLK_CLKCTL                                        (0x000004ECU)
+#define CSL_TOP_PRCM_EFUSE_10M_OSC_DISABLE                                     (0x000004F0U)
+#define CSL_TOP_PRCM_DEBUGSS_CLK_AUTOSWITCH                                    (0x000004F4U)
+#define CSL_TOP_PRCM_RADAR_SAFTY_ERROR_REG                                     (0x000004F8U)
+#define CSL_TOP_PRCM_RELEASEFROMWIR_REG                                        (0x000004FCU)
+#define CSL_TOP_PRCM_HWA_PD_MEM_SHARE_REG                                      (0x00000500U)
+#define CSL_TOP_PRCM_FRC_OSC_CLK_GATE                                          (0x00000504U)
+#define CSL_TOP_PRCM_MEMSWAP_REG                                               (0x00000508U)
+#define CSL_TOP_PRCM_LIMP_MODE_STATUS                                          (0x0000050CU)
+#define CSL_TOP_PRCM_RTI_CLOCK_GATE_SLEEP_STATE                                (0x00000510U)
+#define CSL_TOP_PRCM_TOP_3318_LDO_EN_CTRL                                      (0x00000514U)
+#define CSL_TOP_PRCM_RFANA_TOP_LDO_EN                                          (0x00000518U)
+#define CSL_TOP_PRCM_RFANA_TOP_ISO_CTRL                                        (0x0000051CU)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_LDO_CLKTOP                                  (0x00000520U)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_XO_SLICER                                   (0x00000524U)
+#define CSL_TOP_PRCM_TOP_LDO_3318_CTRL_REG0                                    (0x00000528U)
+#define CSL_TOP_PRCM_TOP_LDO_3318_CTRL_REG1                                    (0x0000052CU)
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG0                                     (0x00000530U)
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG1                                     (0x00000534U)
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG0                                    (0x00000538U)
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG1                                    (0x0000053CU)
+#define CSL_TOP_PRCM_LOCK0_KICK0                                               (0x00001008U)
+#define CSL_TOP_PRCM_LOCK0_KICK1                                               (0x0000100CU)
+#define CSL_TOP_PRCM_INTR_RAW_STATUS                                           (0x00001010U)
+#define CSL_TOP_PRCM_INTR_ENABLED_STATUS_CLEAR                                 (0x00001014U)
+#define CSL_TOP_PRCM_INTR_ENABLE                                               (0x00001018U)
+#define CSL_TOP_PRCM_INTR_ENABLE_CLEAR                                         (0x0000101CU)
+#define CSL_TOP_PRCM_EOI                                                       (0x00001020U)
+#define CSL_TOP_PRCM_FAULT_ADDRESS                                             (0x00001024U)
+#define CSL_TOP_PRCM_FAULT_TYPE_STATUS                                         (0x00001028U)
+#define CSL_TOP_PRCM_FAULT_ATTR_STATUS                                         (0x0000102CU)
+#define CSL_TOP_PRCM_FAULT_CLEAR                                               (0x00001030U)
+#define CSL_TOP_PRCM_MCUCLKOUT_CLKCTL                                          (0x00001C00U)
+#define CSL_TOP_PRCM_MCUCLKOUT_CLKSTAT                                         (0x00001C04U)
+#define CSL_TOP_PRCM_DCDC_CTRL_REG1                                            (0x00001C08U)
+#define CSL_TOP_PRCM_DCDC_CTRL_REG2                                            (0x00001C0CU)
+#define CSL_TOP_PRCM_DCDC_CTRL_REG3                                            (0x00001C10U)
+#define CSL_TOP_PRCM_DCDC_SLOPE_REG                                            (0x00001C14U)
+#define CSL_TOP_PRCM_APP_CPU_CLKCTL                                            (0x00001C18U)
+
+/**************************************************************************
+* Field Definition Macros
+**************************************************************************/
+
+
+/* PID */
+
+#define CSL_TOP_PRCM_PID_PID_MINOR_MASK                                        (0x0000003FU)
+#define CSL_TOP_PRCM_PID_PID_MINOR_SHIFT                                       (0x00000000U)
+#define CSL_TOP_PRCM_PID_PID_MINOR_RESETVAL                                    (0x00000014U)
+#define CSL_TOP_PRCM_PID_PID_MINOR_MAX                                         (0x0000003FU)
+
+#define CSL_TOP_PRCM_PID_PID_CUSTOM_MASK                                       (0x000000C0U)
+#define CSL_TOP_PRCM_PID_PID_CUSTOM_SHIFT                                      (0x00000006U)
+#define CSL_TOP_PRCM_PID_PID_CUSTOM_RESETVAL                                   (0x00000000U)
+#define CSL_TOP_PRCM_PID_PID_CUSTOM_MAX                                        (0x00000003U)
+
+#define CSL_TOP_PRCM_PID_PID_MAJOR_MASK                                        (0x00000700U)
+#define CSL_TOP_PRCM_PID_PID_MAJOR_SHIFT                                       (0x00000008U)
+#define CSL_TOP_PRCM_PID_PID_MAJOR_RESETVAL                                    (0x00000002U)
+#define CSL_TOP_PRCM_PID_PID_MAJOR_MAX                                         (0x00000007U)
+
+#define CSL_TOP_PRCM_PID_PID_MISC_MASK                                         (0x0000F800U)
+#define CSL_TOP_PRCM_PID_PID_MISC_SHIFT                                        (0x0000000BU)
+#define CSL_TOP_PRCM_PID_PID_MISC_RESETVAL                                     (0x00000000U)
+#define CSL_TOP_PRCM_PID_PID_MISC_MAX                                          (0x0000001FU)
+
+#define CSL_TOP_PRCM_PID_PID_MSB16_MASK                                        (0xFFFF0000U)
+#define CSL_TOP_PRCM_PID_PID_MSB16_SHIFT                                       (0x00000010U)
+#define CSL_TOP_PRCM_PID_PID_MSB16_RESETVAL                                    (0x00006180U)
+#define CSL_TOP_PRCM_PID_PID_MSB16_MAX                                         (0x0000FFFFU)
+
+#define CSL_TOP_PRCM_PID_RESETVAL                                              (0x61800214U)
+
+/* CLK_REQ_PARAM */
+
+#define CSL_TOP_PRCM_CLK_REQ_PARAM_CLK_REQ_PARAM_WAKEUP_DELAY_COUNT_MASK       (0x000007FFU)
+#define CSL_TOP_PRCM_CLK_REQ_PARAM_CLK_REQ_PARAM_WAKEUP_DELAY_COUNT_SHIFT      (0x00000000U)
+#define CSL_TOP_PRCM_CLK_REQ_PARAM_CLK_REQ_PARAM_WAKEUP_DELAY_COUNT_RESETVAL   (0x000007FFU)
+#define CSL_TOP_PRCM_CLK_REQ_PARAM_CLK_REQ_PARAM_WAKEUP_DELAY_COUNT_MAX        (0x000007FFU)
+
+#define CSL_TOP_PRCM_CLK_REQ_PARAM_CLK_REQ_PARAM_MODE_MASK                     (0x00000800U)
+#define CSL_TOP_PRCM_CLK_REQ_PARAM_CLK_REQ_PARAM_MODE_SHIFT                    (0x0000000BU)
+#define CSL_TOP_PRCM_CLK_REQ_PARAM_CLK_REQ_PARAM_MODE_RESETVAL                 (0x00000001U)
+#define CSL_TOP_PRCM_CLK_REQ_PARAM_CLK_REQ_PARAM_MODE_MAX                      (0x00000001U)
+
+#define CSL_TOP_PRCM_CLK_REQ_PARAM_CLK_REQ_PARAM_WAKEUP_OUT_STATE_MASK         (0x00001000U)
+#define CSL_TOP_PRCM_CLK_REQ_PARAM_CLK_REQ_PARAM_WAKEUP_OUT_STATE_SHIFT        (0x0000000CU)
+#define CSL_TOP_PRCM_CLK_REQ_PARAM_CLK_REQ_PARAM_WAKEUP_OUT_STATE_RESETVAL     (0x00000001U)
+#define CSL_TOP_PRCM_CLK_REQ_PARAM_CLK_REQ_PARAM_WAKEUP_OUT_STATE_MAX          (0x00000001U)
+
+#define CSL_TOP_PRCM_CLK_REQ_PARAM_CLK_REQ_PARAM_GO_TO_SLEEP_DELAY_MASK        (0x0001E000U)
+#define CSL_TOP_PRCM_CLK_REQ_PARAM_CLK_REQ_PARAM_GO_TO_SLEEP_DELAY_SHIFT       (0x0000000DU)
+#define CSL_TOP_PRCM_CLK_REQ_PARAM_CLK_REQ_PARAM_GO_TO_SLEEP_DELAY_RESETVAL    (0x00000000U)
+#define CSL_TOP_PRCM_CLK_REQ_PARAM_CLK_REQ_PARAM_GO_TO_SLEEP_DELAY_MAX         (0x0000000FU)
+
+#define CSL_TOP_PRCM_CLK_REQ_PARAM_CLK_REQ_PARAM_DEEPSLEEP_OUT_STATE_MASK      (0x00020000U)
+#define CSL_TOP_PRCM_CLK_REQ_PARAM_CLK_REQ_PARAM_DEEPSLEEP_OUT_STATE_SHIFT     (0x00000011U)
+#define CSL_TOP_PRCM_CLK_REQ_PARAM_CLK_REQ_PARAM_DEEPSLEEP_OUT_STATE_RESETVAL  (0x00000001U)
+#define CSL_TOP_PRCM_CLK_REQ_PARAM_CLK_REQ_PARAM_DEEPSLEEP_OUT_STATE_MAX       (0x00000001U)
+
+#define CSL_TOP_PRCM_CLK_REQ_PARAM_RESETVAL                                    (0x00021FFFU)
+
+/* APP_PWR_REQ_PARAM */
+
+#define CSL_TOP_PRCM_APP_PWR_REQ_PARAM_APP_PWR_REQ_PARAM_WAKEUP_DELAY_COUNT_MASK (0x000007FFU)
+#define CSL_TOP_PRCM_APP_PWR_REQ_PARAM_APP_PWR_REQ_PARAM_WAKEUP_DELAY_COUNT_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_APP_PWR_REQ_PARAM_APP_PWR_REQ_PARAM_WAKEUP_DELAY_COUNT_RESETVAL (0x000007FFU)
+#define CSL_TOP_PRCM_APP_PWR_REQ_PARAM_APP_PWR_REQ_PARAM_WAKEUP_DELAY_COUNT_MAX (0x000007FFU)
+
+#define CSL_TOP_PRCM_APP_PWR_REQ_PARAM_APP_PWR_REQ_PARAM_MODE_MASK             (0x00000800U)
+#define CSL_TOP_PRCM_APP_PWR_REQ_PARAM_APP_PWR_REQ_PARAM_MODE_SHIFT            (0x0000000BU)
+#define CSL_TOP_PRCM_APP_PWR_REQ_PARAM_APP_PWR_REQ_PARAM_MODE_RESETVAL         (0x00000001U)
+#define CSL_TOP_PRCM_APP_PWR_REQ_PARAM_APP_PWR_REQ_PARAM_MODE_MAX              (0x00000001U)
+
+#define CSL_TOP_PRCM_APP_PWR_REQ_PARAM_APP_PWR_REQ_PARAM_WAKEUP_OUT_STATE_MASK (0x00001000U)
+#define CSL_TOP_PRCM_APP_PWR_REQ_PARAM_APP_PWR_REQ_PARAM_WAKEUP_OUT_STATE_SHIFT (0x0000000CU)
+#define CSL_TOP_PRCM_APP_PWR_REQ_PARAM_APP_PWR_REQ_PARAM_WAKEUP_OUT_STATE_RESETVAL (0x00000001U)
+#define CSL_TOP_PRCM_APP_PWR_REQ_PARAM_APP_PWR_REQ_PARAM_WAKEUP_OUT_STATE_MAX  (0x00000001U)
+
+#define CSL_TOP_PRCM_APP_PWR_REQ_PARAM_APP_PWR_REQ_PARAM_GO_TO_SLEEP_DELAY_MASK (0x0001E000U)
+#define CSL_TOP_PRCM_APP_PWR_REQ_PARAM_APP_PWR_REQ_PARAM_GO_TO_SLEEP_DELAY_SHIFT (0x0000000DU)
+#define CSL_TOP_PRCM_APP_PWR_REQ_PARAM_APP_PWR_REQ_PARAM_GO_TO_SLEEP_DELAY_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_APP_PWR_REQ_PARAM_APP_PWR_REQ_PARAM_GO_TO_SLEEP_DELAY_MAX (0x0000000FU)
+
+#define CSL_TOP_PRCM_APP_PWR_REQ_PARAM_APP_PWR_REQ_PARAM_DEEPSLEEP_OUT_STATE_MASK (0x00020000U)
+#define CSL_TOP_PRCM_APP_PWR_REQ_PARAM_APP_PWR_REQ_PARAM_DEEPSLEEP_OUT_STATE_SHIFT (0x00000011U)
+#define CSL_TOP_PRCM_APP_PWR_REQ_PARAM_APP_PWR_REQ_PARAM_DEEPSLEEP_OUT_STATE_RESETVAL (0x00000001U)
+#define CSL_TOP_PRCM_APP_PWR_REQ_PARAM_APP_PWR_REQ_PARAM_DEEPSLEEP_OUT_STATE_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_APP_PWR_REQ_PARAM_RESETVAL                                (0x00021FFFU)
+
+/* FEC_PWR_REQ_PARAM */
+
+#define CSL_TOP_PRCM_FEC_PWR_REQ_PARAM_FEC_PWR_REQ_PARAM_WAKEUP_DELAY_COUNT_MASK (0x000007FFU)
+#define CSL_TOP_PRCM_FEC_PWR_REQ_PARAM_FEC_PWR_REQ_PARAM_WAKEUP_DELAY_COUNT_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_FEC_PWR_REQ_PARAM_FEC_PWR_REQ_PARAM_WAKEUP_DELAY_COUNT_RESETVAL (0x000007FFU)
+#define CSL_TOP_PRCM_FEC_PWR_REQ_PARAM_FEC_PWR_REQ_PARAM_WAKEUP_DELAY_COUNT_MAX (0x000007FFU)
+
+#define CSL_TOP_PRCM_FEC_PWR_REQ_PARAM_FEC_PWR_REQ_PARAM_MODE_MASK             (0x00000800U)
+#define CSL_TOP_PRCM_FEC_PWR_REQ_PARAM_FEC_PWR_REQ_PARAM_MODE_SHIFT            (0x0000000BU)
+#define CSL_TOP_PRCM_FEC_PWR_REQ_PARAM_FEC_PWR_REQ_PARAM_MODE_RESETVAL         (0x00000001U)
+#define CSL_TOP_PRCM_FEC_PWR_REQ_PARAM_FEC_PWR_REQ_PARAM_MODE_MAX              (0x00000001U)
+
+#define CSL_TOP_PRCM_FEC_PWR_REQ_PARAM_FEC_PWR_REQ_PARAM_WAKEUP_OUT_STATE_MASK (0x00001000U)
+#define CSL_TOP_PRCM_FEC_PWR_REQ_PARAM_FEC_PWR_REQ_PARAM_WAKEUP_OUT_STATE_SHIFT (0x0000000CU)
+#define CSL_TOP_PRCM_FEC_PWR_REQ_PARAM_FEC_PWR_REQ_PARAM_WAKEUP_OUT_STATE_RESETVAL (0x00000001U)
+#define CSL_TOP_PRCM_FEC_PWR_REQ_PARAM_FEC_PWR_REQ_PARAM_WAKEUP_OUT_STATE_MAX  (0x00000001U)
+
+#define CSL_TOP_PRCM_FEC_PWR_REQ_PARAM_FEC_PWR_REQ_PARAM_GO_TO_SLEEP_DELAY_MASK (0x0001E000U)
+#define CSL_TOP_PRCM_FEC_PWR_REQ_PARAM_FEC_PWR_REQ_PARAM_GO_TO_SLEEP_DELAY_SHIFT (0x0000000DU)
+#define CSL_TOP_PRCM_FEC_PWR_REQ_PARAM_FEC_PWR_REQ_PARAM_GO_TO_SLEEP_DELAY_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_FEC_PWR_REQ_PARAM_FEC_PWR_REQ_PARAM_GO_TO_SLEEP_DELAY_MAX (0x0000000FU)
+
+#define CSL_TOP_PRCM_FEC_PWR_REQ_PARAM_FEC_PWR_REQ_PARAM_DEEPSLEEP_OUT_STATE_MASK (0x00020000U)
+#define CSL_TOP_PRCM_FEC_PWR_REQ_PARAM_FEC_PWR_REQ_PARAM_DEEPSLEEP_OUT_STATE_SHIFT (0x00000011U)
+#define CSL_TOP_PRCM_FEC_PWR_REQ_PARAM_FEC_PWR_REQ_PARAM_DEEPSLEEP_OUT_STATE_RESETVAL (0x00000001U)
+#define CSL_TOP_PRCM_FEC_PWR_REQ_PARAM_FEC_PWR_REQ_PARAM_DEEPSLEEP_OUT_STATE_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_FEC_PWR_REQ_PARAM_RESETVAL                                (0x00021FFFU)
+
+/* HWA_PWR_REQ_PARAM */
+
+#define CSL_TOP_PRCM_HWA_PWR_REQ_PARAM_HWA_PWR_REQ_PARAM_WAKEUP_DELAY_COUNT_MASK (0x000007FFU)
+#define CSL_TOP_PRCM_HWA_PWR_REQ_PARAM_HWA_PWR_REQ_PARAM_WAKEUP_DELAY_COUNT_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_HWA_PWR_REQ_PARAM_HWA_PWR_REQ_PARAM_WAKEUP_DELAY_COUNT_RESETVAL (0x000007FFU)
+#define CSL_TOP_PRCM_HWA_PWR_REQ_PARAM_HWA_PWR_REQ_PARAM_WAKEUP_DELAY_COUNT_MAX (0x000007FFU)
+
+#define CSL_TOP_PRCM_HWA_PWR_REQ_PARAM_HWA_PWR_REQ_PARAM_MODE_MASK             (0x00000800U)
+#define CSL_TOP_PRCM_HWA_PWR_REQ_PARAM_HWA_PWR_REQ_PARAM_MODE_SHIFT            (0x0000000BU)
+#define CSL_TOP_PRCM_HWA_PWR_REQ_PARAM_HWA_PWR_REQ_PARAM_MODE_RESETVAL         (0x00000001U)
+#define CSL_TOP_PRCM_HWA_PWR_REQ_PARAM_HWA_PWR_REQ_PARAM_MODE_MAX              (0x00000001U)
+
+#define CSL_TOP_PRCM_HWA_PWR_REQ_PARAM_HWA_PWR_REQ_PARAM_WAKEUP_OUT_STATE_MASK (0x00001000U)
+#define CSL_TOP_PRCM_HWA_PWR_REQ_PARAM_HWA_PWR_REQ_PARAM_WAKEUP_OUT_STATE_SHIFT (0x0000000CU)
+#define CSL_TOP_PRCM_HWA_PWR_REQ_PARAM_HWA_PWR_REQ_PARAM_WAKEUP_OUT_STATE_RESETVAL (0x00000001U)
+#define CSL_TOP_PRCM_HWA_PWR_REQ_PARAM_HWA_PWR_REQ_PARAM_WAKEUP_OUT_STATE_MAX  (0x00000001U)
+
+#define CSL_TOP_PRCM_HWA_PWR_REQ_PARAM_HWA_PWR_REQ_PARAM_GO_TO_SLEEP_DELAY_MASK (0x0001E000U)
+#define CSL_TOP_PRCM_HWA_PWR_REQ_PARAM_HWA_PWR_REQ_PARAM_GO_TO_SLEEP_DELAY_SHIFT (0x0000000DU)
+#define CSL_TOP_PRCM_HWA_PWR_REQ_PARAM_HWA_PWR_REQ_PARAM_GO_TO_SLEEP_DELAY_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_HWA_PWR_REQ_PARAM_HWA_PWR_REQ_PARAM_GO_TO_SLEEP_DELAY_MAX (0x0000000FU)
+
+#define CSL_TOP_PRCM_HWA_PWR_REQ_PARAM_HWA_PWR_REQ_PARAM_DEEPSLEEP_OUT_STATE_MASK (0x00020000U)
+#define CSL_TOP_PRCM_HWA_PWR_REQ_PARAM_HWA_PWR_REQ_PARAM_DEEPSLEEP_OUT_STATE_SHIFT (0x00000011U)
+#define CSL_TOP_PRCM_HWA_PWR_REQ_PARAM_HWA_PWR_REQ_PARAM_DEEPSLEEP_OUT_STATE_RESETVAL (0x00000001U)
+#define CSL_TOP_PRCM_HWA_PWR_REQ_PARAM_HWA_PWR_REQ_PARAM_DEEPSLEEP_OUT_STATE_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_HWA_PWR_REQ_PARAM_RESETVAL                                (0x00021FFFU)
+
+/* APP_CORE_SYSRESET_PARAM */
+
+#define CSL_TOP_PRCM_APP_CORE_SYSRESET_PARAM_APP_CORE_SYSRESET_PARAM_WAKEUP_DELAY_COUNT_MASK (0x000007FFU)
+#define CSL_TOP_PRCM_APP_CORE_SYSRESET_PARAM_APP_CORE_SYSRESET_PARAM_WAKEUP_DELAY_COUNT_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_APP_CORE_SYSRESET_PARAM_APP_CORE_SYSRESET_PARAM_WAKEUP_DELAY_COUNT_RESETVAL (0x000007FFU)
+#define CSL_TOP_PRCM_APP_CORE_SYSRESET_PARAM_APP_CORE_SYSRESET_PARAM_WAKEUP_DELAY_COUNT_MAX (0x000007FFU)
+
+#define CSL_TOP_PRCM_APP_CORE_SYSRESET_PARAM_APP_CORE_SYSRESET_PARAM_MODE_MASK (0x00000800U)
+#define CSL_TOP_PRCM_APP_CORE_SYSRESET_PARAM_APP_CORE_SYSRESET_PARAM_MODE_SHIFT (0x0000000BU)
+#define CSL_TOP_PRCM_APP_CORE_SYSRESET_PARAM_APP_CORE_SYSRESET_PARAM_MODE_RESETVAL (0x00000001U)
+#define CSL_TOP_PRCM_APP_CORE_SYSRESET_PARAM_APP_CORE_SYSRESET_PARAM_MODE_MAX  (0x00000001U)
+
+#define CSL_TOP_PRCM_APP_CORE_SYSRESET_PARAM_APP_CORE_SYSRESET_PARAM_WAKEUP_OUT_STATE_MASK (0x00001000U)
+#define CSL_TOP_PRCM_APP_CORE_SYSRESET_PARAM_APP_CORE_SYSRESET_PARAM_WAKEUP_OUT_STATE_SHIFT (0x0000000CU)
+#define CSL_TOP_PRCM_APP_CORE_SYSRESET_PARAM_APP_CORE_SYSRESET_PARAM_WAKEUP_OUT_STATE_RESETVAL (0x00000001U)
+#define CSL_TOP_PRCM_APP_CORE_SYSRESET_PARAM_APP_CORE_SYSRESET_PARAM_WAKEUP_OUT_STATE_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_APP_CORE_SYSRESET_PARAM_APP_CORE_SYSRESET_PARAM_GO_TO_SLEEP_DELAY_MASK (0x0001E000U)
+#define CSL_TOP_PRCM_APP_CORE_SYSRESET_PARAM_APP_CORE_SYSRESET_PARAM_GO_TO_SLEEP_DELAY_SHIFT (0x0000000DU)
+#define CSL_TOP_PRCM_APP_CORE_SYSRESET_PARAM_APP_CORE_SYSRESET_PARAM_GO_TO_SLEEP_DELAY_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_APP_CORE_SYSRESET_PARAM_APP_CORE_SYSRESET_PARAM_GO_TO_SLEEP_DELAY_MAX (0x0000000FU)
+
+#define CSL_TOP_PRCM_APP_CORE_SYSRESET_PARAM_APP_CORE_SYSRESET_PARAM_DEEPSLEEP_OUT_STATE_MASK (0x00020000U)
+#define CSL_TOP_PRCM_APP_CORE_SYSRESET_PARAM_APP_CORE_SYSRESET_PARAM_DEEPSLEEP_OUT_STATE_SHIFT (0x00000011U)
+#define CSL_TOP_PRCM_APP_CORE_SYSRESET_PARAM_APP_CORE_SYSRESET_PARAM_DEEPSLEEP_OUT_STATE_RESETVAL (0x00000001U)
+#define CSL_TOP_PRCM_APP_CORE_SYSRESET_PARAM_APP_CORE_SYSRESET_PARAM_DEEPSLEEP_OUT_STATE_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_APP_CORE_SYSRESET_PARAM_RESETVAL                          (0x00021FFFU)
+
+/* FEC_CORE_SYSRESET_PARAM */
+
+#define CSL_TOP_PRCM_FEC_CORE_SYSRESET_PARAM_FEC_CORE_SYSRESET_PARAM_WAKEUP_DELAY_COUNT_MASK (0x000007FFU)
+#define CSL_TOP_PRCM_FEC_CORE_SYSRESET_PARAM_FEC_CORE_SYSRESET_PARAM_WAKEUP_DELAY_COUNT_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_FEC_CORE_SYSRESET_PARAM_FEC_CORE_SYSRESET_PARAM_WAKEUP_DELAY_COUNT_RESETVAL (0x000007FFU)
+#define CSL_TOP_PRCM_FEC_CORE_SYSRESET_PARAM_FEC_CORE_SYSRESET_PARAM_WAKEUP_DELAY_COUNT_MAX (0x000007FFU)
+
+#define CSL_TOP_PRCM_FEC_CORE_SYSRESET_PARAM_FEC_CORE_SYSRESET_PARAM_MODE_MASK (0x00000800U)
+#define CSL_TOP_PRCM_FEC_CORE_SYSRESET_PARAM_FEC_CORE_SYSRESET_PARAM_MODE_SHIFT (0x0000000BU)
+#define CSL_TOP_PRCM_FEC_CORE_SYSRESET_PARAM_FEC_CORE_SYSRESET_PARAM_MODE_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_FEC_CORE_SYSRESET_PARAM_FEC_CORE_SYSRESET_PARAM_MODE_MAX  (0x00000001U)
+
+#define CSL_TOP_PRCM_FEC_CORE_SYSRESET_PARAM_FEC_CORE_SYSRESET_PARAM_WAKEUP_OUT_STATE_MASK (0x00001000U)
+#define CSL_TOP_PRCM_FEC_CORE_SYSRESET_PARAM_FEC_CORE_SYSRESET_PARAM_WAKEUP_OUT_STATE_SHIFT (0x0000000CU)
+#define CSL_TOP_PRCM_FEC_CORE_SYSRESET_PARAM_FEC_CORE_SYSRESET_PARAM_WAKEUP_OUT_STATE_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_FEC_CORE_SYSRESET_PARAM_FEC_CORE_SYSRESET_PARAM_WAKEUP_OUT_STATE_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_FEC_CORE_SYSRESET_PARAM_FEC_CORE_SYSRESET_PARAM_GO_TO_SLEEP_DELAY_MASK (0x0001E000U)
+#define CSL_TOP_PRCM_FEC_CORE_SYSRESET_PARAM_FEC_CORE_SYSRESET_PARAM_GO_TO_SLEEP_DELAY_SHIFT (0x0000000DU)
+#define CSL_TOP_PRCM_FEC_CORE_SYSRESET_PARAM_FEC_CORE_SYSRESET_PARAM_GO_TO_SLEEP_DELAY_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_FEC_CORE_SYSRESET_PARAM_FEC_CORE_SYSRESET_PARAM_GO_TO_SLEEP_DELAY_MAX (0x0000000FU)
+
+#define CSL_TOP_PRCM_FEC_CORE_SYSRESET_PARAM_FEC_CORE_SYSRESET_PARAM_DEEPSLEEP_OUT_STATE_MASK (0x00020000U)
+#define CSL_TOP_PRCM_FEC_CORE_SYSRESET_PARAM_FEC_CORE_SYSRESET_PARAM_DEEPSLEEP_OUT_STATE_SHIFT (0x00000011U)
+#define CSL_TOP_PRCM_FEC_CORE_SYSRESET_PARAM_FEC_CORE_SYSRESET_PARAM_DEEPSLEEP_OUT_STATE_RESETVAL (0x00000001U)
+#define CSL_TOP_PRCM_FEC_CORE_SYSRESET_PARAM_FEC_CORE_SYSRESET_PARAM_DEEPSLEEP_OUT_STATE_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_FEC_CORE_SYSRESET_PARAM_RESETVAL                          (0x000207FFU)
+
+/* RELEASE_PAUSE */
+
+#define CSL_TOP_PRCM_RELEASE_PAUSE_RELEASE_PAUSE_RELEASE_PAUSE_MASK            (0x00000001U)
+#define CSL_TOP_PRCM_RELEASE_PAUSE_RELEASE_PAUSE_RELEASE_PAUSE_SHIFT           (0x00000000U)
+#define CSL_TOP_PRCM_RELEASE_PAUSE_RELEASE_PAUSE_RELEASE_PAUSE_RESETVAL        (0x00000000U)
+#define CSL_TOP_PRCM_RELEASE_PAUSE_RELEASE_PAUSE_RELEASE_PAUSE_MAX             (0x00000001U)
+
+#define CSL_TOP_PRCM_RELEASE_PAUSE_RESETVAL                                    (0x00000000U)
+
+/* WU_COUNTER_END */
+
+#define CSL_TOP_PRCM_WU_COUNTER_END_WU_COUNTER_END_WU_COUNTER_END_MASK         (0x000007FFU)
+#define CSL_TOP_PRCM_WU_COUNTER_END_WU_COUNTER_END_WU_COUNTER_END_SHIFT        (0x00000000U)
+#define CSL_TOP_PRCM_WU_COUNTER_END_WU_COUNTER_END_WU_COUNTER_END_RESETVAL     (0x00000040U)
+#define CSL_TOP_PRCM_WU_COUNTER_END_WU_COUNTER_END_WU_COUNTER_END_MAX          (0x000007FFU)
+
+#define CSL_TOP_PRCM_WU_COUNTER_END_RESETVAL                                   (0x00000040U)
+
+/* WU_COUNTER_START */
+
+#define CSL_TOP_PRCM_WU_COUNTER_START_WU_COUNTER_START_WU_COUNTER_START_MASK   (0x000007FFU)
+#define CSL_TOP_PRCM_WU_COUNTER_START_WU_COUNTER_START_WU_COUNTER_START_SHIFT  (0x00000000U)
+#define CSL_TOP_PRCM_WU_COUNTER_START_WU_COUNTER_START_WU_COUNTER_START_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_WU_COUNTER_START_WU_COUNTER_START_WU_COUNTER_START_MAX    (0x000007FFU)
+
+#define CSL_TOP_PRCM_WU_COUNTER_START_RESETVAL                                 (0x00000000U)
+
+/* WU_COUNTER_PAUSE */
+
+#define CSL_TOP_PRCM_WU_COUNTER_PAUSE_WU_COUNTER_PAUSE_WU_COUNTER_PAUSE_MASK   (0x000007FFU)
+#define CSL_TOP_PRCM_WU_COUNTER_PAUSE_WU_COUNTER_PAUSE_WU_COUNTER_PAUSE_SHIFT  (0x00000000U)
+#define CSL_TOP_PRCM_WU_COUNTER_PAUSE_WU_COUNTER_PAUSE_WU_COUNTER_PAUSE_RESETVAL (0x00000037U)
+#define CSL_TOP_PRCM_WU_COUNTER_PAUSE_WU_COUNTER_PAUSE_WU_COUNTER_PAUSE_MAX    (0x000007FFU)
+
+#define CSL_TOP_PRCM_WU_COUNTER_PAUSE_RESETVAL                                 (0x00000037U)
+
+/* GTS_COUNTER_END */
+
+#define CSL_TOP_PRCM_GTS_COUNTER_END_GTS_COUNTER_END_GTS_COUNTER_END_MASK      (0x000000FFU)
+#define CSL_TOP_PRCM_GTS_COUNTER_END_GTS_COUNTER_END_GTS_COUNTER_END_SHIFT     (0x00000000U)
+#define CSL_TOP_PRCM_GTS_COUNTER_END_GTS_COUNTER_END_GTS_COUNTER_END_RESETVAL  (0x00000003U)
+#define CSL_TOP_PRCM_GTS_COUNTER_END_GTS_COUNTER_END_GTS_COUNTER_END_MAX       (0x000000FFU)
+
+#define CSL_TOP_PRCM_GTS_COUNTER_END_RESETVAL                                  (0x00000003U)
+
+/* SLEEP_COUNTER_END */
+
+#define CSL_TOP_PRCM_SLEEP_COUNTER_END_SLEEP_COUNTER_END_SLEEP_COUNT_END_MASK  (0x001FFFFFU)
+#define CSL_TOP_PRCM_SLEEP_COUNTER_END_SLEEP_COUNTER_END_SLEEP_COUNT_END_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_SLEEP_COUNTER_END_SLEEP_COUNTER_END_SLEEP_COUNT_END_RESETVAL (0x00007D00U)
+#define CSL_TOP_PRCM_SLEEP_COUNTER_END_SLEEP_COUNTER_END_SLEEP_COUNT_END_MAX   (0x001FFFFFU)
+
+#define CSL_TOP_PRCM_SLEEP_COUNTER_END_RESETVAL                                (0x00007D00U)
+
+/* WU_SOURCE_EN */
+
+#define CSL_TOP_PRCM_WU_SOURCE_EN_WU_SOURCE_EN_WU_SOURCE_EN_MASK               (0x0000003FU)
+#define CSL_TOP_PRCM_WU_SOURCE_EN_WU_SOURCE_EN_WU_SOURCE_EN_SHIFT              (0x00000000U)
+#define CSL_TOP_PRCM_WU_SOURCE_EN_WU_SOURCE_EN_WU_SOURCE_EN_RESETVAL           (0x0000003FU)
+#define CSL_TOP_PRCM_WU_SOURCE_EN_WU_SOURCE_EN_WU_SOURCE_EN_MAX                (0x0000003FU)
+
+#define CSL_TOP_PRCM_WU_SOURCE_EN_WU_SOURCE_EN_UART_RX_EDGE_MASK               (0x00000100U)
+#define CSL_TOP_PRCM_WU_SOURCE_EN_WU_SOURCE_EN_UART_RX_EDGE_SHIFT              (0x00000008U)
+#define CSL_TOP_PRCM_WU_SOURCE_EN_WU_SOURCE_EN_UART_RX_EDGE_RESETVAL           (0x00000100U)
+#define CSL_TOP_PRCM_WU_SOURCE_EN_WU_SOURCE_EN_UART_RX_EDGE_MAX                (0x00000001U)
+
+#define CSL_TOP_PRCM_WU_SOURCE_EN_WU_SOURCE_EN_SPI_CS_EDGE_MASK               (0x00000200U)
+#define CSL_TOP_PRCM_WU_SOURCE_EN_WU_SOURCE_EN_SPI_CS_EDGE_SHIFT              (0x00000009U)
+#define CSL_TOP_PRCM_WU_SOURCE_EN_WU_SOURCE_EN_SPI_CS_EDGE_RESETVAL           (0x00000200U)
+#define CSL_TOP_PRCM_WU_SOURCE_EN_WU_SOURCE_EN_SPI_CS_EDGE_MAX                (0x00000001U)
+
+#define CSL_TOP_PRCM_WU_SOURCE_EN_WU_SOURCE_EN_GPIO_INT_EDGE_MASK               (0x00000400U)
+#define CSL_TOP_PRCM_WU_SOURCE_EN_WU_SOURCE_EN_GPIO_INT_EDGE_SHIFT              (0x0000000AU)
+#define CSL_TOP_PRCM_WU_SOURCE_EN_WU_SOURCE_EN_GPIO_INT_EDGE_RESETVAL           (0x00000400U)
+#define CSL_TOP_PRCM_WU_SOURCE_EN_WU_SOURCE_EN_GPIO_INT_EDGE_MAX                (0x00000001U)
+
+#define CSL_TOP_PRCM_WU_SOURCE_EN_WU_SOURCE_EN_SYNCIN_IO_EDGE_MASK               (0x00000800U)
+#define CSL_TOP_PRCM_WU_SOURCE_EN_WU_SOURCE_EN_SYNCIN_IO_EDGE_SHIFT              (0x0000000BU)
+#define CSL_TOP_PRCM_WU_SOURCE_EN_WU_SOURCE_EN_SYNCIN_IO_EDGE_RESETVAL           (0x00000800U)
+#define CSL_TOP_PRCM_WU_SOURCE_EN_WU_SOURCE_EN_SYNCIN_IO_EDGE_MAX                (0x00000001U)
+
+#define CSL_TOP_PRCM_WU_SOURCE_EN_RESETVAL                                     (0x00000F3FU)
+
+/* UART_RTS_CLEAR */
+
+#define CSL_TOP_PRCM_UART_RTS_CLEAR_UART_RTS_CLEAR_UART_RTS_CLEAR_MASK         (0x00000001U)
+#define CSL_TOP_PRCM_UART_RTS_CLEAR_UART_RTS_CLEAR_UART_RTS_CLEAR_SHIFT        (0x00000000U)
+#define CSL_TOP_PRCM_UART_RTS_CLEAR_UART_RTS_CLEAR_UART_RTS_CLEAR_RESETVAL     (0x00000000U)
+#define CSL_TOP_PRCM_UART_RTS_CLEAR_UART_RTS_CLEAR_UART_RTS_CLEAR_MAX          (0x00000001U)
+
+#define CSL_TOP_PRCM_UART_RTS_CLEAR_RESETVAL                                   (0x00000000U)
+
+/* RADAR_WAKEUP_STATUS */
+
+#define CSL_TOP_PRCM_RADAR_WAKEUP_STATUS_RADAR_WAKEUP_STATUS_WAKEUP_STATUS_MASK (0x00000003U)
+#define CSL_TOP_PRCM_RADAR_WAKEUP_STATUS_RADAR_WAKEUP_STATUS_WAKEUP_STATUS_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_RADAR_WAKEUP_STATUS_RADAR_WAKEUP_STATUS_WAKEUP_STATUS_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_RADAR_WAKEUP_STATUS_RADAR_WAKEUP_STATUS_WAKEUP_STATUS_MAX (0x00000003U)
+
+#define CSL_TOP_PRCM_RADAR_WAKEUP_STATUS_RADAR_WAKEUP_STATUS_WAKEUP_SOURCE_MASK (0x000000FCU)
+#define CSL_TOP_PRCM_RADAR_WAKEUP_STATUS_RADAR_WAKEUP_STATUS_WAKEUP_SOURCE_SHIFT (0x00000002U)
+#define CSL_TOP_PRCM_RADAR_WAKEUP_STATUS_RADAR_WAKEUP_STATUS_WAKEUP_SOURCE_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_RADAR_WAKEUP_STATUS_RADAR_WAKEUP_STATUS_WAKEUP_SOURCE_MAX (0x0000003FU)
+
+#define CSL_TOP_PRCM_RADAR_WAKEUP_STATUS_RADAR_WAKEUP_STATUS_WAKEUP_STATUS_CLEAR_MASK (0x00000100U)
+#define CSL_TOP_PRCM_RADAR_WAKEUP_STATUS_RADAR_WAKEUP_STATUS_WAKEUP_STATUS_CLEAR_SHIFT (0x00000008U)
+#define CSL_TOP_PRCM_RADAR_WAKEUP_STATUS_RADAR_WAKEUP_STATUS_WAKEUP_STATUS_CLEAR_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_RADAR_WAKEUP_STATUS_RADAR_WAKEUP_STATUS_WAKEUP_STATUS_CLEAR_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_RADAR_WAKEUP_STATUS_RADAR_WAKEUP_STATUS_RADAR_STATE_IS_WAKE_UP_MASK (0x00010000U)
+#define CSL_TOP_PRCM_RADAR_WAKEUP_STATUS_RADAR_WAKEUP_STATUS_RADAR_STATE_IS_WAKE_UP_SHIFT (0x00000010U)
+#define CSL_TOP_PRCM_RADAR_WAKEUP_STATUS_RADAR_WAKEUP_STATUS_RADAR_STATE_IS_WAKE_UP_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_RADAR_WAKEUP_STATUS_RADAR_WAKEUP_STATUS_RADAR_STATE_IS_WAKE_UP_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_RADAR_WAKEUP_STATUS_RADAR_WAKEUP_STATUS_RADAR_STATE_IS_IDLE_MASK (0x00020000U)
+#define CSL_TOP_PRCM_RADAR_WAKEUP_STATUS_RADAR_WAKEUP_STATUS_RADAR_STATE_IS_IDLE_SHIFT (0x00000011U)
+#define CSL_TOP_PRCM_RADAR_WAKEUP_STATUS_RADAR_WAKEUP_STATUS_RADAR_STATE_IS_IDLE_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_RADAR_WAKEUP_STATUS_RADAR_WAKEUP_STATUS_RADAR_STATE_IS_IDLE_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_RADAR_WAKEUP_STATUS_RADAR_WAKEUP_STATUS_RADAR_STATE_IS_SLEEP_MASK (0x00040000U)
+#define CSL_TOP_PRCM_RADAR_WAKEUP_STATUS_RADAR_WAKEUP_STATUS_RADAR_STATE_IS_SLEEP_SHIFT (0x00000012U)
+#define CSL_TOP_PRCM_RADAR_WAKEUP_STATUS_RADAR_WAKEUP_STATUS_RADAR_STATE_IS_SLEEP_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_RADAR_WAKEUP_STATUS_RADAR_WAKEUP_STATUS_RADAR_STATE_IS_SLEEP_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_RADAR_WAKEUP_STATUS_RADAR_WAKEUP_STATUS_RADAR_STATE_IS_GO_TO_DEEP_SLEEP_MASK (0x00080000U)
+#define CSL_TOP_PRCM_RADAR_WAKEUP_STATUS_RADAR_WAKEUP_STATUS_RADAR_STATE_IS_GO_TO_DEEP_SLEEP_SHIFT (0x00000013U)
+#define CSL_TOP_PRCM_RADAR_WAKEUP_STATUS_RADAR_WAKEUP_STATUS_RADAR_STATE_IS_GO_TO_DEEP_SLEEP_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_RADAR_WAKEUP_STATUS_RADAR_WAKEUP_STATUS_RADAR_STATE_IS_GO_TO_DEEP_SLEEP_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_RADAR_WAKEUP_STATUS_RADAR_WAKEUP_STATUS_RADAR_STATE_IS_DEEP_SLEEP_MASK (0x00100000U)
+#define CSL_TOP_PRCM_RADAR_WAKEUP_STATUS_RADAR_WAKEUP_STATUS_RADAR_STATE_IS_DEEP_SLEEP_SHIFT (0x00000014U)
+#define CSL_TOP_PRCM_RADAR_WAKEUP_STATUS_RADAR_WAKEUP_STATUS_RADAR_STATE_IS_DEEP_SLEEP_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_RADAR_WAKEUP_STATUS_RADAR_WAKEUP_STATUS_RADAR_STATE_IS_DEEP_SLEEP_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_RADAR_WAKEUP_STATUS_RESETVAL                              (0x00000000U)
+
+/* RTC_COMPARE_LSB */
+
+#define CSL_TOP_PRCM_RTC_COMPARE_LSB_RTC_COMPARE_LSB_RTC_COUNTER_COMPARE_VALUE_LSB_MASK (0xFFFFFFFFU)
+#define CSL_TOP_PRCM_RTC_COMPARE_LSB_RTC_COMPARE_LSB_RTC_COUNTER_COMPARE_VALUE_LSB_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_RTC_COMPARE_LSB_RTC_COMPARE_LSB_RTC_COUNTER_COMPARE_VALUE_LSB_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_RTC_COMPARE_LSB_RTC_COMPARE_LSB_RTC_COUNTER_COMPARE_VALUE_LSB_MAX (0xFFFFFFFFU)
+
+#define CSL_TOP_PRCM_RTC_COMPARE_LSB_RESETVAL                                  (0x00000000U)
+
+/* RTC_COMPARE_MSB */
+
+#define CSL_TOP_PRCM_RTC_COMPARE_MSB_RTC_COMPARE_MSB_RTC_COUNTER_COMPARE_VALUE_MSB_MASK (0x0000FFFFU)
+#define CSL_TOP_PRCM_RTC_COMPARE_MSB_RTC_COMPARE_MSB_RTC_COUNTER_COMPARE_VALUE_MSB_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_RTC_COMPARE_MSB_RTC_COMPARE_MSB_RTC_COUNTER_COMPARE_VALUE_MSB_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_RTC_COMPARE_MSB_RTC_COMPARE_MSB_RTC_COUNTER_COMPARE_VALUE_MSB_MAX (0x0000FFFFU)
+
+#define CSL_TOP_PRCM_RTC_COMPARE_MSB_RESETVAL                                  (0x00000000U)
+
+/* RTC_COMPARE_EN */
+
+#define CSL_TOP_PRCM_RTC_COMPARE_EN_RTC_COMPARE_EN_RTC_COUNTER_COMPARE_ENABLE_MASK (0x00000001U)
+#define CSL_TOP_PRCM_RTC_COMPARE_EN_RTC_COMPARE_EN_RTC_COUNTER_COMPARE_ENABLE_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_RTC_COMPARE_EN_RTC_COMPARE_EN_RTC_COUNTER_COMPARE_ENABLE_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_RTC_COMPARE_EN_RTC_COMPARE_EN_RTC_COUNTER_COMPARE_ENABLE_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_RTC_COMPARE_EN_RTC_COMPARE_EN_RTC_COUNTER_COMPARE_ENABLE_STATUS_MASK (0x00000002U)
+#define CSL_TOP_PRCM_RTC_COMPARE_EN_RTC_COMPARE_EN_RTC_COUNTER_COMPARE_ENABLE_STATUS_SHIFT (0x00000001U)
+#define CSL_TOP_PRCM_RTC_COMPARE_EN_RTC_COMPARE_EN_RTC_COUNTER_COMPARE_ENABLE_STATUS_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_RTC_COMPARE_EN_RTC_COMPARE_EN_RTC_COUNTER_COMPARE_ENABLE_STATUS_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_RTC_COMPARE_EN_RESETVAL                                   (0x00000000U)
+
+/* RTC_COUNT_LSB */
+
+#define CSL_TOP_PRCM_RTC_COUNT_LSB_RTC_COUNT_LSB_RTC_COUNTER_VALUE_LSB_MASK    (0xFFFFFFFFU)
+#define CSL_TOP_PRCM_RTC_COUNT_LSB_RTC_COUNT_LSB_RTC_COUNTER_VALUE_LSB_SHIFT   (0x00000000U)
+#define CSL_TOP_PRCM_RTC_COUNT_LSB_RTC_COUNT_LSB_RTC_COUNTER_VALUE_LSB_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_RTC_COUNT_LSB_RTC_COUNT_LSB_RTC_COUNTER_VALUE_LSB_MAX     (0xFFFFFFFFU)
+
+#define CSL_TOP_PRCM_RTC_COUNT_LSB_RESETVAL                                    (0x00000000U)
+
+/* RTC_COUNT_MSB */
+
+#define CSL_TOP_PRCM_RTC_COUNT_MSB_RTC_COUNT_MSB_RTC_COUNTER_VALUE_MSB_MASK    (0x0000FFFFU)
+#define CSL_TOP_PRCM_RTC_COUNT_MSB_RTC_COUNT_MSB_RTC_COUNTER_VALUE_MSB_SHIFT   (0x00000000U)
+#define CSL_TOP_PRCM_RTC_COUNT_MSB_RTC_COUNT_MSB_RTC_COUNTER_VALUE_MSB_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_RTC_COUNT_MSB_RTC_COUNT_MSB_RTC_COUNTER_VALUE_MSB_MAX     (0x0000FFFFU)
+
+#define CSL_TOP_PRCM_RTC_COUNT_MSB_RESETVAL                                    (0x00000000U)
+
+/* PC_REGISTER1 */
+
+#define CSL_TOP_PRCM_PC_REGISTER1_PC_REGISTER1_PC_REGISTER1_MASK               (0xFFFFFFFFU)
+#define CSL_TOP_PRCM_PC_REGISTER1_PC_REGISTER1_PC_REGISTER1_SHIFT              (0x00000000U)
+#define CSL_TOP_PRCM_PC_REGISTER1_PC_REGISTER1_PC_REGISTER1_RESETVAL           (0x00000000U)
+#define CSL_TOP_PRCM_PC_REGISTER1_PC_REGISTER1_PC_REGISTER1_MAX                (0xFFFFFFFFU)
+
+#define CSL_TOP_PRCM_PC_REGISTER1_RESETVAL                                     (0x00000000U)
+
+/* PC_REGISTER2 */
+
+#define CSL_TOP_PRCM_PC_REGISTER2_PC_REGISTER2_PC_REGISTER2_MASK               (0xFFFFFFFFU)
+#define CSL_TOP_PRCM_PC_REGISTER2_PC_REGISTER2_PC_REGISTER2_SHIFT              (0x00000000U)
+#define CSL_TOP_PRCM_PC_REGISTER2_PC_REGISTER2_PC_REGISTER2_RESETVAL           (0x00000000U)
+#define CSL_TOP_PRCM_PC_REGISTER2_PC_REGISTER2_PC_REGISTER2_MAX                (0xFFFFFFFFU)
+
+#define CSL_TOP_PRCM_PC_REGISTER2_RESETVAL                                     (0x00000000U)
+
+/* PC_REGISTER3 */
+
+#define CSL_TOP_PRCM_PC_REGISTER3_PC_REGISTER3_PC_REGISTER3_MASK               (0xFFFFFFFFU)
+#define CSL_TOP_PRCM_PC_REGISTER3_PC_REGISTER3_PC_REGISTER3_SHIFT              (0x00000000U)
+#define CSL_TOP_PRCM_PC_REGISTER3_PC_REGISTER3_PC_REGISTER3_RESETVAL           (0x00000000U)
+#define CSL_TOP_PRCM_PC_REGISTER3_PC_REGISTER3_PC_REGISTER3_MAX                (0xFFFFFFFFU)
+
+#define CSL_TOP_PRCM_PC_REGISTER3_RESETVAL                                     (0x00000000U)
+
+/* PC_REGISTER4 */
+
+#define CSL_TOP_PRCM_PC_REGISTER4_PC_REGISTER4_PC_REGISTER4_MASK               (0xFFFFFFFFU)
+#define CSL_TOP_PRCM_PC_REGISTER4_PC_REGISTER4_PC_REGISTER4_SHIFT              (0x00000000U)
+#define CSL_TOP_PRCM_PC_REGISTER4_PC_REGISTER4_PC_REGISTER4_RESETVAL           (0x00000000U)
+#define CSL_TOP_PRCM_PC_REGISTER4_PC_REGISTER4_PC_REGISTER4_MAX                (0xFFFFFFFFU)
+
+#define CSL_TOP_PRCM_PC_REGISTER4_RESETVAL                                     (0x00000000U)
+
+/* PC_REGISTER5 */
+
+#define CSL_TOP_PRCM_PC_REGISTER5_PC_REGISTER5_PC_REGISTER5_MASK               (0xFFFFFFFFU)
+#define CSL_TOP_PRCM_PC_REGISTER5_PC_REGISTER5_PC_REGISTER5_SHIFT              (0x00000000U)
+#define CSL_TOP_PRCM_PC_REGISTER5_PC_REGISTER5_PC_REGISTER5_RESETVAL           (0x00000000U)
+#define CSL_TOP_PRCM_PC_REGISTER5_PC_REGISTER5_PC_REGISTER5_MAX                (0xFFFFFFFFU)
+
+#define CSL_TOP_PRCM_PC_REGISTER5_RESETVAL                                     (0x00000000U)
+
+/* PC_REGISTER6 */
+
+#define CSL_TOP_PRCM_PC_REGISTER6_PC_REGISTER6_PC_REGISTER6_MASK               (0xFFFFFFFFU)
+#define CSL_TOP_PRCM_PC_REGISTER6_PC_REGISTER6_PC_REGISTER6_SHIFT              (0x00000000U)
+#define CSL_TOP_PRCM_PC_REGISTER6_PC_REGISTER6_PC_REGISTER6_RESETVAL           (0x00000000U)
+#define CSL_TOP_PRCM_PC_REGISTER6_PC_REGISTER6_PC_REGISTER6_MAX                (0xFFFFFFFFU)
+
+#define CSL_TOP_PRCM_PC_REGISTER6_RESETVAL                                     (0x00000000U)
+
+/* PC_REGISTER7 */
+
+#define CSL_TOP_PRCM_PC_REGISTER7_PC_REGISTER7_PC_REGISTER7_MASK               (0xFFFFFFFFU)
+#define CSL_TOP_PRCM_PC_REGISTER7_PC_REGISTER7_PC_REGISTER7_SHIFT              (0x00000000U)
+#define CSL_TOP_PRCM_PC_REGISTER7_PC_REGISTER7_PC_REGISTER7_RESETVAL           (0x00000000U)
+#define CSL_TOP_PRCM_PC_REGISTER7_PC_REGISTER7_PC_REGISTER7_MAX                (0xFFFFFFFFU)
+
+#define CSL_TOP_PRCM_PC_REGISTER7_RESETVAL                                     (0x00000000U)
+
+/* PC_REGISTER8 */
+
+#define CSL_TOP_PRCM_PC_REGISTER8_PC_REGISTER8_PC_REGISTER8_MASK               (0xFFFFFFFFU)
+#define CSL_TOP_PRCM_PC_REGISTER8_PC_REGISTER8_PC_REGISTER8_SHIFT              (0x00000000U)
+#define CSL_TOP_PRCM_PC_REGISTER8_PC_REGISTER8_PC_REGISTER8_RESETVAL           (0x00000000U)
+#define CSL_TOP_PRCM_PC_REGISTER8_PC_REGISTER8_PC_REGISTER8_MAX                (0xFFFFFFFFU)
+
+#define CSL_TOP_PRCM_PC_REGISTER8_RESETVAL                                     (0x00000000U)
+
+/* WAKEUP_IO_MUX_SEL */
+
+#define CSL_TOP_PRCM_WAKEUP_IO_MUX_SEL_WAKEUP_IO_MUX_SEL_WAKEUP_IO_MUX_SEL_MASK (0x00000001U)
+#define CSL_TOP_PRCM_WAKEUP_IO_MUX_SEL_WAKEUP_IO_MUX_SEL_WAKEUP_IO_MUX_SEL_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_WAKEUP_IO_MUX_SEL_WAKEUP_IO_MUX_SEL_WAKEUP_IO_MUX_SEL_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_WAKEUP_IO_MUX_SEL_WAKEUP_IO_MUX_SEL_WAKEUP_IO_MUX_SEL_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_WAKEUP_IO_MUX_SEL_RESETVAL                                (0x00000000U)
+
+/* WAKEUP_INT_SOURCE_EN */
+
+#define CSL_TOP_PRCM_WAKEUP_INT_SOURCE_EN_WAKEUP_INT_SOURCE_EN_WAKEUP_INTERRUPT_SOURCE_EN_MASK (0x00000003U)
+#define CSL_TOP_PRCM_WAKEUP_INT_SOURCE_EN_WAKEUP_INT_SOURCE_EN_WAKEUP_INTERRUPT_SOURCE_EN_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_WAKEUP_INT_SOURCE_EN_WAKEUP_INT_SOURCE_EN_WAKEUP_INTERRUPT_SOURCE_EN_RESETVAL (0x00000003U)
+#define CSL_TOP_PRCM_WAKEUP_INT_SOURCE_EN_WAKEUP_INT_SOURCE_EN_WAKEUP_INTERRUPT_SOURCE_EN_MAX (0x00000003U)
+
+#define CSL_TOP_PRCM_WAKEUP_INT_SOURCE_EN_WAKEUP_INT_SOURCE_EN_RADAR_DEVICESLEEP_WAKEUP_INTERRUPT_EN_MASK (0x00000100U)
+#define CSL_TOP_PRCM_WAKEUP_INT_SOURCE_EN_WAKEUP_INT_SOURCE_EN_RADAR_DEVICESLEEP_WAKEUP_INTERRUPT_EN_SHIFT (0x00000008U)
+#define CSL_TOP_PRCM_WAKEUP_INT_SOURCE_EN_WAKEUP_INT_SOURCE_EN_RADAR_DEVICESLEEP_WAKEUP_INTERRUPT_EN_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_WAKEUP_INT_SOURCE_EN_WAKEUP_INT_SOURCE_EN_RADAR_DEVICESLEEP_WAKEUP_INTERRUPT_EN_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_WAKEUP_INT_SOURCE_EN_RESETVAL                             (0x00000003U)
+
+/* PMS_POWER_MODE */
+
+#define CSL_TOP_PRCM_PMS_POWER_MODE_PMS_POWER_MODE_SEL_OV_PMS_ACTIVE_MODE_SAFE_MASK (0x00000007U)
+#define CSL_TOP_PRCM_PMS_POWER_MODE_PMS_POWER_MODE_SEL_OV_PMS_ACTIVE_MODE_SAFE_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_PMS_POWER_MODE_PMS_POWER_MODE_SEL_OV_PMS_ACTIVE_MODE_SAFE_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PMS_POWER_MODE_PMS_POWER_MODE_SEL_OV_PMS_ACTIVE_MODE_SAFE_MAX (0x00000007U)
+
+#define CSL_TOP_PRCM_PMS_POWER_MODE_PMS_POWER_MODE_OV_PMS_ACTIVE_MODE_MASK     (0x00000008U)
+#define CSL_TOP_PRCM_PMS_POWER_MODE_PMS_POWER_MODE_OV_PMS_ACTIVE_MODE_SHIFT    (0x00000003U)
+#define CSL_TOP_PRCM_PMS_POWER_MODE_PMS_POWER_MODE_OV_PMS_ACTIVE_MODE_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PMS_POWER_MODE_PMS_POWER_MODE_OV_PMS_ACTIVE_MODE_MAX      (0x00000001U)
+
+#define CSL_TOP_PRCM_PMS_POWER_MODE_PMS_POWER_MODE_LDO_MODE_STATUS_MASK        (0x00010000U)
+#define CSL_TOP_PRCM_PMS_POWER_MODE_PMS_POWER_MODE_LDO_MODE_STATUS_SHIFT       (0x00000010U)
+#define CSL_TOP_PRCM_PMS_POWER_MODE_PMS_POWER_MODE_LDO_MODE_STATUS_RESETVAL    (0x00000000U)
+#define CSL_TOP_PRCM_PMS_POWER_MODE_PMS_POWER_MODE_LDO_MODE_STATUS_MAX         (0x00000001U)
+
+#define CSL_TOP_PRCM_PMS_POWER_MODE_RESETVAL                                   (0x00000000U)
+
+/* PMS_SRAM_GO_TO_SLEEP_DELAY */
+
+#define CSL_TOP_PRCM_PMS_SRAM_GO_TO_SLEEP_DELAY_PMS_SRAM_GO_TO_SLEEP_DELAY_SRAM_LDO_GO_TO_SLEEP_DELAY_MASK (0x0000001FU)
+#define CSL_TOP_PRCM_PMS_SRAM_GO_TO_SLEEP_DELAY_PMS_SRAM_GO_TO_SLEEP_DELAY_SRAM_LDO_GO_TO_SLEEP_DELAY_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_PMS_SRAM_GO_TO_SLEEP_DELAY_PMS_SRAM_GO_TO_SLEEP_DELAY_SRAM_LDO_GO_TO_SLEEP_DELAY_RESETVAL (0x00000002U)
+#define CSL_TOP_PRCM_PMS_SRAM_GO_TO_SLEEP_DELAY_PMS_SRAM_GO_TO_SLEEP_DELAY_SRAM_LDO_GO_TO_SLEEP_DELAY_MAX (0x0000001FU)
+
+#define CSL_TOP_PRCM_PMS_SRAM_GO_TO_SLEEP_DELAY_RESETVAL                       (0x00000002U)
+
+/* PMS_SRAM_GO_TO_SLEEP_TIME */
+
+#define CSL_TOP_PRCM_PMS_SRAM_GO_TO_SLEEP_TIME_PMS_SRAM_GO_TO_SLEEP_TIME_SRAM_LDO_GO_TO_SLEEP_TIME_MASK (0x0000001FU)
+#define CSL_TOP_PRCM_PMS_SRAM_GO_TO_SLEEP_TIME_PMS_SRAM_GO_TO_SLEEP_TIME_SRAM_LDO_GO_TO_SLEEP_TIME_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_PMS_SRAM_GO_TO_SLEEP_TIME_PMS_SRAM_GO_TO_SLEEP_TIME_SRAM_LDO_GO_TO_SLEEP_TIME_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PMS_SRAM_GO_TO_SLEEP_TIME_PMS_SRAM_GO_TO_SLEEP_TIME_SRAM_LDO_GO_TO_SLEEP_TIME_MAX (0x0000001FU)
+
+#define CSL_TOP_PRCM_PMS_SRAM_GO_TO_SLEEP_TIME_RESETVAL                        (0x00000000U)
+
+/* PMS_SRAM_WAKEUP_DELAY */
+
+#define CSL_TOP_PRCM_PMS_SRAM_WAKEUP_DELAY_PMS_SRAM_WAKEUP_DELAY_SRAM_LDO_WAKEUP_DELAY_MASK (0x0000001FU)
+#define CSL_TOP_PRCM_PMS_SRAM_WAKEUP_DELAY_PMS_SRAM_WAKEUP_DELAY_SRAM_LDO_WAKEUP_DELAY_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_PMS_SRAM_WAKEUP_DELAY_PMS_SRAM_WAKEUP_DELAY_SRAM_LDO_WAKEUP_DELAY_RESETVAL (0x00000002U)
+#define CSL_TOP_PRCM_PMS_SRAM_WAKEUP_DELAY_PMS_SRAM_WAKEUP_DELAY_SRAM_LDO_WAKEUP_DELAY_MAX (0x0000001FU)
+
+#define CSL_TOP_PRCM_PMS_SRAM_WAKEUP_DELAY_RESETVAL                            (0x00000002U)
+
+/* PMS_SRAM_WAKEUP_TIME */
+
+#define CSL_TOP_PRCM_PMS_SRAM_WAKEUP_TIME_PMS_SRAM_WAKEUP_TIME_SRAM_LDO_WAKEUP_TIME_MASK (0x0000001FU)
+#define CSL_TOP_PRCM_PMS_SRAM_WAKEUP_TIME_PMS_SRAM_WAKEUP_TIME_SRAM_LDO_WAKEUP_TIME_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_PMS_SRAM_WAKEUP_TIME_PMS_SRAM_WAKEUP_TIME_SRAM_LDO_WAKEUP_TIME_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PMS_SRAM_WAKEUP_TIME_PMS_SRAM_WAKEUP_TIME_SRAM_LDO_WAKEUP_TIME_MAX (0x0000001FU)
+
+#define CSL_TOP_PRCM_PMS_SRAM_WAKEUP_TIME_RESETVAL                             (0x00000000U)
+
+/* PMS_SRAM_LDO_EN */
+
+#define CSL_TOP_PRCM_PMS_SRAM_LDO_EN_PMS_SRAM_LDO_EN_SEL_OV_SRAM_LDO_EN_SAFE_MASK (0x00000007U)
+#define CSL_TOP_PRCM_PMS_SRAM_LDO_EN_PMS_SRAM_LDO_EN_SEL_OV_SRAM_LDO_EN_SAFE_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_PMS_SRAM_LDO_EN_PMS_SRAM_LDO_EN_SEL_OV_SRAM_LDO_EN_SAFE_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PMS_SRAM_LDO_EN_PMS_SRAM_LDO_EN_SEL_OV_SRAM_LDO_EN_SAFE_MAX (0x00000007U)
+
+#define CSL_TOP_PRCM_PMS_SRAM_LDO_EN_PMS_SRAM_LDO_EN_OV_SRAM_LDO_EN_MASK       (0x00000008U)
+#define CSL_TOP_PRCM_PMS_SRAM_LDO_EN_PMS_SRAM_LDO_EN_OV_SRAM_LDO_EN_SHIFT      (0x00000003U)
+#define CSL_TOP_PRCM_PMS_SRAM_LDO_EN_PMS_SRAM_LDO_EN_OV_SRAM_LDO_EN_RESETVAL   (0x00000000U)
+#define CSL_TOP_PRCM_PMS_SRAM_LDO_EN_PMS_SRAM_LDO_EN_OV_SRAM_LDO_EN_MAX        (0x00000001U)
+
+#define CSL_TOP_PRCM_PMS_SRAM_LDO_EN_PMS_SRAM_LDO_EN_SEL_OV_SRAM_KA_LDO_EN_MASK (0x00010000U)
+#define CSL_TOP_PRCM_PMS_SRAM_LDO_EN_PMS_SRAM_LDO_EN_SEL_OV_SRAM_KA_LDO_EN_SHIFT (0x00000010U)
+#define CSL_TOP_PRCM_PMS_SRAM_LDO_EN_PMS_SRAM_LDO_EN_SEL_OV_SRAM_KA_LDO_EN_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PMS_SRAM_LDO_EN_PMS_SRAM_LDO_EN_SEL_OV_SRAM_KA_LDO_EN_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_PMS_SRAM_LDO_EN_PMS_SRAM_LDO_EN_OV_SRAM_KA_LDO_EN_MASK    (0x00020000U)
+#define CSL_TOP_PRCM_PMS_SRAM_LDO_EN_PMS_SRAM_LDO_EN_OV_SRAM_KA_LDO_EN_SHIFT   (0x00000011U)
+#define CSL_TOP_PRCM_PMS_SRAM_LDO_EN_PMS_SRAM_LDO_EN_OV_SRAM_KA_LDO_EN_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PMS_SRAM_LDO_EN_PMS_SRAM_LDO_EN_OV_SRAM_KA_LDO_EN_MAX     (0x00000001U)
+
+#define CSL_TOP_PRCM_PMS_SRAM_LDO_EN_RESETVAL                                  (0x00000000U)
+
+/* PMS_SLEEP_NO_RTA_CFG */
+
+#define CSL_TOP_PRCM_PMS_SLEEP_NO_RTA_CFG_PMS_SLEEP_NO_RTA_CFG_SRAM_LDO_SLEEP_NO_RTA_MODE_MASK (0x00000001U)
+#define CSL_TOP_PRCM_PMS_SLEEP_NO_RTA_CFG_PMS_SLEEP_NO_RTA_CFG_SRAM_LDO_SLEEP_NO_RTA_MODE_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_PMS_SLEEP_NO_RTA_CFG_PMS_SLEEP_NO_RTA_CFG_SRAM_LDO_SLEEP_NO_RTA_MODE_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PMS_SLEEP_NO_RTA_CFG_PMS_SLEEP_NO_RTA_CFG_SRAM_LDO_SLEEP_NO_RTA_MODE_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_PMS_SLEEP_NO_RTA_CFG_PMS_SLEEP_NO_RTA_CFG_SRAM_LDO_COMMON_RTA_MODE_MASK (0x00000002U)
+#define CSL_TOP_PRCM_PMS_SLEEP_NO_RTA_CFG_PMS_SLEEP_NO_RTA_CFG_SRAM_LDO_COMMON_RTA_MODE_SHIFT (0x00000001U)
+#define CSL_TOP_PRCM_PMS_SLEEP_NO_RTA_CFG_PMS_SLEEP_NO_RTA_CFG_SRAM_LDO_COMMON_RTA_MODE_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PMS_SLEEP_NO_RTA_CFG_PMS_SLEEP_NO_RTA_CFG_SRAM_LDO_COMMON_RTA_MODE_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_PMS_SLEEP_NO_RTA_CFG_RESETVAL                             (0x00000000U)
+
+/* PMS_SRAM_LDO_TRIM */
+
+#define CSL_TOP_PRCM_PMS_SRAM_LDO_TRIM_PMS_SRAM_LDO_TRIM_SEL_OV_SRAM_LDO_VTRIM_MASK (0x00000001U)
+#define CSL_TOP_PRCM_PMS_SRAM_LDO_TRIM_PMS_SRAM_LDO_TRIM_SEL_OV_SRAM_LDO_VTRIM_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_PMS_SRAM_LDO_TRIM_PMS_SRAM_LDO_TRIM_SEL_OV_SRAM_LDO_VTRIM_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PMS_SRAM_LDO_TRIM_PMS_SRAM_LDO_TRIM_SEL_OV_SRAM_LDO_VTRIM_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_PMS_SRAM_LDO_TRIM_PMS_SRAM_LDO_TRIM_OV_SRAM_LDO_VTRIM_MASK (0x003F0000U)
+#define CSL_TOP_PRCM_PMS_SRAM_LDO_TRIM_PMS_SRAM_LDO_TRIM_OV_SRAM_LDO_VTRIM_SHIFT (0x00000010U)
+#define CSL_TOP_PRCM_PMS_SRAM_LDO_TRIM_PMS_SRAM_LDO_TRIM_OV_SRAM_LDO_VTRIM_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PMS_SRAM_LDO_TRIM_PMS_SRAM_LDO_TRIM_OV_SRAM_LDO_VTRIM_MAX (0x0000003FU)
+
+#define CSL_TOP_PRCM_PMS_SRAM_LDO_TRIM_RESETVAL                                (0x00000000U)
+
+/* PMS_SRAM_KA_TRIM */
+
+#define CSL_TOP_PRCM_PMS_SRAM_KA_TRIM_PMS_SRAM_KA_TRIM_SEL_OV_SRAM_KA_LDO_VTRIM_MASK (0x00000001U)
+#define CSL_TOP_PRCM_PMS_SRAM_KA_TRIM_PMS_SRAM_KA_TRIM_SEL_OV_SRAM_KA_LDO_VTRIM_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_PMS_SRAM_KA_TRIM_PMS_SRAM_KA_TRIM_SEL_OV_SRAM_KA_LDO_VTRIM_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PMS_SRAM_KA_TRIM_PMS_SRAM_KA_TRIM_SEL_OV_SRAM_KA_LDO_VTRIM_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_PMS_SRAM_KA_TRIM_PMS_SRAM_KA_TRIM_OV_SRAM_KA_LDO_TRIM_RTA_MASK (0x003F0000U)
+#define CSL_TOP_PRCM_PMS_SRAM_KA_TRIM_PMS_SRAM_KA_TRIM_OV_SRAM_KA_LDO_TRIM_RTA_SHIFT (0x00000010U)
+#define CSL_TOP_PRCM_PMS_SRAM_KA_TRIM_PMS_SRAM_KA_TRIM_OV_SRAM_KA_LDO_TRIM_RTA_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PMS_SRAM_KA_TRIM_PMS_SRAM_KA_TRIM_OV_SRAM_KA_LDO_TRIM_RTA_MAX (0x0000003FU)
+
+#define CSL_TOP_PRCM_PMS_SRAM_KA_TRIM_PMS_SRAM_KA_TRIM_OV_SRAM_KA_LDO_TRIM_NO_RTA_MASK (0x3F000000U)
+#define CSL_TOP_PRCM_PMS_SRAM_KA_TRIM_PMS_SRAM_KA_TRIM_OV_SRAM_KA_LDO_TRIM_NO_RTA_SHIFT (0x00000018U)
+#define CSL_TOP_PRCM_PMS_SRAM_KA_TRIM_PMS_SRAM_KA_TRIM_OV_SRAM_KA_LDO_TRIM_NO_RTA_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PMS_SRAM_KA_TRIM_PMS_SRAM_KA_TRIM_OV_SRAM_KA_LDO_TRIM_NO_RTA_MAX (0x0000003FU)
+
+#define CSL_TOP_PRCM_PMS_SRAM_KA_TRIM_RESETVAL                                 (0x00000000U)
+
+/* PMS_DIG_GO_TO_SLEEP_DELAY */
+
+#define CSL_TOP_PRCM_PMS_DIG_GO_TO_SLEEP_DELAY_PMS_DIG_GO_TO_SLEEP_DELAY_DIG_LDO_GO_TO_SLEEP_DELAY_MASK (0x0000001FU)
+#define CSL_TOP_PRCM_PMS_DIG_GO_TO_SLEEP_DELAY_PMS_DIG_GO_TO_SLEEP_DELAY_DIG_LDO_GO_TO_SLEEP_DELAY_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_PMS_DIG_GO_TO_SLEEP_DELAY_PMS_DIG_GO_TO_SLEEP_DELAY_DIG_LDO_GO_TO_SLEEP_DELAY_RESETVAL (0x00000002U)
+#define CSL_TOP_PRCM_PMS_DIG_GO_TO_SLEEP_DELAY_PMS_DIG_GO_TO_SLEEP_DELAY_DIG_LDO_GO_TO_SLEEP_DELAY_MAX (0x0000001FU)
+
+#define CSL_TOP_PRCM_PMS_DIG_GO_TO_SLEEP_DELAY_RESETVAL                        (0x00000002U)
+
+/* PMS_DIG_GO_TO_SLEEP_TIME */
+
+#define CSL_TOP_PRCM_PMS_DIG_GO_TO_SLEEP_TIME_PMS_DIG_GO_TO_SLEEP_TIME_DIG_LDO_GO_TO_SLEEP_TIME_MASK (0x0000001FU)
+#define CSL_TOP_PRCM_PMS_DIG_GO_TO_SLEEP_TIME_PMS_DIG_GO_TO_SLEEP_TIME_DIG_LDO_GO_TO_SLEEP_TIME_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_PMS_DIG_GO_TO_SLEEP_TIME_PMS_DIG_GO_TO_SLEEP_TIME_DIG_LDO_GO_TO_SLEEP_TIME_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PMS_DIG_GO_TO_SLEEP_TIME_PMS_DIG_GO_TO_SLEEP_TIME_DIG_LDO_GO_TO_SLEEP_TIME_MAX (0x0000001FU)
+
+#define CSL_TOP_PRCM_PMS_DIG_GO_TO_SLEEP_TIME_RESETVAL                         (0x00000000U)
+
+/* PMS_DIG_WAKEUP_DELAY */
+
+#define CSL_TOP_PRCM_PMS_DIG_WAKEUP_DELAY_PMS_DIG_WAKEUP_DELAY_DIG_LDO_WAKEUP_DELAY_MASK (0x0000001FU)
+#define CSL_TOP_PRCM_PMS_DIG_WAKEUP_DELAY_PMS_DIG_WAKEUP_DELAY_DIG_LDO_WAKEUP_DELAY_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_PMS_DIG_WAKEUP_DELAY_PMS_DIG_WAKEUP_DELAY_DIG_LDO_WAKEUP_DELAY_RESETVAL (0x00000002U)
+#define CSL_TOP_PRCM_PMS_DIG_WAKEUP_DELAY_PMS_DIG_WAKEUP_DELAY_DIG_LDO_WAKEUP_DELAY_MAX (0x0000001FU)
+
+#define CSL_TOP_PRCM_PMS_DIG_WAKEUP_DELAY_RESETVAL                             (0x00000002U)
+
+/* PMS_DIG_WAKEUP_TIME */
+
+#define CSL_TOP_PRCM_PMS_DIG_WAKEUP_TIME_PMS_DIG_WAKEUP_TIME_DIG_LDO_WAKEUP_TIME_MASK (0x0000001FU)
+#define CSL_TOP_PRCM_PMS_DIG_WAKEUP_TIME_PMS_DIG_WAKEUP_TIME_DIG_LDO_WAKEUP_TIME_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_PMS_DIG_WAKEUP_TIME_PMS_DIG_WAKEUP_TIME_DIG_LDO_WAKEUP_TIME_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PMS_DIG_WAKEUP_TIME_PMS_DIG_WAKEUP_TIME_DIG_LDO_WAKEUP_TIME_MAX (0x0000001FU)
+
+#define CSL_TOP_PRCM_PMS_DIG_WAKEUP_TIME_RESETVAL                              (0x00000000U)
+
+/* PMS_DIG_LDO_EN */
+
+#define CSL_TOP_PRCM_PMS_DIG_LDO_EN_PMS_DIG_LDO_EN_SEL_OV_DIG_LDO_EN_SAFE_MASK (0x00000007U)
+#define CSL_TOP_PRCM_PMS_DIG_LDO_EN_PMS_DIG_LDO_EN_SEL_OV_DIG_LDO_EN_SAFE_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_PMS_DIG_LDO_EN_PMS_DIG_LDO_EN_SEL_OV_DIG_LDO_EN_SAFE_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PMS_DIG_LDO_EN_PMS_DIG_LDO_EN_SEL_OV_DIG_LDO_EN_SAFE_MAX  (0x00000007U)
+
+#define CSL_TOP_PRCM_PMS_DIG_LDO_EN_PMS_DIG_LDO_EN_OV_DIG_LDO_EN_MASK          (0x00000008U)
+#define CSL_TOP_PRCM_PMS_DIG_LDO_EN_PMS_DIG_LDO_EN_OV_DIG_LDO_EN_SHIFT         (0x00000003U)
+#define CSL_TOP_PRCM_PMS_DIG_LDO_EN_PMS_DIG_LDO_EN_OV_DIG_LDO_EN_RESETVAL      (0x00000000U)
+#define CSL_TOP_PRCM_PMS_DIG_LDO_EN_PMS_DIG_LDO_EN_OV_DIG_LDO_EN_MAX           (0x00000001U)
+
+#define CSL_TOP_PRCM_PMS_DIG_LDO_EN_PMS_DIG_LDO_EN_SEL_OV_DIG_KA_LDO_EN_MASK   (0x00010000U)
+#define CSL_TOP_PRCM_PMS_DIG_LDO_EN_PMS_DIG_LDO_EN_SEL_OV_DIG_KA_LDO_EN_SHIFT  (0x00000010U)
+#define CSL_TOP_PRCM_PMS_DIG_LDO_EN_PMS_DIG_LDO_EN_SEL_OV_DIG_KA_LDO_EN_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PMS_DIG_LDO_EN_PMS_DIG_LDO_EN_SEL_OV_DIG_KA_LDO_EN_MAX    (0x00000001U)
+
+#define CSL_TOP_PRCM_PMS_DIG_LDO_EN_PMS_DIG_LDO_EN_OV_DIG_KA_LDO_EN_MASK       (0x00020000U)
+#define CSL_TOP_PRCM_PMS_DIG_LDO_EN_PMS_DIG_LDO_EN_OV_DIG_KA_LDO_EN_SHIFT      (0x00000011U)
+#define CSL_TOP_PRCM_PMS_DIG_LDO_EN_PMS_DIG_LDO_EN_OV_DIG_KA_LDO_EN_RESETVAL   (0x00000000U)
+#define CSL_TOP_PRCM_PMS_DIG_LDO_EN_PMS_DIG_LDO_EN_OV_DIG_KA_LDO_EN_MAX        (0x00000001U)
+
+#define CSL_TOP_PRCM_PMS_DIG_LDO_EN_RESETVAL                                   (0x00000000U)
+
+/* PMS_DIG_LDO_TRIM */
+
+#define CSL_TOP_PRCM_PMS_DIG_LDO_TRIM_PMS_DIG_LDO_TRIM_SEL_OV_DIG_LDO_VTRIM_MASK (0x00000001U)
+#define CSL_TOP_PRCM_PMS_DIG_LDO_TRIM_PMS_DIG_LDO_TRIM_SEL_OV_DIG_LDO_VTRIM_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_PMS_DIG_LDO_TRIM_PMS_DIG_LDO_TRIM_SEL_OV_DIG_LDO_VTRIM_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PMS_DIG_LDO_TRIM_PMS_DIG_LDO_TRIM_SEL_OV_DIG_LDO_VTRIM_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_PMS_DIG_LDO_TRIM_PMS_DIG_LDO_TRIM_OV_DIG_LDO_VTRIM_MASK   (0x003F0000U)
+#define CSL_TOP_PRCM_PMS_DIG_LDO_TRIM_PMS_DIG_LDO_TRIM_OV_DIG_LDO_VTRIM_SHIFT  (0x00000010U)
+#define CSL_TOP_PRCM_PMS_DIG_LDO_TRIM_PMS_DIG_LDO_TRIM_OV_DIG_LDO_VTRIM_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PMS_DIG_LDO_TRIM_PMS_DIG_LDO_TRIM_OV_DIG_LDO_VTRIM_MAX    (0x0000003FU)
+
+#define CSL_TOP_PRCM_PMS_DIG_LDO_TRIM_RESETVAL                                 (0x00000000U)
+
+/* PMS_DIG_KA_TRIM */
+
+#define CSL_TOP_PRCM_PMS_DIG_KA_TRIM_PMS_DIG_KA_TRIM_SEL_OV_DIG_KA_LDO_VTRIM_MASK (0x00000001U)
+#define CSL_TOP_PRCM_PMS_DIG_KA_TRIM_PMS_DIG_KA_TRIM_SEL_OV_DIG_KA_LDO_VTRIM_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_PMS_DIG_KA_TRIM_PMS_DIG_KA_TRIM_SEL_OV_DIG_KA_LDO_VTRIM_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PMS_DIG_KA_TRIM_PMS_DIG_KA_TRIM_SEL_OV_DIG_KA_LDO_VTRIM_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_PMS_DIG_KA_TRIM_PMS_DIG_KA_TRIM_OV_DIG_KA_LDO_VTRIM_MASK  (0x003F0000U)
+#define CSL_TOP_PRCM_PMS_DIG_KA_TRIM_PMS_DIG_KA_TRIM_OV_DIG_KA_LDO_VTRIM_SHIFT (0x00000010U)
+#define CSL_TOP_PRCM_PMS_DIG_KA_TRIM_PMS_DIG_KA_TRIM_OV_DIG_KA_LDO_VTRIM_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PMS_DIG_KA_TRIM_PMS_DIG_KA_TRIM_OV_DIG_KA_LDO_VTRIM_MAX   (0x0000003FU)
+
+#define CSL_TOP_PRCM_PMS_DIG_KA_TRIM_RESETVAL                                  (0x00000000U)
+
+/* PMS_PSCON_EN_WAIT_DELAY */
+
+#define CSL_TOP_PRCM_PMS_PSCON_EN_WAIT_DELAY_PMS_PSCON_EN_WAIT_DELAY_PSCON_EN_WAIT_DELAY_MASK (0x000000FFU)
+#define CSL_TOP_PRCM_PMS_PSCON_EN_WAIT_DELAY_PMS_PSCON_EN_WAIT_DELAY_PSCON_EN_WAIT_DELAY_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_PMS_PSCON_EN_WAIT_DELAY_PMS_PSCON_EN_WAIT_DELAY_PSCON_EN_WAIT_DELAY_RESETVAL (0x00000002U)
+#define CSL_TOP_PRCM_PMS_PSCON_EN_WAIT_DELAY_PMS_PSCON_EN_WAIT_DELAY_PSCON_EN_WAIT_DELAY_MAX (0x000000FFU)
+
+#define CSL_TOP_PRCM_PMS_PSCON_EN_WAIT_DELAY_PMS_PSCON_EN_WAIT_DELAY_PSCON_EN_FORCE_ACTIVE_MASK (0x00010000U)
+#define CSL_TOP_PRCM_PMS_PSCON_EN_WAIT_DELAY_PMS_PSCON_EN_WAIT_DELAY_PSCON_EN_FORCE_ACTIVE_SHIFT (0x00000010U)
+#define CSL_TOP_PRCM_PMS_PSCON_EN_WAIT_DELAY_PMS_PSCON_EN_WAIT_DELAY_PSCON_EN_FORCE_ACTIVE_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PMS_PSCON_EN_WAIT_DELAY_PMS_PSCON_EN_WAIT_DELAY_PSCON_EN_FORCE_ACTIVE_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_PMS_PSCON_EN_WAIT_DELAY_PMS_PSCON_EN_WAIT_DELAY_ALLOW_PSCON_EN_BEFORE_DIG_LDO_ACTIVE_MASK (0x01000000U)
+#define CSL_TOP_PRCM_PMS_PSCON_EN_WAIT_DELAY_PMS_PSCON_EN_WAIT_DELAY_ALLOW_PSCON_EN_BEFORE_DIG_LDO_ACTIVE_SHIFT (0x00000018U)
+#define CSL_TOP_PRCM_PMS_PSCON_EN_WAIT_DELAY_PMS_PSCON_EN_WAIT_DELAY_ALLOW_PSCON_EN_BEFORE_DIG_LDO_ACTIVE_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PMS_PSCON_EN_WAIT_DELAY_PMS_PSCON_EN_WAIT_DELAY_ALLOW_PSCON_EN_BEFORE_DIG_LDO_ACTIVE_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_PMS_PSCON_EN_WAIT_DELAY_RESETVAL                          (0x00000002U)
+
+/* PMS_BGAP_DIS_HIBERNATE */
+
+#define CSL_TOP_PRCM_PMS_BGAP_DIS_HIBERNATE_PMS_BGAP_DIS_HIBERNATE_BGAP_DIS_HIBERNATE_MASK (0x00000001U)
+#define CSL_TOP_PRCM_PMS_BGAP_DIS_HIBERNATE_PMS_BGAP_DIS_HIBERNATE_BGAP_DIS_HIBERNATE_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_PMS_BGAP_DIS_HIBERNATE_PMS_BGAP_DIS_HIBERNATE_BGAP_DIS_HIBERNATE_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PMS_BGAP_DIS_HIBERNATE_PMS_BGAP_DIS_HIBERNATE_BGAP_DIS_HIBERNATE_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_PMS_BGAP_DIS_HIBERNATE_RESETVAL                           (0x00000000U)
+
+/* PMS_BGAP_DELAY1 */
+
+#define CSL_TOP_PRCM_PMS_BGAP_DELAY1_PMS_BGAP_DELAY1_BGAP_ENTER_SLEEP_DELAY_MASK (0x0000007FU)
+#define CSL_TOP_PRCM_PMS_BGAP_DELAY1_PMS_BGAP_DELAY1_BGAP_ENTER_SLEEP_DELAY_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_PMS_BGAP_DELAY1_PMS_BGAP_DELAY1_BGAP_ENTER_SLEEP_DELAY_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PMS_BGAP_DELAY1_PMS_BGAP_DELAY1_BGAP_ENTER_SLEEP_DELAY_MAX (0x0000007FU)
+
+#define CSL_TOP_PRCM_PMS_BGAP_DELAY1_PMS_BGAP_DELAY1_BGAP_HIB_REFRESH_TIME_MASK (0x03FF0000U)
+#define CSL_TOP_PRCM_PMS_BGAP_DELAY1_PMS_BGAP_DELAY1_BGAP_HIB_REFRESH_TIME_SHIFT (0x00000010U)
+#define CSL_TOP_PRCM_PMS_BGAP_DELAY1_PMS_BGAP_DELAY1_BGAP_HIB_REFRESH_TIME_RESETVAL (0x00000280U)
+#define CSL_TOP_PRCM_PMS_BGAP_DELAY1_PMS_BGAP_DELAY1_BGAP_HIB_REFRESH_TIME_MAX (0x000003FFU)
+
+#define CSL_TOP_PRCM_PMS_BGAP_DELAY1_RESETVAL                                  (0x02800000U)
+
+/* PMS_BGAP_DELAY2 */
+
+#define CSL_TOP_PRCM_PMS_BGAP_DELAY2_PMS_BGAP_DELAY2_BGAP_CAP_CHARGE_TIME_MASK (0x00000007U)
+#define CSL_TOP_PRCM_PMS_BGAP_DELAY2_PMS_BGAP_DELAY2_BGAP_CAP_CHARGE_TIME_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_PMS_BGAP_DELAY2_PMS_BGAP_DELAY2_BGAP_CAP_CHARGE_TIME_RESETVAL (0x00000006U)
+#define CSL_TOP_PRCM_PMS_BGAP_DELAY2_PMS_BGAP_DELAY2_BGAP_CAP_CHARGE_TIME_MAX  (0x00000007U)
+
+#define CSL_TOP_PRCM_PMS_BGAP_DELAY2_PMS_BGAP_DELAY2_BGAP_REF_CAP_CHARGE_TIME_MASK (0x00070000U)
+#define CSL_TOP_PRCM_PMS_BGAP_DELAY2_PMS_BGAP_DELAY2_BGAP_REF_CAP_CHARGE_TIME_SHIFT (0x00000010U)
+#define CSL_TOP_PRCM_PMS_BGAP_DELAY2_PMS_BGAP_DELAY2_BGAP_REF_CAP_CHARGE_TIME_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PMS_BGAP_DELAY2_PMS_BGAP_DELAY2_BGAP_REF_CAP_CHARGE_TIME_MAX (0x00000007U)
+
+#define CSL_TOP_PRCM_PMS_BGAP_DELAY2_RESETVAL                                  (0x00000006U)
+
+/* PMS_BGAP_EN_OVERRIDE */
+
+#define CSL_TOP_PRCM_PMS_BGAP_EN_OVERRIDE_PMS_BGAP_EN_OVERRIDE_SEL_OV_BGAP_EN_SAFE_MASK (0x00000007U)
+#define CSL_TOP_PRCM_PMS_BGAP_EN_OVERRIDE_PMS_BGAP_EN_OVERRIDE_SEL_OV_BGAP_EN_SAFE_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_PMS_BGAP_EN_OVERRIDE_PMS_BGAP_EN_OVERRIDE_SEL_OV_BGAP_EN_SAFE_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PMS_BGAP_EN_OVERRIDE_PMS_BGAP_EN_OVERRIDE_SEL_OV_BGAP_EN_SAFE_MAX (0x00000007U)
+
+#define CSL_TOP_PRCM_PMS_BGAP_EN_OVERRIDE_PMS_BGAP_EN_OVERRIDE_OV_BGAP_EN_MASK (0x00000008U)
+#define CSL_TOP_PRCM_PMS_BGAP_EN_OVERRIDE_PMS_BGAP_EN_OVERRIDE_OV_BGAP_EN_SHIFT (0x00000003U)
+#define CSL_TOP_PRCM_PMS_BGAP_EN_OVERRIDE_PMS_BGAP_EN_OVERRIDE_OV_BGAP_EN_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PMS_BGAP_EN_OVERRIDE_PMS_BGAP_EN_OVERRIDE_OV_BGAP_EN_MAX  (0x00000001U)
+
+#define CSL_TOP_PRCM_PMS_BGAP_EN_OVERRIDE_RESETVAL                             (0x00000000U)
+
+/* PMS_BGAP_CAP_OVERRIDE1 */
+
+#define CSL_TOP_PRCM_PMS_BGAP_CAP_OVERRIDE1_PMS_BGAP_CAP_OVERRIDE1_SEL_OV_BGAP_CAP_SW_ENZ_MASK (0x00000001U)
+#define CSL_TOP_PRCM_PMS_BGAP_CAP_OVERRIDE1_PMS_BGAP_CAP_OVERRIDE1_SEL_OV_BGAP_CAP_SW_ENZ_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_PMS_BGAP_CAP_OVERRIDE1_PMS_BGAP_CAP_OVERRIDE1_SEL_OV_BGAP_CAP_SW_ENZ_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PMS_BGAP_CAP_OVERRIDE1_PMS_BGAP_CAP_OVERRIDE1_SEL_OV_BGAP_CAP_SW_ENZ_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_PMS_BGAP_CAP_OVERRIDE1_PMS_BGAP_CAP_OVERRIDE1_OV_BGAP_CAP_SW_ENZ_MASK (0x00000002U)
+#define CSL_TOP_PRCM_PMS_BGAP_CAP_OVERRIDE1_PMS_BGAP_CAP_OVERRIDE1_OV_BGAP_CAP_SW_ENZ_SHIFT (0x00000001U)
+#define CSL_TOP_PRCM_PMS_BGAP_CAP_OVERRIDE1_PMS_BGAP_CAP_OVERRIDE1_OV_BGAP_CAP_SW_ENZ_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PMS_BGAP_CAP_OVERRIDE1_PMS_BGAP_CAP_OVERRIDE1_OV_BGAP_CAP_SW_ENZ_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_PMS_BGAP_CAP_OVERRIDE1_PMS_BGAP_CAP_OVERRIDE1_SEL_OV_BGAP_CAP_CHARGE_EN_MASK (0x00010000U)
+#define CSL_TOP_PRCM_PMS_BGAP_CAP_OVERRIDE1_PMS_BGAP_CAP_OVERRIDE1_SEL_OV_BGAP_CAP_CHARGE_EN_SHIFT (0x00000010U)
+#define CSL_TOP_PRCM_PMS_BGAP_CAP_OVERRIDE1_PMS_BGAP_CAP_OVERRIDE1_SEL_OV_BGAP_CAP_CHARGE_EN_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PMS_BGAP_CAP_OVERRIDE1_PMS_BGAP_CAP_OVERRIDE1_SEL_OV_BGAP_CAP_CHARGE_EN_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_PMS_BGAP_CAP_OVERRIDE1_PMS_BGAP_CAP_OVERRIDE1_OV_BGAP_CAP_CHARGE_EN_MASK (0x00020000U)
+#define CSL_TOP_PRCM_PMS_BGAP_CAP_OVERRIDE1_PMS_BGAP_CAP_OVERRIDE1_OV_BGAP_CAP_CHARGE_EN_SHIFT (0x00000011U)
+#define CSL_TOP_PRCM_PMS_BGAP_CAP_OVERRIDE1_PMS_BGAP_CAP_OVERRIDE1_OV_BGAP_CAP_CHARGE_EN_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PMS_BGAP_CAP_OVERRIDE1_PMS_BGAP_CAP_OVERRIDE1_OV_BGAP_CAP_CHARGE_EN_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_PMS_BGAP_CAP_OVERRIDE1_RESETVAL                           (0x00000000U)
+
+/* PMS_BGAP_CAP_OVERRIDE2 */
+
+#define CSL_TOP_PRCM_PMS_BGAP_CAP_OVERRIDE2_PMS_BGAP_CAP_OVERRIDE2_SEL_OV_BGAP_HIB_CAP_SW_EN_MASK (0x00000001U)
+#define CSL_TOP_PRCM_PMS_BGAP_CAP_OVERRIDE2_PMS_BGAP_CAP_OVERRIDE2_SEL_OV_BGAP_HIB_CAP_SW_EN_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_PMS_BGAP_CAP_OVERRIDE2_PMS_BGAP_CAP_OVERRIDE2_SEL_OV_BGAP_HIB_CAP_SW_EN_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PMS_BGAP_CAP_OVERRIDE2_PMS_BGAP_CAP_OVERRIDE2_SEL_OV_BGAP_HIB_CAP_SW_EN_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_PMS_BGAP_CAP_OVERRIDE2_PMS_BGAP_CAP_OVERRIDE2_OV_BGAP_HIB_CAP_SW_EN_MASK (0x00000002U)
+#define CSL_TOP_PRCM_PMS_BGAP_CAP_OVERRIDE2_PMS_BGAP_CAP_OVERRIDE2_OV_BGAP_HIB_CAP_SW_EN_SHIFT (0x00000001U)
+#define CSL_TOP_PRCM_PMS_BGAP_CAP_OVERRIDE2_PMS_BGAP_CAP_OVERRIDE2_OV_BGAP_HIB_CAP_SW_EN_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PMS_BGAP_CAP_OVERRIDE2_PMS_BGAP_CAP_OVERRIDE2_OV_BGAP_HIB_CAP_SW_EN_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_PMS_BGAP_CAP_OVERRIDE2_PMS_BGAP_CAP_OVERRIDE2_SEL_OV_BGAP_HIB_REF_CAP_CHARGE_EN_MASK (0x00010000U)
+#define CSL_TOP_PRCM_PMS_BGAP_CAP_OVERRIDE2_PMS_BGAP_CAP_OVERRIDE2_SEL_OV_BGAP_HIB_REF_CAP_CHARGE_EN_SHIFT (0x00000010U)
+#define CSL_TOP_PRCM_PMS_BGAP_CAP_OVERRIDE2_PMS_BGAP_CAP_OVERRIDE2_SEL_OV_BGAP_HIB_REF_CAP_CHARGE_EN_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PMS_BGAP_CAP_OVERRIDE2_PMS_BGAP_CAP_OVERRIDE2_SEL_OV_BGAP_HIB_REF_CAP_CHARGE_EN_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_PMS_BGAP_CAP_OVERRIDE2_PMS_BGAP_CAP_OVERRIDE2_OV_BGAP_HIB_REF_CAP_CHARGE_EN_MASK (0x00020000U)
+#define CSL_TOP_PRCM_PMS_BGAP_CAP_OVERRIDE2_PMS_BGAP_CAP_OVERRIDE2_OV_BGAP_HIB_REF_CAP_CHARGE_EN_SHIFT (0x00000011U)
+#define CSL_TOP_PRCM_PMS_BGAP_CAP_OVERRIDE2_PMS_BGAP_CAP_OVERRIDE2_OV_BGAP_HIB_REF_CAP_CHARGE_EN_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PMS_BGAP_CAP_OVERRIDE2_PMS_BGAP_CAP_OVERRIDE2_OV_BGAP_HIB_REF_CAP_CHARGE_EN_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_PMS_BGAP_CAP_OVERRIDE2_RESETVAL                           (0x00000000U)
+
+/* PSCON_APP_PD_EN */
+
+#define CSL_TOP_PRCM_PSCON_APP_PD_EN_PSCON_APP_PD_EN_SEL_OV_APP_PD_IS_SLEEP_MASK (0x00000001U)
+#define CSL_TOP_PRCM_PSCON_APP_PD_EN_PSCON_APP_PD_EN_SEL_OV_APP_PD_IS_SLEEP_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_PSCON_APP_PD_EN_PSCON_APP_PD_EN_SEL_OV_APP_PD_IS_SLEEP_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PSCON_APP_PD_EN_PSCON_APP_PD_EN_SEL_OV_APP_PD_IS_SLEEP_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_PSCON_APP_PD_EN_PSCON_APP_PD_EN_OV_APP_PD_IS_SLEEP_MASK   (0x00000002U)
+#define CSL_TOP_PRCM_PSCON_APP_PD_EN_PSCON_APP_PD_EN_OV_APP_PD_IS_SLEEP_SHIFT  (0x00000001U)
+#define CSL_TOP_PRCM_PSCON_APP_PD_EN_PSCON_APP_PD_EN_OV_APP_PD_IS_SLEEP_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PSCON_APP_PD_EN_PSCON_APP_PD_EN_OV_APP_PD_IS_SLEEP_MAX    (0x00000001U)
+
+#define CSL_TOP_PRCM_PSCON_APP_PD_EN_PSCON_APP_PD_EN_APP_PD_POWER_STATUS_MASK  (0x00000100U)
+#define CSL_TOP_PRCM_PSCON_APP_PD_EN_PSCON_APP_PD_EN_APP_PD_POWER_STATUS_SHIFT (0x00000008U)
+#define CSL_TOP_PRCM_PSCON_APP_PD_EN_PSCON_APP_PD_EN_APP_PD_POWER_STATUS_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PSCON_APP_PD_EN_PSCON_APP_PD_EN_APP_PD_POWER_STATUS_MAX   (0x00000001U)
+
+#define CSL_TOP_PRCM_PSCON_APP_PD_EN_PSCON_APP_PD_EN_APP_PD_RESET_STATUS_MASK  (0x00000200U)
+#define CSL_TOP_PRCM_PSCON_APP_PD_EN_PSCON_APP_PD_EN_APP_PD_RESET_STATUS_SHIFT (0x00000009U)
+#define CSL_TOP_PRCM_PSCON_APP_PD_EN_PSCON_APP_PD_EN_APP_PD_RESET_STATUS_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PSCON_APP_PD_EN_PSCON_APP_PD_EN_APP_PD_RESET_STATUS_MAX   (0x00000001U)
+
+#define CSL_TOP_PRCM_PSCON_APP_PD_EN_RESETVAL                                  (0x00000000U)
+
+/* PSCON_FEC_PD_EN */
+
+#define CSL_TOP_PRCM_PSCON_FEC_PD_EN_PSCON_FEC_PD_EN_SEL_OV_FEC_PD_IS_SLEEP_MASK (0x00000001U)
+#define CSL_TOP_PRCM_PSCON_FEC_PD_EN_PSCON_FEC_PD_EN_SEL_OV_FEC_PD_IS_SLEEP_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_PSCON_FEC_PD_EN_PSCON_FEC_PD_EN_SEL_OV_FEC_PD_IS_SLEEP_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PSCON_FEC_PD_EN_PSCON_FEC_PD_EN_SEL_OV_FEC_PD_IS_SLEEP_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_PSCON_FEC_PD_EN_PSCON_FEC_PD_EN_OV_FEC_PD_IS_SLEEP_MASK   (0x00000002U)
+#define CSL_TOP_PRCM_PSCON_FEC_PD_EN_PSCON_FEC_PD_EN_OV_FEC_PD_IS_SLEEP_SHIFT  (0x00000001U)
+#define CSL_TOP_PRCM_PSCON_FEC_PD_EN_PSCON_FEC_PD_EN_OV_FEC_PD_IS_SLEEP_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PSCON_FEC_PD_EN_PSCON_FEC_PD_EN_OV_FEC_PD_IS_SLEEP_MAX    (0x00000001U)
+
+#define CSL_TOP_PRCM_PSCON_FEC_PD_EN_PSCON_FEC_PD_EN_FEC_PD_POWER_STATUS_MASK  (0x00000100U)
+#define CSL_TOP_PRCM_PSCON_FEC_PD_EN_PSCON_FEC_PD_EN_FEC_PD_POWER_STATUS_SHIFT (0x00000008U)
+#define CSL_TOP_PRCM_PSCON_FEC_PD_EN_PSCON_FEC_PD_EN_FEC_PD_POWER_STATUS_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PSCON_FEC_PD_EN_PSCON_FEC_PD_EN_FEC_PD_POWER_STATUS_MAX   (0x00000001U)
+
+#define CSL_TOP_PRCM_PSCON_FEC_PD_EN_PSCON_FEC_PD_EN_FEC_PD_RESET_STATUS_MASK  (0x00000200U)
+#define CSL_TOP_PRCM_PSCON_FEC_PD_EN_PSCON_FEC_PD_EN_FEC_PD_RESET_STATUS_SHIFT (0x00000009U)
+#define CSL_TOP_PRCM_PSCON_FEC_PD_EN_PSCON_FEC_PD_EN_FEC_PD_RESET_STATUS_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PSCON_FEC_PD_EN_PSCON_FEC_PD_EN_FEC_PD_RESET_STATUS_MAX   (0x00000001U)
+
+#define CSL_TOP_PRCM_PSCON_FEC_PD_EN_RESETVAL                                  (0x00000000U)
+
+/* PSCON_HWA_PD_EN */
+
+#define CSL_TOP_PRCM_PSCON_HWA_PD_EN_PSCON_HWA_PD_EN_SEL_OV_HWA_PD_IS_SLEEP_MASK (0x00000001U)
+#define CSL_TOP_PRCM_PSCON_HWA_PD_EN_PSCON_HWA_PD_EN_SEL_OV_HWA_PD_IS_SLEEP_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_PSCON_HWA_PD_EN_PSCON_HWA_PD_EN_SEL_OV_HWA_PD_IS_SLEEP_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PSCON_HWA_PD_EN_PSCON_HWA_PD_EN_SEL_OV_HWA_PD_IS_SLEEP_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_PSCON_HWA_PD_EN_PSCON_HWA_PD_EN_OV_HWA_PD_IS_SLEEP_MASK   (0x00000002U)
+#define CSL_TOP_PRCM_PSCON_HWA_PD_EN_PSCON_HWA_PD_EN_OV_HWA_PD_IS_SLEEP_SHIFT  (0x00000001U)
+#define CSL_TOP_PRCM_PSCON_HWA_PD_EN_PSCON_HWA_PD_EN_OV_HWA_PD_IS_SLEEP_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PSCON_HWA_PD_EN_PSCON_HWA_PD_EN_OV_HWA_PD_IS_SLEEP_MAX    (0x00000001U)
+
+#define CSL_TOP_PRCM_PSCON_HWA_PD_EN_PSCON_HWA_PD_EN_HWA_PD_POWER_STATUS_MASK  (0x00000100U)
+#define CSL_TOP_PRCM_PSCON_HWA_PD_EN_PSCON_HWA_PD_EN_HWA_PD_POWER_STATUS_SHIFT (0x00000008U)
+#define CSL_TOP_PRCM_PSCON_HWA_PD_EN_PSCON_HWA_PD_EN_HWA_PD_POWER_STATUS_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PSCON_HWA_PD_EN_PSCON_HWA_PD_EN_HWA_PD_POWER_STATUS_MAX   (0x00000001U)
+
+#define CSL_TOP_PRCM_PSCON_HWA_PD_EN_PSCON_HWA_PD_EN_HWA_PD_RESET_STATUS_MASK  (0x00000200U)
+#define CSL_TOP_PRCM_PSCON_HWA_PD_EN_PSCON_HWA_PD_EN_HWA_PD_RESET_STATUS_SHIFT (0x00000009U)
+#define CSL_TOP_PRCM_PSCON_HWA_PD_EN_PSCON_HWA_PD_EN_HWA_PD_RESET_STATUS_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PSCON_HWA_PD_EN_PSCON_HWA_PD_EN_HWA_PD_RESET_STATUS_MAX   (0x00000001U)
+
+#define CSL_TOP_PRCM_PSCON_HWA_PD_EN_RESETVAL                                  (0x00000000U)
+
+/* PSCON_TEST_DBG_PD_EN */
+
+#define CSL_TOP_PRCM_PSCON_TEST_DBG_PD_EN_PSCON_TEST_DBG_PD_EN_SEL_OV_TEST_DBG_PD_IS_SLEEP_MASK (0x00000001U)
+#define CSL_TOP_PRCM_PSCON_TEST_DBG_PD_EN_PSCON_TEST_DBG_PD_EN_SEL_OV_TEST_DBG_PD_IS_SLEEP_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_PSCON_TEST_DBG_PD_EN_PSCON_TEST_DBG_PD_EN_SEL_OV_TEST_DBG_PD_IS_SLEEP_RESETVAL (0x00000001U)
+#define CSL_TOP_PRCM_PSCON_TEST_DBG_PD_EN_PSCON_TEST_DBG_PD_EN_SEL_OV_TEST_DBG_PD_IS_SLEEP_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_PSCON_TEST_DBG_PD_EN_PSCON_TEST_DBG_PD_EN_OV_TEST_DBG_PD_IS_SLEEP_MASK (0x00000002U)
+#define CSL_TOP_PRCM_PSCON_TEST_DBG_PD_EN_PSCON_TEST_DBG_PD_EN_OV_TEST_DBG_PD_IS_SLEEP_SHIFT (0x00000001U)
+#define CSL_TOP_PRCM_PSCON_TEST_DBG_PD_EN_PSCON_TEST_DBG_PD_EN_OV_TEST_DBG_PD_IS_SLEEP_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PSCON_TEST_DBG_PD_EN_PSCON_TEST_DBG_PD_EN_OV_TEST_DBG_PD_IS_SLEEP_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_PSCON_TEST_DBG_PD_EN_PSCON_TEST_DBG_PD_EN_TEST_DBG_PD_POWER_STATUS_MASK (0x00000100U)
+#define CSL_TOP_PRCM_PSCON_TEST_DBG_PD_EN_PSCON_TEST_DBG_PD_EN_TEST_DBG_PD_POWER_STATUS_SHIFT (0x00000008U)
+#define CSL_TOP_PRCM_PSCON_TEST_DBG_PD_EN_PSCON_TEST_DBG_PD_EN_TEST_DBG_PD_POWER_STATUS_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PSCON_TEST_DBG_PD_EN_PSCON_TEST_DBG_PD_EN_TEST_DBG_PD_POWER_STATUS_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_PSCON_TEST_DBG_PD_EN_PSCON_TEST_DBG_PD_EN_TEST_DBG_PD_RESET_STATUS_MASK (0x00000200U)
+#define CSL_TOP_PRCM_PSCON_TEST_DBG_PD_EN_PSCON_TEST_DBG_PD_EN_TEST_DBG_PD_RESET_STATUS_SHIFT (0x00000009U)
+#define CSL_TOP_PRCM_PSCON_TEST_DBG_PD_EN_PSCON_TEST_DBG_PD_EN_TEST_DBG_PD_RESET_STATUS_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PSCON_TEST_DBG_PD_EN_PSCON_TEST_DBG_PD_EN_TEST_DBG_PD_RESET_STATUS_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_PSCON_TEST_DBG_PD_EN_RESETVAL                             (0x00000001U)
+
+/* PSCON_APP_PD_RAM_STATE */
+
+#define CSL_TOP_PRCM_PSCON_APP_PD_RAM_STATE_PSCON_APP_PD_RAM_STATE_APP_PD_MEM_SLEEP_STATE_MASK (0x00000007U)
+#define CSL_TOP_PRCM_PSCON_APP_PD_RAM_STATE_PSCON_APP_PD_RAM_STATE_APP_PD_MEM_SLEEP_STATE_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_PSCON_APP_PD_RAM_STATE_PSCON_APP_PD_RAM_STATE_APP_PD_MEM_SLEEP_STATE_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PSCON_APP_PD_RAM_STATE_PSCON_APP_PD_RAM_STATE_APP_PD_MEM_SLEEP_STATE_MAX (0x00000007U)
+#define CSL_TOP_PRCM_PSCON_APP_PD_RAM_STATE_PSCON_APP_PD_RAM_STATE_APP_PD_SRAM_CLUSTER1_MEM_SLEEP_STATE_MASK (0x00000001U)
+#define CSL_TOP_PRCM_PSCON_APP_PD_RAM_STATE_PSCON_APP_PD_RAM_STATE_APP_PD_SRAM_CLUSTER1_MEM_SLEEP_STATE_SHIFT (0x00000000U)
+
+#define CSL_TOP_PRCM_PSCON_APP_PD_RAM_STATE_PSCON_APP_PD_RAM_STATE_APP_PD_SRAM_CLUSTER2_MEM_SLEEP_STATE_MASK (0x00000002U)
+#define CSL_TOP_PRCM_PSCON_APP_PD_RAM_STATE_PSCON_APP_PD_RAM_STATE_APP_PD_SRAM_CLUSTER2_MEM_SLEEP_STATE_SHIFT (0x00000001U)
+
+#define CSL_TOP_PRCM_PSCON_APP_PD_RAM_STATE_PSCON_APP_PD_RAM_STATE_APP_PD_SRAM_CLUSTER3_MEM_SLEEP_STATE_MASK (0x00000004U)
+#define CSL_TOP_PRCM_PSCON_APP_PD_RAM_STATE_PSCON_APP_PD_RAM_STATE_APP_PD_SRAM_CLUSTER3_MEM_SLEEP_STATE_SHIFT (0x00000002U)
+
+
+#define CSL_TOP_PRCM_PSCON_APP_PD_RAM_STATE_PSCON_APP_PD_RAM_STATE_APP_PD_MEM_ACTIVE_STATE_MASK (0x00070000U)
+#define CSL_TOP_PRCM_PSCON_APP_PD_RAM_STATE_PSCON_APP_PD_RAM_STATE_APP_PD_MEM_ACTIVE_STATE_SHIFT (0x00000010U)
+#define CSL_TOP_PRCM_PSCON_APP_PD_RAM_STATE_PSCON_APP_PD_RAM_STATE_APP_PD_MEM_ACTIVE_STATE_RESETVAL (0x00000007U)
+#define CSL_TOP_PRCM_PSCON_APP_PD_RAM_STATE_PSCON_APP_PD_RAM_STATE_APP_PD_MEM_ACTIVE_STATE_MAX (0x00000007U)
+
+#define CSL_TOP_PRCM_PSCON_APP_PD_RAM_STATE_RESETVAL                           (0x00070000U)
+
+/* PSCON_APP_PD_RAM_GRP1_STATE */
+
+#define CSL_TOP_PRCM_PSCON_APP_PD_RAM_GRP1_STATE_PSCON_APP_PD_RAM_GRP1_STATE_APP_PD_MEM_GRP1_SLEEP_STATE_MASK (0x00000003U)
+#define CSL_TOP_PRCM_PSCON_APP_PD_RAM_GRP1_STATE_PSCON_APP_PD_RAM_GRP1_STATE_APP_PD_MEM_GRP1_SLEEP_STATE_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_PSCON_APP_PD_RAM_GRP1_STATE_PSCON_APP_PD_RAM_GRP1_STATE_APP_PD_MEM_GRP1_SLEEP_STATE_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PSCON_APP_PD_RAM_GRP1_STATE_PSCON_APP_PD_RAM_GRP1_STATE_APP_PD_MEM_GRP1_SLEEP_STATE_MAX (0x00000003U)
+#define CSL_TOP_PRCM_PSCON_APP_PD_RAM_GRP1_STATE_PSCON_APP_PD_RAM_GRP1_STATE_APP_PD_MEM_GRP1_SRAM_CLUSTER4_SLEEP_STATE_MASK (0x00000001U)
+#define CSL_TOP_PRCM_PSCON_APP_PD_RAM_GRP1_STATE_PSCON_APP_PD_RAM_GRP1_STATE_APP_PD_MEM_GRP1_SRAM_CLUSTER4_SLEEP_STATE_SHIFT (0x00000000U)
+
+#define CSL_TOP_PRCM_PSCON_APP_PD_RAM_GRP1_STATE_PSCON_APP_PD_RAM_GRP1_STATE_APP_PD_MEM_GRP1_SRAM_CLUSTER5_SLEEP_STATE_MASK (0x00000002U)
+#define CSL_TOP_PRCM_PSCON_APP_PD_RAM_GRP1_STATE_PSCON_APP_PD_RAM_GRP1_STATE_APP_PD_MEM_GRP1_SRAM_CLUSTER5_SLEEP_STATE_SHIFT (0x00000001U)
+
+#define CSL_TOP_PRCM_PSCON_APP_PD_RAM_GRP1_STATE_PSCON_APP_PD_RAM_GRP1_STATE_APP_PD_MEM_GRP1_ACTIVE_STATE_MASK (0x00030000U)
+#define CSL_TOP_PRCM_PSCON_APP_PD_RAM_GRP1_STATE_PSCON_APP_PD_RAM_GRP1_STATE_APP_PD_MEM_GRP1_ACTIVE_STATE_SHIFT (0x00000010U)
+#define CSL_TOP_PRCM_PSCON_APP_PD_RAM_GRP1_STATE_PSCON_APP_PD_RAM_GRP1_STATE_APP_PD_MEM_GRP1_ACTIVE_STATE_RESETVAL (0x00000003U)
+#define CSL_TOP_PRCM_PSCON_APP_PD_RAM_GRP1_STATE_PSCON_APP_PD_RAM_GRP1_STATE_APP_PD_MEM_GRP1_ACTIVE_STATE_MAX (0x00000003U)
+
+#define CSL_TOP_PRCM_PSCON_APP_PD_RAM_GRP1_STATE_RESETVAL                      (0x00030000U)
+
+/* PSCON_APP_PD_RAM_GRP2_STATE */
+
+#define CSL_TOP_PRCM_PSCON_APP_PD_RAM_GRP2_STATE_PSCON_APP_PD_RAM_GRP2_STATE_APP_PD_MEM_GRP2_SLEEP_STATE_MASK (0x00000001U)
+#define CSL_TOP_PRCM_PSCON_APP_PD_RAM_GRP2_STATE_PSCON_APP_PD_RAM_GRP2_STATE_APP_PD_MEM_GRP2_SLEEP_STATE_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_PSCON_APP_PD_RAM_GRP2_STATE_PSCON_APP_PD_RAM_GRP2_STATE_APP_PD_MEM_GRP2_SLEEP_STATE_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PSCON_APP_PD_RAM_GRP2_STATE_PSCON_APP_PD_RAM_GRP2_STATE_APP_PD_MEM_GRP2_SLEEP_STATE_MAX (0x00000001U)
+#define CSL_TOP_PRCM_PSCON_APP_PD_RAM_GRP2_STATE_PSCON_APP_PD_RAM_GRP2_STATE_APP_PD_MEM_GRP2_SRAM_CLUSTER6_SLEEP_STATE_MASK (0x00000001U)
+#define CSL_TOP_PRCM_PSCON_APP_PD_RAM_GRP2_STATE_PSCON_APP_PD_RAM_GRP2_STATE_APP_PD_MEM_GRP2_SRAM_CLUSTER6_SLEEP_STATE_SHIFT (0x00000000U)
+
+#define CSL_TOP_PRCM_PSCON_APP_PD_RAM_GRP2_STATE_PSCON_APP_PD_RAM_GRP2_STATE_APP_PD_MEM_GRP2_ACTIVE_STATE_MASK (0x00010000U)
+#define CSL_TOP_PRCM_PSCON_APP_PD_RAM_GRP2_STATE_PSCON_APP_PD_RAM_GRP2_STATE_APP_PD_MEM_GRP2_ACTIVE_STATE_SHIFT (0x00000010U)
+#define CSL_TOP_PRCM_PSCON_APP_PD_RAM_GRP2_STATE_PSCON_APP_PD_RAM_GRP2_STATE_APP_PD_MEM_GRP2_ACTIVE_STATE_RESETVAL (0x00000001U)
+#define CSL_TOP_PRCM_PSCON_APP_PD_RAM_GRP2_STATE_PSCON_APP_PD_RAM_GRP2_STATE_APP_PD_MEM_GRP2_ACTIVE_STATE_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_PSCON_APP_PD_RAM_GRP2_STATE_RESETVAL                      (0x00010000U)
+
+/* PSCON_HWA_PD_RAM_GRP3_STATE */
+
+#define CSL_TOP_PRCM_PSCON_HWA_PD_RAM_GRP3_STATE_PSCON_HWA_PD_RAM_GRP3_STATE_HWA_PD_MEM_GRP3_SLEEP_STATE_MASK (0x00000007U)
+#define CSL_TOP_PRCM_PSCON_HWA_PD_RAM_GRP3_STATE_PSCON_HWA_PD_RAM_GRP3_STATE_HWA_PD_MEM_GRP3_SLEEP_STATE_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_PSCON_HWA_PD_RAM_GRP3_STATE_PSCON_HWA_PD_RAM_GRP3_STATE_HWA_PD_MEM_GRP3_SLEEP_STATE_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PSCON_HWA_PD_RAM_GRP3_STATE_PSCON_HWA_PD_RAM_GRP3_STATE_HWA_PD_MEM_GRP3_SLEEP_STATE_MAX (0x00000007U)
+#define CSL_TOP_PRCM_PSCON_HWA_PD_RAM_GRP3_STATE_PSCON_HWA_PD_RAM_GRP3_STATE_HWA_PD_MEM_GRP3_SRAM_CLUSTER1_SLEEP_STATE_MASK (0x00000001U)
+#define CSL_TOP_PRCM_PSCON_HWA_PD_RAM_GRP3_STATE_PSCON_HWA_PD_RAM_GRP3_STATE_HWA_PD_MEM_GRP3_SRAM_CLUSTER1_SLEEP_STATE_SHIFT (0x00000000U)
+
+#define CSL_TOP_PRCM_PSCON_HWA_PD_RAM_GRP3_STATE_PSCON_HWA_PD_RAM_GRP3_STATE_HWA_PD_MEM_GRP3_SRAM_CLUSTER2_SLEEP_STATE_MASK (0x00000002U)
+#define CSL_TOP_PRCM_PSCON_HWA_PD_RAM_GRP3_STATE_PSCON_HWA_PD_RAM_GRP3_STATE_HWA_PD_MEM_GRP3_SRAM_CLUSTER2_SLEEP_STATE_SHIFT (0x00000001U)
+
+#define CSL_TOP_PRCM_PSCON_HWA_PD_RAM_GRP3_STATE_PSCON_HWA_PD_RAM_GRP3_STATE_HWA_PD_MEM_GRP3_SRAM_CLUSTER3_SLEEP_STATE_MASK (0x00000004U)
+#define CSL_TOP_PRCM_PSCON_HWA_PD_RAM_GRP3_STATE_PSCON_HWA_PD_RAM_GRP3_STATE_HWA_PD_MEM_GRP3_SRAM_CLUSTER3_SLEEP_STATE_SHIFT (0x00000002U)
+
+
+#define CSL_TOP_PRCM_PSCON_HWA_PD_RAM_GRP3_STATE_PSCON_HWA_PD_RAM_GRP3_STATE_HWA_PD_MEM_GRP3_ACTIVE_STATE_MASK (0x00070000U)
+#define CSL_TOP_PRCM_PSCON_HWA_PD_RAM_GRP3_STATE_PSCON_HWA_PD_RAM_GRP3_STATE_HWA_PD_MEM_GRP3_ACTIVE_STATE_SHIFT (0x00000010U)
+#define CSL_TOP_PRCM_PSCON_HWA_PD_RAM_GRP3_STATE_PSCON_HWA_PD_RAM_GRP3_STATE_HWA_PD_MEM_GRP3_ACTIVE_STATE_RESETVAL (0x00000007U)
+#define CSL_TOP_PRCM_PSCON_HWA_PD_RAM_GRP3_STATE_PSCON_HWA_PD_RAM_GRP3_STATE_HWA_PD_MEM_GRP3_ACTIVE_STATE_MAX (0x00000007U)
+
+#define CSL_TOP_PRCM_PSCON_HWA_PD_RAM_GRP3_STATE_RESETVAL                      (0x00070000U)
+
+/* PSCON_FEC_PD_RAM_STATE */
+
+#define CSL_TOP_PRCM_PSCON_FEC_PD_RAM_STATE_PSCON_FEC_PD_RAM_STATE_FEC_PD_MEM_SLEEP_STATE_MASK (0x00000001U)
+#define CSL_TOP_PRCM_PSCON_FEC_PD_RAM_STATE_PSCON_FEC_PD_RAM_STATE_FEC_PD_MEM_SLEEP_STATE_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_PSCON_FEC_PD_RAM_STATE_PSCON_FEC_PD_RAM_STATE_FEC_PD_MEM_SLEEP_STATE_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PSCON_FEC_PD_RAM_STATE_PSCON_FEC_PD_RAM_STATE_FEC_PD_MEM_SLEEP_STATE_MAX (0x00000001U)
+#define CSL_TOP_PRCM_PSCON_FEC_PD_RAM_STATE_PSCON_FEC_PD_RAM_STATE_FEC_PD_MEM_SRAM_CLUSTER1_SLEEP_STATE_MASK (0x00000001U)
+#define CSL_TOP_PRCM_PSCON_FEC_PD_RAM_STATE_PSCON_FEC_PD_RAM_STATE_FEC_PD_MEM_SRAM_CLUSTER1_SLEEP_STATE_SHIFT (0x00000000U)
+
+#define CSL_TOP_PRCM_PSCON_FEC_PD_RAM_STATE_PSCON_FEC_PD_RAM_STATE_FEC_PD_MEM_ACTIVE_STATE_MASK (0x00010000U)
+#define CSL_TOP_PRCM_PSCON_FEC_PD_RAM_STATE_PSCON_FEC_PD_RAM_STATE_FEC_PD_MEM_ACTIVE_STATE_SHIFT (0x00000010U)
+#define CSL_TOP_PRCM_PSCON_FEC_PD_RAM_STATE_PSCON_FEC_PD_RAM_STATE_FEC_PD_MEM_ACTIVE_STATE_RESETVAL (0x00000001U)
+#define CSL_TOP_PRCM_PSCON_FEC_PD_RAM_STATE_PSCON_FEC_PD_RAM_STATE_FEC_PD_MEM_ACTIVE_STATE_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_PSCON_FEC_PD_RAM_STATE_RESETVAL                           (0x00010000U)
+
+/* PSCON_FEC_PD_RAM_GRP4_STATE */
+
+#define CSL_TOP_PRCM_PSCON_FEC_PD_RAM_GRP4_STATE_PSCON_FEC_PD_RAM_GRP4_STATE_FEC_PD_MEM_GRP4_SLEEP_STATE_MASK (0x00000003U)
+#define CSL_TOP_PRCM_PSCON_FEC_PD_RAM_GRP4_STATE_PSCON_FEC_PD_RAM_GRP4_STATE_FEC_PD_MEM_GRP4_SLEEP_STATE_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_PSCON_FEC_PD_RAM_GRP4_STATE_PSCON_FEC_PD_RAM_GRP4_STATE_FEC_PD_MEM_GRP4_SLEEP_STATE_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PSCON_FEC_PD_RAM_GRP4_STATE_PSCON_FEC_PD_RAM_GRP4_STATE_FEC_PD_MEM_GRP4_SLEEP_STATE_MAX (0x00000003U)
+#define CSL_TOP_PRCM_PSCON_FEC_PD_RAM_GRP4_STATE_PSCON_FEC_PD_RAM_GRP4_STATE_FEC_PD_MEM_GRP4_SRAM_CLUSTER2_SLEEP_STATE_MASK (0x00000001U)
+#define CSL_TOP_PRCM_PSCON_FEC_PD_RAM_GRP4_STATE_PSCON_FEC_PD_RAM_GRP4_STATE_FEC_PD_MEM_GRP4_SRAM_CLUSTER2_SLEEP_STATE_SHIFT (0x00000000U)
+
+#define CSL_TOP_PRCM_PSCON_FEC_PD_RAM_GRP4_STATE_PSCON_FEC_PD_RAM_GRP4_STATE_FEC_PD_MEM_GRP4_SRAM_CLUSTER3_SLEEP_STATE_MASK (0x00000002U)
+#define CSL_TOP_PRCM_PSCON_FEC_PD_RAM_GRP4_STATE_PSCON_FEC_PD_RAM_GRP4_STATE_FEC_PD_MEM_GRP4_SRAM_CLUSTER3_SLEEP_STATE_SHIFT (0x00000001U)
+
+#define CSL_TOP_PRCM_PSCON_FEC_PD_RAM_GRP4_STATE_PSCON_FEC_PD_RAM_GRP4_STATE_FEC_PD_MEM_GRP4_ACTIVE_STATE_MASK (0x00030000U)
+#define CSL_TOP_PRCM_PSCON_FEC_PD_RAM_GRP4_STATE_PSCON_FEC_PD_RAM_GRP4_STATE_FEC_PD_MEM_GRP4_ACTIVE_STATE_SHIFT (0x00000010U)
+#define CSL_TOP_PRCM_PSCON_FEC_PD_RAM_GRP4_STATE_PSCON_FEC_PD_RAM_GRP4_STATE_FEC_PD_MEM_GRP4_ACTIVE_STATE_RESETVAL (0x00000003U)
+#define CSL_TOP_PRCM_PSCON_FEC_PD_RAM_GRP4_STATE_PSCON_FEC_PD_RAM_GRP4_STATE_FEC_PD_MEM_GRP4_ACTIVE_STATE_MAX (0x00000003U)
+
+#define CSL_TOP_PRCM_PSCON_FEC_PD_RAM_GRP4_STATE_RESETVAL                      (0x00030000U)
+
+/* PSCON_RAM_FORCE_SWITCH_EN */
+
+#define CSL_TOP_PRCM_PSCON_RAM_FORCE_SWITCH_EN_PSCON_RAM_FORCE_SWITCH_EN_MEM_ALL_SWITCH_FORCE_EN_MASK (0x00000001U)
+#define CSL_TOP_PRCM_PSCON_RAM_FORCE_SWITCH_EN_PSCON_RAM_FORCE_SWITCH_EN_MEM_ALL_SWITCH_FORCE_EN_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_PSCON_RAM_FORCE_SWITCH_EN_PSCON_RAM_FORCE_SWITCH_EN_MEM_ALL_SWITCH_FORCE_EN_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PSCON_RAM_FORCE_SWITCH_EN_PSCON_RAM_FORCE_SWITCH_EN_MEM_ALL_SWITCH_FORCE_EN_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_PSCON_RAM_FORCE_SWITCH_EN_RESETVAL                        (0x00000000U)
+
+/* PSCON_RAM_SWITCH_EN_OVERRIDE1 */
+
+#define CSL_TOP_PRCM_PSCON_RAM_SWITCH_EN_OVERRIDE1_PSCON_RAM_SWITCH_EN_OVERRIDE1_SEL_OV_APP_PD_MEM_GRP1_SWITCH_EN_MASK (0x00000001U)
+#define CSL_TOP_PRCM_PSCON_RAM_SWITCH_EN_OVERRIDE1_PSCON_RAM_SWITCH_EN_OVERRIDE1_SEL_OV_APP_PD_MEM_GRP1_SWITCH_EN_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_PSCON_RAM_SWITCH_EN_OVERRIDE1_PSCON_RAM_SWITCH_EN_OVERRIDE1_SEL_OV_APP_PD_MEM_GRP1_SWITCH_EN_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PSCON_RAM_SWITCH_EN_OVERRIDE1_PSCON_RAM_SWITCH_EN_OVERRIDE1_SEL_OV_APP_PD_MEM_GRP1_SWITCH_EN_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_PSCON_RAM_SWITCH_EN_OVERRIDE1_PSCON_RAM_SWITCH_EN_OVERRIDE1_OV_APP_PD_MEM_GRP1_SWITCH_EN_MASK (0x00000002U)
+#define CSL_TOP_PRCM_PSCON_RAM_SWITCH_EN_OVERRIDE1_PSCON_RAM_SWITCH_EN_OVERRIDE1_OV_APP_PD_MEM_GRP1_SWITCH_EN_SHIFT (0x00000001U)
+#define CSL_TOP_PRCM_PSCON_RAM_SWITCH_EN_OVERRIDE1_PSCON_RAM_SWITCH_EN_OVERRIDE1_OV_APP_PD_MEM_GRP1_SWITCH_EN_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PSCON_RAM_SWITCH_EN_OVERRIDE1_PSCON_RAM_SWITCH_EN_OVERRIDE1_OV_APP_PD_MEM_GRP1_SWITCH_EN_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_PSCON_RAM_SWITCH_EN_OVERRIDE1_PSCON_RAM_SWITCH_EN_OVERRIDE1_SEL_OV_APP_PD_MEM_GRP2_SWITCH_EN_MASK (0x00010000U)
+#define CSL_TOP_PRCM_PSCON_RAM_SWITCH_EN_OVERRIDE1_PSCON_RAM_SWITCH_EN_OVERRIDE1_SEL_OV_APP_PD_MEM_GRP2_SWITCH_EN_SHIFT (0x00000010U)
+#define CSL_TOP_PRCM_PSCON_RAM_SWITCH_EN_OVERRIDE1_PSCON_RAM_SWITCH_EN_OVERRIDE1_SEL_OV_APP_PD_MEM_GRP2_SWITCH_EN_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PSCON_RAM_SWITCH_EN_OVERRIDE1_PSCON_RAM_SWITCH_EN_OVERRIDE1_SEL_OV_APP_PD_MEM_GRP2_SWITCH_EN_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_PSCON_RAM_SWITCH_EN_OVERRIDE1_PSCON_RAM_SWITCH_EN_OVERRIDE1_OV_APP_PD_MEM_GRP2_SWITCH_EN_MASK (0x00020000U)
+#define CSL_TOP_PRCM_PSCON_RAM_SWITCH_EN_OVERRIDE1_PSCON_RAM_SWITCH_EN_OVERRIDE1_OV_APP_PD_MEM_GRP2_SWITCH_EN_SHIFT (0x00000011U)
+#define CSL_TOP_PRCM_PSCON_RAM_SWITCH_EN_OVERRIDE1_PSCON_RAM_SWITCH_EN_OVERRIDE1_OV_APP_PD_MEM_GRP2_SWITCH_EN_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PSCON_RAM_SWITCH_EN_OVERRIDE1_PSCON_RAM_SWITCH_EN_OVERRIDE1_OV_APP_PD_MEM_GRP2_SWITCH_EN_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_PSCON_RAM_SWITCH_EN_OVERRIDE1_RESETVAL                    (0x00000000U)
+
+/* PSCON_RAM_SWITCH_EN_OVERRIDE2 */
+
+#define CSL_TOP_PRCM_PSCON_RAM_SWITCH_EN_OVERRIDE2_PSCON_RAM_SWITCH_EN_OVERRIDE2_SEL_OV_HWA_PD_MEM_GRP3_SWITCH_EN_MASK (0x00000001U)
+#define CSL_TOP_PRCM_PSCON_RAM_SWITCH_EN_OVERRIDE2_PSCON_RAM_SWITCH_EN_OVERRIDE2_SEL_OV_HWA_PD_MEM_GRP3_SWITCH_EN_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_PSCON_RAM_SWITCH_EN_OVERRIDE2_PSCON_RAM_SWITCH_EN_OVERRIDE2_SEL_OV_HWA_PD_MEM_GRP3_SWITCH_EN_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PSCON_RAM_SWITCH_EN_OVERRIDE2_PSCON_RAM_SWITCH_EN_OVERRIDE2_SEL_OV_HWA_PD_MEM_GRP3_SWITCH_EN_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_PSCON_RAM_SWITCH_EN_OVERRIDE2_PSCON_RAM_SWITCH_EN_OVERRIDE2_OV_HWA_PD_MEM_GRP3_SWITCH_EN_MASK (0x00000002U)
+#define CSL_TOP_PRCM_PSCON_RAM_SWITCH_EN_OVERRIDE2_PSCON_RAM_SWITCH_EN_OVERRIDE2_OV_HWA_PD_MEM_GRP3_SWITCH_EN_SHIFT (0x00000001U)
+#define CSL_TOP_PRCM_PSCON_RAM_SWITCH_EN_OVERRIDE2_PSCON_RAM_SWITCH_EN_OVERRIDE2_OV_HWA_PD_MEM_GRP3_SWITCH_EN_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PSCON_RAM_SWITCH_EN_OVERRIDE2_PSCON_RAM_SWITCH_EN_OVERRIDE2_OV_HWA_PD_MEM_GRP3_SWITCH_EN_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_PSCON_RAM_SWITCH_EN_OVERRIDE2_PSCON_RAM_SWITCH_EN_OVERRIDE2_SEL_OV_FEC_PD_MEM_GRP4_SWITCH_EN_MASK (0x00010000U)
+#define CSL_TOP_PRCM_PSCON_RAM_SWITCH_EN_OVERRIDE2_PSCON_RAM_SWITCH_EN_OVERRIDE2_SEL_OV_FEC_PD_MEM_GRP4_SWITCH_EN_SHIFT (0x00000010U)
+#define CSL_TOP_PRCM_PSCON_RAM_SWITCH_EN_OVERRIDE2_PSCON_RAM_SWITCH_EN_OVERRIDE2_SEL_OV_FEC_PD_MEM_GRP4_SWITCH_EN_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PSCON_RAM_SWITCH_EN_OVERRIDE2_PSCON_RAM_SWITCH_EN_OVERRIDE2_SEL_OV_FEC_PD_MEM_GRP4_SWITCH_EN_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_PSCON_RAM_SWITCH_EN_OVERRIDE2_PSCON_RAM_SWITCH_EN_OVERRIDE2_OV_FEC_PD_MEM_GRP4_SWITCH_EN_MASK (0x00020000U)
+#define CSL_TOP_PRCM_PSCON_RAM_SWITCH_EN_OVERRIDE2_PSCON_RAM_SWITCH_EN_OVERRIDE2_OV_FEC_PD_MEM_GRP4_SWITCH_EN_SHIFT (0x00000011U)
+#define CSL_TOP_PRCM_PSCON_RAM_SWITCH_EN_OVERRIDE2_PSCON_RAM_SWITCH_EN_OVERRIDE2_OV_FEC_PD_MEM_GRP4_SWITCH_EN_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PSCON_RAM_SWITCH_EN_OVERRIDE2_PSCON_RAM_SWITCH_EN_OVERRIDE2_OV_FEC_PD_MEM_GRP4_SWITCH_EN_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_PSCON_RAM_SWITCH_EN_OVERRIDE2_RESETVAL                    (0x00000000U)
+
+/* PSCOM_RAM_SWITCH_DELAY */
+
+#define CSL_TOP_PRCM_PSCOM_RAM_SWITCH_DELAY_PSCOM_RAM_SWITCH_DELAY_USE_MEM_SWITCH_DELAY_GLOBAL_MASK (0x00000001U)
+#define CSL_TOP_PRCM_PSCOM_RAM_SWITCH_DELAY_PSCOM_RAM_SWITCH_DELAY_USE_MEM_SWITCH_DELAY_GLOBAL_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_PSCOM_RAM_SWITCH_DELAY_PSCOM_RAM_SWITCH_DELAY_USE_MEM_SWITCH_DELAY_GLOBAL_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PSCOM_RAM_SWITCH_DELAY_PSCOM_RAM_SWITCH_DELAY_USE_MEM_SWITCH_DELAY_GLOBAL_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_PSCOM_RAM_SWITCH_DELAY_PSCOM_RAM_SWITCH_DELAY_GLOBAL_MEM_SWITCH_HIGHRES_LOWRES_DELAY_MASK (0x00000006U)
+#define CSL_TOP_PRCM_PSCOM_RAM_SWITCH_DELAY_PSCOM_RAM_SWITCH_DELAY_GLOBAL_MEM_SWITCH_HIGHRES_LOWRES_DELAY_SHIFT (0x00000001U)
+#define CSL_TOP_PRCM_PSCOM_RAM_SWITCH_DELAY_PSCOM_RAM_SWITCH_DELAY_GLOBAL_MEM_SWITCH_HIGHRES_LOWRES_DELAY_RESETVAL (0x00000002U)
+#define CSL_TOP_PRCM_PSCOM_RAM_SWITCH_DELAY_PSCOM_RAM_SWITCH_DELAY_GLOBAL_MEM_SWITCH_HIGHRES_LOWRES_DELAY_MAX (0x00000003U)
+
+#define CSL_TOP_PRCM_PSCOM_RAM_SWITCH_DELAY_PSCOM_RAM_SWITCH_DELAY_APP_PD_MEM_GRP1_SWITCH_HIGHRES_LOWRES_DELAY_MASK (0x00000300U)
+#define CSL_TOP_PRCM_PSCOM_RAM_SWITCH_DELAY_PSCOM_RAM_SWITCH_DELAY_APP_PD_MEM_GRP1_SWITCH_HIGHRES_LOWRES_DELAY_SHIFT (0x00000008U)
+#define CSL_TOP_PRCM_PSCOM_RAM_SWITCH_DELAY_PSCOM_RAM_SWITCH_DELAY_APP_PD_MEM_GRP1_SWITCH_HIGHRES_LOWRES_DELAY_RESETVAL (0x00000002U)
+#define CSL_TOP_PRCM_PSCOM_RAM_SWITCH_DELAY_PSCOM_RAM_SWITCH_DELAY_APP_PD_MEM_GRP1_SWITCH_HIGHRES_LOWRES_DELAY_MAX (0x00000003U)
+
+#define CSL_TOP_PRCM_PSCOM_RAM_SWITCH_DELAY_PSCOM_RAM_SWITCH_DELAY_APP_PD_MEM_GRP2_SWITCH_HIGHRES_LOWRES_DELAY_MASK (0x00000C00U)
+#define CSL_TOP_PRCM_PSCOM_RAM_SWITCH_DELAY_PSCOM_RAM_SWITCH_DELAY_APP_PD_MEM_GRP2_SWITCH_HIGHRES_LOWRES_DELAY_SHIFT (0x0000000AU)
+#define CSL_TOP_PRCM_PSCOM_RAM_SWITCH_DELAY_PSCOM_RAM_SWITCH_DELAY_APP_PD_MEM_GRP2_SWITCH_HIGHRES_LOWRES_DELAY_RESETVAL (0x00000002U)
+#define CSL_TOP_PRCM_PSCOM_RAM_SWITCH_DELAY_PSCOM_RAM_SWITCH_DELAY_APP_PD_MEM_GRP2_SWITCH_HIGHRES_LOWRES_DELAY_MAX (0x00000003U)
+
+#define CSL_TOP_PRCM_PSCOM_RAM_SWITCH_DELAY_PSCOM_RAM_SWITCH_DELAY_HWA_PD_MEM_GRP3_SWITCH_HIGHRES_LOWRES_DELAY_MASK (0x00003000U)
+#define CSL_TOP_PRCM_PSCOM_RAM_SWITCH_DELAY_PSCOM_RAM_SWITCH_DELAY_HWA_PD_MEM_GRP3_SWITCH_HIGHRES_LOWRES_DELAY_SHIFT (0x0000000CU)
+#define CSL_TOP_PRCM_PSCOM_RAM_SWITCH_DELAY_PSCOM_RAM_SWITCH_DELAY_HWA_PD_MEM_GRP3_SWITCH_HIGHRES_LOWRES_DELAY_RESETVAL (0x00000002U)
+#define CSL_TOP_PRCM_PSCOM_RAM_SWITCH_DELAY_PSCOM_RAM_SWITCH_DELAY_HWA_PD_MEM_GRP3_SWITCH_HIGHRES_LOWRES_DELAY_MAX (0x00000003U)
+
+#define CSL_TOP_PRCM_PSCOM_RAM_SWITCH_DELAY_PSCOM_RAM_SWITCH_DELAY_FEC_PD_MEM_GRP4_SWITCH_HIGHRES_LOWRES_DELAY_MASK (0x0000C000U)
+#define CSL_TOP_PRCM_PSCOM_RAM_SWITCH_DELAY_PSCOM_RAM_SWITCH_DELAY_FEC_PD_MEM_GRP4_SWITCH_HIGHRES_LOWRES_DELAY_SHIFT (0x0000000EU)
+#define CSL_TOP_PRCM_PSCOM_RAM_SWITCH_DELAY_PSCOM_RAM_SWITCH_DELAY_FEC_PD_MEM_GRP4_SWITCH_HIGHRES_LOWRES_DELAY_RESETVAL (0x00000002U)
+#define CSL_TOP_PRCM_PSCOM_RAM_SWITCH_DELAY_PSCOM_RAM_SWITCH_DELAY_FEC_PD_MEM_GRP4_SWITCH_HIGHRES_LOWRES_DELAY_MAX (0x00000003U)
+
+#define CSL_TOP_PRCM_PSCOM_RAM_SWITCH_DELAY_RESETVAL                           (0x0000AA04U)
+
+/* PSCON_DFTRTA_OVERRIDE */
+
+#define CSL_TOP_PRCM_PSCON_DFTRTA_OVERRIDE_PSCON_DFTRTA_OVERRIDE_SEL_OV_DFTRTAON_MASK (0x00000001U)
+#define CSL_TOP_PRCM_PSCON_DFTRTA_OVERRIDE_PSCON_DFTRTA_OVERRIDE_SEL_OV_DFTRTAON_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_PSCON_DFTRTA_OVERRIDE_PSCON_DFTRTA_OVERRIDE_SEL_OV_DFTRTAON_RESETVAL (0x00000001U)
+#define CSL_TOP_PRCM_PSCON_DFTRTA_OVERRIDE_PSCON_DFTRTA_OVERRIDE_SEL_OV_DFTRTAON_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_PSCON_DFTRTA_OVERRIDE_PSCON_DFTRTA_OVERRIDE_OV_DFTRTAON_MASK (0x00000002U)
+#define CSL_TOP_PRCM_PSCON_DFTRTA_OVERRIDE_PSCON_DFTRTA_OVERRIDE_OV_DFTRTAON_SHIFT (0x00000001U)
+#define CSL_TOP_PRCM_PSCON_DFTRTA_OVERRIDE_PSCON_DFTRTA_OVERRIDE_OV_DFTRTAON_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PSCON_DFTRTA_OVERRIDE_PSCON_DFTRTA_OVERRIDE_OV_DFTRTAON_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_PSCON_DFTRTA_OVERRIDE_PSCON_DFTRTA_OVERRIDE_SEL_OV_DFTRTAGOOD_MASK (0x00010000U)
+#define CSL_TOP_PRCM_PSCON_DFTRTA_OVERRIDE_PSCON_DFTRTA_OVERRIDE_SEL_OV_DFTRTAGOOD_SHIFT (0x00000010U)
+#define CSL_TOP_PRCM_PSCON_DFTRTA_OVERRIDE_PSCON_DFTRTA_OVERRIDE_SEL_OV_DFTRTAGOOD_RESETVAL (0x00000001U)
+#define CSL_TOP_PRCM_PSCON_DFTRTA_OVERRIDE_PSCON_DFTRTA_OVERRIDE_SEL_OV_DFTRTAGOOD_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_PSCON_DFTRTA_OVERRIDE_PSCON_DFTRTA_OVERRIDE_OV_DFTRTAGOOD_MASK (0x00020000U)
+#define CSL_TOP_PRCM_PSCON_DFTRTA_OVERRIDE_PSCON_DFTRTA_OVERRIDE_OV_DFTRTAGOOD_SHIFT (0x00000011U)
+#define CSL_TOP_PRCM_PSCON_DFTRTA_OVERRIDE_PSCON_DFTRTA_OVERRIDE_OV_DFTRTAGOOD_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PSCON_DFTRTA_OVERRIDE_PSCON_DFTRTA_OVERRIDE_OV_DFTRTAGOOD_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_PSCON_DFTRTA_OVERRIDE_RESETVAL                            (0x00010001U)
+
+/* PSCON_VNWA_SWITCH_EN1 */
+
+#define CSL_TOP_PRCM_PSCON_VNWA_SWITCH_EN1_PSCON_VNWA_SWITCH_EN1_SEL_OV_APP_PD_MEM_GRP1_VNWA_SWITCH_EN_MASK (0x00000001U)
+#define CSL_TOP_PRCM_PSCON_VNWA_SWITCH_EN1_PSCON_VNWA_SWITCH_EN1_SEL_OV_APP_PD_MEM_GRP1_VNWA_SWITCH_EN_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_PSCON_VNWA_SWITCH_EN1_PSCON_VNWA_SWITCH_EN1_SEL_OV_APP_PD_MEM_GRP1_VNWA_SWITCH_EN_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PSCON_VNWA_SWITCH_EN1_PSCON_VNWA_SWITCH_EN1_SEL_OV_APP_PD_MEM_GRP1_VNWA_SWITCH_EN_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_PSCON_VNWA_SWITCH_EN1_PSCON_VNWA_SWITCH_EN1_OV_APP_PD_MEM_GRP1_VNWA_SWITCH_EN_MASK (0x00000002U)
+#define CSL_TOP_PRCM_PSCON_VNWA_SWITCH_EN1_PSCON_VNWA_SWITCH_EN1_OV_APP_PD_MEM_GRP1_VNWA_SWITCH_EN_SHIFT (0x00000001U)
+#define CSL_TOP_PRCM_PSCON_VNWA_SWITCH_EN1_PSCON_VNWA_SWITCH_EN1_OV_APP_PD_MEM_GRP1_VNWA_SWITCH_EN_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PSCON_VNWA_SWITCH_EN1_PSCON_VNWA_SWITCH_EN1_OV_APP_PD_MEM_GRP1_VNWA_SWITCH_EN_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_PSCON_VNWA_SWITCH_EN1_PSCON_VNWA_SWITCH_EN1_SEL_OV_APP_PD_MEM_GRP2_VNWA_SWITCH_EN_MASK (0x00010000U)
+#define CSL_TOP_PRCM_PSCON_VNWA_SWITCH_EN1_PSCON_VNWA_SWITCH_EN1_SEL_OV_APP_PD_MEM_GRP2_VNWA_SWITCH_EN_SHIFT (0x00000010U)
+#define CSL_TOP_PRCM_PSCON_VNWA_SWITCH_EN1_PSCON_VNWA_SWITCH_EN1_SEL_OV_APP_PD_MEM_GRP2_VNWA_SWITCH_EN_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PSCON_VNWA_SWITCH_EN1_PSCON_VNWA_SWITCH_EN1_SEL_OV_APP_PD_MEM_GRP2_VNWA_SWITCH_EN_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_PSCON_VNWA_SWITCH_EN1_PSCON_VNWA_SWITCH_EN1_OV_APP_PD_MEM_GRP2_VNWA_SWITCH_EN_MASK (0x00020000U)
+#define CSL_TOP_PRCM_PSCON_VNWA_SWITCH_EN1_PSCON_VNWA_SWITCH_EN1_OV_APP_PD_MEM_GRP2_VNWA_SWITCH_EN_SHIFT (0x00000011U)
+#define CSL_TOP_PRCM_PSCON_VNWA_SWITCH_EN1_PSCON_VNWA_SWITCH_EN1_OV_APP_PD_MEM_GRP2_VNWA_SWITCH_EN_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PSCON_VNWA_SWITCH_EN1_PSCON_VNWA_SWITCH_EN1_OV_APP_PD_MEM_GRP2_VNWA_SWITCH_EN_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_PSCON_VNWA_SWITCH_EN1_RESETVAL                            (0x00000000U)
+
+/* PSCON_VNWA_SWITCH_EN2 */
+
+#define CSL_TOP_PRCM_PSCON_VNWA_SWITCH_EN2_PSCON_VNWA_SWITCH_EN2_SEL_OV_HWA_PD_MEM_GRP3_VNWA_SWITCH_EN_MASK (0x00000001U)
+#define CSL_TOP_PRCM_PSCON_VNWA_SWITCH_EN2_PSCON_VNWA_SWITCH_EN2_SEL_OV_HWA_PD_MEM_GRP3_VNWA_SWITCH_EN_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_PSCON_VNWA_SWITCH_EN2_PSCON_VNWA_SWITCH_EN2_SEL_OV_HWA_PD_MEM_GRP3_VNWA_SWITCH_EN_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PSCON_VNWA_SWITCH_EN2_PSCON_VNWA_SWITCH_EN2_SEL_OV_HWA_PD_MEM_GRP3_VNWA_SWITCH_EN_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_PSCON_VNWA_SWITCH_EN2_PSCON_VNWA_SWITCH_EN2_OV_HWA_PD_MEM_GRP3_VNWA_SWITCH_EN_MASK (0x00000002U)
+#define CSL_TOP_PRCM_PSCON_VNWA_SWITCH_EN2_PSCON_VNWA_SWITCH_EN2_OV_HWA_PD_MEM_GRP3_VNWA_SWITCH_EN_SHIFT (0x00000001U)
+#define CSL_TOP_PRCM_PSCON_VNWA_SWITCH_EN2_PSCON_VNWA_SWITCH_EN2_OV_HWA_PD_MEM_GRP3_VNWA_SWITCH_EN_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PSCON_VNWA_SWITCH_EN2_PSCON_VNWA_SWITCH_EN2_OV_HWA_PD_MEM_GRP3_VNWA_SWITCH_EN_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_PSCON_VNWA_SWITCH_EN2_PSCON_VNWA_SWITCH_EN2_SEL_OV_FEC_PD_MEM_GRP4_VNWA_SWITCH_EN_MASK (0x00010000U)
+#define CSL_TOP_PRCM_PSCON_VNWA_SWITCH_EN2_PSCON_VNWA_SWITCH_EN2_SEL_OV_FEC_PD_MEM_GRP4_VNWA_SWITCH_EN_SHIFT (0x00000010U)
+#define CSL_TOP_PRCM_PSCON_VNWA_SWITCH_EN2_PSCON_VNWA_SWITCH_EN2_SEL_OV_FEC_PD_MEM_GRP4_VNWA_SWITCH_EN_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PSCON_VNWA_SWITCH_EN2_PSCON_VNWA_SWITCH_EN2_SEL_OV_FEC_PD_MEM_GRP4_VNWA_SWITCH_EN_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_PSCON_VNWA_SWITCH_EN2_PSCON_VNWA_SWITCH_EN2_OV_FEC_PD_MEM_GRP4_VNWA_SWITCH_EN_MASK (0x00020000U)
+#define CSL_TOP_PRCM_PSCON_VNWA_SWITCH_EN2_PSCON_VNWA_SWITCH_EN2_OV_FEC_PD_MEM_GRP4_VNWA_SWITCH_EN_SHIFT (0x00000011U)
+#define CSL_TOP_PRCM_PSCON_VNWA_SWITCH_EN2_PSCON_VNWA_SWITCH_EN2_OV_FEC_PD_MEM_GRP4_VNWA_SWITCH_EN_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PSCON_VNWA_SWITCH_EN2_PSCON_VNWA_SWITCH_EN2_OV_FEC_PD_MEM_GRP4_VNWA_SWITCH_EN_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_PSCON_VNWA_SWITCH_EN2_RESETVAL                            (0x00000000U)
+
+/* PSCON_SRAM_LDO_WEAK_PROCESS */
+
+#define CSL_TOP_PRCM_PSCON_SRAM_LDO_WEAK_PROCESS_PSCON_SRAM_LDO_WEAK_PROCESS_SEL_OV_VNWA_SWITCH_WEAK_PROCESS_MASK (0x00000001U)
+#define CSL_TOP_PRCM_PSCON_SRAM_LDO_WEAK_PROCESS_PSCON_SRAM_LDO_WEAK_PROCESS_SEL_OV_VNWA_SWITCH_WEAK_PROCESS_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_PSCON_SRAM_LDO_WEAK_PROCESS_PSCON_SRAM_LDO_WEAK_PROCESS_SEL_OV_VNWA_SWITCH_WEAK_PROCESS_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PSCON_SRAM_LDO_WEAK_PROCESS_PSCON_SRAM_LDO_WEAK_PROCESS_SEL_OV_VNWA_SWITCH_WEAK_PROCESS_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_PSCON_SRAM_LDO_WEAK_PROCESS_PSCON_SRAM_LDO_WEAK_PROCESS_OV_VNWA_SWITCH_WEAK_PROCESS_MASK (0x00000002U)
+#define CSL_TOP_PRCM_PSCON_SRAM_LDO_WEAK_PROCESS_PSCON_SRAM_LDO_WEAK_PROCESS_OV_VNWA_SWITCH_WEAK_PROCESS_SHIFT (0x00000001U)
+#define CSL_TOP_PRCM_PSCON_SRAM_LDO_WEAK_PROCESS_PSCON_SRAM_LDO_WEAK_PROCESS_OV_VNWA_SWITCH_WEAK_PROCESS_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_PSCON_SRAM_LDO_WEAK_PROCESS_PSCON_SRAM_LDO_WEAK_PROCESS_OV_VNWA_SWITCH_WEAK_PROCESS_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_PSCON_SRAM_LDO_WEAK_PROCESS_RESETVAL                      (0x00000000U)
+
+/* CLKM_OSC_CLK_REQ */
+
+#define CSL_TOP_PRCM_CLKM_OSC_CLK_REQ_CLKM_OSC_CLK_REQ_SEL_OV_OSC_CLK_REQ_MASK (0x00000001U)
+#define CSL_TOP_PRCM_CLKM_OSC_CLK_REQ_CLKM_OSC_CLK_REQ_SEL_OV_OSC_CLK_REQ_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_CLKM_OSC_CLK_REQ_CLKM_OSC_CLK_REQ_SEL_OV_OSC_CLK_REQ_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_CLKM_OSC_CLK_REQ_CLKM_OSC_CLK_REQ_SEL_OV_OSC_CLK_REQ_MAX  (0x00000001U)
+
+#define CSL_TOP_PRCM_CLKM_OSC_CLK_REQ_CLKM_OSC_CLK_REQ_OV_OSC_CLK_REQ_MASK     (0x00000002U)
+#define CSL_TOP_PRCM_CLKM_OSC_CLK_REQ_CLKM_OSC_CLK_REQ_OV_OSC_CLK_REQ_SHIFT    (0x00000001U)
+#define CSL_TOP_PRCM_CLKM_OSC_CLK_REQ_CLKM_OSC_CLK_REQ_OV_OSC_CLK_REQ_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_CLKM_OSC_CLK_REQ_CLKM_OSC_CLK_REQ_OV_OSC_CLK_REQ_MAX      (0x00000001U)
+
+#define CSL_TOP_PRCM_CLKM_OSC_CLK_REQ_RESETVAL                                 (0x00000000U)
+
+/* CLKM_OVERRIDE1 */
+
+#define CSL_TOP_PRCM_CLKM_OVERRIDE1_CLKM_OVERRIDE1_SEL_OV_SLICER_LDO_EN_MASK   (0x00000001U)
+#define CSL_TOP_PRCM_CLKM_OVERRIDE1_CLKM_OVERRIDE1_SEL_OV_SLICER_LDO_EN_SHIFT  (0x00000000U)
+#define CSL_TOP_PRCM_CLKM_OVERRIDE1_CLKM_OVERRIDE1_SEL_OV_SLICER_LDO_EN_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_CLKM_OVERRIDE1_CLKM_OVERRIDE1_SEL_OV_SLICER_LDO_EN_MAX    (0x00000001U)
+
+#define CSL_TOP_PRCM_CLKM_OVERRIDE1_CLKM_OVERRIDE1_OV_SLICER_LDO_EN_MASK       (0x00000002U)
+#define CSL_TOP_PRCM_CLKM_OVERRIDE1_CLKM_OVERRIDE1_OV_SLICER_LDO_EN_SHIFT      (0x00000001U)
+#define CSL_TOP_PRCM_CLKM_OVERRIDE1_CLKM_OVERRIDE1_OV_SLICER_LDO_EN_RESETVAL   (0x00000000U)
+#define CSL_TOP_PRCM_CLKM_OVERRIDE1_CLKM_OVERRIDE1_OV_SLICER_LDO_EN_MAX        (0x00000001U)
+
+#define CSL_TOP_PRCM_CLKM_OVERRIDE1_CLKM_OVERRIDE1_SEL_OV_SLICER_BIAS_EN_MASK  (0x00010000U)
+#define CSL_TOP_PRCM_CLKM_OVERRIDE1_CLKM_OVERRIDE1_SEL_OV_SLICER_BIAS_EN_SHIFT (0x00000010U)
+#define CSL_TOP_PRCM_CLKM_OVERRIDE1_CLKM_OVERRIDE1_SEL_OV_SLICER_BIAS_EN_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_CLKM_OVERRIDE1_CLKM_OVERRIDE1_SEL_OV_SLICER_BIAS_EN_MAX   (0x00000001U)
+
+#define CSL_TOP_PRCM_CLKM_OVERRIDE1_CLKM_OVERRIDE1_OV_SLICER_BIAS_EN_MASK      (0x00020000U)
+#define CSL_TOP_PRCM_CLKM_OVERRIDE1_CLKM_OVERRIDE1_OV_SLICER_BIAS_EN_SHIFT     (0x00000011U)
+#define CSL_TOP_PRCM_CLKM_OVERRIDE1_CLKM_OVERRIDE1_OV_SLICER_BIAS_EN_RESETVAL  (0x00000000U)
+#define CSL_TOP_PRCM_CLKM_OVERRIDE1_CLKM_OVERRIDE1_OV_SLICER_BIAS_EN_MAX       (0x00000001U)
+
+#define CSL_TOP_PRCM_CLKM_OVERRIDE1_RESETVAL                                   (0x00000000U)
+
+/* CLKM_OVERRIDE2 */
+
+#define CSL_TOP_PRCM_CLKM_OVERRIDE2_CLKM_OVERRIDE2_SEL_OV_XTAL_EN_MASK         (0x00000001U)
+#define CSL_TOP_PRCM_CLKM_OVERRIDE2_CLKM_OVERRIDE2_SEL_OV_XTAL_EN_SHIFT        (0x00000000U)
+#define CSL_TOP_PRCM_CLKM_OVERRIDE2_CLKM_OVERRIDE2_SEL_OV_XTAL_EN_RESETVAL     (0x00000000U)
+#define CSL_TOP_PRCM_CLKM_OVERRIDE2_CLKM_OVERRIDE2_SEL_OV_XTAL_EN_MAX          (0x00000001U)
+
+#define CSL_TOP_PRCM_CLKM_OVERRIDE2_CLKM_OVERRIDE2_OV_XTAL_EN_MASK             (0x00000002U)
+#define CSL_TOP_PRCM_CLKM_OVERRIDE2_CLKM_OVERRIDE2_OV_XTAL_EN_SHIFT            (0x00000001U)
+#define CSL_TOP_PRCM_CLKM_OVERRIDE2_CLKM_OVERRIDE2_OV_XTAL_EN_RESETVAL         (0x00000000U)
+#define CSL_TOP_PRCM_CLKM_OVERRIDE2_CLKM_OVERRIDE2_OV_XTAL_EN_MAX              (0x00000001U)
+
+#define CSL_TOP_PRCM_CLKM_OVERRIDE2_CLKM_OVERRIDE2_SEL_OV_SLICER_EN_MASK       (0x00010000U)
+#define CSL_TOP_PRCM_CLKM_OVERRIDE2_CLKM_OVERRIDE2_SEL_OV_SLICER_EN_SHIFT      (0x00000010U)
+#define CSL_TOP_PRCM_CLKM_OVERRIDE2_CLKM_OVERRIDE2_SEL_OV_SLICER_EN_RESETVAL   (0x00000000U)
+#define CSL_TOP_PRCM_CLKM_OVERRIDE2_CLKM_OVERRIDE2_SEL_OV_SLICER_EN_MAX        (0x00000001U)
+
+#define CSL_TOP_PRCM_CLKM_OVERRIDE2_CLKM_OVERRIDE2_OV_SLICER_EN_MASK           (0x00020000U)
+#define CSL_TOP_PRCM_CLKM_OVERRIDE2_CLKM_OVERRIDE2_OV_SLICER_EN_SHIFT          (0x00000011U)
+#define CSL_TOP_PRCM_CLKM_OVERRIDE2_CLKM_OVERRIDE2_OV_SLICER_EN_RESETVAL       (0x00000000U)
+#define CSL_TOP_PRCM_CLKM_OVERRIDE2_CLKM_OVERRIDE2_OV_SLICER_EN_MAX            (0x00000001U)
+
+#define CSL_TOP_PRCM_CLKM_OVERRIDE2_RESETVAL                                   (0x00000000U)
+
+/* CLKM_OVERRIDE3 */
+
+#define CSL_TOP_PRCM_CLKM_OVERRIDE3_CLKM_OVERRIDE3_SEL_OV_XTAL_DET_EN_MASK     (0x00000001U)
+#define CSL_TOP_PRCM_CLKM_OVERRIDE3_CLKM_OVERRIDE3_SEL_OV_XTAL_DET_EN_SHIFT    (0x00000000U)
+#define CSL_TOP_PRCM_CLKM_OVERRIDE3_CLKM_OVERRIDE3_SEL_OV_XTAL_DET_EN_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_CLKM_OVERRIDE3_CLKM_OVERRIDE3_SEL_OV_XTAL_DET_EN_MAX      (0x00000001U)
+
+#define CSL_TOP_PRCM_CLKM_OVERRIDE3_CLKM_OVERRIDE3_OV_XTAL_DET_EN_MASK         (0x00000002U)
+#define CSL_TOP_PRCM_CLKM_OVERRIDE3_CLKM_OVERRIDE3_OV_XTAL_DET_EN_SHIFT        (0x00000001U)
+#define CSL_TOP_PRCM_CLKM_OVERRIDE3_CLKM_OVERRIDE3_OV_XTAL_DET_EN_RESETVAL     (0x00000000U)
+#define CSL_TOP_PRCM_CLKM_OVERRIDE3_CLKM_OVERRIDE3_OV_XTAL_DET_EN_MAX          (0x00000001U)
+
+#define CSL_TOP_PRCM_CLKM_OVERRIDE3_RESETVAL                                   (0x00000000U)
+
+/* CLKM_OUTPUT_HOST_CLK_REQ_OVERRIDE */
+
+#define CSL_TOP_PRCM_CLKM_OUTPUT_HOST_CLK_REQ_OVERRIDE_CLKM_OUTPUT_HOST_CLK_REQ_OVERRIDE_SEL_OV_HOST_CLK_REQ_MASK (0x00000001U)
+#define CSL_TOP_PRCM_CLKM_OUTPUT_HOST_CLK_REQ_OVERRIDE_CLKM_OUTPUT_HOST_CLK_REQ_OVERRIDE_SEL_OV_HOST_CLK_REQ_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_CLKM_OUTPUT_HOST_CLK_REQ_OVERRIDE_CLKM_OUTPUT_HOST_CLK_REQ_OVERRIDE_SEL_OV_HOST_CLK_REQ_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_CLKM_OUTPUT_HOST_CLK_REQ_OVERRIDE_CLKM_OUTPUT_HOST_CLK_REQ_OVERRIDE_SEL_OV_HOST_CLK_REQ_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_CLKM_OUTPUT_HOST_CLK_REQ_OVERRIDE_CLKM_OUTPUT_HOST_CLK_REQ_OVERRIDE_OV_HOST_CLK_REQ_MASK (0x00000002U)
+#define CSL_TOP_PRCM_CLKM_OUTPUT_HOST_CLK_REQ_OVERRIDE_CLKM_OUTPUT_HOST_CLK_REQ_OVERRIDE_OV_HOST_CLK_REQ_SHIFT (0x00000001U)
+#define CSL_TOP_PRCM_CLKM_OUTPUT_HOST_CLK_REQ_OVERRIDE_CLKM_OUTPUT_HOST_CLK_REQ_OVERRIDE_OV_HOST_CLK_REQ_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_CLKM_OUTPUT_HOST_CLK_REQ_OVERRIDE_CLKM_OUTPUT_HOST_CLK_REQ_OVERRIDE_OV_HOST_CLK_REQ_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_CLKM_OUTPUT_HOST_CLK_REQ_OVERRIDE_RESETVAL                (0x00000000U)
+
+/* CLKM_SEL_OV_XT_DRIVE */
+
+#define CSL_TOP_PRCM_CLKM_SEL_OV_XT_DRIVE_CLKM_SEL_OV_XT_DRIVE_SEL_OV_LOW_XT_DRIVE_MASK (0x00000001U)
+#define CSL_TOP_PRCM_CLKM_SEL_OV_XT_DRIVE_CLKM_SEL_OV_XT_DRIVE_SEL_OV_LOW_XT_DRIVE_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_CLKM_SEL_OV_XT_DRIVE_CLKM_SEL_OV_XT_DRIVE_SEL_OV_LOW_XT_DRIVE_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_CLKM_SEL_OV_XT_DRIVE_CLKM_SEL_OV_XT_DRIVE_SEL_OV_LOW_XT_DRIVE_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_CLKM_SEL_OV_XT_DRIVE_CLKM_SEL_OV_XT_DRIVE_OV_LOW_XT_DRIVE_MASK (0x0000003EU)
+#define CSL_TOP_PRCM_CLKM_SEL_OV_XT_DRIVE_CLKM_SEL_OV_XT_DRIVE_OV_LOW_XT_DRIVE_SHIFT (0x00000001U)
+#define CSL_TOP_PRCM_CLKM_SEL_OV_XT_DRIVE_CLKM_SEL_OV_XT_DRIVE_OV_LOW_XT_DRIVE_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_CLKM_SEL_OV_XT_DRIVE_CLKM_SEL_OV_XT_DRIVE_OV_LOW_XT_DRIVE_MAX (0x0000001FU)
+
+#define CSL_TOP_PRCM_CLKM_SEL_OV_XT_DRIVE_CLKM_SEL_OV_XT_DRIVE_SEL_OV_HIGH_XT_DRIVE_MASK (0x00010000U)
+#define CSL_TOP_PRCM_CLKM_SEL_OV_XT_DRIVE_CLKM_SEL_OV_XT_DRIVE_SEL_OV_HIGH_XT_DRIVE_SHIFT (0x00000010U)
+#define CSL_TOP_PRCM_CLKM_SEL_OV_XT_DRIVE_CLKM_SEL_OV_XT_DRIVE_SEL_OV_HIGH_XT_DRIVE_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_CLKM_SEL_OV_XT_DRIVE_CLKM_SEL_OV_XT_DRIVE_SEL_OV_HIGH_XT_DRIVE_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_CLKM_SEL_OV_XT_DRIVE_CLKM_SEL_OV_XT_DRIVE_OV_HIGH_XT_DRIVE_MASK (0x003E0000U)
+#define CSL_TOP_PRCM_CLKM_SEL_OV_XT_DRIVE_CLKM_SEL_OV_XT_DRIVE_OV_HIGH_XT_DRIVE_SHIFT (0x00000011U)
+#define CSL_TOP_PRCM_CLKM_SEL_OV_XT_DRIVE_CLKM_SEL_OV_XT_DRIVE_OV_HIGH_XT_DRIVE_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_CLKM_SEL_OV_XT_DRIVE_CLKM_SEL_OV_XT_DRIVE_OV_HIGH_XT_DRIVE_MAX (0x0000001FU)
+
+#define CSL_TOP_PRCM_CLKM_SEL_OV_XT_DRIVE_RESETVAL                             (0x00000000U)
+
+/* CLKM_DELAY1 */
+
+#define CSL_TOP_PRCM_CLKM_DELAY1_CLKM_DELAY1_CLKM_CLK_REQ_DELAY_MASK           (0x0000001FU)
+#define CSL_TOP_PRCM_CLKM_DELAY1_CLKM_DELAY1_CLKM_CLK_REQ_DELAY_SHIFT          (0x00000000U)
+#define CSL_TOP_PRCM_CLKM_DELAY1_CLKM_DELAY1_CLKM_CLK_REQ_DELAY_RESETVAL       (0x00000000U)
+#define CSL_TOP_PRCM_CLKM_DELAY1_CLKM_DELAY1_CLKM_CLK_REQ_DELAY_MAX            (0x0000001FU)
+
+#define CSL_TOP_PRCM_CLKM_DELAY1_CLKM_DELAY1_CLKM_EXTEND_VALID_DELAY_MASK      (0x001F0000U)
+#define CSL_TOP_PRCM_CLKM_DELAY1_CLKM_DELAY1_CLKM_EXTEND_VALID_DELAY_SHIFT     (0x00000010U)
+#define CSL_TOP_PRCM_CLKM_DELAY1_CLKM_DELAY1_CLKM_EXTEND_VALID_DELAY_RESETVAL  (0x00000000U)
+#define CSL_TOP_PRCM_CLKM_DELAY1_CLKM_DELAY1_CLKM_EXTEND_VALID_DELAY_MAX       (0x0000001FU)
+
+#define CSL_TOP_PRCM_CLKM_DELAY1_RESETVAL                                      (0x00000000U)
+
+/* CLKM_DELAY2 */
+
+#define CSL_TOP_PRCM_CLKM_DELAY2_CLKM_DELAY2_SEL_OV_CLKM_OSC_EN_DELAY_MASK     (0x00000001U)
+#define CSL_TOP_PRCM_CLKM_DELAY2_CLKM_DELAY2_SEL_OV_CLKM_OSC_EN_DELAY_SHIFT    (0x00000000U)
+#define CSL_TOP_PRCM_CLKM_DELAY2_CLKM_DELAY2_SEL_OV_CLKM_OSC_EN_DELAY_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_CLKM_DELAY2_CLKM_DELAY2_SEL_OV_CLKM_OSC_EN_DELAY_MAX      (0x00000001U)
+
+#define CSL_TOP_PRCM_CLKM_DELAY2_CLKM_DELAY2_OV_CLKM_OSC_EN_DELAY_MASK         (0x000007FEU)
+#define CSL_TOP_PRCM_CLKM_DELAY2_CLKM_DELAY2_OV_CLKM_OSC_EN_DELAY_SHIFT        (0x00000001U)
+#define CSL_TOP_PRCM_CLKM_DELAY2_CLKM_DELAY2_OV_CLKM_OSC_EN_DELAY_RESETVAL     (0x0000001FU)
+#define CSL_TOP_PRCM_CLKM_DELAY2_CLKM_DELAY2_OV_CLKM_OSC_EN_DELAY_MAX          (0x000003FFU)
+
+#define CSL_TOP_PRCM_CLKM_DELAY2_CLKM_DELAY2_SEL_OV_CLKM_SLICER_EN_DELAY_MASK  (0x00010000U)
+#define CSL_TOP_PRCM_CLKM_DELAY2_CLKM_DELAY2_SEL_OV_CLKM_SLICER_EN_DELAY_SHIFT (0x00000010U)
+#define CSL_TOP_PRCM_CLKM_DELAY2_CLKM_DELAY2_SEL_OV_CLKM_SLICER_EN_DELAY_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_CLKM_DELAY2_CLKM_DELAY2_SEL_OV_CLKM_SLICER_EN_DELAY_MAX   (0x00000001U)
+
+#define CSL_TOP_PRCM_CLKM_DELAY2_CLKM_DELAY2_OV_CLKM_SLICER_EN_DELAY_MASK      (0x07FE0000U)
+#define CSL_TOP_PRCM_CLKM_DELAY2_CLKM_DELAY2_OV_CLKM_SLICER_EN_DELAY_SHIFT     (0x00000011U)
+#define CSL_TOP_PRCM_CLKM_DELAY2_CLKM_DELAY2_OV_CLKM_SLICER_EN_DELAY_RESETVAL  (0x00000003U)
+#define CSL_TOP_PRCM_CLKM_DELAY2_CLKM_DELAY2_OV_CLKM_SLICER_EN_DELAY_MAX       (0x000003FFU)
+
+#define CSL_TOP_PRCM_CLKM_DELAY2_RESETVAL                                      (0x0006003EU)
+
+/* CLKM_HOST_CLK_REQ_DELAY */
+
+#define CSL_TOP_PRCM_CLKM_HOST_CLK_REQ_DELAY_CLKM_HOST_CLK_REQ_DELAY_SEL_OV_CLKM_HOST_CLK_REQ_DELAY_MASK (0x00000001U)
+#define CSL_TOP_PRCM_CLKM_HOST_CLK_REQ_DELAY_CLKM_HOST_CLK_REQ_DELAY_SEL_OV_CLKM_HOST_CLK_REQ_DELAY_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_CLKM_HOST_CLK_REQ_DELAY_CLKM_HOST_CLK_REQ_DELAY_SEL_OV_CLKM_HOST_CLK_REQ_DELAY_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_CLKM_HOST_CLK_REQ_DELAY_CLKM_HOST_CLK_REQ_DELAY_SEL_OV_CLKM_HOST_CLK_REQ_DELAY_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_CLKM_HOST_CLK_REQ_DELAY_CLKM_HOST_CLK_REQ_DELAY_OV_CLKM_HOST_CLK_REQ_DELAY_MASK (0x000007FEU)
+#define CSL_TOP_PRCM_CLKM_HOST_CLK_REQ_DELAY_CLKM_HOST_CLK_REQ_DELAY_OV_CLKM_HOST_CLK_REQ_DELAY_SHIFT (0x00000001U)
+#define CSL_TOP_PRCM_CLKM_HOST_CLK_REQ_DELAY_CLKM_HOST_CLK_REQ_DELAY_OV_CLKM_HOST_CLK_REQ_DELAY_RESETVAL (0x000001E0U)
+#define CSL_TOP_PRCM_CLKM_HOST_CLK_REQ_DELAY_CLKM_HOST_CLK_REQ_DELAY_OV_CLKM_HOST_CLK_REQ_DELAY_MAX (0x000003FFU)
+
+#define CSL_TOP_PRCM_CLKM_HOST_CLK_REQ_DELAY_CLKM_HOST_CLK_REQ_DELAY_SEL_OV_CLKM_HOST_CLK_REQ_PULSE_WIDTH_MASK (0x00010000U)
+#define CSL_TOP_PRCM_CLKM_HOST_CLK_REQ_DELAY_CLKM_HOST_CLK_REQ_DELAY_SEL_OV_CLKM_HOST_CLK_REQ_PULSE_WIDTH_SHIFT (0x00000010U)
+#define CSL_TOP_PRCM_CLKM_HOST_CLK_REQ_DELAY_CLKM_HOST_CLK_REQ_DELAY_SEL_OV_CLKM_HOST_CLK_REQ_PULSE_WIDTH_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_CLKM_HOST_CLK_REQ_DELAY_CLKM_HOST_CLK_REQ_DELAY_SEL_OV_CLKM_HOST_CLK_REQ_PULSE_WIDTH_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_CLKM_HOST_CLK_REQ_DELAY_CLKM_HOST_CLK_REQ_DELAY_OV_CLKM_HOST_CLK_REQ_PULSE_WIDTH_MASK (0x07FE0000U)
+#define CSL_TOP_PRCM_CLKM_HOST_CLK_REQ_DELAY_CLKM_HOST_CLK_REQ_DELAY_OV_CLKM_HOST_CLK_REQ_PULSE_WIDTH_SHIFT (0x00000011U)
+#define CSL_TOP_PRCM_CLKM_HOST_CLK_REQ_DELAY_CLKM_HOST_CLK_REQ_DELAY_OV_CLKM_HOST_CLK_REQ_PULSE_WIDTH_RESETVAL (0x00000064U)
+#define CSL_TOP_PRCM_CLKM_HOST_CLK_REQ_DELAY_CLKM_HOST_CLK_REQ_DELAY_OV_CLKM_HOST_CLK_REQ_PULSE_WIDTH_MAX (0x000003FFU)
+
+#define CSL_TOP_PRCM_CLKM_HOST_CLK_REQ_DELAY_RESETVAL                          (0x00C803C0U)
+
+/* RST_OVERRIDE */
+
+#define CSL_TOP_PRCM_RST_OVERRIDE_RST_OVERRIDE_OV_APP_PD_POR_RSTN_MASK         (0x00000001U)
+#define CSL_TOP_PRCM_RST_OVERRIDE_RST_OVERRIDE_OV_APP_PD_POR_RSTN_SHIFT        (0x00000000U)
+#define CSL_TOP_PRCM_RST_OVERRIDE_RST_OVERRIDE_OV_APP_PD_POR_RSTN_RESETVAL     (0x00000001U)
+#define CSL_TOP_PRCM_RST_OVERRIDE_RST_OVERRIDE_OV_APP_PD_POR_RSTN_MAX          (0x00000001U)
+
+#define CSL_TOP_PRCM_RST_OVERRIDE_RST_OVERRIDE_OV_FEC_PD_POR_RSTN_MASK         (0x00000002U)
+#define CSL_TOP_PRCM_RST_OVERRIDE_RST_OVERRIDE_OV_FEC_PD_POR_RSTN_SHIFT        (0x00000001U)
+#define CSL_TOP_PRCM_RST_OVERRIDE_RST_OVERRIDE_OV_FEC_PD_POR_RSTN_RESETVAL     (0x00000001U)
+#define CSL_TOP_PRCM_RST_OVERRIDE_RST_OVERRIDE_OV_FEC_PD_POR_RSTN_MAX          (0x00000001U)
+
+#define CSL_TOP_PRCM_RST_OVERRIDE_RST_OVERRIDE_OV_HWA_PD_POR_RSTN_MASK         (0x00000004U)
+#define CSL_TOP_PRCM_RST_OVERRIDE_RST_OVERRIDE_OV_HWA_PD_POR_RSTN_SHIFT        (0x00000002U)
+#define CSL_TOP_PRCM_RST_OVERRIDE_RST_OVERRIDE_OV_HWA_PD_POR_RSTN_RESETVAL     (0x00000001U)
+#define CSL_TOP_PRCM_RST_OVERRIDE_RST_OVERRIDE_OV_HWA_PD_POR_RSTN_MAX          (0x00000001U)
+
+#define CSL_TOP_PRCM_RST_OVERRIDE_RST_OVERRIDE_OV_PSCON_POR_RSTN_MASK          (0x00000010U)
+#define CSL_TOP_PRCM_RST_OVERRIDE_RST_OVERRIDE_OV_PSCON_POR_RSTN_SHIFT         (0x00000004U)
+#define CSL_TOP_PRCM_RST_OVERRIDE_RST_OVERRIDE_OV_PSCON_POR_RSTN_RESETVAL      (0x00000001U)
+#define CSL_TOP_PRCM_RST_OVERRIDE_RST_OVERRIDE_OV_PSCON_POR_RSTN_MAX           (0x00000001U)
+
+#define CSL_TOP_PRCM_RST_OVERRIDE_RESETVAL                                     (0x00000017U)
+
+/* RST_SOFT_RESET */
+
+#define CSL_TOP_PRCM_RST_SOFT_RESET_RST_SOFT_RESET_WARM_RESET_REQN_MASK        (0x00000001U)
+#define CSL_TOP_PRCM_RST_SOFT_RESET_RST_SOFT_RESET_WARM_RESET_REQN_SHIFT       (0x00000000U)
+#define CSL_TOP_PRCM_RST_SOFT_RESET_RST_SOFT_RESET_WARM_RESET_REQN_RESETVAL    (0x00000000U)
+#define CSL_TOP_PRCM_RST_SOFT_RESET_RST_SOFT_RESET_WARM_RESET_REQN_MAX         (0x00000001U)
+
+#define CSL_TOP_PRCM_RST_SOFT_RESET_RST_SOFT_RESET_WARM_RSTN_PULSE_WIDTH_MASK  (0x001F0000U)
+#define CSL_TOP_PRCM_RST_SOFT_RESET_RST_SOFT_RESET_WARM_RSTN_PULSE_WIDTH_SHIFT (0x00000010U)
+#define CSL_TOP_PRCM_RST_SOFT_RESET_RST_SOFT_RESET_WARM_RSTN_PULSE_WIDTH_RESETVAL (0x00000010U)
+#define CSL_TOP_PRCM_RST_SOFT_RESET_RST_SOFT_RESET_WARM_RSTN_PULSE_WIDTH_MAX   (0x0000001FU)
+
+#define CSL_TOP_PRCM_RST_SOFT_RESET_RESETVAL                                   (0x00100000U)
+
+/* RST_WDT_RESET_EN */
+
+#define CSL_TOP_PRCM_RST_WDT_RESET_EN_RST_WDT_RESET_EN_WD_RESET_EN_MASK        (0x00000001U)
+#define CSL_TOP_PRCM_RST_WDT_RESET_EN_RST_WDT_RESET_EN_WD_RESET_EN_SHIFT       (0x00000000U)
+#define CSL_TOP_PRCM_RST_WDT_RESET_EN_RST_WDT_RESET_EN_WD_RESET_EN_RESETVAL    (0x00000000U)
+#define CSL_TOP_PRCM_RST_WDT_RESET_EN_RST_WDT_RESET_EN_WD_RESET_EN_MAX         (0x00000001U)
+
+#define CSL_TOP_PRCM_RST_WDT_RESET_EN_RESETVAL                                 (0x00000000U)
+
+/* RST_APP_PD_SOFT_RESET */
+
+#define CSL_TOP_PRCM_RST_APP_PD_SOFT_RESET_RST_APP_PD_SOFT_RESET_APP_PD_WARM_RESET_REQN_MASK (0x00000001U)
+#define CSL_TOP_PRCM_RST_APP_PD_SOFT_RESET_RST_APP_PD_SOFT_RESET_APP_PD_WARM_RESET_REQN_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_RST_APP_PD_SOFT_RESET_RST_APP_PD_SOFT_RESET_APP_PD_WARM_RESET_REQN_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_RST_APP_PD_SOFT_RESET_RST_APP_PD_SOFT_RESET_APP_PD_WARM_RESET_REQN_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_RST_APP_PD_SOFT_RESET_RST_APP_PD_SOFT_RESET_APP_PD_WARM_RSTN_PULSE_WIDTH_MASK (0x001F0000U)
+#define CSL_TOP_PRCM_RST_APP_PD_SOFT_RESET_RST_APP_PD_SOFT_RESET_APP_PD_WARM_RSTN_PULSE_WIDTH_SHIFT (0x00000010U)
+#define CSL_TOP_PRCM_RST_APP_PD_SOFT_RESET_RST_APP_PD_SOFT_RESET_APP_PD_WARM_RSTN_PULSE_WIDTH_RESETVAL (0x00000010U)
+#define CSL_TOP_PRCM_RST_APP_PD_SOFT_RESET_RST_APP_PD_SOFT_RESET_APP_PD_WARM_RSTN_PULSE_WIDTH_MAX (0x0000001FU)
+
+#define CSL_TOP_PRCM_RST_APP_PD_SOFT_RESET_RESETVAL                            (0x00100000U)
+
+/* RST_FEC_PD_SOFT_RESET */
+
+#define CSL_TOP_PRCM_RST_FEC_PD_SOFT_RESET_RST_FEC_PD_SOFT_RESET_FEC_PD_WARM_RESET_REQN_MASK (0x00000001U)
+#define CSL_TOP_PRCM_RST_FEC_PD_SOFT_RESET_RST_FEC_PD_SOFT_RESET_FEC_PD_WARM_RESET_REQN_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_RST_FEC_PD_SOFT_RESET_RST_FEC_PD_SOFT_RESET_FEC_PD_WARM_RESET_REQN_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_RST_FEC_PD_SOFT_RESET_RST_FEC_PD_SOFT_RESET_FEC_PD_WARM_RESET_REQN_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_RST_FEC_PD_SOFT_RESET_RST_FEC_PD_SOFT_RESET_FEC_PD_WARM_RSTN_PULSE_WIDTH_MASK (0x001F0000U)
+#define CSL_TOP_PRCM_RST_FEC_PD_SOFT_RESET_RST_FEC_PD_SOFT_RESET_FEC_PD_WARM_RSTN_PULSE_WIDTH_SHIFT (0x00000010U)
+#define CSL_TOP_PRCM_RST_FEC_PD_SOFT_RESET_RST_FEC_PD_SOFT_RESET_FEC_PD_WARM_RSTN_PULSE_WIDTH_RESETVAL (0x00000010U)
+#define CSL_TOP_PRCM_RST_FEC_PD_SOFT_RESET_RST_FEC_PD_SOFT_RESET_FEC_PD_WARM_RSTN_PULSE_WIDTH_MAX (0x0000001FU)
+
+#define CSL_TOP_PRCM_RST_FEC_PD_SOFT_RESET_RESETVAL                            (0x00100000U)
+
+/* RST_HWA_PD_SOFT_RESET */
+
+#define CSL_TOP_PRCM_RST_HWA_PD_SOFT_RESET_RST_HWA_PD_SOFT_RESET_HWA_PD_WARM_RESET_REQN_MASK (0x00000001U)
+#define CSL_TOP_PRCM_RST_HWA_PD_SOFT_RESET_RST_HWA_PD_SOFT_RESET_HWA_PD_WARM_RESET_REQN_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_RST_HWA_PD_SOFT_RESET_RST_HWA_PD_SOFT_RESET_HWA_PD_WARM_RESET_REQN_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_RST_HWA_PD_SOFT_RESET_RST_HWA_PD_SOFT_RESET_HWA_PD_WARM_RESET_REQN_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_RST_HWA_PD_SOFT_RESET_RST_HWA_PD_SOFT_RESET_HWA_PD_WARM_RSTN_PULSE_WIDTH_MASK (0x001F0000U)
+#define CSL_TOP_PRCM_RST_HWA_PD_SOFT_RESET_RST_HWA_PD_SOFT_RESET_HWA_PD_WARM_RSTN_PULSE_WIDTH_SHIFT (0x00000010U)
+#define CSL_TOP_PRCM_RST_HWA_PD_SOFT_RESET_RST_HWA_PD_SOFT_RESET_HWA_PD_WARM_RSTN_PULSE_WIDTH_RESETVAL (0x00000010U)
+#define CSL_TOP_PRCM_RST_HWA_PD_SOFT_RESET_RST_HWA_PD_SOFT_RESET_HWA_PD_WARM_RSTN_PULSE_WIDTH_MAX (0x0000001FU)
+
+#define CSL_TOP_PRCM_RST_HWA_PD_SOFT_RESET_RESETVAL                            (0x00100000U)
+
+/* RST_SOFT_APP_CORE_SYSRESET_REQ */
+
+#define CSL_TOP_PRCM_RST_SOFT_APP_CORE_SYSRESET_REQ_RST_SOFT_APP_CORE_SYSRESET_REQ_APP_PD_CORE_RESET_REQN_MASK (0x00000001U)
+#define CSL_TOP_PRCM_RST_SOFT_APP_CORE_SYSRESET_REQ_RST_SOFT_APP_CORE_SYSRESET_REQ_APP_PD_CORE_RESET_REQN_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_RST_SOFT_APP_CORE_SYSRESET_REQ_RST_SOFT_APP_CORE_SYSRESET_REQ_APP_PD_CORE_RESET_REQN_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_RST_SOFT_APP_CORE_SYSRESET_REQ_RST_SOFT_APP_CORE_SYSRESET_REQ_APP_PD_CORE_RESET_REQN_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_RST_SOFT_APP_CORE_SYSRESET_REQ_RST_SOFT_APP_CORE_SYSRESET_REQ_APP_PD_CORE_RSTN_PULSE_WIDTH_MASK (0x001F0000U)
+#define CSL_TOP_PRCM_RST_SOFT_APP_CORE_SYSRESET_REQ_RST_SOFT_APP_CORE_SYSRESET_REQ_APP_PD_CORE_RSTN_PULSE_WIDTH_SHIFT (0x00000010U)
+#define CSL_TOP_PRCM_RST_SOFT_APP_CORE_SYSRESET_REQ_RST_SOFT_APP_CORE_SYSRESET_REQ_APP_PD_CORE_RSTN_PULSE_WIDTH_RESETVAL (0x00000010U)
+#define CSL_TOP_PRCM_RST_SOFT_APP_CORE_SYSRESET_REQ_RST_SOFT_APP_CORE_SYSRESET_REQ_APP_PD_CORE_RSTN_PULSE_WIDTH_MAX (0x0000001FU)
+
+#define CSL_TOP_PRCM_RST_SOFT_APP_CORE_SYSRESET_REQ_RESETVAL                   (0x00100000U)
+
+/* RST_SOFT_FEC_CORE_SYSRESET_REQ */
+
+#define CSL_TOP_PRCM_RST_SOFT_FEC_CORE_SYSRESET_REQ_RST_SOFT_FEC_CORE_SYSRESET_REQ_FEC_PD_CORE_RESET_REQN_MASK (0x00000001U)
+#define CSL_TOP_PRCM_RST_SOFT_FEC_CORE_SYSRESET_REQ_RST_SOFT_FEC_CORE_SYSRESET_REQ_FEC_PD_CORE_RESET_REQN_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_RST_SOFT_FEC_CORE_SYSRESET_REQ_RST_SOFT_FEC_CORE_SYSRESET_REQ_FEC_PD_CORE_RESET_REQN_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_RST_SOFT_FEC_CORE_SYSRESET_REQ_RST_SOFT_FEC_CORE_SYSRESET_REQ_FEC_PD_CORE_RESET_REQN_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_RST_SOFT_FEC_CORE_SYSRESET_REQ_RST_SOFT_FEC_CORE_SYSRESET_REQ_FEC_PD_CORE_RSTN_PULSE_WIDTH_MASK (0x001F0000U)
+#define CSL_TOP_PRCM_RST_SOFT_FEC_CORE_SYSRESET_REQ_RST_SOFT_FEC_CORE_SYSRESET_REQ_FEC_PD_CORE_RSTN_PULSE_WIDTH_SHIFT (0x00000010U)
+#define CSL_TOP_PRCM_RST_SOFT_FEC_CORE_SYSRESET_REQ_RST_SOFT_FEC_CORE_SYSRESET_REQ_FEC_PD_CORE_RSTN_PULSE_WIDTH_RESETVAL (0x00000010U)
+#define CSL_TOP_PRCM_RST_SOFT_FEC_CORE_SYSRESET_REQ_RST_SOFT_FEC_CORE_SYSRESET_REQ_FEC_PD_CORE_RSTN_PULSE_WIDTH_MAX (0x0000001FU)
+
+#define CSL_TOP_PRCM_RST_SOFT_FEC_CORE_SYSRESET_REQ_RESETVAL                   (0x00100000U)
+
+/* SYS_RST_CAUSE */
+
+#define CSL_TOP_PRCM_SYS_RST_CAUSE_SYS_RST_CAUSE_SYS_RST_CAUSE_MASK            (0x00000007U)
+#define CSL_TOP_PRCM_SYS_RST_CAUSE_SYS_RST_CAUSE_SYS_RST_CAUSE_SHIFT           (0x00000000U)
+#define CSL_TOP_PRCM_SYS_RST_CAUSE_SYS_RST_CAUSE_SYS_RST_CAUSE_RESETVAL        (0x00000000U)
+#define CSL_TOP_PRCM_SYS_RST_CAUSE_SYS_RST_CAUSE_SYS_RST_CAUSE_MAX             (0x00000007U)
+
+#define CSL_TOP_PRCM_SYS_RST_CAUSE_SYS_RST_CAUSE_SYS_RST_CAUSE_CLR_MASK        (0x00010000U)
+#define CSL_TOP_PRCM_SYS_RST_CAUSE_SYS_RST_CAUSE_SYS_RST_CAUSE_CLR_SHIFT       (0x00000010U)
+#define CSL_TOP_PRCM_SYS_RST_CAUSE_SYS_RST_CAUSE_SYS_RST_CAUSE_CLR_RESETVAL    (0x00000000U)
+#define CSL_TOP_PRCM_SYS_RST_CAUSE_SYS_RST_CAUSE_SYS_RST_CAUSE_CLR_MAX         (0x00000001U)
+
+#define CSL_TOP_PRCM_SYS_RST_CAUSE_RESETVAL                                    (0x00000000U)
+
+/* DUBUGSS_DISABLE */
+
+#define CSL_TOP_PRCM_DUBUGSS_DISABLE_DUBUGSS_DISABLE_DEBUGSS_DISABLE_MASK      (0x00000001U)
+#define CSL_TOP_PRCM_DUBUGSS_DISABLE_DUBUGSS_DISABLE_DEBUGSS_DISABLE_SHIFT     (0x00000000U)
+#define CSL_TOP_PRCM_DUBUGSS_DISABLE_DUBUGSS_DISABLE_DEBUGSS_DISABLE_RESETVAL  (0x00000000U)
+#define CSL_TOP_PRCM_DUBUGSS_DISABLE_DUBUGSS_DISABLE_DEBUGSS_DISABLE_MAX       (0x00000001U)
+
+#define CSL_TOP_PRCM_DUBUGSS_DISABLE_RESETVAL                                  (0x00000000U)
+
+/* SLOW_CLK_CLKCTL */
+
+#define CSL_TOP_PRCM_SLOW_CLK_CLKCTL_SLOW_CLK_CLKCTL_SLOW_CLK_SRC_SEL_MASK     (0x00000007U)
+#define CSL_TOP_PRCM_SLOW_CLK_CLKCTL_SLOW_CLK_CLKCTL_SLOW_CLK_SRC_SEL_SHIFT    (0x00000000U)
+#define CSL_TOP_PRCM_SLOW_CLK_CLKCTL_SLOW_CLK_CLKCTL_SLOW_CLK_SRC_SEL_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_SLOW_CLK_CLKCTL_SLOW_CLK_CLKCTL_SLOW_CLK_SRC_SEL_MAX      (0x00000007U)
+
+#define CSL_TOP_PRCM_SLOW_CLK_CLKCTL_SLOW_CLK_CLKCTL_SLOW_CLK_IN_USE_MASK      (0x00030000U)
+#define CSL_TOP_PRCM_SLOW_CLK_CLKCTL_SLOW_CLK_CLKCTL_SLOW_CLK_IN_USE_SHIFT     (0x00000010U)
+#define CSL_TOP_PRCM_SLOW_CLK_CLKCTL_SLOW_CLK_CLKCTL_SLOW_CLK_IN_USE_RESETVAL  (0x00000000U)
+#define CSL_TOP_PRCM_SLOW_CLK_CLKCTL_SLOW_CLK_CLKCTL_SLOW_CLK_IN_USE_MAX       (0x00000003U)
+
+#define CSL_TOP_PRCM_SLOW_CLK_CLKCTL_RESETVAL                                  (0x00000000U)
+
+/* DEBUGSS_CLK_CLKCTL */
+
+#define CSL_TOP_PRCM_DEBUGSS_CLK_CLKCTL_DEBUGSS_CLK_CLKCTL_DEBUGSS_CLK_SRC_SEL_MASK (0x00000FFFU)
+#define CSL_TOP_PRCM_DEBUGSS_CLK_CLKCTL_DEBUGSS_CLK_CLKCTL_DEBUGSS_CLK_SRC_SEL_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_DEBUGSS_CLK_CLKCTL_DEBUGSS_CLK_CLKCTL_DEBUGSS_CLK_SRC_SEL_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_DEBUGSS_CLK_CLKCTL_DEBUGSS_CLK_CLKCTL_DEBUGSS_CLK_SRC_SEL_MAX (0x00000FFFU)
+
+#define CSL_TOP_PRCM_DEBUGSS_CLK_CLKCTL_DEBUGSS_CLK_CLKCTL_DEBUGSS_CLK_IN_USE_MASK (0x00FF0000U)
+#define CSL_TOP_PRCM_DEBUGSS_CLK_CLKCTL_DEBUGSS_CLK_CLKCTL_DEBUGSS_CLK_IN_USE_SHIFT (0x00000010U)
+#define CSL_TOP_PRCM_DEBUGSS_CLK_CLKCTL_DEBUGSS_CLK_CLKCTL_DEBUGSS_CLK_IN_USE_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_DEBUGSS_CLK_CLKCTL_DEBUGSS_CLK_CLKCTL_DEBUGSS_CLK_IN_USE_MAX (0x000000FFU)
+
+#define CSL_TOP_PRCM_DEBUGSS_CLK_CLKCTL_RESETVAL                               (0x00000000U)
+
+/* EFUSE_10M_OSC_DISABLE */
+
+#define CSL_TOP_PRCM_EFUSE_10M_OSC_DISABLE_EFUSE_10M_OSC_DISABLE_SEL_OV_EFUSE_10MHZ_OSC_DISABLE_MASK (0x00000007U)
+#define CSL_TOP_PRCM_EFUSE_10M_OSC_DISABLE_EFUSE_10M_OSC_DISABLE_SEL_OV_EFUSE_10MHZ_OSC_DISABLE_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_EFUSE_10M_OSC_DISABLE_EFUSE_10M_OSC_DISABLE_SEL_OV_EFUSE_10MHZ_OSC_DISABLE_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_EFUSE_10M_OSC_DISABLE_EFUSE_10M_OSC_DISABLE_SEL_OV_EFUSE_10MHZ_OSC_DISABLE_MAX (0x00000007U)
+
+#define CSL_TOP_PRCM_EFUSE_10M_OSC_DISABLE_EFUSE_10M_OSC_DISABLE_OV_EFUSE_10MHZ_OSC_DISABLE_MASK (0x00000008U)
+#define CSL_TOP_PRCM_EFUSE_10M_OSC_DISABLE_EFUSE_10M_OSC_DISABLE_OV_EFUSE_10MHZ_OSC_DISABLE_SHIFT (0x00000003U)
+#define CSL_TOP_PRCM_EFUSE_10M_OSC_DISABLE_EFUSE_10M_OSC_DISABLE_OV_EFUSE_10MHZ_OSC_DISABLE_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_EFUSE_10M_OSC_DISABLE_EFUSE_10M_OSC_DISABLE_OV_EFUSE_10MHZ_OSC_DISABLE_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_EFUSE_10M_OSC_DISABLE_RESETVAL                            (0x00000000U)
+
+/* DEBUGSS_CLK_AUTOSWITCH */
+
+#define CSL_TOP_PRCM_DEBUGSS_CLK_AUTOSWITCH_DEBUGSS_CLK_AUTOSWITCH_DEBUGSS_CLK_AUTOSWITCH_EN_MASK (0x00000003U)
+#define CSL_TOP_PRCM_DEBUGSS_CLK_AUTOSWITCH_DEBUGSS_CLK_AUTOSWITCH_DEBUGSS_CLK_AUTOSWITCH_EN_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_DEBUGSS_CLK_AUTOSWITCH_DEBUGSS_CLK_AUTOSWITCH_DEBUGSS_CLK_AUTOSWITCH_EN_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_DEBUGSS_CLK_AUTOSWITCH_DEBUGSS_CLK_AUTOSWITCH_DEBUGSS_CLK_AUTOSWITCH_EN_MAX (0x00000003U)
+
+#define CSL_TOP_PRCM_DEBUGSS_CLK_AUTOSWITCH_RESETVAL                           (0x00000000U)
+
+/* RADAR_SAFTY_ERROR_REG */
+
+#define CSL_TOP_PRCM_RADAR_SAFTY_ERROR_REG_RADAR_SAFTY_ERROR_REG_RADAR_STATE_FSM_UNKNOWN_STATE_ERROR_REG_MASK (0x00000001U)
+#define CSL_TOP_PRCM_RADAR_SAFTY_ERROR_REG_RADAR_SAFTY_ERROR_REG_RADAR_STATE_FSM_UNKNOWN_STATE_ERROR_REG_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_RADAR_SAFTY_ERROR_REG_RADAR_SAFTY_ERROR_REG_RADAR_STATE_FSM_UNKNOWN_STATE_ERROR_REG_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_RADAR_SAFTY_ERROR_REG_RADAR_SAFTY_ERROR_REG_RADAR_STATE_FSM_UNKNOWN_STATE_ERROR_REG_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_RADAR_SAFTY_ERROR_REG_RADAR_SAFTY_ERROR_REG_SRAM_LDO_FSM_UNKNOWN_STATE_ERROR_REG_MASK (0x00000002U)
+#define CSL_TOP_PRCM_RADAR_SAFTY_ERROR_REG_RADAR_SAFTY_ERROR_REG_SRAM_LDO_FSM_UNKNOWN_STATE_ERROR_REG_SHIFT (0x00000001U)
+#define CSL_TOP_PRCM_RADAR_SAFTY_ERROR_REG_RADAR_SAFTY_ERROR_REG_SRAM_LDO_FSM_UNKNOWN_STATE_ERROR_REG_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_RADAR_SAFTY_ERROR_REG_RADAR_SAFTY_ERROR_REG_SRAM_LDO_FSM_UNKNOWN_STATE_ERROR_REG_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_RADAR_SAFTY_ERROR_REG_RADAR_SAFTY_ERROR_REG_DIG_LDO_FSM_UNKNOWN_STATE_ERROR_REG_MASK (0x00000004U)
+#define CSL_TOP_PRCM_RADAR_SAFTY_ERROR_REG_RADAR_SAFTY_ERROR_REG_DIG_LDO_FSM_UNKNOWN_STATE_ERROR_REG_SHIFT (0x00000002U)
+#define CSL_TOP_PRCM_RADAR_SAFTY_ERROR_REG_RADAR_SAFTY_ERROR_REG_DIG_LDO_FSM_UNKNOWN_STATE_ERROR_REG_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_RADAR_SAFTY_ERROR_REG_RADAR_SAFTY_ERROR_REG_DIG_LDO_FSM_UNKNOWN_STATE_ERROR_REG_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_RADAR_SAFTY_ERROR_REG_RADAR_SAFTY_ERROR_REG_BGAP_FSM_UNKNOWN_STATE_ERROR_REG_MASK (0x00000008U)
+#define CSL_TOP_PRCM_RADAR_SAFTY_ERROR_REG_RADAR_SAFTY_ERROR_REG_BGAP_FSM_UNKNOWN_STATE_ERROR_REG_SHIFT (0x00000003U)
+#define CSL_TOP_PRCM_RADAR_SAFTY_ERROR_REG_RADAR_SAFTY_ERROR_REG_BGAP_FSM_UNKNOWN_STATE_ERROR_REG_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_RADAR_SAFTY_ERROR_REG_RADAR_SAFTY_ERROR_REG_BGAP_FSM_UNKNOWN_STATE_ERROR_REG_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_RADAR_SAFTY_ERROR_REG_RADAR_SAFTY_ERROR_REG_CLKM_FSM_UNKNOWN_STATE_ERROR_REG_MASK (0x00000010U)
+#define CSL_TOP_PRCM_RADAR_SAFTY_ERROR_REG_RADAR_SAFTY_ERROR_REG_CLKM_FSM_UNKNOWN_STATE_ERROR_REG_SHIFT (0x00000004U)
+#define CSL_TOP_PRCM_RADAR_SAFTY_ERROR_REG_RADAR_SAFTY_ERROR_REG_CLKM_FSM_UNKNOWN_STATE_ERROR_REG_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_RADAR_SAFTY_ERROR_REG_RADAR_SAFTY_ERROR_REG_CLKM_FSM_UNKNOWN_STATE_ERROR_REG_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_RADAR_SAFTY_ERROR_REG_RADAR_SAFTY_ERROR_REG_PSCON_LOGIC_FSM_UNKNOWN_STATE_ERROR_REG_MASK (0x000001E0U)
+#define CSL_TOP_PRCM_RADAR_SAFTY_ERROR_REG_RADAR_SAFTY_ERROR_REG_PSCON_LOGIC_FSM_UNKNOWN_STATE_ERROR_REG_SHIFT (0x00000005U)
+#define CSL_TOP_PRCM_RADAR_SAFTY_ERROR_REG_RADAR_SAFTY_ERROR_REG_PSCON_LOGIC_FSM_UNKNOWN_STATE_ERROR_REG_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_RADAR_SAFTY_ERROR_REG_RADAR_SAFTY_ERROR_REG_PSCON_LOGIC_FSM_UNKNOWN_STATE_ERROR_REG_MAX (0x0000000FU)
+
+#define CSL_TOP_PRCM_RADAR_SAFTY_ERROR_REG_RADAR_SAFTY_ERROR_REG_PSCON_MEM_FSM_UNKNOWN_STATE_ERROR_REG_MASK (0x00007E00U)
+#define CSL_TOP_PRCM_RADAR_SAFTY_ERROR_REG_RADAR_SAFTY_ERROR_REG_PSCON_MEM_FSM_UNKNOWN_STATE_ERROR_REG_SHIFT (0x00000009U)
+#define CSL_TOP_PRCM_RADAR_SAFTY_ERROR_REG_RADAR_SAFTY_ERROR_REG_PSCON_MEM_FSM_UNKNOWN_STATE_ERROR_REG_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_RADAR_SAFTY_ERROR_REG_RADAR_SAFTY_ERROR_REG_PSCON_MEM_FSM_UNKNOWN_STATE_ERROR_REG_MAX (0x0000003FU)
+
+#define CSL_TOP_PRCM_RADAR_SAFTY_ERROR_REG_RADAR_SAFTY_ERROR_REG_SAFETY_ERROR_REG_WR_DIS_MASK (0x00010000U)
+#define CSL_TOP_PRCM_RADAR_SAFTY_ERROR_REG_RADAR_SAFTY_ERROR_REG_SAFETY_ERROR_REG_WR_DIS_SHIFT (0x00000010U)
+#define CSL_TOP_PRCM_RADAR_SAFTY_ERROR_REG_RADAR_SAFTY_ERROR_REG_SAFETY_ERROR_REG_WR_DIS_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_RADAR_SAFTY_ERROR_REG_RADAR_SAFTY_ERROR_REG_SAFETY_ERROR_REG_WR_DIS_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_RADAR_SAFTY_ERROR_REG_RADAR_SAFTY_ERROR_REG_SAFETY_ERROR_REG_CLEAR_MASK (0x00020000U)
+#define CSL_TOP_PRCM_RADAR_SAFTY_ERROR_REG_RADAR_SAFTY_ERROR_REG_SAFETY_ERROR_REG_CLEAR_SHIFT (0x00000011U)
+#define CSL_TOP_PRCM_RADAR_SAFTY_ERROR_REG_RADAR_SAFTY_ERROR_REG_SAFETY_ERROR_REG_CLEAR_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_RADAR_SAFTY_ERROR_REG_RADAR_SAFTY_ERROR_REG_SAFETY_ERROR_REG_CLEAR_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_RADAR_SAFTY_ERROR_REG_RESETVAL                            (0x00000000U)
+
+/* RELEASEFROMWIR_REG */
+
+#define CSL_TOP_PRCM_RELEASEFROMWIR_REG_RELEASEFROMWIR_REG_RELEASEFROMWIR_APP_CORE_RSTN_MASK (0x00000001U)
+#define CSL_TOP_PRCM_RELEASEFROMWIR_REG_RELEASEFROMWIR_REG_RELEASEFROMWIR_APP_CORE_RSTN_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_RELEASEFROMWIR_REG_RELEASEFROMWIR_REG_RELEASEFROMWIR_APP_CORE_RSTN_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_RELEASEFROMWIR_REG_RELEASEFROMWIR_REG_RELEASEFROMWIR_APP_CORE_RSTN_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_RELEASEFROMWIR_REG_RELEASEFROMWIR_REG_RELEASEFROMWIR_FEC_CORE_RSTN_MASK (0x00010000U)
+#define CSL_TOP_PRCM_RELEASEFROMWIR_REG_RELEASEFROMWIR_REG_RELEASEFROMWIR_FEC_CORE_RSTN_SHIFT (0x00000010U)
+#define CSL_TOP_PRCM_RELEASEFROMWIR_REG_RELEASEFROMWIR_REG_RELEASEFROMWIR_FEC_CORE_RSTN_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_RELEASEFROMWIR_REG_RELEASEFROMWIR_REG_RELEASEFROMWIR_FEC_CORE_RSTN_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_RELEASEFROMWIR_REG_RESETVAL                               (0x00000000U)
+
+/* HWA_PD_MEM_SHARE_REG */
+
+#define CSL_TOP_PRCM_HWA_PD_MEM_SHARE_REG_HWA_PD_MEM_SHARE_REG_HWA_PD_MEM_SHARE_APPSS_CONFIG_MASK (0x0000003FU)
+#define CSL_TOP_PRCM_HWA_PD_MEM_SHARE_REG_HWA_PD_MEM_SHARE_REG_HWA_PD_MEM_SHARE_APPSS_CONFIG_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_HWA_PD_MEM_SHARE_REG_HWA_PD_MEM_SHARE_REG_HWA_PD_MEM_SHARE_APPSS_CONFIG_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_HWA_PD_MEM_SHARE_REG_HWA_PD_MEM_SHARE_REG_HWA_PD_MEM_SHARE_APPSS_CONFIG_MAX (0x0000003FU)
+
+#define CSL_TOP_PRCM_HWA_PD_MEM_SHARE_REG_HWA_PD_MEM_SHARE_REG_HWA_PD_MEM_SHARE_FECSS_CONFIG_MASK (0x00000700U)
+#define CSL_TOP_PRCM_HWA_PD_MEM_SHARE_REG_HWA_PD_MEM_SHARE_REG_HWA_PD_MEM_SHARE_FECSS_CONFIG_SHIFT (0x00000008U)
+#define CSL_TOP_PRCM_HWA_PD_MEM_SHARE_REG_HWA_PD_MEM_SHARE_REG_HWA_PD_MEM_SHARE_FECSS_CONFIG_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_HWA_PD_MEM_SHARE_REG_HWA_PD_MEM_SHARE_REG_HWA_PD_MEM_SHARE_FECSS_CONFIG_MAX (0x00000007U)
+
+#define CSL_TOP_PRCM_HWA_PD_MEM_SHARE_REG_RESETVAL                             (0x00000000U)
+
+/* FRC_OSC_CLK_GATE */
+
+#define CSL_TOP_PRCM_FRC_OSC_CLK_GATE_FRC_OSC_CLK_GATE_CLK_GATE_MASK           (0x00000007U)
+#define CSL_TOP_PRCM_FRC_OSC_CLK_GATE_FRC_OSC_CLK_GATE_CLK_GATE_SHIFT          (0x00000000U)
+#define CSL_TOP_PRCM_FRC_OSC_CLK_GATE_FRC_OSC_CLK_GATE_CLK_GATE_RESETVAL       (0x00000000U)
+#define CSL_TOP_PRCM_FRC_OSC_CLK_GATE_FRC_OSC_CLK_GATE_CLK_GATE_MAX            (0x00000007U)
+
+#define CSL_TOP_PRCM_FRC_OSC_CLK_GATE_RESETVAL                                 (0x00000000U)
+
+/* MEMSWAP_REG */
+
+#define CSL_TOP_PRCM_MEMSWAP_REG_MEMSWAP_REG_MMR_APPMEMSWAP_LOCK_MASK          (0x00000001U)
+#define CSL_TOP_PRCM_MEMSWAP_REG_MEMSWAP_REG_MMR_APPMEMSWAP_LOCK_SHIFT         (0x00000000U)
+#define CSL_TOP_PRCM_MEMSWAP_REG_MEMSWAP_REG_MMR_APPMEMSWAP_LOCK_RESETVAL      (0x00000001U)
+#define CSL_TOP_PRCM_MEMSWAP_REG_MEMSWAP_REG_MMR_APPMEMSWAP_LOCK_MAX           (0x00000001U)
+
+#define CSL_TOP_PRCM_MEMSWAP_REG_MEMSWAP_REG_MMR_FECMEMSWAP_LOCK_MASK          (0x00000002U)
+#define CSL_TOP_PRCM_MEMSWAP_REG_MEMSWAP_REG_MMR_FECMEMSWAP_LOCK_SHIFT         (0x00000001U)
+#define CSL_TOP_PRCM_MEMSWAP_REG_MEMSWAP_REG_MMR_FECMEMSWAP_LOCK_RESETVAL      (0x00000001U)
+#define CSL_TOP_PRCM_MEMSWAP_REG_MEMSWAP_REG_MMR_FECMEMSWAP_LOCK_MAX           (0x00000001U)
+
+#define CSL_TOP_PRCM_MEMSWAP_REG_RESETVAL                                      (0x00000003U)
+
+/* LIMP_MODE_STATUS */
+
+#define CSL_TOP_PRCM_LIMP_MODE_STATUS_LIMP_MODE_STATUS_LIMP_MODE_XTAL_CLK_MASK (0x00000001U)
+#define CSL_TOP_PRCM_LIMP_MODE_STATUS_LIMP_MODE_STATUS_LIMP_MODE_XTAL_CLK_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_LIMP_MODE_STATUS_LIMP_MODE_STATUS_LIMP_MODE_XTAL_CLK_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_LIMP_MODE_STATUS_LIMP_MODE_STATUS_LIMP_MODE_XTAL_CLK_MAX  (0x00000001U)
+
+#define CSL_TOP_PRCM_LIMP_MODE_STATUS_LIMP_MODE_STATUS_LIMP_MODE_RCOSC10M_MASK (0x00000002U)
+#define CSL_TOP_PRCM_LIMP_MODE_STATUS_LIMP_MODE_STATUS_LIMP_MODE_RCOSC10M_SHIFT (0x00000001U)
+#define CSL_TOP_PRCM_LIMP_MODE_STATUS_LIMP_MODE_STATUS_LIMP_MODE_RCOSC10M_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_LIMP_MODE_STATUS_LIMP_MODE_STATUS_LIMP_MODE_RCOSC10M_MAX  (0x00000001U)
+
+#define CSL_TOP_PRCM_LIMP_MODE_STATUS_RESETVAL                                 (0x00000000U)
+
+/* RTI_CLOCK_GATE_SLEEP_STATE */
+
+#define CSL_TOP_PRCM_RTI_CLOCK_GATE_SLEEP_STATE_RTI_CLOCK_GATE_SLEEP_STATE_APPSS_RTI_WD_CLK_GATE_IN_SLEEP_MASK (0x00000001U)
+#define CSL_TOP_PRCM_RTI_CLOCK_GATE_SLEEP_STATE_RTI_CLOCK_GATE_SLEEP_STATE_APPSS_RTI_WD_CLK_GATE_IN_SLEEP_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_RTI_CLOCK_GATE_SLEEP_STATE_RTI_CLOCK_GATE_SLEEP_STATE_APPSS_RTI_WD_CLK_GATE_IN_SLEEP_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_RTI_CLOCK_GATE_SLEEP_STATE_RTI_CLOCK_GATE_SLEEP_STATE_APPSS_RTI_WD_CLK_GATE_IN_SLEEP_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_RTI_CLOCK_GATE_SLEEP_STATE_RTI_CLOCK_GATE_SLEEP_STATE_FECSS_RTI_CLK_GATE_IN_SLEEP_MASK (0x00000100U)
+#define CSL_TOP_PRCM_RTI_CLOCK_GATE_SLEEP_STATE_RTI_CLOCK_GATE_SLEEP_STATE_FECSS_RTI_CLK_GATE_IN_SLEEP_SHIFT (0x00000008U)
+#define CSL_TOP_PRCM_RTI_CLOCK_GATE_SLEEP_STATE_RTI_CLOCK_GATE_SLEEP_STATE_FECSS_RTI_CLK_GATE_IN_SLEEP_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_RTI_CLOCK_GATE_SLEEP_STATE_RTI_CLOCK_GATE_SLEEP_STATE_FECSS_RTI_CLK_GATE_IN_SLEEP_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_RTI_CLOCK_GATE_SLEEP_STATE_RESETVAL                       (0x00000000U)
+
+/* TOP_3318_LDO_EN_CTRL */
+
+#define CSL_TOP_PRCM_TOP_3318_LDO_EN_CTRL_TOP_3318_LDO_EN_CTRL_TOP_3318_KA_LDO_EN_MASK (0x00000001U)
+#define CSL_TOP_PRCM_TOP_3318_LDO_EN_CTRL_TOP_3318_LDO_EN_CTRL_TOP_3318_KA_LDO_EN_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_TOP_3318_LDO_EN_CTRL_TOP_3318_LDO_EN_CTRL_TOP_3318_KA_LDO_EN_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_TOP_3318_LDO_EN_CTRL_TOP_3318_LDO_EN_CTRL_TOP_3318_KA_LDO_EN_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_TOP_3318_LDO_EN_CTRL_TOP_3318_LDO_EN_CTRL_TOP_3318_LDO_EN_MASK (0x00000100U)
+#define CSL_TOP_PRCM_TOP_3318_LDO_EN_CTRL_TOP_3318_LDO_EN_CTRL_TOP_3318_LDO_EN_SHIFT (0x00000008U)
+#define CSL_TOP_PRCM_TOP_3318_LDO_EN_CTRL_TOP_3318_LDO_EN_CTRL_TOP_3318_LDO_EN_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_TOP_3318_LDO_EN_CTRL_TOP_3318_LDO_EN_CTRL_TOP_3318_LDO_EN_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_TOP_3318_LDO_EN_CTRL_TOP_3318_LDO_EN_CTRL_TOP_3318_KA_LDO_VTRIM_MASK (0x001F0000U)
+#define CSL_TOP_PRCM_TOP_3318_LDO_EN_CTRL_TOP_3318_LDO_EN_CTRL_TOP_3318_KA_LDO_VTRIM_SHIFT (0x00000010U)
+#define CSL_TOP_PRCM_TOP_3318_LDO_EN_CTRL_TOP_3318_LDO_EN_CTRL_TOP_3318_KA_LDO_VTRIM_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_TOP_3318_LDO_EN_CTRL_TOP_3318_LDO_EN_CTRL_TOP_3318_KA_LDO_VTRIM_MAX (0x0000001FU)
+
+#define CSL_TOP_PRCM_TOP_3318_LDO_EN_CTRL_TOP_3318_LDO_EN_CTRL_TOP_3318_LDO_VTRIM_MASK (0x1F000000U)
+#define CSL_TOP_PRCM_TOP_3318_LDO_EN_CTRL_TOP_3318_LDO_EN_CTRL_TOP_3318_LDO_VTRIM_SHIFT (0x00000018U)
+#define CSL_TOP_PRCM_TOP_3318_LDO_EN_CTRL_TOP_3318_LDO_EN_CTRL_TOP_3318_LDO_VTRIM_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_TOP_3318_LDO_EN_CTRL_TOP_3318_LDO_EN_CTRL_TOP_3318_LDO_VTRIM_MAX (0x0000001FU)
+
+#define CSL_TOP_PRCM_TOP_3318_LDO_EN_CTRL_RESETVAL                             (0x00000000U)
+
+/* RFANA_TOP_LDO_EN */
+
+#define CSL_TOP_PRCM_RFANA_TOP_LDO_EN_RFANA_TOP_LDO_EN_CTRL_MASK               (0x000FFFFFU)
+#define CSL_TOP_PRCM_RFANA_TOP_LDO_EN_RFANA_TOP_LDO_EN_CTRL_SHIFT              (0x00000000U)
+#define CSL_TOP_PRCM_RFANA_TOP_LDO_EN_RFANA_TOP_LDO_EN_CTRL_RESETVAL           (0x00000000U)
+#define CSL_TOP_PRCM_RFANA_TOP_LDO_EN_RFANA_TOP_LDO_EN_CTRL_MAX                (0x000FFFFFU)
+
+#define CSL_TOP_PRCM_RFANA_TOP_LDO_EN_RESETVAL                                 (0x00000000U)
+
+/* RFANA_TOP_ISO_CTRL */
+
+#define CSL_TOP_PRCM_RFANA_TOP_ISO_CTRL_RFANA_TOP_ISO_CTRL_CTRL_MASK           (0x000FFFFFU)
+#define CSL_TOP_PRCM_RFANA_TOP_ISO_CTRL_RFANA_TOP_ISO_CTRL_CTRL_SHIFT          (0x00000000U)
+#define CSL_TOP_PRCM_RFANA_TOP_ISO_CTRL_RFANA_TOP_ISO_CTRL_CTRL_RESETVAL       (0x00000000U)
+#define CSL_TOP_PRCM_RFANA_TOP_ISO_CTRL_RFANA_TOP_ISO_CTRL_CTRL_MAX            (0x000FFFFFU)
+
+#define CSL_TOP_PRCM_RFANA_TOP_ISO_CTRL_RESETVAL                               (0x00000000U)
+
+/* CLK_CTRL_REG1_LDO_CLKTOP */
+
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_LDO_CLKTOP_CLK_CTRL_REG1_LDO_CLKTOP_LDO_VOUT_CTRL_MASK (0x0000000FU)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_LDO_CLKTOP_CLK_CTRL_REG1_LDO_CLKTOP_LDO_VOUT_CTRL_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_LDO_CLKTOP_CLK_CTRL_REG1_LDO_CLKTOP_LDO_VOUT_CTRL_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_LDO_CLKTOP_CLK_CTRL_REG1_LDO_CLKTOP_LDO_VOUT_CTRL_MAX (0x0000000FU)
+
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_LDO_CLKTOP_CLK_CTRL_REG1_LDO_CLKTOP_ENZ_LOW_BW_CAP_MASK (0x00000010U)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_LDO_CLKTOP_CLK_CTRL_REG1_LDO_CLKTOP_ENZ_LOW_BW_CAP_SHIFT (0x00000004U)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_LDO_CLKTOP_CLK_CTRL_REG1_LDO_CLKTOP_ENZ_LOW_BW_CAP_RESETVAL (0x00000001U)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_LDO_CLKTOP_CLK_CTRL_REG1_LDO_CLKTOP_ENZ_LOW_BW_CAP_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_LDO_CLKTOP_CLK_CTRL_REG1_LDO_CLKTOP_EN_TEST_MODE_MASK (0x00000020U)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_LDO_CLKTOP_CLK_CTRL_REG1_LDO_CLKTOP_EN_TEST_MODE_SHIFT (0x00000005U)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_LDO_CLKTOP_CLK_CTRL_REG1_LDO_CLKTOP_EN_TEST_MODE_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_LDO_CLKTOP_CLK_CTRL_REG1_LDO_CLKTOP_EN_TEST_MODE_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_LDO_CLKTOP_CLK_CTRL_REG1_LDO_CLKTOP_EN_SHRT_CKT_MASK (0x00000040U)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_LDO_CLKTOP_CLK_CTRL_REG1_LDO_CLKTOP_EN_SHRT_CKT_SHIFT (0x00000006U)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_LDO_CLKTOP_CLK_CTRL_REG1_LDO_CLKTOP_EN_SHRT_CKT_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_LDO_CLKTOP_CLK_CTRL_REG1_LDO_CLKTOP_EN_SHRT_CKT_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_LDO_CLKTOP_CLK_CTRL_REG1_LDO_CLKTOP_EN_BYPASS_MASK (0x00000080U)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_LDO_CLKTOP_CLK_CTRL_REG1_LDO_CLKTOP_EN_BYPASS_SHIFT (0x00000007U)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_LDO_CLKTOP_CLK_CTRL_REG1_LDO_CLKTOP_EN_BYPASS_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_LDO_CLKTOP_CLK_CTRL_REG1_LDO_CLKTOP_EN_BYPASS_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_LDO_CLKTOP_CLK_CTRL_REG1_LDO_CLKTOP_LDO_BW_CTRL_MASK (0x00000700U)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_LDO_CLKTOP_CLK_CTRL_REG1_LDO_CLKTOP_LDO_BW_CTRL_SHIFT (0x00000008U)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_LDO_CLKTOP_CLK_CTRL_REG1_LDO_CLKTOP_LDO_BW_CTRL_RESETVAL (0x00000007U)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_LDO_CLKTOP_CLK_CTRL_REG1_LDO_CLKTOP_LDO_BW_CTRL_MAX (0x00000007U)
+
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_LDO_CLKTOP_CLK_CTRL_REG1_LDO_CLKTOP_SCPRT_IBIAS_CTRL_MASK (0x00000800U)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_LDO_CLKTOP_CLK_CTRL_REG1_LDO_CLKTOP_SCPRT_IBIAS_CTRL_SHIFT (0x0000000BU)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_LDO_CLKTOP_CLK_CTRL_REG1_LDO_CLKTOP_SCPRT_IBIAS_CTRL_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_LDO_CLKTOP_CLK_CTRL_REG1_LDO_CLKTOP_SCPRT_IBIAS_CTRL_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_LDO_CLKTOP_CLK_CTRL_REG1_LDO_CLKTOP_ENABLE_PMOS_PULLDOWN_MASK (0x00001000U)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_LDO_CLKTOP_CLK_CTRL_REG1_LDO_CLKTOP_ENABLE_PMOS_PULLDOWN_SHIFT (0x0000000CU)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_LDO_CLKTOP_CLK_CTRL_REG1_LDO_CLKTOP_ENABLE_PMOS_PULLDOWN_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_LDO_CLKTOP_CLK_CTRL_REG1_LDO_CLKTOP_ENABLE_PMOS_PULLDOWN_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_LDO_CLKTOP_CLK_CTRL_REG1_LDO_CLKTOP_TLOAD_CTRL_MASK (0x0000E000U)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_LDO_CLKTOP_CLK_CTRL_REG1_LDO_CLKTOP_TLOAD_CTRL_SHIFT (0x0000000DU)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_LDO_CLKTOP_CLK_CTRL_REG1_LDO_CLKTOP_TLOAD_CTRL_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_LDO_CLKTOP_CLK_CTRL_REG1_LDO_CLKTOP_TLOAD_CTRL_MAX (0x00000007U)
+
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_LDO_CLKTOP_CLK_CTRL_REG1_LDO_CLKTOP_TESTMUX_CTRL_MASK (0x000F0000U)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_LDO_CLKTOP_CLK_CTRL_REG1_LDO_CLKTOP_TESTMUX_CTRL_SHIFT (0x00000010U)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_LDO_CLKTOP_CLK_CTRL_REG1_LDO_CLKTOP_TESTMUX_CTRL_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_LDO_CLKTOP_CLK_CTRL_REG1_LDO_CLKTOP_TESTMUX_CTRL_MAX (0x0000000FU)
+
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_LDO_CLKTOP_CLK_CTRL_REG1_LDO_CLKTOP_BISTMUX_CTRL_MASK (0x00F00000U)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_LDO_CLKTOP_CLK_CTRL_REG1_LDO_CLKTOP_BISTMUX_CTRL_SHIFT (0x00000014U)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_LDO_CLKTOP_CLK_CTRL_REG1_LDO_CLKTOP_BISTMUX_CTRL_RESETVAL (0x00000004U)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_LDO_CLKTOP_CLK_CTRL_REG1_LDO_CLKTOP_BISTMUX_CTRL_MAX (0x0000000FU)
+
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_LDO_CLKTOP_CLK_CTRL_REG1_LDO_CLKTOP_RESERVED0_MASK (0xFF000000U)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_LDO_CLKTOP_CLK_CTRL_REG1_LDO_CLKTOP_RESERVED0_SHIFT (0x00000018U)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_LDO_CLKTOP_CLK_CTRL_REG1_LDO_CLKTOP_RESERVED0_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_LDO_CLKTOP_CLK_CTRL_REG1_LDO_CLKTOP_RESERVED0_MAX (0x000000FFU)
+
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_LDO_CLKTOP_RESETVAL                         (0x00400710U)
+
+/* CLK_CTRL_REG1_XO_SLICER */
+
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_XO_SLICER_CLK_CTRL_REG1_XO_SLICER_RTRIM_BIAS_XO_SLICER_MASK (0x0000000FU)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_XO_SLICER_CLK_CTRL_REG1_XO_SLICER_RTRIM_BIAS_XO_SLICER_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_XO_SLICER_CLK_CTRL_REG1_XO_SLICER_RTRIM_BIAS_XO_SLICER_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_XO_SLICER_CLK_CTRL_REG1_XO_SLICER_RTRIM_BIAS_XO_SLICER_MAX (0x0000000FU)
+
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_XO_SLICER_CLK_CTRL_REG1_XO_SLICER_RESERVED0_MASK (0x000001F0U)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_XO_SLICER_CLK_CTRL_REG1_XO_SLICER_RESERVED0_SHIFT (0x00000004U)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_XO_SLICER_CLK_CTRL_REG1_XO_SLICER_RESERVED0_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_XO_SLICER_CLK_CTRL_REG1_XO_SLICER_RESERVED0_MAX (0x0000001FU)
+
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_XO_SLICER_CLK_CTRL_REG1_XO_SLICER_FASTCHARGEZ_BIAS_XO_SLICER_MASK (0x00000200U)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_XO_SLICER_CLK_CTRL_REG1_XO_SLICER_FASTCHARGEZ_BIAS_XO_SLICER_SHIFT (0x00000009U)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_XO_SLICER_CLK_CTRL_REG1_XO_SLICER_FASTCHARGEZ_BIAS_XO_SLICER_RESETVAL (0x00000001U)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_XO_SLICER_CLK_CTRL_REG1_XO_SLICER_FASTCHARGEZ_BIAS_XO_SLICER_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_XO_SLICER_CLK_CTRL_REG1_XO_SLICER_SLICER_HIPWR_XO_SLICER_MASK (0x00000400U)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_XO_SLICER_CLK_CTRL_REG1_XO_SLICER_SLICER_HIPWR_XO_SLICER_SHIFT (0x0000000AU)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_XO_SLICER_CLK_CTRL_REG1_XO_SLICER_SLICER_HIPWR_XO_SLICER_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_XO_SLICER_CLK_CTRL_REG1_XO_SLICER_SLICER_HIPWR_XO_SLICER_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_XO_SLICER_CLK_CTRL_REG1_XO_SLICER_SLICER_DCCPL_XO_SLICER_MASK (0x00000800U)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_XO_SLICER_CLK_CTRL_REG1_XO_SLICER_SLICER_DCCPL_XO_SLICER_SHIFT (0x0000000BU)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_XO_SLICER_CLK_CTRL_REG1_XO_SLICER_SLICER_DCCPL_XO_SLICER_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_XO_SLICER_CLK_CTRL_REG1_XO_SLICER_SLICER_DCCPL_XO_SLICER_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_XO_SLICER_CLK_CTRL_REG1_XO_SLICER_RESERVED1_MASK (0x00001000U)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_XO_SLICER_CLK_CTRL_REG1_XO_SLICER_RESERVED1_SHIFT (0x0000000CU)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_XO_SLICER_CLK_CTRL_REG1_XO_SLICER_RESERVED1_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_XO_SLICER_CLK_CTRL_REG1_XO_SLICER_RESERVED1_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_XO_SLICER_CLK_CTRL_REG1_XO_SLICER_SLICER_APLL_BYPASS_MASK (0x00002000U)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_XO_SLICER_CLK_CTRL_REG1_XO_SLICER_SLICER_APLL_BYPASS_SHIFT (0x0000000DU)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_XO_SLICER_CLK_CTRL_REG1_XO_SLICER_SLICER_APLL_BYPASS_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_XO_SLICER_CLK_CTRL_REG1_XO_SLICER_SLICER_APLL_BYPASS_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_XO_SLICER_CLK_CTRL_REG1_XO_SLICER_SLICER_APLL_BYPASS_DRV_MASK (0x00004000U)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_XO_SLICER_CLK_CTRL_REG1_XO_SLICER_SLICER_APLL_BYPASS_DRV_SHIFT (0x0000000EU)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_XO_SLICER_CLK_CTRL_REG1_XO_SLICER_SLICER_APLL_BYPASS_DRV_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_XO_SLICER_CLK_CTRL_REG1_XO_SLICER_SLICER_APLL_BYPASS_DRV_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_XO_SLICER_CLK_CTRL_REG1_XO_SLICER_RESERVED2_MASK (0xFFFF8000U)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_XO_SLICER_CLK_CTRL_REG1_XO_SLICER_RESERVED2_SHIFT (0x0000000FU)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_XO_SLICER_CLK_CTRL_REG1_XO_SLICER_RESERVED2_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_XO_SLICER_CLK_CTRL_REG1_XO_SLICER_RESERVED2_MAX (0x0001FFFFU)
+
+#define CSL_TOP_PRCM_CLK_CTRL_REG1_XO_SLICER_RESETVAL                          (0x00000200U)
+
+/* TOP_LDO_3318_CTRL_REG0 */
+
+#define CSL_TOP_PRCM_TOP_LDO_3318_CTRL_REG0_TOP_LDO_3318_CTRL_REG0_LDO_SPARE_MASK (0x00000003U)
+#define CSL_TOP_PRCM_TOP_LDO_3318_CTRL_REG0_TOP_LDO_3318_CTRL_REG0_LDO_SPARE_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_TOP_LDO_3318_CTRL_REG0_TOP_LDO_3318_CTRL_REG0_LDO_SPARE_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_TOP_LDO_3318_CTRL_REG0_TOP_LDO_3318_CTRL_REG0_LDO_SPARE_MAX (0x00000003U)
+
+#define CSL_TOP_PRCM_TOP_LDO_3318_CTRL_REG0_TOP_LDO_3318_CTRL_REG0_LDO_TEST_ENABLE_MASK (0x00000004U)
+#define CSL_TOP_PRCM_TOP_LDO_3318_CTRL_REG0_TOP_LDO_3318_CTRL_REG0_LDO_TEST_ENABLE_SHIFT (0x00000002U)
+#define CSL_TOP_PRCM_TOP_LDO_3318_CTRL_REG0_TOP_LDO_3318_CTRL_REG0_LDO_TEST_ENABLE_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_TOP_LDO_3318_CTRL_REG0_TOP_LDO_3318_CTRL_REG0_LDO_TEST_ENABLE_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_TOP_LDO_3318_CTRL_REG0_TOP_LDO_3318_CTRL_REG0_LDO_SPARE1_MASK (0x000007F8U)
+#define CSL_TOP_PRCM_TOP_LDO_3318_CTRL_REG0_TOP_LDO_3318_CTRL_REG0_LDO_SPARE1_SHIFT (0x00000003U)
+#define CSL_TOP_PRCM_TOP_LDO_3318_CTRL_REG0_TOP_LDO_3318_CTRL_REG0_LDO_SPARE1_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_TOP_LDO_3318_CTRL_REG0_TOP_LDO_3318_CTRL_REG0_LDO_SPARE1_MAX (0x000000FFU)
+
+#define CSL_TOP_PRCM_TOP_LDO_3318_CTRL_REG0_TOP_LDO_3318_CTRL_REG0_LDO_ENABLE_MASK (0x00000800U)
+#define CSL_TOP_PRCM_TOP_LDO_3318_CTRL_REG0_TOP_LDO_3318_CTRL_REG0_LDO_ENABLE_SHIFT (0x0000000BU)
+#define CSL_TOP_PRCM_TOP_LDO_3318_CTRL_REG0_TOP_LDO_3318_CTRL_REG0_LDO_ENABLE_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_TOP_LDO_3318_CTRL_REG0_TOP_LDO_3318_CTRL_REG0_LDO_ENABLE_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_TOP_LDO_3318_CTRL_REG0_TOP_LDO_3318_CTRL_REG0_LDO_CTRL_MASK (0x07FFF000U)
+#define CSL_TOP_PRCM_TOP_LDO_3318_CTRL_REG0_TOP_LDO_3318_CTRL_REG0_LDO_CTRL_SHIFT (0x0000000CU)
+#define CSL_TOP_PRCM_TOP_LDO_3318_CTRL_REG0_TOP_LDO_3318_CTRL_REG0_LDO_CTRL_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_TOP_LDO_3318_CTRL_REG0_TOP_LDO_3318_CTRL_REG0_LDO_CTRL_MAX (0x00007FFFU)
+
+#define CSL_TOP_PRCM_TOP_LDO_3318_CTRL_REG0_TOP_LDO_3318_CTRL_REG0_LDO_BIST_ENABLE_MASK (0x08000000U)
+#define CSL_TOP_PRCM_TOP_LDO_3318_CTRL_REG0_TOP_LDO_3318_CTRL_REG0_LDO_BIST_ENABLE_SHIFT (0x0000001BU)
+#define CSL_TOP_PRCM_TOP_LDO_3318_CTRL_REG0_TOP_LDO_3318_CTRL_REG0_LDO_BIST_ENABLE_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_TOP_LDO_3318_CTRL_REG0_TOP_LDO_3318_CTRL_REG0_LDO_BIST_ENABLE_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_TOP_LDO_3318_CTRL_REG0_TOP_LDO_3318_CTRL_REG0_LDO_BIST_CONTROL_MASK (0xF0000000U)
+#define CSL_TOP_PRCM_TOP_LDO_3318_CTRL_REG0_TOP_LDO_3318_CTRL_REG0_LDO_BIST_CONTROL_SHIFT (0x0000001CU)
+#define CSL_TOP_PRCM_TOP_LDO_3318_CTRL_REG0_TOP_LDO_3318_CTRL_REG0_LDO_BIST_CONTROL_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_TOP_LDO_3318_CTRL_REG0_TOP_LDO_3318_CTRL_REG0_LDO_BIST_CONTROL_MAX (0x0000000FU)
+
+#define CSL_TOP_PRCM_TOP_LDO_3318_CTRL_REG0_RESETVAL                           (0x00000000U)
+
+/* TOP_LDO_3318_CTRL_REG1 */
+
+#define CSL_TOP_PRCM_TOP_LDO_3318_CTRL_REG1_TOP_LDO_3318_CTRL_REG1_KA_LDO_SPARE_MASK (0x0000FFFFU)
+#define CSL_TOP_PRCM_TOP_LDO_3318_CTRL_REG1_TOP_LDO_3318_CTRL_REG1_KA_LDO_SPARE_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_TOP_LDO_3318_CTRL_REG1_TOP_LDO_3318_CTRL_REG1_KA_LDO_SPARE_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_TOP_LDO_3318_CTRL_REG1_TOP_LDO_3318_CTRL_REG1_KA_LDO_SPARE_MAX (0x0000FFFFU)
+
+#define CSL_TOP_PRCM_TOP_LDO_3318_CTRL_REG1_TOP_LDO_3318_CTRL_REG1_KA_LDO_CTRL_MASK (0x7FFF0000U)
+#define CSL_TOP_PRCM_TOP_LDO_3318_CTRL_REG1_TOP_LDO_3318_CTRL_REG1_KA_LDO_CTRL_SHIFT (0x00000010U)
+#define CSL_TOP_PRCM_TOP_LDO_3318_CTRL_REG1_TOP_LDO_3318_CTRL_REG1_KA_LDO_CTRL_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_TOP_LDO_3318_CTRL_REG1_TOP_LDO_3318_CTRL_REG1_KA_LDO_CTRL_MAX (0x00007FFFU)
+
+#define CSL_TOP_PRCM_TOP_LDO_3318_CTRL_REG1_TOP_LDO_3318_CTRL_REG1_KA_LDO_EN_MASK (0x80000000U)
+#define CSL_TOP_PRCM_TOP_LDO_3318_CTRL_REG1_TOP_LDO_3318_CTRL_REG1_KA_LDO_EN_SHIFT (0x0000001FU)
+#define CSL_TOP_PRCM_TOP_LDO_3318_CTRL_REG1_TOP_LDO_3318_CTRL_REG1_KA_LDO_EN_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_TOP_LDO_3318_CTRL_REG1_TOP_LDO_3318_CTRL_REG1_KA_LDO_EN_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_TOP_LDO_3318_CTRL_REG1_RESETVAL                           (0x00000000U)
+
+/* TOP_LDO_DIG_CTRL_REG0 */
+
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG0_TOP_LDO_DIG_CTRL_REG0_DIG_LDO_SPARE_MASK (0x000000FFU)
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG0_TOP_LDO_DIG_CTRL_REG0_DIG_LDO_SPARE_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG0_TOP_LDO_DIG_CTRL_REG0_DIG_LDO_SPARE_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG0_TOP_LDO_DIG_CTRL_REG0_DIG_LDO_SPARE_MAX (0x000000FFU)
+
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG0_TOP_LDO_DIG_CTRL_REG0_DIG_LDO_IQ_TRIM_MASK (0x00000300U)
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG0_TOP_LDO_DIG_CTRL_REG0_DIG_LDO_IQ_TRIM_SHIFT (0x00000008U)
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG0_TOP_LDO_DIG_CTRL_REG0_DIG_LDO_IQ_TRIM_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG0_TOP_LDO_DIG_CTRL_REG0_DIG_LDO_IQ_TRIM_MAX (0x00000003U)
+
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG0_TOP_LDO_DIG_CTRL_REG0_DIG_LDO_EN_SC_PROTECTION_MASK (0x00000400U)
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG0_TOP_LDO_DIG_CTRL_REG0_DIG_LDO_EN_SC_PROTECTION_SHIFT (0x0000000AU)
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG0_TOP_LDO_DIG_CTRL_REG0_DIG_LDO_EN_SC_PROTECTION_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG0_TOP_LDO_DIG_CTRL_REG0_DIG_LDO_EN_SC_PROTECTION_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG0_TOP_LDO_DIG_CTRL_REG0_DIG_LDO_BIST_EN_MASK (0x00000800U)
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG0_TOP_LDO_DIG_CTRL_REG0_DIG_LDO_BIST_EN_SHIFT (0x0000000BU)
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG0_TOP_LDO_DIG_CTRL_REG0_DIG_LDO_BIST_EN_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG0_TOP_LDO_DIG_CTRL_REG0_DIG_LDO_BIST_EN_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG0_TOP_LDO_DIG_CTRL_REG0_DIG_LDO_BIST_CTRL_MASK (0x0000F000U)
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG0_TOP_LDO_DIG_CTRL_REG0_DIG_LDO_BIST_CTRL_SHIFT (0x0000000CU)
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG0_TOP_LDO_DIG_CTRL_REG0_DIG_LDO_BIST_CTRL_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG0_TOP_LDO_DIG_CTRL_REG0_DIG_LDO_BIST_CTRL_MAX (0x0000000FU)
+
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG0_TOP_LDO_DIG_CTRL_REG0_DIG_KA_VTRIM_MASK (0x003F0000U)
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG0_TOP_LDO_DIG_CTRL_REG0_DIG_KA_VTRIM_SHIFT (0x00000010U)
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG0_TOP_LDO_DIG_CTRL_REG0_DIG_KA_VTRIM_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG0_TOP_LDO_DIG_CTRL_REG0_DIG_KA_VTRIM_MAX (0x0000003FU)
+
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG0_TOP_LDO_DIG_CTRL_REG0_DIG_KA_SPARE_MASK (0x03C00000U)
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG0_TOP_LDO_DIG_CTRL_REG0_DIG_KA_SPARE_SHIFT (0x00000016U)
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG0_TOP_LDO_DIG_CTRL_REG0_DIG_KA_SPARE_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG0_TOP_LDO_DIG_CTRL_REG0_DIG_KA_SPARE_MAX (0x0000000FU)
+
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG0_TOP_LDO_DIG_CTRL_REG0_DIG_KA_RTRIM_MASK (0x3C000000U)
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG0_TOP_LDO_DIG_CTRL_REG0_DIG_KA_RTRIM_SHIFT (0x0000001AU)
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG0_TOP_LDO_DIG_CTRL_REG0_DIG_KA_RTRIM_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG0_TOP_LDO_DIG_CTRL_REG0_DIG_KA_RTRIM_MAX (0x0000000FU)
+
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG0_TOP_LDO_DIG_CTRL_REG0_EN_DIG_KA_MASK (0x40000000U)
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG0_TOP_LDO_DIG_CTRL_REG0_EN_DIG_KA_SHIFT (0x0000001EU)
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG0_TOP_LDO_DIG_CTRL_REG0_EN_DIG_KA_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG0_TOP_LDO_DIG_CTRL_REG0_EN_DIG_KA_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG0_TOP_LDO_DIG_CTRL_REG0_EN_DIG_LDO_MASK (0x80000000U)
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG0_TOP_LDO_DIG_CTRL_REG0_EN_DIG_LDO_SHIFT (0x0000001FU)
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG0_TOP_LDO_DIG_CTRL_REG0_EN_DIG_LDO_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG0_TOP_LDO_DIG_CTRL_REG0_EN_DIG_LDO_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG0_RESETVAL                            (0x00000000U)
+
+/* TOP_LDO_DIG_CTRL_REG1 */
+
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG1_TOP_LDO_DIG_CTRL_REG1_TBD_MASK      (0x00001FFFU)
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG1_TOP_LDO_DIG_CTRL_REG1_TBD_SHIFT     (0x00000000U)
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG1_TOP_LDO_DIG_CTRL_REG1_TBD_RESETVAL  (0x00000000U)
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG1_TOP_LDO_DIG_CTRL_REG1_TBD_MAX       (0x00001FFFU)
+
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG1_TOP_LDO_DIG_CTRL_REG1_DIG_LDO_SC_CT_TRIM_MASK (0x00006000U)
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG1_TOP_LDO_DIG_CTRL_REG1_DIG_LDO_SC_CT_TRIM_SHIFT (0x0000000DU)
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG1_TOP_LDO_DIG_CTRL_REG1_DIG_LDO_SC_CT_TRIM_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG1_TOP_LDO_DIG_CTRL_REG1_DIG_LDO_SC_CT_TRIM_MAX (0x00000003U)
+
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG1_TOP_LDO_DIG_CTRL_REG1_DIG_LDO_VTRIM_MASK (0x001F8000U)
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG1_TOP_LDO_DIG_CTRL_REG1_DIG_LDO_VTRIM_SHIFT (0x0000000FU)
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG1_TOP_LDO_DIG_CTRL_REG1_DIG_LDO_VTRIM_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG1_TOP_LDO_DIG_CTRL_REG1_DIG_LDO_VTRIM_MAX (0x0000003FU)
+
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG1_TOP_LDO_DIG_CTRL_REG1_DIG_LDO_TMUX_CTRL_MASK (0x1FE00000U)
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG1_TOP_LDO_DIG_CTRL_REG1_DIG_LDO_TMUX_CTRL_SHIFT (0x00000015U)
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG1_TOP_LDO_DIG_CTRL_REG1_DIG_LDO_TMUX_CTRL_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG1_TOP_LDO_DIG_CTRL_REG1_DIG_LDO_TMUX_CTRL_MAX (0x000000FFU)
+
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG1_TOP_LDO_DIG_CTRL_REG1_DIG_LDO_TEST_LOAD_ENABLE_MASK (0x20000000U)
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG1_TOP_LDO_DIG_CTRL_REG1_DIG_LDO_TEST_LOAD_ENABLE_SHIFT (0x0000001DU)
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG1_TOP_LDO_DIG_CTRL_REG1_DIG_LDO_TEST_LOAD_ENABLE_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG1_TOP_LDO_DIG_CTRL_REG1_DIG_LDO_TEST_LOAD_ENABLE_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG1_TOP_LDO_DIG_CTRL_REG1_DIG_LDO_TEST_ENABLE_MASK (0x40000000U)
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG1_TOP_LDO_DIG_CTRL_REG1_DIG_LDO_TEST_ENABLE_SHIFT (0x0000001EU)
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG1_TOP_LDO_DIG_CTRL_REG1_DIG_LDO_TEST_ENABLE_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG1_TOP_LDO_DIG_CTRL_REG1_DIG_LDO_TEST_ENABLE_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG1_TOP_LDO_DIG_CTRL_REG1_DIG_LDO_INRUSH_CTRL_LOWV_MASK (0x80000000U)
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG1_TOP_LDO_DIG_CTRL_REG1_DIG_LDO_INRUSH_CTRL_LOWV_SHIFT (0x0000001FU)
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG1_TOP_LDO_DIG_CTRL_REG1_DIG_LDO_INRUSH_CTRL_LOWV_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG1_TOP_LDO_DIG_CTRL_REG1_DIG_LDO_INRUSH_CTRL_LOWV_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_TOP_LDO_DIG_CTRL_REG1_RESETVAL                            (0x00000000U)
+
+/* TOP_LDO_SRAM_CTRL_REG0 */
+
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG0_TOP_LDO_SRAM_CTRL_REG0_SRAM_LDO_SPARE_MASK (0x000000FFU)
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG0_TOP_LDO_SRAM_CTRL_REG0_SRAM_LDO_SPARE_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG0_TOP_LDO_SRAM_CTRL_REG0_SRAM_LDO_SPARE_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG0_TOP_LDO_SRAM_CTRL_REG0_SRAM_LDO_SPARE_MAX (0x000000FFU)
+
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG0_TOP_LDO_SRAM_CTRL_REG0_SRAM_LDO_IQ_TRIM_MASK (0x00000300U)
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG0_TOP_LDO_SRAM_CTRL_REG0_SRAM_LDO_IQ_TRIM_SHIFT (0x00000008U)
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG0_TOP_LDO_SRAM_CTRL_REG0_SRAM_LDO_IQ_TRIM_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG0_TOP_LDO_SRAM_CTRL_REG0_SRAM_LDO_IQ_TRIM_MAX (0x00000003U)
+
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG0_TOP_LDO_SRAM_CTRL_REG0_SRAM_LDO_EN_SC_PROTECTION_MASK (0x00000400U)
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG0_TOP_LDO_SRAM_CTRL_REG0_SRAM_LDO_EN_SC_PROTECTION_SHIFT (0x0000000AU)
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG0_TOP_LDO_SRAM_CTRL_REG0_SRAM_LDO_EN_SC_PROTECTION_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG0_TOP_LDO_SRAM_CTRL_REG0_SRAM_LDO_EN_SC_PROTECTION_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG0_TOP_LDO_SRAM_CTRL_REG0_SRAM_LDO_BIST_EN_MASK (0x00000800U)
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG0_TOP_LDO_SRAM_CTRL_REG0_SRAM_LDO_BIST_EN_SHIFT (0x0000000BU)
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG0_TOP_LDO_SRAM_CTRL_REG0_SRAM_LDO_BIST_EN_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG0_TOP_LDO_SRAM_CTRL_REG0_SRAM_LDO_BIST_EN_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG0_TOP_LDO_SRAM_CTRL_REG0_SRAM_LDO_BIST_CTRL_MASK (0x0000F000U)
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG0_TOP_LDO_SRAM_CTRL_REG0_SRAM_LDO_BIST_CTRL_SHIFT (0x0000000CU)
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG0_TOP_LDO_SRAM_CTRL_REG0_SRAM_LDO_BIST_CTRL_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG0_TOP_LDO_SRAM_CTRL_REG0_SRAM_LDO_BIST_CTRL_MAX (0x0000000FU)
+
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG0_TOP_LDO_SRAM_CTRL_REG0_SRAM_KA_VTRIM_MASK (0x003F0000U)
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG0_TOP_LDO_SRAM_CTRL_REG0_SRAM_KA_VTRIM_SHIFT (0x00000010U)
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG0_TOP_LDO_SRAM_CTRL_REG0_SRAM_KA_VTRIM_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG0_TOP_LDO_SRAM_CTRL_REG0_SRAM_KA_VTRIM_MAX (0x0000003FU)
+
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG0_TOP_LDO_SRAM_CTRL_REG0_SRAM_KA_SPARE_MASK (0x03C00000U)
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG0_TOP_LDO_SRAM_CTRL_REG0_SRAM_KA_SPARE_SHIFT (0x00000016U)
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG0_TOP_LDO_SRAM_CTRL_REG0_SRAM_KA_SPARE_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG0_TOP_LDO_SRAM_CTRL_REG0_SRAM_KA_SPARE_MAX (0x0000000FU)
+
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG0_TOP_LDO_SRAM_CTRL_REG0_SRAM_KA_RTRIM_MASK (0x3C000000U)
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG0_TOP_LDO_SRAM_CTRL_REG0_SRAM_KA_RTRIM_SHIFT (0x0000001AU)
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG0_TOP_LDO_SRAM_CTRL_REG0_SRAM_KA_RTRIM_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG0_TOP_LDO_SRAM_CTRL_REG0_SRAM_KA_RTRIM_MAX (0x0000000FU)
+
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG0_TOP_LDO_SRAM_CTRL_REG0_EN_SRAM_KA_MASK (0x40000000U)
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG0_TOP_LDO_SRAM_CTRL_REG0_EN_SRAM_KA_SHIFT (0x0000001EU)
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG0_TOP_LDO_SRAM_CTRL_REG0_EN_SRAM_KA_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG0_TOP_LDO_SRAM_CTRL_REG0_EN_SRAM_KA_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG0_TOP_LDO_SRAM_CTRL_REG0_EN_SRAM_LDO_MASK (0x80000000U)
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG0_TOP_LDO_SRAM_CTRL_REG0_EN_SRAM_LDO_SHIFT (0x0000001FU)
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG0_TOP_LDO_SRAM_CTRL_REG0_EN_SRAM_LDO_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG0_TOP_LDO_SRAM_CTRL_REG0_EN_SRAM_LDO_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG0_RESETVAL                           (0x00000000U)
+
+/* TOP_LDO_SRAM_CTRL_REG1 */
+
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG1_TOP_LDO_SRAM_CTRL_REG1_SPARE_MASK  (0x00000FFFU)
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG1_TOP_LDO_SRAM_CTRL_REG1_SPARE_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG1_TOP_LDO_SRAM_CTRL_REG1_SPARE_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG1_TOP_LDO_SRAM_CTRL_REG1_SPARE_MAX   (0x00000FFFU)
+
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG1_TOP_LDO_SRAM_CTRL_REG1_EN_VNWA_BIAS_MASK (0x00001000U)
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG1_TOP_LDO_SRAM_CTRL_REG1_EN_VNWA_BIAS_SHIFT (0x0000000CU)
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG1_TOP_LDO_SRAM_CTRL_REG1_EN_VNWA_BIAS_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG1_TOP_LDO_SRAM_CTRL_REG1_EN_VNWA_BIAS_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG1_TOP_LDO_SRAM_CTRL_REG1_SLDO_SC_CURRENT_TRIM_MASK (0x00006000U)
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG1_TOP_LDO_SRAM_CTRL_REG1_SLDO_SC_CURRENT_TRIM_SHIFT (0x0000000DU)
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG1_TOP_LDO_SRAM_CTRL_REG1_SLDO_SC_CURRENT_TRIM_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG1_TOP_LDO_SRAM_CTRL_REG1_SLDO_SC_CURRENT_TRIM_MAX (0x00000003U)
+
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG1_TOP_LDO_SRAM_CTRL_REG1_SLDO_VTRIM_MASK (0x001F8000U)
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG1_TOP_LDO_SRAM_CTRL_REG1_SLDO_VTRIM_SHIFT (0x0000000FU)
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG1_TOP_LDO_SRAM_CTRL_REG1_SLDO_VTRIM_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG1_TOP_LDO_SRAM_CTRL_REG1_SLDO_VTRIM_MAX (0x0000003FU)
+
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG1_TOP_LDO_SRAM_CTRL_REG1_SLDO_TMUX_CTRL_MASK (0x1FE00000U)
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG1_TOP_LDO_SRAM_CTRL_REG1_SLDO_TMUX_CTRL_SHIFT (0x00000015U)
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG1_TOP_LDO_SRAM_CTRL_REG1_SLDO_TMUX_CTRL_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG1_TOP_LDO_SRAM_CTRL_REG1_SLDO_TMUX_CTRL_MAX (0x000000FFU)
+
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG1_TOP_LDO_SRAM_CTRL_REG1_SLDO_TESTLOAD_EN_MASK (0x20000000U)
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG1_TOP_LDO_SRAM_CTRL_REG1_SLDO_TESTLOAD_EN_SHIFT (0x0000001DU)
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG1_TOP_LDO_SRAM_CTRL_REG1_SLDO_TESTLOAD_EN_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG1_TOP_LDO_SRAM_CTRL_REG1_SLDO_TESTLOAD_EN_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG1_TOP_LDO_SRAM_CTRL_REG1_SLDO_TEST_EN_MASK (0x40000000U)
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG1_TOP_LDO_SRAM_CTRL_REG1_SLDO_TEST_EN_SHIFT (0x0000001EU)
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG1_TOP_LDO_SRAM_CTRL_REG1_SLDO_TEST_EN_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG1_TOP_LDO_SRAM_CTRL_REG1_SLDO_TEST_EN_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG1_TOP_LDO_SRAM_CTRL_REG1_SLDO_INRUSH_CONTROL_MASK (0x80000000U)
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG1_TOP_LDO_SRAM_CTRL_REG1_SLDO_INRUSH_CONTROL_SHIFT (0x0000001FU)
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG1_TOP_LDO_SRAM_CTRL_REG1_SLDO_INRUSH_CONTROL_RESETVAL (0x00000001U)
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG1_TOP_LDO_SRAM_CTRL_REG1_SLDO_INRUSH_CONTROL_MAX (0x00000001U)
+
+#define CSL_TOP_PRCM_TOP_LDO_SRAM_CTRL_REG1_RESETVAL                           (0x80000000U)
+
+/* LOCK0_KICK0 */
+
+#define CSL_TOP_PRCM_LOCK0_KICK0_LOCK0_KICK0_MASK                              (0xFFFFFFFFU)
+#define CSL_TOP_PRCM_LOCK0_KICK0_LOCK0_KICK0_SHIFT                             (0x00000000U)
+#define CSL_TOP_PRCM_LOCK0_KICK0_LOCK0_KICK0_RESETVAL                          (0x00000000U)
+#define CSL_TOP_PRCM_LOCK0_KICK0_LOCK0_KICK0_MAX                               (0xFFFFFFFFU)
+
+#define CSL_TOP_PRCM_LOCK0_KICK0_RESETVAL                                      (0x00000000U)
+
+/* LOCK0_KICK1 */
+
+#define CSL_TOP_PRCM_LOCK0_KICK1_LOCK0_KICK1_MASK                              (0xFFFFFFFFU)
+#define CSL_TOP_PRCM_LOCK0_KICK1_LOCK0_KICK1_SHIFT                             (0x00000000U)
+#define CSL_TOP_PRCM_LOCK0_KICK1_LOCK0_KICK1_RESETVAL                          (0x00000000U)
+#define CSL_TOP_PRCM_LOCK0_KICK1_LOCK0_KICK1_MAX                               (0xFFFFFFFFU)
+
+#define CSL_TOP_PRCM_LOCK0_KICK1_RESETVAL                                      (0x00000000U)
+
+/* INTR_RAW_STATUS */
+
+#define CSL_TOP_PRCM_INTR_RAW_STATUS_PROT_ERR_MASK                             (0x00000001U)
+#define CSL_TOP_PRCM_INTR_RAW_STATUS_PROT_ERR_SHIFT                            (0x00000000U)
+#define CSL_TOP_PRCM_INTR_RAW_STATUS_PROT_ERR_RESETVAL                         (0x00000000U)
+#define CSL_TOP_PRCM_INTR_RAW_STATUS_PROT_ERR_MAX                              (0x00000001U)
+
+#define CSL_TOP_PRCM_INTR_RAW_STATUS_ADDR_ERR_MASK                             (0x00000002U)
+#define CSL_TOP_PRCM_INTR_RAW_STATUS_ADDR_ERR_SHIFT                            (0x00000001U)
+#define CSL_TOP_PRCM_INTR_RAW_STATUS_ADDR_ERR_RESETVAL                         (0x00000000U)
+#define CSL_TOP_PRCM_INTR_RAW_STATUS_ADDR_ERR_MAX                              (0x00000001U)
+
+#define CSL_TOP_PRCM_INTR_RAW_STATUS_KICK_ERR_MASK                             (0x00000004U)
+#define CSL_TOP_PRCM_INTR_RAW_STATUS_KICK_ERR_SHIFT                            (0x00000002U)
+#define CSL_TOP_PRCM_INTR_RAW_STATUS_KICK_ERR_RESETVAL                         (0x00000000U)
+#define CSL_TOP_PRCM_INTR_RAW_STATUS_KICK_ERR_MAX                              (0x00000001U)
+
+#define CSL_TOP_PRCM_INTR_RAW_STATUS_PROXY_ERR_MASK                            (0x00000008U)
+#define CSL_TOP_PRCM_INTR_RAW_STATUS_PROXY_ERR_SHIFT                           (0x00000003U)
+#define CSL_TOP_PRCM_INTR_RAW_STATUS_PROXY_ERR_RESETVAL                        (0x00000000U)
+#define CSL_TOP_PRCM_INTR_RAW_STATUS_PROXY_ERR_MAX                             (0x00000001U)
+
+#define CSL_TOP_PRCM_INTR_RAW_STATUS_RESETVAL                                  (0x00000000U)
+
+/* INTR_ENABLED_STATUS_CLEAR */
+
+#define CSL_TOP_PRCM_INTR_ENABLED_STATUS_CLEAR_ENABLED_PROT_ERR_MASK           (0x00000001U)
+#define CSL_TOP_PRCM_INTR_ENABLED_STATUS_CLEAR_ENABLED_PROT_ERR_SHIFT          (0x00000000U)
+#define CSL_TOP_PRCM_INTR_ENABLED_STATUS_CLEAR_ENABLED_PROT_ERR_RESETVAL       (0x00000000U)
+#define CSL_TOP_PRCM_INTR_ENABLED_STATUS_CLEAR_ENABLED_PROT_ERR_MAX            (0x00000001U)
+
+#define CSL_TOP_PRCM_INTR_ENABLED_STATUS_CLEAR_ENABLED_ADDR_ERR_MASK           (0x00000002U)
+#define CSL_TOP_PRCM_INTR_ENABLED_STATUS_CLEAR_ENABLED_ADDR_ERR_SHIFT          (0x00000001U)
+#define CSL_TOP_PRCM_INTR_ENABLED_STATUS_CLEAR_ENABLED_ADDR_ERR_RESETVAL       (0x00000000U)
+#define CSL_TOP_PRCM_INTR_ENABLED_STATUS_CLEAR_ENABLED_ADDR_ERR_MAX            (0x00000001U)
+
+#define CSL_TOP_PRCM_INTR_ENABLED_STATUS_CLEAR_ENABLED_KICK_ERR_MASK           (0x00000004U)
+#define CSL_TOP_PRCM_INTR_ENABLED_STATUS_CLEAR_ENABLED_KICK_ERR_SHIFT          (0x00000002U)
+#define CSL_TOP_PRCM_INTR_ENABLED_STATUS_CLEAR_ENABLED_KICK_ERR_RESETVAL       (0x00000000U)
+#define CSL_TOP_PRCM_INTR_ENABLED_STATUS_CLEAR_ENABLED_KICK_ERR_MAX            (0x00000001U)
+
+#define CSL_TOP_PRCM_INTR_ENABLED_STATUS_CLEAR_ENABLED_PROXY_ERR_MASK          (0x00000008U)
+#define CSL_TOP_PRCM_INTR_ENABLED_STATUS_CLEAR_ENABLED_PROXY_ERR_SHIFT         (0x00000003U)
+#define CSL_TOP_PRCM_INTR_ENABLED_STATUS_CLEAR_ENABLED_PROXY_ERR_RESETVAL      (0x00000000U)
+#define CSL_TOP_PRCM_INTR_ENABLED_STATUS_CLEAR_ENABLED_PROXY_ERR_MAX           (0x00000001U)
+
+#define CSL_TOP_PRCM_INTR_ENABLED_STATUS_CLEAR_RESETVAL                        (0x00000000U)
+
+/* INTR_ENABLE */
+
+#define CSL_TOP_PRCM_INTR_ENABLE_PROT_ERR_EN_MASK                              (0x00000001U)
+#define CSL_TOP_PRCM_INTR_ENABLE_PROT_ERR_EN_SHIFT                             (0x00000000U)
+#define CSL_TOP_PRCM_INTR_ENABLE_PROT_ERR_EN_RESETVAL                          (0x00000000U)
+#define CSL_TOP_PRCM_INTR_ENABLE_PROT_ERR_EN_MAX                               (0x00000001U)
+
+#define CSL_TOP_PRCM_INTR_ENABLE_ADDR_ERR_EN_MASK                              (0x00000002U)
+#define CSL_TOP_PRCM_INTR_ENABLE_ADDR_ERR_EN_SHIFT                             (0x00000001U)
+#define CSL_TOP_PRCM_INTR_ENABLE_ADDR_ERR_EN_RESETVAL                          (0x00000000U)
+#define CSL_TOP_PRCM_INTR_ENABLE_ADDR_ERR_EN_MAX                               (0x00000001U)
+
+#define CSL_TOP_PRCM_INTR_ENABLE_KICK_ERR_EN_MASK                              (0x00000004U)
+#define CSL_TOP_PRCM_INTR_ENABLE_KICK_ERR_EN_SHIFT                             (0x00000002U)
+#define CSL_TOP_PRCM_INTR_ENABLE_KICK_ERR_EN_RESETVAL                          (0x00000000U)
+#define CSL_TOP_PRCM_INTR_ENABLE_KICK_ERR_EN_MAX                               (0x00000001U)
+
+#define CSL_TOP_PRCM_INTR_ENABLE_PROXY_ERR_EN_MASK                             (0x00000008U)
+#define CSL_TOP_PRCM_INTR_ENABLE_PROXY_ERR_EN_SHIFT                            (0x00000003U)
+#define CSL_TOP_PRCM_INTR_ENABLE_PROXY_ERR_EN_RESETVAL                         (0x00000000U)
+#define CSL_TOP_PRCM_INTR_ENABLE_PROXY_ERR_EN_MAX                              (0x00000001U)
+
+#define CSL_TOP_PRCM_INTR_ENABLE_RESETVAL                                      (0x00000000U)
+
+/* INTR_ENABLE_CLEAR */
+
+#define CSL_TOP_PRCM_INTR_ENABLE_CLEAR_PROT_ERR_EN_CLR_MASK                    (0x00000001U)
+#define CSL_TOP_PRCM_INTR_ENABLE_CLEAR_PROT_ERR_EN_CLR_SHIFT                   (0x00000000U)
+#define CSL_TOP_PRCM_INTR_ENABLE_CLEAR_PROT_ERR_EN_CLR_RESETVAL                (0x00000000U)
+#define CSL_TOP_PRCM_INTR_ENABLE_CLEAR_PROT_ERR_EN_CLR_MAX                     (0x00000001U)
+
+#define CSL_TOP_PRCM_INTR_ENABLE_CLEAR_ADDR_ERR_EN_CLR_MASK                    (0x00000002U)
+#define CSL_TOP_PRCM_INTR_ENABLE_CLEAR_ADDR_ERR_EN_CLR_SHIFT                   (0x00000001U)
+#define CSL_TOP_PRCM_INTR_ENABLE_CLEAR_ADDR_ERR_EN_CLR_RESETVAL                (0x00000000U)
+#define CSL_TOP_PRCM_INTR_ENABLE_CLEAR_ADDR_ERR_EN_CLR_MAX                     (0x00000001U)
+
+#define CSL_TOP_PRCM_INTR_ENABLE_CLEAR_KICK_ERR_EN_CLR_MASK                    (0x00000004U)
+#define CSL_TOP_PRCM_INTR_ENABLE_CLEAR_KICK_ERR_EN_CLR_SHIFT                   (0x00000002U)
+#define CSL_TOP_PRCM_INTR_ENABLE_CLEAR_KICK_ERR_EN_CLR_RESETVAL                (0x00000000U)
+#define CSL_TOP_PRCM_INTR_ENABLE_CLEAR_KICK_ERR_EN_CLR_MAX                     (0x00000001U)
+
+#define CSL_TOP_PRCM_INTR_ENABLE_CLEAR_PROXY_ERR_EN_CLR_MASK                   (0x00000008U)
+#define CSL_TOP_PRCM_INTR_ENABLE_CLEAR_PROXY_ERR_EN_CLR_SHIFT                  (0x00000003U)
+#define CSL_TOP_PRCM_INTR_ENABLE_CLEAR_PROXY_ERR_EN_CLR_RESETVAL               (0x00000000U)
+#define CSL_TOP_PRCM_INTR_ENABLE_CLEAR_PROXY_ERR_EN_CLR_MAX                    (0x00000001U)
+
+#define CSL_TOP_PRCM_INTR_ENABLE_CLEAR_RESETVAL                                (0x00000000U)
+
+/* EOI */
+
+#define CSL_TOP_PRCM_EOI_EOI_VECTOR_MASK                                       (0x000000FFU)
+#define CSL_TOP_PRCM_EOI_EOI_VECTOR_SHIFT                                      (0x00000000U)
+#define CSL_TOP_PRCM_EOI_EOI_VECTOR_RESETVAL                                   (0x00000000U)
+#define CSL_TOP_PRCM_EOI_EOI_VECTOR_MAX                                        (0x000000FFU)
+
+#define CSL_TOP_PRCM_EOI_RESETVAL                                              (0x00000000U)
+
+/* FAULT_ADDRESS */
+
+#define CSL_TOP_PRCM_FAULT_ADDRESS_FAULT_ADDR_MASK                             (0xFFFFFFFFU)
+#define CSL_TOP_PRCM_FAULT_ADDRESS_FAULT_ADDR_SHIFT                            (0x00000000U)
+#define CSL_TOP_PRCM_FAULT_ADDRESS_FAULT_ADDR_RESETVAL                         (0x00000000U)
+#define CSL_TOP_PRCM_FAULT_ADDRESS_FAULT_ADDR_MAX                              (0xFFFFFFFFU)
+
+#define CSL_TOP_PRCM_FAULT_ADDRESS_RESETVAL                                    (0x00000000U)
+
+/* FAULT_TYPE_STATUS */
+
+#define CSL_TOP_PRCM_FAULT_TYPE_STATUS_FAULT_TYPE_MASK                         (0x0000003FU)
+#define CSL_TOP_PRCM_FAULT_TYPE_STATUS_FAULT_TYPE_SHIFT                        (0x00000000U)
+#define CSL_TOP_PRCM_FAULT_TYPE_STATUS_FAULT_TYPE_RESETVAL                     (0x00000000U)
+#define CSL_TOP_PRCM_FAULT_TYPE_STATUS_FAULT_TYPE_MAX                          (0x0000003FU)
+
+#define CSL_TOP_PRCM_FAULT_TYPE_STATUS_FAULT_NS_MASK                           (0x00000040U)
+#define CSL_TOP_PRCM_FAULT_TYPE_STATUS_FAULT_NS_SHIFT                          (0x00000006U)
+#define CSL_TOP_PRCM_FAULT_TYPE_STATUS_FAULT_NS_RESETVAL                       (0x00000000U)
+#define CSL_TOP_PRCM_FAULT_TYPE_STATUS_FAULT_NS_MAX                            (0x00000001U)
+
+#define CSL_TOP_PRCM_FAULT_TYPE_STATUS_RESETVAL                                (0x00000000U)
+
+/* FAULT_ATTR_STATUS */
+
+#define CSL_TOP_PRCM_FAULT_ATTR_STATUS_FAULT_PRIVID_MASK                       (0x000000FFU)
+#define CSL_TOP_PRCM_FAULT_ATTR_STATUS_FAULT_PRIVID_SHIFT                      (0x00000000U)
+#define CSL_TOP_PRCM_FAULT_ATTR_STATUS_FAULT_PRIVID_RESETVAL                   (0x00000000U)
+#define CSL_TOP_PRCM_FAULT_ATTR_STATUS_FAULT_PRIVID_MAX                        (0x000000FFU)
+
+#define CSL_TOP_PRCM_FAULT_ATTR_STATUS_FAULT_ROUTEID_MASK                      (0x000FFF00U)
+#define CSL_TOP_PRCM_FAULT_ATTR_STATUS_FAULT_ROUTEID_SHIFT                     (0x00000008U)
+#define CSL_TOP_PRCM_FAULT_ATTR_STATUS_FAULT_ROUTEID_RESETVAL                  (0x00000000U)
+#define CSL_TOP_PRCM_FAULT_ATTR_STATUS_FAULT_ROUTEID_MAX                       (0x00000FFFU)
+
+#define CSL_TOP_PRCM_FAULT_ATTR_STATUS_FAULT_XID_MASK                          (0xFFF00000U)
+#define CSL_TOP_PRCM_FAULT_ATTR_STATUS_FAULT_XID_SHIFT                         (0x00000014U)
+#define CSL_TOP_PRCM_FAULT_ATTR_STATUS_FAULT_XID_RESETVAL                      (0x00000000U)
+#define CSL_TOP_PRCM_FAULT_ATTR_STATUS_FAULT_XID_MAX                           (0x00000FFFU)
+
+#define CSL_TOP_PRCM_FAULT_ATTR_STATUS_RESETVAL                                (0x00000000U)
+
+/* FAULT_CLEAR */
+
+#define CSL_TOP_PRCM_FAULT_CLEAR_FAULT_CLR_MASK                                (0x00000001U)
+#define CSL_TOP_PRCM_FAULT_CLEAR_FAULT_CLR_SHIFT                               (0x00000000U)
+#define CSL_TOP_PRCM_FAULT_CLEAR_FAULT_CLR_RESETVAL                            (0x00000000U)
+#define CSL_TOP_PRCM_FAULT_CLEAR_FAULT_CLR_MAX                                 (0x00000001U)
+
+#define CSL_TOP_PRCM_FAULT_CLEAR_RESETVAL                                      (0x00000000U)
+
+/* MCUCLKOUT_CLKCTL */
+
+#define CSL_TOP_PRCM_MCUCLKOUT_CLKCTL_MCUCLKOUT_CLKCTL_MCUCLKOUT_CLK_SW_GATE_MASK (0x0000000FU)
+#define CSL_TOP_PRCM_MCUCLKOUT_CLKCTL_MCUCLKOUT_CLKCTL_MCUCLKOUT_CLK_SW_GATE_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_MCUCLKOUT_CLKCTL_MCUCLKOUT_CLKCTL_MCUCLKOUT_CLK_SW_GATE_RESETVAL (0x00000007U)
+#define CSL_TOP_PRCM_MCUCLKOUT_CLKCTL_MCUCLKOUT_CLKCTL_MCUCLKOUT_CLK_SW_GATE_MAX (0x0000000FU)
+
+#define CSL_TOP_PRCM_MCUCLKOUT_CLKCTL_MCUCLKOUT_CLKCTL_MCUCLKOUT_CLK_SRC_SEL_MASK (0x0000FFF0U)
+#define CSL_TOP_PRCM_MCUCLKOUT_CLKCTL_MCUCLKOUT_CLKCTL_MCUCLKOUT_CLK_SRC_SEL_SHIFT (0x00000004U)
+#define CSL_TOP_PRCM_MCUCLKOUT_CLKCTL_MCUCLKOUT_CLKCTL_MCUCLKOUT_CLK_SRC_SEL_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_MCUCLKOUT_CLKCTL_MCUCLKOUT_CLKCTL_MCUCLKOUT_CLK_SRC_SEL_MAX (0x00000FFFU)
+
+#define CSL_TOP_PRCM_MCUCLKOUT_CLKCTL_MCUCLKOUT_CLKCTL_MCUCLKOUT_CLK_DIVR_MASK (0x0FFF0000U)
+#define CSL_TOP_PRCM_MCUCLKOUT_CLKCTL_MCUCLKOUT_CLKCTL_MCUCLKOUT_CLK_DIVR_SHIFT (0x00000010U)
+#define CSL_TOP_PRCM_MCUCLKOUT_CLKCTL_MCUCLKOUT_CLKCTL_MCUCLKOUT_CLK_DIVR_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_MCUCLKOUT_CLKCTL_MCUCLKOUT_CLKCTL_MCUCLKOUT_CLK_DIVR_MAX  (0x00000FFFU)
+
+#define CSL_TOP_PRCM_MCUCLKOUT_CLKCTL_RESETVAL                                 (0x00000007U)
+
+/* MCUCLKOUT_CLKSTAT */
+
+#define CSL_TOP_PRCM_MCUCLKOUT_CLKSTAT_MCUCLKOUT_CLKSTAT_MCUCLKOUT_CLK_CURR_DIVR_MASK (0x0000000FU)
+#define CSL_TOP_PRCM_MCUCLKOUT_CLKSTAT_MCUCLKOUT_CLKSTAT_MCUCLKOUT_CLK_CURR_DIVR_SHIFT (0x00000000U)
+#define CSL_TOP_PRCM_MCUCLKOUT_CLKSTAT_MCUCLKOUT_CLKSTAT_MCUCLKOUT_CLK_CURR_DIVR_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_MCUCLKOUT_CLKSTAT_MCUCLKOUT_CLKSTAT_MCUCLKOUT_CLK_CURR_DIVR_MAX (0x0000000FU)
+
+#define CSL_TOP_PRCM_MCUCLKOUT_CLKSTAT_MCUCLKOUT_CLKSTAT_MCUCLKOUT_CLK_IN_USE_MASK (0x00000FF0U)
+#define CSL_TOP_PRCM_MCUCLKOUT_CLKSTAT_MCUCLKOUT_CLKSTAT_MCUCLKOUT_CLK_IN_USE_SHIFT (0x00000004U)
+#define CSL_TOP_PRCM_MCUCLKOUT_CLKSTAT_MCUCLKOUT_CLKSTAT_MCUCLKOUT_CLK_IN_USE_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_MCUCLKOUT_CLKSTAT_MCUCLKOUT_CLKSTAT_MCUCLKOUT_CLK_IN_USE_MAX (0x000000FFU)
+
+#define CSL_TOP_PRCM_MCUCLKOUT_CLKSTAT_RESETVAL                                (0x00000000U)
+
+/* DCDC_CTRL_REG1 */
+
+#define CSL_TOP_PRCM_DCDC_CTRL_REG1_DCDC_CTRL_REG1_DCDC_RSTN_REG_MASK          (0x00000001U)
+#define CSL_TOP_PRCM_DCDC_CTRL_REG1_DCDC_CTRL_REG1_DCDC_RSTN_REG_SHIFT         (0x00000000U)
+#define CSL_TOP_PRCM_DCDC_CTRL_REG1_DCDC_CTRL_REG1_DCDC_RSTN_REG_RESETVAL      (0x00000000U)
+#define CSL_TOP_PRCM_DCDC_CTRL_REG1_DCDC_CTRL_REG1_DCDC_RSTN_REG_MAX           (0x00000001U)
+
+#define CSL_TOP_PRCM_DCDC_CTRL_REG1_DCDC_CTRL_REG1_DCDC_CLK_EN_MASK            (0x00010000U)
+#define CSL_TOP_PRCM_DCDC_CTRL_REG1_DCDC_CTRL_REG1_DCDC_CLK_EN_SHIFT           (0x00000010U)
+#define CSL_TOP_PRCM_DCDC_CTRL_REG1_DCDC_CTRL_REG1_DCDC_CLK_EN_RESETVAL        (0x00000000U)
+#define CSL_TOP_PRCM_DCDC_CTRL_REG1_DCDC_CTRL_REG1_DCDC_CLK_EN_MAX             (0x00000001U)
+
+#define CSL_TOP_PRCM_DCDC_CTRL_REG1_RESETVAL                                   (0x00000000U)
+
+/* DCDC_CTRL_REG2 */
+
+#define CSL_TOP_PRCM_DCDC_CTRL_REG2_DCDC_CTRL_REG2_DCDC_DITHER_EN_MASK         (0x00000001U)
+#define CSL_TOP_PRCM_DCDC_CTRL_REG2_DCDC_CTRL_REG2_DCDC_DITHER_EN_SHIFT        (0x00000000U)
+#define CSL_TOP_PRCM_DCDC_CTRL_REG2_DCDC_CTRL_REG2_DCDC_DITHER_EN_RESETVAL     (0x00000000U)
+#define CSL_TOP_PRCM_DCDC_CTRL_REG2_DCDC_CTRL_REG2_DCDC_DITHER_EN_MAX          (0x00000001U)
+
+#define CSL_TOP_PRCM_DCDC_CTRL_REG2_DCDC_CTRL_REG2_DCDC_FREQ_ACC_MODE_MASK     (0x00010000U)
+#define CSL_TOP_PRCM_DCDC_CTRL_REG2_DCDC_CTRL_REG2_DCDC_FREQ_ACC_MODE_SHIFT    (0x00000010U)
+#define CSL_TOP_PRCM_DCDC_CTRL_REG2_DCDC_CTRL_REG2_DCDC_FREQ_ACC_MODE_RESETVAL (0x00000000U)
+#define CSL_TOP_PRCM_DCDC_CTRL_REG2_DCDC_CTRL_REG2_DCDC_FREQ_ACC_MODE_MAX      (0x00000001U)
+
+#define CSL_TOP_PRCM_DCDC_CTRL_REG2_RESETVAL                                   (0x00000000U)
+
+/* DCDC_CTRL_REG3 */
+
+#define CSL_TOP_PRCM_DCDC_CTRL_REG3_DCDC_CTRL_REG3_DCDC_MIN_FREQ_THR_MASK      (0x000000FFU)
+#define CSL_TOP_PRCM_DCDC_CTRL_REG3_DCDC_CTRL_REG3_DCDC_MIN_FREQ_THR_SHIFT     (0x00000000U)
+#define CSL_TOP_PRCM_DCDC_CTRL_REG3_DCDC_CTRL_REG3_DCDC_MIN_FREQ_THR_RESETVAL  (0x00000000U)
+#define CSL_TOP_PRCM_DCDC_CTRL_REG3_DCDC_CTRL_REG3_DCDC_MIN_FREQ_THR_MAX       (0x000000FFU)
+
+#define CSL_TOP_PRCM_DCDC_CTRL_REG3_DCDC_CTRL_REG3_DCDC_MAX_FREQ_THR_MASK      (0x00FF0000U)
+#define CSL_TOP_PRCM_DCDC_CTRL_REG3_DCDC_CTRL_REG3_DCDC_MAX_FREQ_THR_SHIFT     (0x00000010U)
+#define CSL_TOP_PRCM_DCDC_CTRL_REG3_DCDC_CTRL_REG3_DCDC_MAX_FREQ_THR_RESETVAL  (0x00000000U)
+#define CSL_TOP_PRCM_DCDC_CTRL_REG3_DCDC_CTRL_REG3_DCDC_MAX_FREQ_THR_MAX       (0x000000FFU)
+
+#define CSL_TOP_PRCM_DCDC_CTRL_REG3_RESETVAL                                   (0x00000000U)
+
+/* DCDC_SLOPE_REG */
+
+#define CSL_TOP_PRCM_DCDC_SLOPE_REG_DCDC_SLOPE_REG_DCDC_SLOPE_VAL_MASK         (0x07FFFFFFU)
+#define CSL_TOP_PRCM_DCDC_SLOPE_REG_DCDC_SLOPE_REG_DCDC_SLOPE_VAL_SHIFT        (0x00000000U)
+#define CSL_TOP_PRCM_DCDC_SLOPE_REG_DCDC_SLOPE_REG_DCDC_SLOPE_VAL_RESETVAL     (0x00000000U)
+#define CSL_TOP_PRCM_DCDC_SLOPE_REG_DCDC_SLOPE_REG_DCDC_SLOPE_VAL_MAX          (0x07FFFFFFU)
+
+#define CSL_TOP_PRCM_DCDC_SLOPE_REG_RESETVAL                                   (0x00000000U)
+
+/* APP_CPU_CLKCTL */
+
+#define CSL_TOP_PRCM_APP_CPU_CLKCTL_APP_CPU_CLKCTL_GATE_MASK                   (0x0000000FU)
+#define CSL_TOP_PRCM_APP_CPU_CLKCTL_APP_CPU_CLKCTL_GATE_SHIFT                  (0x00000000U)
+#define CSL_TOP_PRCM_APP_CPU_CLKCTL_APP_CPU_CLKCTL_GATE_RESETVAL               (0x00000000U)
+#define CSL_TOP_PRCM_APP_CPU_CLKCTL_APP_CPU_CLKCTL_GATE_MAX                    (0x0000000FU)
+
+#define CSL_TOP_PRCM_APP_CPU_CLKCTL_RESETVAL                                   (0x00000000U)
+
+#ifdef __cplusplus
+}
+#endif
+#endif

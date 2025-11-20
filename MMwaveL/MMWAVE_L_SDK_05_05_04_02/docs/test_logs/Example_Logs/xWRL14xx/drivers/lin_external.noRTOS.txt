@@ -1,0 +1,10 @@
+[LIN] LIN mode external, application started ...
+[LIN] : New Data Sent = 12
+[LIN] : New Data Sent = 34
+[LIN] : New Data Sent = 56
+[LIN] : New Data Sent = 78
+[LIN] : New Data Sent = 9a
+[LIN] : New Data Sent = ab
+[LIN] : New Data Sent = cd
+[LIN] : New Data Sent = ef
+All tests have passed!!

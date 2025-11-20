@@ -1,0 +1,10 @@
+var group__DPU__ZOOMPROC__ERROR__CODE =
+[
+    [ "DPU_ZOOMPROC_EINVAL", "group__DPU__ZOOMPROC__ERROR__CODE.html#ga83b9149e1144c929ffc628683935ae85", null ],
+    [ "DPU_ZOOMPROC_ENOMEM", "group__DPU__ZOOMPROC__ERROR__CODE.html#gaa370cdb4c9565956febe6d8e2ffbd8df", null ],
+    [ "DPU_ZOOMPROC_EINTERNAL", "group__DPU__ZOOMPROC__ERROR__CODE.html#gad654a7521daad1ef362c49101c829b3c", null ],
+    [ "DPU_ZOOMPROC_ENOTIMPL", "group__DPU__ZOOMPROC__ERROR__CODE.html#ga4bea9eef04eea0e535031353046022d0", null ],
+    [ "DPU_ZOOMPROC_EINPROGRESS", "group__DPU__ZOOMPROC__ERROR__CODE.html#ga0948c8d3272cbca145ff45132e1a29fd", null ],
+    [ "DPU_ZOOMPROC_ECMD", "group__DPU__ZOOMPROC__ERROR__CODE.html#gaf6507b02e274d9e4e4d885f96eff8588", null ],
+    [ "DPU_ZOOMPROC_ESEMA", "group__DPU__ZOOMPROC__ERROR__CODE.html#ga985a7937cc5ca93256dbb82250c37d85", null ]
+];

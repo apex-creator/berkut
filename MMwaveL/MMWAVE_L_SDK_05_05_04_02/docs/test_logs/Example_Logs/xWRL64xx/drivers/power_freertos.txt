@@ -1,0 +1,33 @@
+þReason for Reset is STC_PORZ
+
+
+*** Power Management Options : ***
+    1) for LPDS.
+    2) for Idle Mode.
+Please select Power Management mode :  1
+
+Exited LPDS!!.... ò
+Reason for Reset is Deep Sleep
+Reason for Deep Sleep Wakeup is GPIO/SYNCIN
+
+*** Power Management Options : ***
+    1) for LPDS.
+    2) for Idle Mode.
+Please select Power Management mode :  1
+
+Exited LPDS!!.... â
+Reason for Reset is Deep Sleep
+Reason for Deep Sleep Wakeup is SLEEP COUNTER
+
+*** Power Management Options : ***
+    1) for LPDS.
+    2) for Idle Mode.
+Please select Power Management mode :  2
+
+Entering IDLE...þIø
+Exited IDLE!!
+
+*** Power Management Options : ***
+    1) for LPDS.
+    2) for Idle Mode.
+Please select Power Management mode :

@@ -1,0 +1,37 @@
+DPU Test Started 
+numTxAntennas = 2
+numRxAntennas = 3
+numRangeBins = 64
+numDopplerChirps = 128
+numFrames = 1
+
+Frame 0 data read started
+Reading Data From File.. 0 percent
+Reading Data From File.. 7 percent
+Reading Data From File.. 15 percent
+Reading Data From File.. 23 percent
+Reading Data From File.. 31 percent
+Reading Data From File.. 39 percent
+Reading Data From File.. 46 percent
+Reading Data From File.. 54 percent
+Reading Data From File.. 62 percent
+Reading Data From File.. 70 percent
+Reading Data From File.. 78 percent
+Reading Data From File.. 85 percent
+Reading Data From File.. 93 percent
+Measured processing time (dopplerproc) = CPU cycles = 57088 !!!
+Writing Data to File.. 0 percent
+Writing Data to File.. 15 percent
+Writing Data to File.. 31 percent
+Writing Data to File.. 46 percent
+Writing Data to File.. 62 percent
+Writing Data to File.. 78 percent
+Writing Data to File.. 93 percent
+Writing Output Data to File done
+Total no of points in detection Matrix compared: 7488!!
+Total no of points failed: 0!!
+Overal frame performance: %100.00!!
+Doppler DPU processing for frame 0 done
+Test #0 finished!
+
+All tests have passed!!

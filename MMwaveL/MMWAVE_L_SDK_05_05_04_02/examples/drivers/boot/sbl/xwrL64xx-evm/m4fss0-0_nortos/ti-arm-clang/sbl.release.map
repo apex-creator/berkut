@@ -1,0 +1,1586 @@
+******************************************************************************
+            TI ARM Clang Linker Unix v3.2.2                    
+******************************************************************************
+>> Linked Fri Aug 29 15:04:42 2025
+
+OUTPUT FILE NAME:   <sbl.release.out>
+ENTRY POINT SYMBOL: "_c_int00"  address: 0048993d
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  M4F_RAM               00470000   00010000  00003e88  0000c178  RWIX
+  M4F_VECS              00480000   00000200  00000140  000000c0  RWIX
+  M4F_SHA_RAM           00480200   0003fe00  0000b9d0  00034430  RWIX
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00470000    00470000    00003640   00000000    rw-
+  00470000    00470000    00002640   00000000    rw- .bss
+  00472640    00472640    00001000   00000000    rw- .stack
+00473640    00473640    00000760   00000560    rw-
+  00473640    00473640    00000560   00000560    rw- .data
+  00473ba0    00473ba0    00000200   00000000    rw- .sysmem
+00473da0    00473da0    000000d0   000000d0    r-x
+  00473da0    00473da0    000000d0   000000d0    r-x .jumptoApp
+00473e70    00473e70    00000018   00000000    rw-
+  00473e70    00473e70    00000018   00000000    rw- .jumptoAppdata
+00480000    00480000    00000140   00000140    rw-
+  00480000    00480000    00000140   00000140    rw- .vectors
+00480200    00480200    0000b9d0   0000b9d0    r-x
+  00480200    00480200    0000a900   0000a900    r-x .text
+  0048ab00    0048ab00    000010d0   000010d0    r-- .rodata
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.bss       0    00470000    00002640     UNINITIALIZED
+                  00470000    00001800     (.common:c_ReadBuffer)
+                  00471800    0000041c     (.common:t_CfgFilePrms)
+                  00471c1c    00000280     (.common:gHwiCtrl)
+                  00471e9c    0000021c     ti_drivers_config.obj (.bss.gUartObjects)
+                  004720b8    00000194     ti_drivers_config.obj (.bss.gQspiObjects)
+                  0047224c    00000120     libsysbm.a : trgmsg.c.obj (.bss:_CIOBUF_)
+                  0047236c    000000a0     libc.a : defs.c.obj (.bss.__TI_tmpnams)
+                  0047240c    00000090     (.common:t_Metaheader)
+                  0047249c    00000058     ti_drivers_config.obj (.bss.gEdmaObjects)
+                  004724f4    00000004     libc.a : memory.c.obj (.bss.sys_free)
+                  004724f8    00000038     (.common:gClockCtrl)
+                  00472530    00000038     (.common:t_ImagePrms)
+                  00472568    00000020     (.common:crcEdmaParam)
+                  00472588    00000020     (.common:gTimerHwiObj)
+                  004725a8    00000020     (.common:sblObj)
+                  004725c8    00000018     (.common:t_PingPongBuffCtx)
+                  004725e0    00000010     (.common:gFlashObject_MX25V1635F)
+                  004725f0    00000010     (.common:t_ImgValidCtx)
+                  00472600    0000000c     (.common:t_BuffParserTaskCtx)
+                  0047260c    00000008     libsysbm.a : hostopen.c.obj (.bss.parmbuf)
+                  00472614    00000004     (.common:crcParam)
+                  00472618    00000004     (.common:crcTcc)
+                  0047261c    00000004     (.common:crcdmaCh)
+                  00472620    00000004     (.common:edmaBaseAddr)
+                  00472624    00000004     (.common:edmaRegionId)
+                  00472628    00000004     (.common:gEdmaHandle)
+                  0047262c    00000004     (.common:gFlashHandle)
+                  00472630    00000004     (.common:gQspiHandle)
+                  00472634    00000004     (.common:gTimerBaseAddr)
+                  00472638    00000004     (.common:gUartHandle)
+                  0047263c    00000004     (.common:t_ParserCtx)
+
+.stack     0    00472640    00001000     UNINITIALIZED
+                  00472640    00000004     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : boot_armv7m.obj (.stack)
+                  00472644    00000ffc     --HOLE--
+
+.data      0    00473640    00000560     
+                  00473640    000000f0     libc.a : defs.c.obj (.data._ftable)
+                  00473730    00000078     libsysbm.a : host_device.c.obj (.data._device)
+                  004737a8    00000070     ti_board_open_close.obj (.data.gFlashDevCfg_MX25V1635F)
+                  00473818    00000064     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : qspi.obj (.data.gQspiDrvObj)
+                  0047387c    00000064                                                   : uart_sci.obj (.data.gUartDrvObj)
+                  004738e0    00000050     libsysbm.a : host_device.c.obj (.data._stream)
+                  00473930    00000050     ti_drivers_config.obj (.data.gEdmaAttrs)
+                  00473980    00000048     ti_pinmux_config.obj (.data.gPinMuxMainDomainCfg)
+                  004739c8    00000038     ti_drivers_config.obj (.data.gQspiAttrs)
+                  00473a00    00000038     ti_drivers_open_close.obj (.data.gUartParams)
+                  00473a38    00000030     ti_board_open_close.obj (.data.gFlashAttrs_MX25V1635F)
+                  00473a68    00000030     ti_dpl_config.obj (.data.gMpuRegionConfig)
+                  00473a98    00000024     ti_power_clock_config.obj (.data.gSocModulesClockFrequency)
+                  00473abc    0000001c     board.xwrL64xx.m4f.ti-arm-clang.release.lib : flash_nor_qspi.obj (.data.gFlashNorQspiFxns)
+                  00473ad8    00000014     ti_dpl_config.obj (.data.gClockConfig)
+                  00473aec    00000014     ti_power_clock_config.obj (.data.gSocModules)
+                  00473b00    00000010     ti_board_open_close.obj (.data.gFlashConfig)
+                  00473b10    00000010     board.xwrL64xx.m4f.ti-arm-clang.release.lib : flash_nor_qspi.obj (.data.gFlashToSpiProtocolMap)
+                  00473b20    0000000c     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : AddrTranslateP.obj (.data.gAddrTranslateConfig)
+                  00473b2c    0000000c     ti_dpl_config.obj (.data.gMpuConfig)
+                  00473b38    00000008     libc.a : exit.c.obj (.data..L_MergedGlobals)
+                  00473b40    00000008     ti_drivers_config.obj (.data.gEdmaConfig)
+                  00473b48    00000008     ti_board_open_close.obj (.data.gFlashParams)
+                  00473b50    00000008     ti_drivers_config.obj (.data.gQspiConfig)
+                  00473b58    00000008     ti_drivers_config.obj (.data.gUartAttrs)
+                  00473b60    00000008     ti_drivers_config.obj (.data.gUartConfig)
+                  00473b68    00000004     libc.a : defs.c.obj (.data.__TI_ft_end)
+                  00473b6c    00000004            : aeabi_portable.c.obj (.data.__aeabi_errno)
+                  00473b70    00000004            : _lock.c.obj (.data._lock)
+                  00473b74    00000004            : _lock.c.obj (.data._unlock)
+                  00473b78    00000004     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : DebugP_log.obj (.data.gDebugLogZone)
+                  00473b7c    00000004                                                  : DebugP_uartLogWriter.obj (.data.gDebugP_uartDrvIndex)
+                  00473b80    00000004     ti_drivers_config.obj (.data.gEdmaConfigNum)
+                  00473b84    00000004     ti_drivers_open_close.obj (.data.gEdmaParams)
+                  00473b88    00000004     ti_board_open_close.obj (.data.gFlashConfigNum)
+                  00473b8c    00000004     ti_drivers_config.obj (.data.gQspiConfigNum)
+                  00473b90    00000004     ti_drivers_open_close.obj (.data.gQspiParams)
+                  00473b94    00000004     ti_drivers_config.obj (.data.gUartConfigNum)
+                  00473b98    00000001     libc.a : memory.c.obj (.data.memory_is_initialized)
+                  00473b99    00000007     --HOLE-- [fill = 0]
+
+.sysmem    0    00473ba0    00000200     UNINITIALIZED
+                  00473ba0    00000010     libc.a : memory.c.obj (.sysmem)
+                  00473bb0    000001f0     --HOLE--
+
+.jumptoApp 
+*          0    00473da0    000000d0     
+                  00473da0    000000ca     sbl_main.obj (.jumptoApp)
+                  00473e6a    00000006     --HOLE-- [fill = 0]
+
+.jumptoAppdata 
+*          0    00473e70    00000018     UNINITIALIZED
+                  00473e70    00000014     sbl_main.obj (.jumptoAppdata)
+                  00473e84    00000004     --HOLE--
+
+.vectors   0    00480000    00000140     
+                  00480000    00000140     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : HwiP_armv7m_handlers_nortos.obj (.vectors)
+
+.text      0    00480200    0000a900     
+                  00480200    00000a0c     libc.a : _printfi.c.obj (.text:__TI_printfi)
+                  00480c0c    00000594     transport.obj (.text.SBL_transportDownloadFile)
+                  004811a0    00000570     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : printf.obj (.text._vsnprintf)
+                  00481710    000004a8                                                  : printf.obj (.text._etoa)
+                  00481bb8    00000440                                                  : printf.obj (.text._ftoa)
+                  00481ff8    000003b0                                                  : HwiP_armv7m.obj (.text.hwi)
+                  004823a8    0000037a     board.xwrL64xx.m4f.ti-arm-clang.release.lib : flash_nor_qspi.obj (.text.Flash_norQspiOpen)
+                  00482722    00000006     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : edma.obj (.text.EDMA_isInterruptEnabled)
+                  00482728    00000360                                                   : uart_sci.obj (.text.UART_open)
+                  00482a88    00000310                                                   : soc_rcm.obj (.text.SOC_rcmGetPeripheralClock)
+                  00482d98    0000030a                                                   : edma.obj (.text.EDMA_init)
+                  004830a2    0000001e                                                   : edma.obj (.text.EDMAClrIntrRegion)
+                  004830c0    000002dc     libc.a : strcmp_t2.S.obj (.text:strcmp)
+                  0048339c    00000004     ti_board_open_close.obj (.text.Board_driversOpen)
+                  004833a0    000002b8     libc.a : _printfi.c.obj (.text._pconv_a)
+                  00483658    00000238            : _printfi.c.obj (.text._pconv_g)
+                  00483890    0000022e     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : qspi.obj (.text.QSPI_open)
+                  00483abe    0000022c                                                   : uart_sci.obj (.text.UART_write)
+                  00483cea    00000002     ti_board_config.obj (.text.Board_deinit)
+                  00483cec    000001fc     parser_image.obj (.text.parser_parseRprcSecContent)
+                  00483ee8    000001ca     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : MpuP_armv7m.obj (.text.mpu)
+                  004840b2    00000002     ti_board_config.obj (.text.Board_init)
+                  004840b4    000001b6     libclang_rt.builtins.a : adddf3.S.obj (.text.adddf3_subdf3)
+                  0048426a    000001b0     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : uart_sci.obj (.text.UART_read)
+                  0048441a    00000002     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : CacheP_null.obj (.text.CacheP_inv)
+                  0048441c    000001a6     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : edma.obj (.text.EDMA_deinit)
+                  004845c2    00000004     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : ClockP_nortos_m4.obj (.text.ClockP_getTimerCount)
+                  004845c6    00000002                                                  : CacheP_null.obj (.text.CacheP_wb)
+                  004845c8    000001a0     libc.a : _printfi.c.obj (.text.fcvt)
+                  00484768    00000190     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : uart_sci_edma.obj (.text.UART_edmaChannelConfig)
+                  004848f8    0000018c                                                   : qspi_edma.obj (.text.QSPI_edmaTransfer)
+                  00484a84    00000004     ti_power_clock_config.obj (.text.PowerClock_deinit)
+                  00484a88    00000180     libc.a : _printfi.c.obj (.text._pconv_e)
+                  00484c08    0000017e     parser.obj (.text.parser_parseMetaHeader)
+                  00484d86    0000017a     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : uart_sci.obj (.text.UART_controllerIsr)
+                  00484f00    00000176                                                   : qspi_edma.obj (.text.QSPI_edmaChannelConfig)
+                  00485076    00000002     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : ClockP_nortos_m4.obj (.text.ClockP_timerClearOverflowInt)
+                  00485078    00000170     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : soc_rcm.obj (.text.SOC_rcmEnablePeripheralClock)
+                  004851e8    0000016a     board.xwrL64xx.m4f.ti-arm-clang.release.lib : flash_nor_qspi.obj (.text.Flash_norQspiWrite)
+                  00485352    00000166     parser_image.obj (.text.parser_calculateImageOffset)
+                  004854b8    00000162     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : soc_rcm.obj (.text.SOC_rcmSetPeripheralClock)
+                  0048561a    00000002     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : SemaphoreP_nortos.obj (.text.SemaphoreP_destruct)
+                  0048561c    00000162     sbl_main.obj (.text.sbl_main)
+                  0048577e    00000002     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : TaskP_nortos.obj (.text.TaskP_yield)
+                  00485780    0000015e     sbl_main.obj (.text.sbl_computeCrc32Cpu)
+                  004858de    00000002     libclang_rt.builtins.a : aeabi_div0.c.obj (.text.__aeabi_ldiv0)
+                  004858e0    0000015c     bootload.obj (.text.bootload_qspi)
+                  00485a3c    00000156     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : qspi.obj (.text.QSPI_readCmd)
+                  00485b92    00000148                                                   : uart_sci.obj (.text.UART_close)
+                  00485cda    00000002     libc.a : _lock.c.obj (.text._nop)
+                  00485cdc    00000144     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : printf.obj (.text._ntoa_format)
+                  00485e20    00000136     libclang_rt.builtins.a : divdf3.S.obj (.text.__divdf3)
+                  00485f56    00000002     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : printf.obj (.text._out_null)
+                  00485f58    00000132     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : edma.obj (.text.allocResource)
+                  0048608a    0000012c                                                   : edma.obj (.text.EDMA_open)
+                  004861b6    00000002     --HOLE-- [fill = 0]
+                  004861b8    00000126     sbl_main.obj (.text.sbl_sendDataCrc32Cpu)
+                  004862de    00000002     --HOLE-- [fill = 0]
+                  004862e0    00000120     libc.a : memory.c.obj (.text.aligned_alloc)
+                  00486400    0000010c            : s_scalbn.c.obj (.text.scalbn)
+                  0048650c    00000108     board.xwrL64xx.m4f.ti-arm-clang.release.lib : flash_nor_qspi.obj (.text.Flash_norQspiReset)
+                  00486614    00000104     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : edma.obj (.text.EDMA_transferCompletionMasterIsrFxn)
+                  00486718    00000102                                                   : crc.obj (.text.CRC_configure)
+                  0048681a    00000002     --HOLE-- [fill = 0]
+                  0048681c    000000fc     libclang_rt.builtins.a : muldf3.S.obj (.text.__muldf3)
+                  00486918    000000fa     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : edma.obj (.text.EDMA_freeResource)
+                  00486a12    00000002     --HOLE-- [fill = 0]
+                  00486a14    000000fa                                                   : qspi.obj (.text.QSPI_readMemMapMode)
+                  00486b0e    000000f6     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : ClockP_nortos_m4.obj (.text.ClockP_init)
+                  00486c04    000000f0     libc.a : fputs.c.obj (.text.fputs)
+                  00486cf4    000000f0            : memory.c.obj (.text.free)
+                  00486de4    000000e8     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : qspi.obj (.text.QSPI_writeCmd)
+                  00486ecc    000000e8                                                   : uart_sci_edma.obj (.text.UART_readDma)
+                  00486fb4    000000e6     parser_image_validity.obj (.text.parser_checkImageValidity)
+                  0048709a    00000002     --HOLE-- [fill = 0]
+                  0048709c    000000e0     parser_image_validity.obj (.text.parser_imageValidation)
+                  0048717c    000000da     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : HwiP_armv7m_handlers_nortos.obj (.text.hwi)
+                  00487256    00000002     --HOLE-- [fill = 0]
+                  00487258    000000d8     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : edma.obj (.text.EDMA_allocResource)
+                  00487330    000000d8                                                   : uart_sci_edma.obj (.text.UART_writeDma)
+                  00487408    000000d8     libc.a : setvbuf.c.obj (.text.setvbuf)
+                  004874e0    000000d6     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : edma.obj (.text.EDMA_unregisterIntr)
+                  004875b6    000000d4     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : TimerP_rti.obj (.text.TimerP_setup)
+                  0048768a    00000002     --HOLE-- [fill = 0]
+                  0048768c    000000d2     parser_image.obj (.text.parser_parseRprcHeader)
+                  0048775e    000000ce     board.xwrL64xx.m4f.ti-arm-clang.release.lib : flash_nor_qspi.obj (.text.Flash_norQspiSet4ByteAddrMode)
+                  0048782c    000000ca     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : edma.obj (.text.EDMA_registerIntr)
+                  004878f6    00000002     --HOLE-- [fill = 0]
+                  004878f8    000000bc                                                   : qspi.obj (.text.QSPI_spiConfigWrite)
+                  004879b4    000000bc     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : SysTickTimerP.obj (.text.SysTickTimerP_setup)
+                  00487a70    000000b8     board.xwrL64xx.m4f.ti-arm-clang.release.lib : flash_nor_qspi.obj (.text.Flash_norQspiErase)
+                  00487b28    000000b8                                                 : flash_nor_qspi.obj (.text.Flash_norQspiEraseSector)
+                  00487be0    000000b0     libclang_rt.builtins.a : udivmoddi4.S.obj (.text)
+                  00487c90    000000ae     ti_dpl_config.obj (.text.TimerP_init)
+                  00487d3e    00000002     --HOLE-- [fill = 0]
+                  00487d40    000000a4     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : printf.obj (.text._ntoa_long_long)
+                  00487de4    000000a4                                                  : printf.obj (.text._out_rev)
+                  00487e88    000000a2     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : uart_sci.obj (.text.UART_flushTxFifo)
+                  00487f2a    00000002     --HOLE-- [fill = 0]
+                  00487f2c    0000009e     parser_image.obj (.text.parser_parseRprcSecHeader)
+                  00487fca    00000002     --HOLE-- [fill = 0]
+                  00487fcc    0000009c     libc.a : s_floorf.c.obj (.text.floorf)
+                  00488068    0000009a     sbl_main.obj (.text.sbl_configureEdmaCrc)
+                  00488102    00000002     --HOLE-- [fill = 0]
+                  00488104    00000098     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : SemaphoreP_nortos.obj (.text.SemaphoreP_pend)
+                  0048819c    00000096     parser.obj (.text.parser_init)
+                  00488232    00000002     --HOLE-- [fill = 0]
+                  00488234    00000094     sbl_main.obj (.text.SBL_imageFlasher)
+                  004882c8    00000094     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : uart_sci.obj (.text.UART_init)
+                  0048835c    00000094     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : printf.obj (.text._ntoa_long)
+                  004883f0    00000094     parser_image.obj (.text.parser_parseRprcImage)
+                  00488484    00000092     parser.obj (.text.parser_buffer)
+                  00488516    00000090     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : edma.obj (.text.EDMADisableTransferRegion)
+                  004885a6    00000090                                                   : edma.obj (.text.EDMAEnableTransferRegion)
+                  00488636    00000002     --HOLE-- [fill = 0]
+                  00488638    00000088     libc.a : fputc.c.obj (.text.fputc)
+                  004886c0    00000086     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : uart_sci_edma.obj (.text.UART_txEdmaIsrFxn)
+                  00488746    00000002     --HOLE-- [fill = 0]
+                  00488748    00000082                                                   : qspi.obj (.text.QSPI_init)
+                  004887ca    00000080                                                   : uart_sci_edma.obj (.text.UART_rxEdmaIsrFxn)
+                  0048884a    0000007e     libc.a : s_roundf.c.obj (.text.roundf)
+                  004888c8    0000007c     board.xwrL64xx.m4f.ti-arm-clang.release.lib : flash_nor_qspi.obj (.text.Flash_norQspiWaitReady)
+                  00488944    00000074     libc.a : fclose.c.obj (.text.__TI_closefile)
+                  004889b8    00000072     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : edma.obj (.text.EDMA_close)
+                  00488a2a    00000070                                                   : edma.obj (.text.EDMAConfigureChannelRegion)
+                  00488a9a    00000002     --HOLE-- [fill = 0]
+                  00488a9c    0000006e     libclang_rt.builtins.a : comparedf2.c.obj (.text.__gedf2)
+                  00488b0a    00000002     --HOLE-- [fill = 0]
+                  00488b0c    0000006e                            : comparedf2.c.obj (.text.__ledf2)
+                  00488b7a    0000006c     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : qspi_edma.obj (.text.QSPI_edmaChannelFree)
+                  00488be6    0000006c     libc.a : _printfi.c.obj (.text._mcpy)
+                  00488c52    00000002     --HOLE-- [fill = 0]
+                  00488c54    0000006c            : memory.c.obj (.text.split)
+                  00488cc0    0000006a     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : AddrTranslateP.obj (.text.AddrTranslateP_getLocalAddr)
+                  00488d2a    00000068     ti_board_open_close.obj (.text.Board_flashOpen)
+                  00488d92    00000068     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : uart_sci.obj (.text.UART_readCancelNoCB)
+                  00488dfa    00000068                                                   : uart_sci.obj (.text.UART_writeCancelNoCB)
+                  00488e62    00000004                                                   : soc.obj (.text.SOC_moduleSetClockFrequency)
+                  00488e66    00000002     --HOLE-- [fill = 0]
+                  00488e68    00000068     libc.a : s_frexp.c.obj (.text.frexp)
+                  00488ed0    00000068            : fseek.c.obj (.text.fseeko)
+                  00488f38    00000068            : getdevice.c.obj (.text.getdevice)
+                  00488fa0    00000064     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : ClockP_nortos.obj (.text.ClockP_timerTickIsr)
+                  00489004    00000064     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : edma.obj (.text.EDMAFreeChannelRegion)
+                  00489068    00000064     libsysbm.a : hostrename.c.obj (.text.HOSTrename)
+                  004890cc    00000062     libclang_rt.builtins.a : aeabi_dcmp.S.obj (.text.__aeabi_dcmp)
+                  0048912e    00000060     libc.a : _io_perm.c.obj (.text.__TI_wrt_ok)
+                  0048918e    00000002     --HOLE-- [fill = 0]
+                  00489190    00000060     libsysbm.a : close.c.obj (.text.close)
+                  004891f0    0000005e     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : DebugP_log.obj (.text._DebugP_assert)
+                  0048924e    0000005a     parser_image.obj (.text.parser_readAlignmentBytes)
+                  004892a8    00000058     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : ClockP_nortos.obj (.text.ClockP_getTimeUsec)
+                  00489300    00000058     libsysbm.a : hostlseek.c.obj (.text.HOSTlseek)
+                  00489358    00000058                : hostopen.c.obj (.text.HOSTopen)
+                  004893b0    00000056     libc.a : _ltoa.c.obj (.text.__TI_ltoa)
+                  00489406    00000002     --HOLE-- [fill = 0]
+                  00489408    00000054     libsysbm.a : hostread.c.obj (.text.HOSTread)
+                  0048945c    00000054                : hostwrite.c.obj (.text.HOSTwrite)
+                  004894b0    00000054     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : qspi.obj (.text.QSPI_close)
+                  00489504    00000054     libc.a : _printfi.c.obj (.text._pconv_f)
+                  00489558    00000050     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : crc.obj (.text.CRC_initialize)
+                  004895a8    00000050                                                   : soc.obj (.text.SOC_virtToPhy)
+                  004895f8    00000050     libc.a : fflush.c.obj (.text.__TI_doflush)
+                  00489648    0000004e     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : ClockP_nortos.obj (.text.ClockP_addToList)
+                  00489696    00000002     --HOLE-- [fill = 0]
+                  00489698    0000004e     transport.obj (.text.SBL_printf)
+                  004896e6    0000004e     libc.a : _printfi.c.obj (.text._ecpy)
+                  00489734    0000004c     ti_drivers_open_close.obj (.text.Drivers_edmaOpen)
+                  00489780    0000004c     ti_drivers_open_close.obj (.text.Drivers_qspiOpen)
+                  004897cc    0000004c     ti_drivers_open_close.obj (.text.Drivers_uartOpen)
+                  00489818    0000004a     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : ClockP_nortos.obj (.text.ClockP_construct)
+                  00489862    0000004a     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : edma.obj (.text.EDMADisableChInShadowRegRegion)
+                  004898ac    00000048     libclang_rt.builtins.a : fixdfsi.S.obj (.text.__fixdfsi)
+                  004898f4    00000048     sbl_main.obj (.text.sbl_configureCrc32Cpu)
+                  0048993c    00000048     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : boot_armv7m.obj (.text:_c_int00)
+                  00489984    00000046     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : edma.obj (.text.EDMA_getBaseAddr)
+                  004899ca    00000002     --HOLE-- [fill = 0]
+                  004899cc    00000044     libsysbm.a : hostunlink.c.obj (.text.HOSTunlink)
+                  00489a10    00000044     libclang_rt.builtins.a : fixunsdfsi.S.obj (.text.__fixunsdfsi)
+                  00489a54    00000040     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : ClockP_nortos.obj (.text.ClockP_stop)
+                  00489a94    00000040     ti_drivers_open_close.obj (.text.Drivers_close)
+                  00489ad4    00000040     libc.a : atoi.c.obj (.text.atoi)
+                  00489b14    0000003e     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : edma.obj (.text.EDMAMapChToEvtQ)
+                  00489b52    00000002     --HOLE-- [fill = 0]
+                  00489b54    0000003e                                                   : edma.obj (.text.EDMASetPaRAM)
+                  00489b92    0000003e                                                   : qspi_edma.obj (.text.QSPI_edmaIsrFxn)
+                  00489bd0    0000003e     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : SemaphoreP_nortos.obj (.text.SemaphoreP_constructBinary)
+                  00489c0e    0000003e     ti_drivers_config.obj (.text.System_init)
+                  00489c4c    0000003c     board.xwrL64xx.m4f.ti-arm-clang.release.lib : flash_nor_qspi.obj (.text.Flash_norQspiRead)
+                  00489c88    0000003c     libsysbm.a : hostclose.c.obj (.text.HOSTclose)
+                  00489cc4    0000003c     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : SemaphoreP_nortos.obj (.text.SemaphoreP_constructMutex)
+                  00489d00    0000003c     libc.a : vsnprintf.c.obj (.text.vsnprintf)
+                  00489d3c    0000003a     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : ClockP_nortos.obj (.text.ClockP_destruct)
+                  00489d76    0000003a                                                  : DebugP_uartLogWriter.obj (.text.DebugP_uartLogWriterPutChar)
+                  00489db0    00000038     ti_drivers_config.obj (.text.Drivers_uartInit)
+                  00489de8    00000038     ti_power_clock_config.obj (.text.Module_clockSetFrequency)
+                  00489e20    00000038     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : qspi.obj (.text.QSPI_writeConfigMode)
+                  00489e58    00000038                                                   : soc_rcm.obj (.text.SOC_rcmEnableADPLLClock)
+                  00489e90    00000038     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : DebugP_nortos.obj (.text._DebugP_logZone)
+                  00489ec8    00000038     libclang_rt.builtins.a : extendsfdf2.S.obj (.text.__extendsfdf2)
+                  00489f00    00000038     libc.a : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit)
+                  00489f38    00000036     board.xwrL64xx.m4f.ti-arm-clang.release.lib : flash.obj (.text.Flash_open)
+                  00489f6e    00000002     --HOLE-- [fill = 0]
+                  00489f70    00000036     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : pinmux.obj (.text.Pinmux_config)
+                  00489fa6    00000034     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : ClockP_nortos.obj (.text.ClockP_start)
+                  00489fda    00000002     --HOLE-- [fill = 0]
+                  00489fdc    00000034     libc.a : fopen.c.obj (.text.__TI_cleanup)
+                  0048a010    00000034     libsysbm.a : trgmsg.c.obj (.text.__TI_writemsg)
+                  0048a044    00000034     libc.a : _printfi.c.obj (.text._fcpy)
+                  0048a078    00000032     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : edma.obj (.text.EDMA_getHandle)
+                  0048a0aa    00000002     --HOLE-- [fill = 0]
+                  0048a0ac    00000032     ti_power_clock_config.obj (.text.Module_clockEnable)
+                  0048a0de    00000032     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : SemaphoreP_nortos.obj (.text.SemaphoreP_post)
+                  0048a110    00000030     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : crc.obj (.text.CRC_channelReset)
+                  0048a140    00000030     libsysbm.a : trgmsg.c.obj (.text.__TI_readmsg)
+                  0048a170    00000030     libclang_rt.builtins.a : comparedf2.c.obj (.text.__unorddf2)
+                  0048a1a0    00000030     libc.a : vsnprintf.c.obj (.text._outs)
+                  0048a1d0    00000030            : exit.c.obj (.text.exit)
+                  0048a200    0000002e     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : crc.obj (.text.CRC_getPSASig)
+                  0048a22e    0000002e                                                   : crc.obj (.text.CRC_getPSASigRegAddr)
+                  0048a25c    0000002e                                                   : edma.obj (.text.EDMAEnableChInShadowRegRegion)
+                  0048a28a    00000002     --HOLE-- [fill = 0]
+                  0048a28c    0000002e     ti_power_clock_config.obj (.text.Module_clockDisable)
+                  0048a2ba    0000002e     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : qspi.obj (.text.QSPI_getHandle)
+                  0048a2e8    0000002e     libclang_rt.builtins.a : floatsidf.S.obj (.text.__floatsidf)
+                  0048a316    00000002     --HOLE-- [fill = 0]
+                  0048a318    0000002c     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : soc_rcm.obj (.text.SOC_rcmSetM4ClockSrc)
+                  0048a344    0000002c                                                   : uart_sci.obj (.text.UART_getHandle)
+                  0048a370    0000002c     libc.a : getdevice.c.obj (.text.finddevice)
+                  0048a39c    0000002c     libsysbm.a : lseek.c.obj (.text.lseek)
+                  0048a3c8    0000002c                : unlink.c.obj (.text.unlink)
+                  0048a3f4    0000002c                : write.c.obj (.text.write)
+                  0048a420    0000002a     crc16.obj (.text.crc16_ccitt)
+                  0048a44a    00000028     ti_dpl_config.obj (.text.Dpl_init)
+                  0048a472    00000028     transport.obj (.text.SBL_transportRead)
+                  0048a49a    00000002     --HOLE-- [fill = 0]
+                  0048a49c    00000028     libc.a : memory.c.obj (.text.free_list_insert)
+                  0048a4c4    00000026     board.xwrL64xx.m4f.ti-arm-clang.release.lib : flash_nor_qspi.obj (.text.Flash_norQspiSetOpCodeModeDummy)
+                  0048a4ea    00000024     ti_dpl_config.obj (.text.Dpl_deinit)
+                  0048a50e    00000024     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : edma.obj (.text.EDMAReadIntrStatusRegion)
+                  0048a532    00000002     --HOLE-- [fill = 0]
+                  0048a534    00000024     libc.a : fputs.c.obj (.text.puts)
+                  0048a558    00000024     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : printf.obj (.text.vprintf_)
+                  0048a57c    00000022     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : soc.obj (.text.SOC_controlModuleUnlockMMR)
+                  0048a59e    00000020     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : DebugP_log.obj (.text.DebugP_logZoneEnable)
+                  0048a5be    00000020     board.xwrL64xx.m4f.ti-arm-clang.release.lib : flash.obj (.text.Flash_getAttrs)
+                  0048a5de    00000002     --HOLE-- [fill = 0]
+                  0048a5e0    00000020     libclang_rt.builtins.a : floatunsidf.S.obj (.text.__floatunsidf)
+                  0048a600    0000001e     board.xwrL64xx.m4f.ti-arm-clang.release.lib : flash.obj (.text.Flash_read)
+                  0048a61e    0000001e                                                 : flash.obj (.text.Flash_write)
+                  0048a63c    0000001e     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : TimerP_rti.obj (.text.TimerP_Params_init)
+                  0048a65a    00000002     --HOLE-- [fill = 0]
+                  0048a65c    0000001e                                                  : DebugP_log.obj (.text._DebugP_assertNoLog)
+                  0048a67a    0000001e     libc.a : memccpy.c.obj (.text.memccpy)
+                  0048a698    0000001e     sbl_main.obj (.text.sbl_getCrc32Cpu)
+                  0048a6b6    00000002     --HOLE-- [fill = 0]
+                  0048a6b8    0000001c     libc.a : memory.c.obj (.text.free_list_remove)
+                  0048a6d4    0000001c     main.obj (.text.main)
+                  0048a6f0    0000001a     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : qspi.obj (.text.QSPI_deinit)
+                  0048a70a    0000001a     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : SysTickTimerP.obj (.text.SysTickTimerP_Params_init)
+                  0048a724    0000001a     ti_drivers_config.obj (.text.System_deinit)
+                  0048a73e    0000001a     ti_dpl_config.obj (.text.TimerP_isr0)
+                  0048a758    0000001a     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : uart_sci.obj (.text.UART_deinit)
+                  0048a772    0000001a     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : boot_armv7m.obj (.text.stack_init)
+                  0048a78c    00000018     ti_board_open_close.obj (.text.Board_driversClose)
+                  0048a7a4    00000018     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : ClockP_nortos_m4.obj (.text.ClockP_deinit)
+                  0048a7bc    00000018     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : qspi.obj (.text.QSPI_readCmdParams_init)
+                  0048a7d4    00000018                                                   : qspi.obj (.text.QSPI_writeCmdParams_init)
+                  0048a7ec    00000018     libc.a : vsnprintf.c.obj (.text._outc)
+                  0048a804    00000016     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : HwiP_armv7m.obj (.text.HwiP_inISR)
+                  0048a81a    00000016     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : qspi.obj (.text.QSPI_transaction_init)
+                  0048a830    00000016                                                   : soc_rcm.obj (.text.SOC_getEfusePgVersion)
+                  0048a846    00000014                                                   : edma.obj (.text.EDMA_getRegionId)
+                  0048a85a    00000014                                                   : soc.obj (.text.SOC_controlModuleLockMMR)
+                  0048a86e    00000002     --HOLE-- [fill = 0]
+                  0048a870    00000014     libclang_rt.builtins.a : aeabi_uldivmod.S.obj (.text.__aeabi_uldivmod)
+                  0048a884    00000014     parser_image_validity.obj (.text.parser_imageValidParamsInit)
+                  0048a898    00000012     ti_drivers_open_close.obj (.text.Drivers_open)
+                  0048a8aa    00000012     board.xwrL64xx.m4f.ti-arm-clang.release.lib : flash.obj (.text.Flash_eraseBlk)
+                  0048a8bc    00000012     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : soc.obj (.text.SOC_clocksEnable)
+                  0048a8ce    00000012     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : SysTickTimerP.obj (.text.SysTickTimerP_start)
+                  0048a8e0    00000012                                                  : SysTickTimerP.obj (.text.SysTickTimerP_stop)
+                  0048a8f2    00000012     ti_dpl_config.obj (.text.putchar_)
+                  0048a904    00000012     libc.a : _printfi.c.obj (.text.strchr)
+                  0048a916    00000012            : memcpy_t2.S.obj (.text:TI_memcpy_small)
+                  0048a928    00000010     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : qspi.obj (.text.QSPI_setAddressByteCount)
+                  0048a938    00000010                                                   : qspi.obj (.text.QSPI_setDummyBitCount)
+                  0048a948    00000010                                                   : qspi.obj (.text.QSPI_setReadCmd)
+                  0048a958    00000010                                                   : qspi.obj (.text.QSPI_setRxLines)
+                  0048a968    00000010                                                   : qspi.obj (.text.QSPI_setWriteCmd)
+                  0048a978    00000010     libc.a : wcslen.c.obj (.text.wcslen)
+                  0048a988    0000000e     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : edma.obj (.text.EDMACCPaRAMEntry_init)
+                  0048a996    0000000e     board.xwrL64xx.m4f.ti-arm-clang.release.lib : flash.obj (.text.Flash_close)
+                  0048a9a4    0000000e     ti_pinmux_config.obj (.text.Pinmux_init)
+                  0048a9b2    0000000e     ti_power_clock_config.obj (.text.PowerClock_init)
+                  0048a9c0    0000000e     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : qspi.obj (.text.QSPI_isr)
+                  0048a9ce    0000000e     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : SysTickTimerP.obj (.text.SysTickTimerP_getCount)
+                  0048a9dc    0000000e                                                  : SysTickTimerP.obj (.text.SysTickTimerP_getReloadCount)
+                  0048a9ea    0000000e     libsysbm.a : hostrename.c.obj (.text.strcpy)
+                  0048a9f8    0000000e     libc.a : _printfi.c.obj (.text.strlen)
+                  0048aa06    0000000e     libsysbm.a : hostrename.c.obj (.text.strlen)
+                  0048aa14    0000000e     libc.a : memset_t2.S.obj (.text:TI_memset_small)
+                  0048aa22    0000000c     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : ClockP_nortos.obj (.text.ClockP_getTicks)
+                  0048aa2e    0000000c                                                  : DebugP_uartLogWriter.obj (.text.DebugP_uartSetDrvIndex)
+                  0048aa3a    0000000c     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : soc.obj (.text.SOC_moduleClockEnable)
+                  0048aa46    00000002     --HOLE-- [fill = 0]
+                  0048aa48    0000000c     libc.a : fputc.c.obj (.text.putchar)
+                  0048aa54    0000000a     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : ClockP_nortos.obj (.text.ClockP_Params_init)
+                  0048aa5e    0000000a                                                  : ClockP_nortos.obj (.text.ClockP_isActive)
+                  0048aa68    0000000a                                                  : TimerP_rti.obj (.text.TimerP_stop)
+                  0048aa72    00000002     --HOLE-- [fill = 0]
+                  0048aa74    0000000a     libclang_rt.builtins.a : aeabi_memset.S.obj (.text.__aeabi_memset)
+                  0048aa7e    0000000a     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : printf.obj (.text._out_char)
+                  0048aa88    0000000a     parser.obj (.text.parser_buffMgmt)
+                  0048aa92    00000008     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : edma.obj (.text.EDMA_allocDmaChannel)
+                  0048aa9a    00000008                                                   : edma.obj (.text.EDMA_allocParam)
+                  0048aaa2    00000008                                                   : edma.obj (.text.EDMA_allocTcc)
+                  0048aaaa    00000008                                                   : edma.obj (.text.EDMA_freeDmaChannel)
+                  0048aab2    00000008                                                   : edma.obj (.text.EDMA_freeParam)
+                  0048aaba    00000008                                                   : edma.obj (.text.EDMA_freeTcc)
+                  0048aac2    00000008     board.xwrL64xx.m4f.ti-arm-clang.release.lib : flash_nor_qspi.obj (.text.Flash_norQspiClose)
+                  0048aaca    00000008     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : TimerP_rti.obj (.text.TimerP_clearOverflowInt)
+                  0048aad2    00000002     --HOLE-- [fill = 0]
+                  0048aad4    00000008     libc.a : aeabi_portable.c.obj (.text.__aeabi_errno_addr)
+                  0048aadc    00000008     libclang_rt.builtins.a : aeabi_memset.S.obj (.text.__aeabi_memclr)
+                  0048aae4    00000008     libc.a : memory.c.obj (.text.malloc)
+                  0048aaec    00000004     libclang_rt.builtins.a : aeabi_memcpy.S.obj (.text.__aeabi_memcpy)
+                  0048aaf0    00000004     ti_dpl_config.obj (.text.boot)
+                  0048aaf4    00000004     libc.a : fseek.c.obj (.text.fseek)
+                  0048aaf8    00000004     libsysbm.a : remove.c.obj (.text.remove)
+                  0048aafc    00000004     libc.a : exit.c.obj (.text:abort)
+
+.rodata    0    0048ab00    000010d0     
+                  0048ab00    00000200     crc16.obj (.rodata.crc16tab)
+                  0048ad00    00000101     libc.a : aeabi_ctype.S.obj (.rodata:__aeabi_ctype_table_)
+                  0048ae01    00000006     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : edma.obj (.rodata.str1.88401663264709294401)
+                  0048ae07    00000001     --HOLE-- [fill = 0]
+                  0048ae08    00000050     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : printf.obj (.rodata._ftoa.pow10)
+                  0048ae58    00000049     sbl_main.obj (.rodata.str1.9330437042625293671)
+                  0048aea1    00000047     sbl_main.obj (.rodata.str1.120163663779610881521)
+                  0048aee8    00000045     sbl_main.obj (.rodata.str1.53022930387851468841)
+                  0048af2d    0000003a     parser_image.obj (.rodata.str1.32359389434029430091)
+                  0048af67    00000037     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : SemaphoreP_nortos.obj (.rodata.str1.77784356401422800491)
+                  0048af9e    00000036     ti_board_open_close.obj (.rodata.str1.92759273185302855351)
+                  0048afd4    00000035     ti_drivers_open_close.obj (.rodata.str1.135241915826326793361)
+                  0048b009    00000035     ti_drivers_open_close.obj (.rodata.str1.83291568192396921451)
+                  0048b03e    00000035     ti_drivers_open_close.obj (.rodata.str1.89322429334436556861)
+                  0048b073    00000032     transport.obj (.rodata.str1.6344198967402135071)
+                  0048b0a5    00000031     sbl_main.obj (.rodata.str1.147937778607978155621)
+                  0048b0d6    00000030     parser_image.obj (.rodata.str1.160369347313741309971)
+                  0048b106    0000002e     parser_image.obj (.rodata.str1.41495787417733785911)
+                  0048b134    0000002e     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : ClockP_nortos.obj (.rodata.str1.60552435462749564001)
+                  0048b162    0000002d     parser_image.obj (.rodata.str1.177776317476064832901)
+                  0048b18f    0000002b     sbl_main.obj (.rodata.str1.180842441585924038711)
+                  0048b1ba    0000002a     sbl_main.obj (.rodata.str1.127637399991638963231)
+                  0048b1e4    0000002a     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : DebugP_log.obj (.rodata.str1.8568035916953519521)
+                  0048b20e    00000029     parser.obj (.rodata.str1.80841417416396368981)
+                  0048b237    00000028     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : SysTickTimerP.obj (.rodata.str1.124645680920677519181)
+                  0048b25f    00000027                                                  : ClockP_nortos_m4.obj (.rodata.str1.5874506960196990421)
+                  0048b286    00000026     sbl_main.obj (.rodata.str1.134139992427359471831)
+                  0048b2ac    00000026     transport.obj (.rodata.str1.147192975516643416261)
+                  0048b2d2    00000024     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : edma.obj (.rodata.str1.76418684701105564031)
+                  0048b2f6    00000023     parser_image.obj (.rodata.str1.145844508972549567421)
+                  0048b319    00000023     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : ClockP_nortos_m4.obj (.rodata.str1.48637854522803579141)
+                  0048b33c    00000023     sbl_main.obj (.rodata.str1.72955376630788186051)
+                  0048b35f    00000021     sbl_main.obj (.rodata.str1.176887160544568463621)
+                  0048b380    00000021     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : ClockP_nortos_m4.obj (.rodata.str1.99773122168583189571)
+                  0048b3a1    00000003     sbl_main.obj (.rodata.str1.87628360814280680741)
+                  0048b3a4    00000020     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : soc_rcm.obj (.rodata.cst16)
+                  0048b3c4    00000020     sbl_main.obj (.rodata.str1.16444369663342768141)
+                  0048b3e4    0000001f     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : ClockP_nortos_m4.obj (.rodata.str1.10592210478019630971)
+                  0048b403    0000001f     sbl_main.obj (.rodata.str1.31506172366562984811)
+                  0048b422    0000001f     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : SemaphoreP_nortos.obj (.rodata.str1.93106250239489445331)
+                  0048b441    0000001e     sbl_main.obj (.rodata.str1.147778017141730866951)
+                  0048b45f    0000001e     sbl_main.obj (.rodata.str1.91282795300719137671)
+                  0048b47d    0000001d     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : qspi.obj (.rodata.str1.135910412420766670741)
+                  0048b49a    0000001d     sbl_main.obj (.rodata.str1.167708798169163931851)
+                  0048b4b7    0000001d     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : TimerP_rti.obj (.rodata.str1.168704976108447940721)
+                  0048b4d4    0000001c     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : soc_rcm.obj (.rodata.str1.56477286324532805231)
+                  0048b4f0    0000001b     sbl_main.obj (.rodata.str1.101417270247360650021)
+                  0048b50b    0000001b     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : TimerP_rti.obj (.rodata.str1.127871409925583167061)
+                  0048b526    0000001b     parser_image.obj (.rodata.str1.175942779092066538841)
+                  0048b541    0000001b     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : ClockP_nortos.obj (.rodata.str1.25471646840808198631)
+                  0048b55c    0000001b                                                  : SysTickTimerP.obj (.rodata.str1.62417832979391646401)
+                  0048b577    0000001a     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : edma.obj (.rodata.str1.100996213821086933721)
+                  0048b591    0000001a     parser_image.obj (.rodata.str1.121180832430126538951)
+                  0048b5ab    0000001a     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : soc_rcm.obj (.rodata.str1.13846211276285849311)
+                  0048b5c5    0000001a                                                   : qspi_edma.obj (.rodata.str1.143677181573357729111)
+                  0048b5df    0000001a                                                   : qspi_edma.obj (.rodata.str1.31994798867268193021)
+                  0048b5f9    0000001a                                                   : soc_rcm.obj (.rodata.str1.52576848066905547631)
+                  0048b613    0000001a                                                   : soc_rcm.obj (.rodata.str1.73573858413138203341)
+                  0048b62d    0000001a     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : ClockP_nortos_m4.obj (.rodata.str1.90786756798019705061)
+                  0048b647    00000019     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : soc_rcm.obj (.rodata.str1.164767278446434951321)
+                  0048b660    00000019                                                   : uart_sci_edma.obj (.rodata.str1.1694563462317297321)
+                  0048b679    00000019     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : TimerP_rti.obj (.rodata.str1.171094773555586588011)
+                  0048b692    00000019                                                  : SysTickTimerP.obj (.rodata.str1.31813016594639626501)
+                  0048b6ab    00000019     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : qspi_edma.obj (.rodata.str1.48709671272779746201)
+                  0048b6c4    00000019                                                   : uart_sci.obj (.rodata.str1.55013173113347637961)
+                  0048b6dd    00000019                                                   : uart_sci.obj (.rodata.str1.87895611013758742281)
+                  0048b6f6    00000018                                                   : uart_sci.obj (.rodata.str1.120312415395384906381)
+                  0048b70e    00000018     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : TimerP_rti.obj (.rodata.str1.28969720400930718401)
+                  0048b726    00000018     parser_image.obj (.rodata.str1.56924906836484201501)
+                  0048b73e    00000018     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : uart_sci_edma.obj (.rodata.str1.96300436347963894471)
+                  0048b756    00000017                                                   : qspi_edma.obj (.rodata.str1.124354099690648782791)
+                  0048b76d    00000017                                                   : edma.obj (.rodata.str1.124854076466481638881)
+                  0048b784    00000017                                                   : uart_sci.obj (.rodata.str1.165585763696907955751)
+                  0048b79b    00000017     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : SysTickTimerP.obj (.rodata.str1.26547744409832483041)
+                  0048b7b2    00000017     parser.obj (.rodata.str1.48779193123002888681)
+                  0048b7c9    00000017     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : soc_rcm.obj (.rodata.str1.85053832093120688671)
+                  0048b7e0    00000016                                                   : qspi.obj (.rodata.str1.12560174967481994231)
+                  0048b7f6    00000016                                                   : edma.obj (.rodata.str1.168695502010531622391)
+                  0048b80c    00000016                                                   : uart_sci.obj (.rodata.str1.85700947625728835951)
+                  0048b822    00000016                                                   : qspi.obj (.rodata.str1.92825623095800856511)
+                  0048b838    00000015                                                   : uart_sci.obj (.rodata.str1.30326902893263927811)
+                  0048b84d    00000015     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : SemaphoreP_nortos.obj (.rodata.str1.67625122021398397081)
+                  0048b862    00000014     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : uart_sci.obj (.rodata.str1.110275345620306777191)
+                  0048b876    00000014                                                   : edma.obj (.rodata.str1.111851871490580105611)
+                  0048b88a    00000014                                                   : uart_sci.obj (.rodata.str1.121623592925719072031)
+                  0048b89e    00000014                                                   : uart_sci.obj (.rodata.str1.156252650444771372741)
+                  0048b8b2    00000014     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : SysTickTimerP.obj (.rodata.str1.51182185672064785091)
+                  0048b8c6    00000013     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : edma.obj (.rodata.str1.161616063420144653881)
+                  0048b8d9    00000013                                                   : uart_sci.obj (.rodata.str1.165533286247086816691)
+                  0048b8ec    00000013                                                   : uart_sci.obj (.rodata.str1.26965721692059912711)
+                  0048b8ff    00000013                                                   : uart_sci.obj (.rodata.str1.69545364057784193721)
+                  0048b912    00000012                                                   : edma.obj (.rodata.str1.108028640702030349071)
+                  0048b924    00000012                                                   : uart_sci_edma.obj (.rodata.str1.160953260642837941861)
+                  0048b936    00000012                                                   : edma.obj (.rodata.str1.168183851025455507691)
+                  0048b948    00000012                                                   : uart_sci.obj (.rodata.str1.178001865525784930881)
+                  0048b95a    00000012                                                   : uart_sci_edma.obj (.rodata.str1.26883157310831064051)
+                  0048b96c    00000012     parser.obj (.rodata.str1.5790450746952730601)
+                  0048b97e    00000012     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : qspi_edma.obj (.rodata.str1.74620174135756680921)
+                  0048b990    00000011                                                   : uart_sci.obj (.rodata.str1.104924308178690690741)
+                  0048b9a1    00000011                                                   : edma.obj (.rodata.str1.106738448986847799941)
+                  0048b9b2    00000011     libc.a : _printfi.c.obj (.rodata.str1.11645776875810915891)
+                  0048b9c3    00000011     ti_drivers_open_close.obj (.rodata.str1.139024142228835422611)
+                  0048b9d4    00000011     libc.a : _printfi.c.obj (.rodata.str1.44690500295887128011)
+                  0048b9e5    00000011     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : uart_sci.obj (.rodata.str1.45363221463256978381)
+                  0048b9f6    00000011     ti_drivers_open_close.obj (.rodata.str1.47319419042038394831)
+                  0048ba07    00000011     ti_drivers_open_close.obj (.rodata.str1.49542467075964467631)
+                  0048ba18    00000011     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : ClockP_nortos.obj (.rodata.str1.56392992661620616651)
+                  0048ba29    00000001     --HOLE-- [fill = 0]
+                  0048ba2a    00000010     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : soc_rcm.obj (.rodata.cst8)
+                  0048ba3a    00000010                                                   : soc_rcm.obj (.rodata.str1.1771380296078173761)
+                  0048ba4a    00000010     ti_board_open_close.obj (.rodata.str1.37919595551125161991)
+                  0048ba5a    00000010     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : qspi_edma.obj (.rodata.str1.73117382213956597391)
+                  0048ba6a    0000000f                                                   : uart_sci_edma.obj (.rodata.str1.111748486407635674111)
+                  0048ba79    0000000f                                                   : qspi.obj (.rodata.str1.144057298332754841671)
+                  0048ba88    0000000f                                                   : edma.obj (.rodata.str1.146140478628064919631)
+                  0048ba97    0000000f                                                   : edma.obj (.rodata.str1.161917553004410528641)
+                  0048baa6    0000000f                                                   : uart_sci.obj (.rodata.str1.58838004102269809421)
+                  0048bab5    0000000f                                                   : edma.obj (.rodata.str1.7213619448781788421)
+                  0048bac4    0000000e                                                   : uart_sci.obj (.rodata.str1.103833506493370671461)
+                  0048bad2    0000000e                                                   : edma.obj (.rodata.str1.71946734960229262581)
+                  0048bae0    0000000d                                                   : edma.obj (.rodata.str1.20711589974906254701)
+                  0048baed    0000000d     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : TimerP_rti.obj (.rodata.str1.37123793416160760081)
+                  0048bafa    0000000d                                                  : TimerP_rti.obj (.rodata.str1.68197642816127260011)
+                  0048bb07    00000001     --HOLE-- [fill = 0]
+                  0048bb08    0000000c     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : soc_rcm.obj (.rodata.gSocRcmSpiClkSrcValMap)
+                  0048bb14    0000000c     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : ClockP_nortos_m4.obj (.rodata.str1.102805212716916126391)
+                  0048bb20    0000000c     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : edma.obj (.rodata.str1.23715209751856245321)
+                  0048bb2c    0000000c                                                   : qspi.obj (.rodata.str1.76608676823413182551)
+                  0048bb38    0000000b     ti_board_open_close.obj (.rodata.str1.104873027471873634371)
+                  0048bb43    0000000b     drivers.xwrL64xx.m4f.ti-arm-clang.release.lib : uart_sci.obj (.rodata.str1.132042644373295978941)
+                  0048bb4e    0000000b                                                   : uart_sci.obj (.rodata.str1.174583129905367634191)
+                  0048bb59    0000000b                                                   : edma.obj (.rodata.str1.76990244014968518721)
+                  0048bb64    0000000a                                                   : soc_rcm.obj (.rodata.gSocRcmWdtClkSrcValMap)
+                  0048bb6e    0000000a                                                   : uart_sci.obj (.rodata.str1.103248998792830521871)
+                  0048bb78    0000000a                                                   : uart_sci.obj (.rodata.str1.124552654841916713531)
+                  0048bb82    0000000a                                                   : edma.obj (.rodata.str1.138945604539585827651)
+                  0048bb8c    0000000a                                                   : edma.obj (.rodata.str1.155011958078798190681)
+                  0048bb96    0000000a                                                   : uart_sci.obj (.rodata.str1.170731718426455550511)
+                  0048bba0    0000000a                                                   : qspi.obj (.rodata.str1.42250777056531364411)
+                  0048bbaa    0000000a                                                   : qspi.obj (.rodata.str1.74616868707024351891)
+                  0048bbb4    00000005     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : printf.obj (.rodata.str1.180255128143303278211)
+                  0048bbb9    00000005                                                  : printf.obj (.rodata.str1.62992066646743021711)
+                  0048bbbe    00000005     sbl_main.obj (.rodata.str1.70598641213093199701)
+                  0048bbc3    00000004     nortos.xwrL64xx.m4f.ti-arm-clang.release.lib : printf.obj (.rodata.str1.83442741595977738081)
+                  0048bbc7    00000004                                                  : printf.obj (.rodata.str1.92767893489218153371)
+                  0048bbcb    00000002     libc.a : fputs.c.obj (.rodata.str1.127069605411828601681)
+                  0048bbcd    00000003     --HOLE-- [fill = 0]
+
+__llvm_prf_cnts 
+*          0    00470000    00000000     UNINITIALIZED
+
+__llvm_prf_bits 
+*          0    00470000    00000000     UNINITIALIZED
+
+MODULE SUMMARY
+
+       Module                            code    ro data   rw data
+       ------                            ----    -------   -------
+    obj/release/
+       parser.obj                        688     82        6328   
+       parser_image.obj                  1472    309       1108   
+       sbl_main.obj                      1604    640       104    
+       transport.obj                     1546    88        0      
+       ti_drivers_config.obj             144     0         1212   
+       ti_drivers_open_close.obj         310     210       76     
+       crc16.obj                         42      512       0      
+       parser_image_validity.obj         474     0         16     
+       ti_board_open_close.obj           132     81        208    
+       ti_dpl_config.obj                 298     0         116    
+       bootload.obj                      348     0         0      
+       ti_power_clock_config.obj         170     0         56     
+       ti_pinmux_config.obj              14      0         72     
+       main.obj                          28      0         0      
+       ti_board_config.obj               4       0         0      
+    +--+---------------------------------+-------+---------+---------+
+       Total:                            7274    1922      9296   
+                                                                  
+    /home/epswbld7/ti/ccs1271/ccs/tools/compiler/ti-cgt-armllvm_3.2.2.LTS/lib/armv7em-ti-none-eabihf/c/libc.a
+       _printfi.c.obj                    4990    34        0      
+       strcmp_t2.S.obj                   732     0         0      
+       memory.c.obj                      712     0         5      
+       defs.c.obj                        0       0         404    
+       fputs.c.obj                       276     2         0      
+       s_scalbn.c.obj                    268     0         0      
+       aeabi_ctype.S.obj                 0       257       0      
+       setvbuf.c.obj                     216     0         0      
+       s_floorf.c.obj                    156     0         0      
+       fputc.c.obj                       148     0         0      
+       getdevice.c.obj                   148     0         0      
+       vsnprintf.c.obj                   132     0         0      
+       s_roundf.c.obj                    126     0         0      
+       fclose.c.obj                      116     0         0      
+       fseek.c.obj                       108     0         0      
+       s_frexp.c.obj                     104     0         0      
+       _io_perm.c.obj                    96      0         0      
+       _ltoa.c.obj                       86      0         0      
+       fflush.c.obj                      80      0         0      
+       atoi.c.obj                        64      0         0      
+       exit.c.obj                        52      0         8      
+       autoinit.c.obj                    56      0         0      
+       fopen.c.obj                       52      0         0      
+       memccpy.c.obj                     30      0         0      
+       memcpy_t2.S.obj                   18      0         0      
+       wcslen.c.obj                      16      0         0      
+       memset_t2.S.obj                   14      0         0      
+       aeabi_portable.c.obj              8       0         4      
+       _lock.c.obj                       2       0         8      
+    +--+---------------------------------+-------+---------+---------+
+       Total:                            8806    293       429    
+                                                                  
+    /home/epswbld7/ti/ccs1271/ccs/tools/compiler/ti-cgt-armllvm_3.2.2.LTS/lib/armv7em-ti-none-eabihf/c/libsysbm.a
+       trgmsg.c.obj                      100     0         288    
+       host_device.c.obj                 0       0         200    
+       hostrename.c.obj                  128     0         0      
+       close.c.obj                       96      0         0      
+       hostopen.c.obj                    88      0         8      
+       hostlseek.c.obj                   88      0         0      
+       hostread.c.obj                    84      0         0      
+       hostwrite.c.obj                   84      0         0      
+       hostunlink.c.obj                  68      0         0      
+       hostclose.c.obj                   60      0         0      
+       lseek.c.obj                       44      0         0      
+       unlink.c.obj                      44      0         0      
+       write.c.obj                       44      0         0      
+       remove.c.obj                      4       0         0      
+    +--+---------------------------------+-------+---------+---------+
+       Total:                            932     0         496    
+                                                                  
+    /home/epswbld7/ti/ccs1271/ccs/tools/compiler/ti-cgt-armllvm_3.2.2.LTS/lib/clang/15.0.7/lib/armv7em-ti-none-eabihf/libclang_rt.builtins.a
+       adddf3.S.obj                      438     0         0      
+       divdf3.S.obj                      310     0         0      
+       comparedf2.c.obj                  268     0         0      
+       muldf3.S.obj                      252     0         0      
+       udivmoddi4.S.obj                  176     0         0      
+       aeabi_dcmp.S.obj                  98      0         0      
+       fixdfsi.S.obj                     72      0         0      
+       fixunsdfsi.S.obj                  68      0         0      
+       extendsfdf2.S.obj                 56      0         0      
+       floatsidf.S.obj                   46      0         0      
+       floatunsidf.S.obj                 32      0         0      
+       aeabi_uldivmod.S.obj              20      0         0      
+       aeabi_memset.S.obj                18      0         0      
+       aeabi_memcpy.S.obj                4       0         0      
+       aeabi_div0.c.obj                  2       0         0      
+    +--+---------------------------------+-------+---------+---------+
+       Total:                            1860    0         0      
+                                                                  
+    /nightlybuilds/mmwave_sdk_internal/mcupsdk_internal/jenkins/MMWAVE_L_SDK_05_05_04_02/source/board/lib/board.xwrL64xx.m4f.ti-arm-clang.release.lib
+       flash_nor_qspi.obj                2320    0         44     
+       flash.obj                         178     0         0      
+    +--+---------------------------------+-------+---------+---------+
+       Total:                            2498    0         44     
+                                                                  
+    /nightlybuilds/mmwave_sdk_internal/mcupsdk_internal/jenkins/MMWAVE_L_SDK_05_05_04_02/source/drivers/lib/drivers.xwrL64xx.m4f.ti-arm-clang.release.lib
+       edma.obj                          4080    320       0      
+       uart_sci.obj                      3146    390       100    
+       qspi.obj                          2076    120       100    
+       soc_rcm.obj                       1628    240       0      
+       uart_sci_edma.obj                 1110    100       0      
+       qspi_edma.obj                     940     134       0      
+       crc.obj                           478     0         0      
+       soc.obj                           168     0         0      
+       pinmux.obj                        54      0         0      
+    +--+---------------------------------+-------+---------+---------+
+       Total:                            13680   1304      200    
+                                                                  
+    /nightlybuilds/mmwave_sdk_internal/mcupsdk_internal/jenkins/MMWAVE_L_SDK_05_05_04_02/source/kernel/nortos/lib/nortos.xwrL64xx.m4f.ti-arm-clang.release.lib
+       printf.obj                        4520    98        0      
+       HwiP_armv7m.obj                   966     0         640    
+       ClockP_nortos.obj                 546     90        56     
+       HwiP_armv7m_handlers_nortos.obj   218     0         320    
+       MpuP_armv7m.obj                   458     0         0      
+       ClockP_nortos_m4.obj              276     176       0      
+       SemaphoreP_nortos.obj             326     107       0      
+       SysTickTimerP.obj                 278     135       0      
+       TimerP_rti.obj                    260     131       0      
+       DebugP_log.obj                    156     42        4      
+       AddrTranslateP.obj                106     0         12     
+       boot_armv7m.obj                   98      0         0      
+       DebugP_uartLogWriter.obj          70      0         4      
+       DebugP_nortos.obj                 56      0         0      
+       CacheP_null.obj                   4       0         0      
+       TaskP_nortos.obj                  2       0         0      
+    +--+---------------------------------+-------+---------+---------+
+       Total:                            8340    779       1036   
+                                                                  
+       Heap:                             0       0         512    
+       Stack:                            0       0         4096   
+    +--+---------------------------------+-------+---------+---------+
+       Grand Total:                      43390   4298      16109  
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                          
+-------   ----                          
+00488cc1  AddrTranslateP_getLocalAddr   
+00483ceb  Board_deinit                  
+0048a78d  Board_driversClose            
+0048339d  Board_driversOpen             
+00488d2b  Board_flashOpen               
+004840b3  Board_init                    
+0048aafc  C$$EXIT                       
+0048a03b  C$$IO$$                       
+0048a111  CRC_channelReset              
+00486719  CRC_configure                 
+0048a201  CRC_getPSASig                 
+0048a22f  CRC_getPSASigRegAddr          
+00489559  CRC_initialize                
+0048441b  CacheP_inv                    
+004845c7  CacheP_wb                     
+0048aa55  ClockP_Params_init            
+00489819  ClockP_construct              
+0048a7a5  ClockP_deinit                 
+00489d3d  ClockP_destruct               
+0048aa23  ClockP_getTicks               
+004892a9  ClockP_getTimeUsec            
+004845c3  ClockP_getTimerCount          
+00486b0f  ClockP_init                   
+0048aa5f  ClockP_isActive               
+00489fa7  ClockP_start                  
+00489a55  ClockP_stop                   
+00485077  ClockP_timerClearOverflowInt  
+00488fa1  ClockP_timerTickIsr           
+0048a59f  DebugP_logZoneEnable          
+00489d77  DebugP_uartLogWriterPutChar   
+0048aa2f  DebugP_uartSetDrvIndex        
+0048a4eb  Dpl_deinit                    
+0048a44b  Dpl_init                      
+00489a95  Drivers_close                 
+00489735  Drivers_edmaOpen              
+0048a899  Drivers_open                  
+00489781  Drivers_qspiOpen              
+00489db1  Drivers_uartInit              
+004897cd  Drivers_uartOpen              
+0048a989  EDMACCPaRAMEntry_init         
+004830a3  EDMAClrIntrRegion             
+00488a2b  EDMAConfigureChannelRegion    
+00489863  EDMADisableChInShadowRegRegion
+00488517  EDMADisableTransferRegion     
+0048a25d  EDMAEnableChInShadowRegRegion 
+004885a7  EDMAEnableTransferRegion      
+00489005  EDMAFreeChannelRegion         
+00489b15  EDMAMapChToEvtQ               
+0048a50f  EDMAReadIntrStatusRegion      
+00489b55  EDMASetPaRAM                  
+0048aa93  EDMA_allocDmaChannel          
+0048aa9b  EDMA_allocParam               
+0048aaa3  EDMA_allocTcc                 
+004889b9  EDMA_close                    
+0048441d  EDMA_deinit                   
+0048aaab  EDMA_freeDmaChannel           
+0048aab3  EDMA_freeParam                
+0048aabb  EDMA_freeTcc                  
+00489985  EDMA_getBaseAddr              
+0048a079  EDMA_getHandle                
+0048a847  EDMA_getRegionId              
+00482d99  EDMA_init                     
+00482723  EDMA_isInterruptEnabled       
+0048608b  EDMA_open                     
+0048782d  EDMA_registerIntr             
+004874e1  EDMA_unregisterIntr           
+0048a997  Flash_close                   
+0048a8ab  Flash_eraseBlk                
+0048a5bf  Flash_getAttrs                
+00489f39  Flash_open                    
+0048a601  Flash_read                    
+0048a61f  Flash_write                   
+00489c89  HOSTclose                     
+00489301  HOSTlseek                     
+00489359  HOSTopen                      
+00489409  HOSTread                      
+00489069  HOSTrename                    
+004899cd  HOSTunlink                    
+0048945d  HOSTwrite                     
+0048217b  HwiP_Params_init              
+004871f7  HwiP_busFault_handler         
+0048210b  HwiP_clearInt                 
+0048218d  HwiP_construct                
+00487237  HwiP_debugMon_handler         
+00482235  HwiP_destruct                 
+004822c3  HwiP_disable                  
+00482051  HwiP_disableInt               
+004822cf  HwiP_enable                   
+00481ff9  HwiP_enableInt                
+004871d7  HwiP_hardFault_handler        
+0048a805  HwiP_inISR                    
+004822db  HwiP_init                     
+0048717d  HwiP_interrupt_handler        
+004871e7  HwiP_memFault_handler         
+004871b1  HwiP_nmi_handler              
+00487247  HwiP_pendSV_handler           
+004822af  HwiP_post                     
+00487217  HwiP_reserved_handler         
+00482047  HwiP_restore                  
+004820ad  HwiP_restoreInt               
+0048212d  HwiP_setPri                   
+00487227  HwiP_svc_handler              
+00487207  HwiP_usageFault_handler       
+0048a28d  Module_clockDisable           
+0048a0ad  Module_clockEnable            
+00489de9  Module_clockSetFrequency      
+00483ee9  MpuP_RegionAttrs_init         
+00484003  MpuP_disable                  
+00483fc9  MpuP_enable                   
+00484039  MpuP_init                     
+00484029  MpuP_isEnable                 
+00483f01  MpuP_setRegion                
+00489f71  Pinmux_config                 
+0048a9a5  Pinmux_init                   
+00484a85  PowerClock_deinit             
+0048a9b3  PowerClock_init               
+004894b1  QSPI_close                    
+0048a6f1  QSPI_deinit                   
+00484f01  QSPI_edmaChannelConfig        
+00488b7b  QSPI_edmaChannelFree          
+004848f9  QSPI_edmaTransfer             
+0048a2bb  QSPI_getHandle                
+00488749  QSPI_init                     
+00483891  QSPI_open                     
+00485a3d  QSPI_readCmd                  
+0048a7bd  QSPI_readCmdParams_init       
+00486a15  QSPI_readMemMapMode           
+0048a929  QSPI_setAddressByteCount      
+0048a939  QSPI_setDummyBitCount         
+0048a949  QSPI_setReadCmd               
+0048a959  QSPI_setRxLines               
+0048a969  QSPI_setWriteCmd              
+0048a81b  QSPI_transaction_init         
+00486de5  QSPI_writeCmd                 
+0048a7d5  QSPI_writeCmdParams_init      
+00489e21  QSPI_writeConfigMode          
+00488235  SBL_imageFlasher              
+00489699  SBL_printf                    
+00480c0d  SBL_transportDownloadFile     
+0048a473  SBL_transportRead             
+0048a8bd  SOC_clocksEnable              
+0048a85b  SOC_controlModuleLockMMR      
+0048a57d  SOC_controlModuleUnlockMMR    
+0048a831  SOC_getEfusePgVersion         
+0048aa3b  SOC_moduleClockEnable         
+00488e63  SOC_moduleSetClockFrequency   
+00489e59  SOC_rcmEnableADPLLClock       
+00485079  SOC_rcmEnablePeripheralClock  
+00482a89  SOC_rcmGetPeripheralClock     
+0048a319  SOC_rcmSetM4ClockSrc          
+004854b9  SOC_rcmSetPeripheralClock     
+004895a9  SOC_virtToPhy                 
+00489bd1  SemaphoreP_constructBinary    
+00489cc5  SemaphoreP_constructMutex     
+0048561b  SemaphoreP_destruct           
+00488105  SemaphoreP_pend               
+0048a0df  SemaphoreP_post               
+0048a70b  SysTickTimerP_Params_init     
+0048a9cf  SysTickTimerP_getCount        
+0048a9dd  SysTickTimerP_getReloadCount  
+004879b5  SysTickTimerP_setup           
+0048a8cf  SysTickTimerP_start           
+0048a8e1  SysTickTimerP_stop            
+0048a725  System_deinit                 
+00489c0f  System_init                   
+0048a917  TI_memcpy_small               
+0048aa15  TI_memset_small               
+0048577f  TaskP_yield                   
+0048a63d  TimerP_Params_init            
+0048aacb  TimerP_clearOverflowInt       
+00487c91  TimerP_init                   
+0048a73f  TimerP_isr0                   
+004875b7  TimerP_setup                  
+0048aa69  TimerP_stop                   
+00485b93  UART_close                    
+0048a759  UART_deinit                   
+00484769  UART_edmaChannelConfig        
+00487e89  UART_flushTxFifo              
+0048a345  UART_getHandle                
+004882c9  UART_init                     
+00482729  UART_open                     
+0048426b  UART_read                     
+00486ecd  UART_readDma                  
+00483abf  UART_write                    
+00487331  UART_writeDma                 
+0047224c  _CIOBUF_                      
+004891f1  _DebugP_assert                
+0048a65d  _DebugP_assertNoLog           
+00489e91  _DebugP_logZone               
+00472640  __BSS_END                     
+00470000  __BSS_START                   
+0047224c  __CIOBUF_                     
+00473640  __STACK_END                   
+00001000  __STACK_SIZE                  
+00000200  __SYSMEM_SIZE                 
+00000000  __TI_ATRegion0_region_sz      
+00000000  __TI_ATRegion0_src_addr       
+00000000  __TI_ATRegion0_trg_addr       
+00000000  __TI_ATRegion1_region_sz      
+00000000  __TI_ATRegion1_src_addr       
+00000000  __TI_ATRegion1_trg_addr       
+00000000  __TI_ATRegion2_region_sz      
+00000000  __TI_ATRegion2_src_addr       
+00000000  __TI_ATRegion2_trg_addr       
+UNDEFED   __TI_CINIT_Base               
+UNDEFED   __TI_CINIT_Limit              
+UNDEFED   __TI_Handler_Table_Base       
+UNDEFED   __TI_Handler_Table_Limit      
+00489f01  __TI_auto_init_nobinit_nopinit
+00489fdd  __TI_cleanup                  
+00473b38  __TI_cleanup_ptr              
+00488945  __TI_closefile                
+004895f9  __TI_doflush                  
+00473b3c  __TI_dtors_ptr                
+00473b68  __TI_ft_end                   
+004893b1  __TI_ltoa                     
+ffffffff  __TI_pprof_out_hndl           
+00480201  __TI_printfi                  
+ffffffff  __TI_prof_data_size           
+ffffffff  __TI_prof_data_start          
+0048a141  __TI_readmsg                  
+00470000  __TI_static_base__            
+0047236c  __TI_tmpnams                  
+0048a011  __TI_writemsg                 
+0048912f  __TI_wrt_ok                   
+004840bf  __adddf3                      
+0048ad00  __aeabi_ctype_table_          
+0048ad00  __aeabi_ctype_table_C         
+004898ad  __aeabi_d2iz                  
+00489a11  __aeabi_d2uiz                 
+004840bf  __aeabi_dadd                  
+004890cd  __aeabi_dcmpeq                
+00489109  __aeabi_dcmpge                
+0048911d  __aeabi_dcmpgt                
+004890f5  __aeabi_dcmple                
+004890e1  __aeabi_dcmplt                
+0048a171  __aeabi_dcmpun                
+00485e21  __aeabi_ddiv                  
+0048681d  __aeabi_dmul                  
+004840b5  __aeabi_dsub                  
+00473b6c  __aeabi_errno                 
+0048aad5  __aeabi_errno_addr            
+00489ec9  __aeabi_f2d                   
+0048a2e9  __aeabi_i2d                   
+004858df  __aeabi_ldiv0                 
+0048aadd  __aeabi_memclr                
+0048aadd  __aeabi_memclr4               
+0048aadd  __aeabi_memclr8               
+0048aaed  __aeabi_memcpy                
+0048aaed  __aeabi_memcpy4               
+0048aaed  __aeabi_memcpy8               
+0048aa75  __aeabi_memset                
+0048aa75  __aeabi_memset4               
+0048aa75  __aeabi_memset8               
+0048a5e1  __aeabi_ui2d                  
+0048a871  __aeabi_uldivmod              
+ffffffff  __binit__                     
+00488b0d  __cmpdf2                      
+00485e21  __divdf3                      
+00488b0d  __eqdf2                       
+00489ec9  __extendsfdf2                 
+004898ad  __fixdfsi                     
+00489a11  __fixunsdfsi                  
+0048a2e9  __floatsidf                   
+0048a5e1  __floatunsidf                 
+00488a9d  __gedf2                       
+00488a9d  __gtdf2                       
+00488b0d  __ledf2                       
+00488b0d  __ltdf2                       
+0048aaf1  __mpu_init                    
+0048681d  __muldf3                      
+00488b0d  __nedf2                       
+00472640  __stack                       
+00470000  __start___llvm_prf_bits       
+00470000  __start___llvm_prf_cnts       
+00470000  __stop___llvm_prf_bits        
+00470000  __stop___llvm_prf_cnts        
+004840b5  __subdf3                      
+00487be1  __udivmoddi4                  
+0048a171  __unorddf2                    
+0048993d  _c_int00                      
+00473730  _device                       
+00473640  _ftable                       
+00473b70  _lock                         
+00485cdb  _nop                          
+004738e0  _stream                       
+00473ba0  _sys_memory                   
+UNDEFED   _system_post_cinit            
+00473b74  _unlock                       
+0048aafd  abort                         
+004862e1  aligned_alloc                 
+00473e80  appBootVec                    
+00473e7c  appRcmIpccfgclkgate1          
+00473e74  appShmClk                     
+00489ad5  atoi                          
+ffffffff  binit                         
+004858e1  bootload_qspi                 
+00470000  c_ReadBuffer                  
+00489191  close                         
+0048a421  crc16_ccitt                   
+00472568  crcEdmaParam                  
+00472614  crcParam                      
+00472618  crcTcc                        
+0047261c  crcdmaCh                      
+00472620  edmaBaseAddr                  
+00472624  edmaRegionId                  
+0048a1d1  exit                          
+0048a371  finddevice                    
+00487fcd  floorf                        
+00488639  fputc                         
+00486c05  fputs                         
+00486cf5  free                          
+00488e69  frexp                         
+00488e69  frexpl                        
+0048aaf5  fseek                         
+00488ed1  fseeko                        
+00473b20  gAddrTranslateConfig          
+00473ad8  gClockConfig                  
+004724f8  gClockCtrl                    
+00473b78  gDebugLogZone                 
+00473b7c  gDebugP_uartDrvIndex          
+00473b40  gEdmaConfig                   
+00473b80  gEdmaConfigNum                
+00472628  gEdmaHandle                   
+00473b84  gEdmaParams                   
+00473a38  gFlashAttrs_MX25V1635F        
+00473b00  gFlashConfig                  
+00473b88  gFlashConfigNum               
+004737a8  gFlashDevCfg_MX25V1635F       
+0047262c  gFlashHandle                  
+00473abc  gFlashNorQspiFxns             
+004725e0  gFlashObject_MX25V1635F       
+00473b48  gFlashParams                  
+00473b10  gFlashToSpiProtocolMap        
+00471c1c  gHwiCtrl                      
+00480000  gHwiP_vectorTable             
+00473b2c  gMpuConfig                    
+00473a68  gMpuRegionConfig              
+00473b50  gQspiConfig                   
+00473b8c  gQspiConfigNum                
+00472630  gQspiHandle                   
+00473b90  gQspiParams                   
+00473aec  gSocModules                   
+00473a98  gSocModulesClockFrequency     
+00472634  gTimerBaseAddr                
+00472588  gTimerHwiObj                  
+00473b60  gUartConfig                   
+00473b94  gUartConfigNum                
+00472638  gUartHandle                   
+00473a00  gUartParams                   
+00488f39  getdevice                     
+00486401  ldexp                         
+00486401  ldexpl                        
+0048a39d  lseek                         
+0048a6d5  main                          
+0048aae5  malloc                        
+004862e1  memalign                      
+0048a67b  memccpy                       
+0047260c  parmbuf                       
+0048aa89  parser_buffMgmt               
+00488485  parser_buffer                 
+00485353  parser_calculateImageOffset   
+00486fb5  parser_checkImageValidity     
+0048a885  parser_imageValidParamsInit   
+0048709d  parser_imageValidation        
+0048819d  parser_init                   
+00484c09  parser_parseMetaHeader        
+0048768d  parser_parseRprcHeader        
+004883f1  parser_parseRprcImage         
+00483ced  parser_parseRprcSecContent    
+00487f2d  parser_parseRprcSecHeader     
+0048924f  parser_readAlignmentBytes     
+0048aa49  putchar                       
+0048a8f3  putchar_                      
+0048a535  puts                          
+0048aaf9  remove                        
+0048884b  roundf                        
+004725a8  sblObj                        
+00485781  sbl_computeCrc32Cpu           
+004898f5  sbl_configureCrc32Cpu         
+00488069  sbl_configureEdmaCrc          
+0048a699  sbl_getCrc32Cpu               
+0048561d  sbl_main                      
+004861b9  sbl_sendDataCrc32Cpu          
+00473da1  sbl_switchtoapp               
+00486401  scalbn                        
+00486401  scalbnl                       
+00487409  setvbuf                       
+0048a773  stack_init                    
+004830c9  strcmp                        
+00472600  t_BuffParserTaskCtx           
+00471800  t_CfgFilePrms                 
+00472530  t_ImagePrms                   
+004725f0  t_ImgValidCtx                 
+0047240c  t_Metaheader                  
+0047263c  t_ParserCtx                   
+004725c8  t_PingPongBuffCtx             
+00473e78  topPrcmShmCfg                 
+0048a3c9  unlink                        
+0048a559  vprintf_                      
+00489d01  vsnprintf                     
+00473e70  vtor                          
+0048a979  wcslen                        
+0048a3f5  write                         
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                          
+-------   ----                          
+00000000  __TI_ATRegion0_region_sz      
+00000000  __TI_ATRegion0_src_addr       
+00000000  __TI_ATRegion0_trg_addr       
+00000000  __TI_ATRegion1_region_sz      
+00000000  __TI_ATRegion1_src_addr       
+00000000  __TI_ATRegion1_trg_addr       
+00000000  __TI_ATRegion2_region_sz      
+00000000  __TI_ATRegion2_src_addr       
+00000000  __TI_ATRegion2_trg_addr       
+00000200  __SYSMEM_SIZE                 
+00001000  __STACK_SIZE                  
+00470000  __BSS_START                   
+00470000  __TI_static_base__            
+00470000  __start___llvm_prf_bits       
+00470000  __start___llvm_prf_cnts       
+00470000  __stop___llvm_prf_bits        
+00470000  __stop___llvm_prf_cnts        
+00470000  c_ReadBuffer                  
+00471800  t_CfgFilePrms                 
+00471c1c  gHwiCtrl                      
+0047224c  _CIOBUF_                      
+0047224c  __CIOBUF_                     
+0047236c  __TI_tmpnams                  
+0047240c  t_Metaheader                  
+004724f8  gClockCtrl                    
+00472530  t_ImagePrms                   
+00472568  crcEdmaParam                  
+00472588  gTimerHwiObj                  
+004725a8  sblObj                        
+004725c8  t_PingPongBuffCtx             
+004725e0  gFlashObject_MX25V1635F       
+004725f0  t_ImgValidCtx                 
+00472600  t_BuffParserTaskCtx           
+0047260c  parmbuf                       
+00472614  crcParam                      
+00472618  crcTcc                        
+0047261c  crcdmaCh                      
+00472620  edmaBaseAddr                  
+00472624  edmaRegionId                  
+00472628  gEdmaHandle                   
+0047262c  gFlashHandle                  
+00472630  gQspiHandle                   
+00472634  gTimerBaseAddr                
+00472638  gUartHandle                   
+0047263c  t_ParserCtx                   
+00472640  __BSS_END                     
+00472640  __stack                       
+00473640  __STACK_END                   
+00473640  _ftable                       
+00473730  _device                       
+004737a8  gFlashDevCfg_MX25V1635F       
+004738e0  _stream                       
+00473a00  gUartParams                   
+00473a38  gFlashAttrs_MX25V1635F        
+00473a68  gMpuRegionConfig              
+00473a98  gSocModulesClockFrequency     
+00473abc  gFlashNorQspiFxns             
+00473ad8  gClockConfig                  
+00473aec  gSocModules                   
+00473b00  gFlashConfig                  
+00473b10  gFlashToSpiProtocolMap        
+00473b20  gAddrTranslateConfig          
+00473b2c  gMpuConfig                    
+00473b38  __TI_cleanup_ptr              
+00473b3c  __TI_dtors_ptr                
+00473b40  gEdmaConfig                   
+00473b48  gFlashParams                  
+00473b50  gQspiConfig                   
+00473b60  gUartConfig                   
+00473b68  __TI_ft_end                   
+00473b6c  __aeabi_errno                 
+00473b70  _lock                         
+00473b74  _unlock                       
+00473b78  gDebugLogZone                 
+00473b7c  gDebugP_uartDrvIndex          
+00473b80  gEdmaConfigNum                
+00473b84  gEdmaParams                   
+00473b88  gFlashConfigNum               
+00473b8c  gQspiConfigNum                
+00473b90  gQspiParams                   
+00473b94  gUartConfigNum                
+00473ba0  _sys_memory                   
+00473da1  sbl_switchtoapp               
+00473e70  vtor                          
+00473e74  appShmClk                     
+00473e78  topPrcmShmCfg                 
+00473e7c  appRcmIpccfgclkgate1          
+00473e80  appBootVec                    
+00480000  gHwiP_vectorTable             
+00480201  __TI_printfi                  
+00480c0d  SBL_transportDownloadFile     
+00481ff9  HwiP_enableInt                
+00482047  HwiP_restore                  
+00482051  HwiP_disableInt               
+004820ad  HwiP_restoreInt               
+0048210b  HwiP_clearInt                 
+0048212d  HwiP_setPri                   
+0048217b  HwiP_Params_init              
+0048218d  HwiP_construct                
+00482235  HwiP_destruct                 
+004822af  HwiP_post                     
+004822c3  HwiP_disable                  
+004822cf  HwiP_enable                   
+004822db  HwiP_init                     
+00482723  EDMA_isInterruptEnabled       
+00482729  UART_open                     
+00482a89  SOC_rcmGetPeripheralClock     
+00482d99  EDMA_init                     
+004830a3  EDMAClrIntrRegion             
+004830c9  strcmp                        
+0048339d  Board_driversOpen             
+00483891  QSPI_open                     
+00483abf  UART_write                    
+00483ceb  Board_deinit                  
+00483ced  parser_parseRprcSecContent    
+00483ee9  MpuP_RegionAttrs_init         
+00483f01  MpuP_setRegion                
+00483fc9  MpuP_enable                   
+00484003  MpuP_disable                  
+00484029  MpuP_isEnable                 
+00484039  MpuP_init                     
+004840b3  Board_init                    
+004840b5  __aeabi_dsub                  
+004840b5  __subdf3                      
+004840bf  __adddf3                      
+004840bf  __aeabi_dadd                  
+0048426b  UART_read                     
+0048441b  CacheP_inv                    
+0048441d  EDMA_deinit                   
+004845c3  ClockP_getTimerCount          
+004845c7  CacheP_wb                     
+00484769  UART_edmaChannelConfig        
+004848f9  QSPI_edmaTransfer             
+00484a85  PowerClock_deinit             
+00484c09  parser_parseMetaHeader        
+00484f01  QSPI_edmaChannelConfig        
+00485077  ClockP_timerClearOverflowInt  
+00485079  SOC_rcmEnablePeripheralClock  
+00485353  parser_calculateImageOffset   
+004854b9  SOC_rcmSetPeripheralClock     
+0048561b  SemaphoreP_destruct           
+0048561d  sbl_main                      
+0048577f  TaskP_yield                   
+00485781  sbl_computeCrc32Cpu           
+004858df  __aeabi_ldiv0                 
+004858e1  bootload_qspi                 
+00485a3d  QSPI_readCmd                  
+00485b93  UART_close                    
+00485cdb  _nop                          
+00485e21  __aeabi_ddiv                  
+00485e21  __divdf3                      
+0048608b  EDMA_open                     
+004861b9  sbl_sendDataCrc32Cpu          
+004862e1  aligned_alloc                 
+004862e1  memalign                      
+00486401  ldexp                         
+00486401  ldexpl                        
+00486401  scalbn                        
+00486401  scalbnl                       
+00486719  CRC_configure                 
+0048681d  __aeabi_dmul                  
+0048681d  __muldf3                      
+00486a15  QSPI_readMemMapMode           
+00486b0f  ClockP_init                   
+00486c05  fputs                         
+00486cf5  free                          
+00486de5  QSPI_writeCmd                 
+00486ecd  UART_readDma                  
+00486fb5  parser_checkImageValidity     
+0048709d  parser_imageValidation        
+0048717d  HwiP_interrupt_handler        
+004871b1  HwiP_nmi_handler              
+004871d7  HwiP_hardFault_handler        
+004871e7  HwiP_memFault_handler         
+004871f7  HwiP_busFault_handler         
+00487207  HwiP_usageFault_handler       
+00487217  HwiP_reserved_handler         
+00487227  HwiP_svc_handler              
+00487237  HwiP_debugMon_handler         
+00487247  HwiP_pendSV_handler           
+00487331  UART_writeDma                 
+00487409  setvbuf                       
+004874e1  EDMA_unregisterIntr           
+004875b7  TimerP_setup                  
+0048768d  parser_parseRprcHeader        
+0048782d  EDMA_registerIntr             
+004879b5  SysTickTimerP_setup           
+00487be1  __udivmoddi4                  
+00487c91  TimerP_init                   
+00487e89  UART_flushTxFifo              
+00487f2d  parser_parseRprcSecHeader     
+00487fcd  floorf                        
+00488069  sbl_configureEdmaCrc          
+00488105  SemaphoreP_pend               
+0048819d  parser_init                   
+00488235  SBL_imageFlasher              
+004882c9  UART_init                     
+004883f1  parser_parseRprcImage         
+00488485  parser_buffer                 
+00488517  EDMADisableTransferRegion     
+004885a7  EDMAEnableTransferRegion      
+00488639  fputc                         
+00488749  QSPI_init                     
+0048884b  roundf                        
+00488945  __TI_closefile                
+004889b9  EDMA_close                    
+00488a2b  EDMAConfigureChannelRegion    
+00488a9d  __gedf2                       
+00488a9d  __gtdf2                       
+00488b0d  __cmpdf2                      
+00488b0d  __eqdf2                       
+00488b0d  __ledf2                       
+00488b0d  __ltdf2                       
+00488b0d  __nedf2                       
+00488b7b  QSPI_edmaChannelFree          
+00488cc1  AddrTranslateP_getLocalAddr   
+00488d2b  Board_flashOpen               
+00488e63  SOC_moduleSetClockFrequency   
+00488e69  frexp                         
+00488e69  frexpl                        
+00488ed1  fseeko                        
+00488f39  getdevice                     
+00488fa1  ClockP_timerTickIsr           
+00489005  EDMAFreeChannelRegion         
+00489069  HOSTrename                    
+004890cd  __aeabi_dcmpeq                
+004890e1  __aeabi_dcmplt                
+004890f5  __aeabi_dcmple                
+00489109  __aeabi_dcmpge                
+0048911d  __aeabi_dcmpgt                
+0048912f  __TI_wrt_ok                   
+00489191  close                         
+004891f1  _DebugP_assert                
+0048924f  parser_readAlignmentBytes     
+004892a9  ClockP_getTimeUsec            
+00489301  HOSTlseek                     
+00489359  HOSTopen                      
+004893b1  __TI_ltoa                     
+00489409  HOSTread                      
+0048945d  HOSTwrite                     
+004894b1  QSPI_close                    
+00489559  CRC_initialize                
+004895a9  SOC_virtToPhy                 
+004895f9  __TI_doflush                  
+00489699  SBL_printf                    
+00489735  Drivers_edmaOpen              
+00489781  Drivers_qspiOpen              
+004897cd  Drivers_uartOpen              
+00489819  ClockP_construct              
+00489863  EDMADisableChInShadowRegRegion
+004898ad  __aeabi_d2iz                  
+004898ad  __fixdfsi                     
+004898f5  sbl_configureCrc32Cpu         
+0048993d  _c_int00                      
+00489985  EDMA_getBaseAddr              
+004899cd  HOSTunlink                    
+00489a11  __aeabi_d2uiz                 
+00489a11  __fixunsdfsi                  
+00489a55  ClockP_stop                   
+00489a95  Drivers_close                 
+00489ad5  atoi                          
+00489b15  EDMAMapChToEvtQ               
+00489b55  EDMASetPaRAM                  
+00489bd1  SemaphoreP_constructBinary    
+00489c0f  System_init                   
+00489c89  HOSTclose                     
+00489cc5  SemaphoreP_constructMutex     
+00489d01  vsnprintf                     
+00489d3d  ClockP_destruct               
+00489d77  DebugP_uartLogWriterPutChar   
+00489db1  Drivers_uartInit              
+00489de9  Module_clockSetFrequency      
+00489e21  QSPI_writeConfigMode          
+00489e59  SOC_rcmEnableADPLLClock       
+00489e91  _DebugP_logZone               
+00489ec9  __aeabi_f2d                   
+00489ec9  __extendsfdf2                 
+00489f01  __TI_auto_init_nobinit_nopinit
+00489f39  Flash_open                    
+00489f71  Pinmux_config                 
+00489fa7  ClockP_start                  
+00489fdd  __TI_cleanup                  
+0048a011  __TI_writemsg                 
+0048a03b  C$$IO$$                       
+0048a079  EDMA_getHandle                
+0048a0ad  Module_clockEnable            
+0048a0df  SemaphoreP_post               
+0048a111  CRC_channelReset              
+0048a141  __TI_readmsg                  
+0048a171  __aeabi_dcmpun                
+0048a171  __unorddf2                    
+0048a1d1  exit                          
+0048a201  CRC_getPSASig                 
+0048a22f  CRC_getPSASigRegAddr          
+0048a25d  EDMAEnableChInShadowRegRegion 
+0048a28d  Module_clockDisable           
+0048a2bb  QSPI_getHandle                
+0048a2e9  __aeabi_i2d                   
+0048a2e9  __floatsidf                   
+0048a319  SOC_rcmSetM4ClockSrc          
+0048a345  UART_getHandle                
+0048a371  finddevice                    
+0048a39d  lseek                         
+0048a3c9  unlink                        
+0048a3f5  write                         
+0048a421  crc16_ccitt                   
+0048a44b  Dpl_init                      
+0048a473  SBL_transportRead             
+0048a4eb  Dpl_deinit                    
+0048a50f  EDMAReadIntrStatusRegion      
+0048a535  puts                          
+0048a559  vprintf_                      
+0048a57d  SOC_controlModuleUnlockMMR    
+0048a59f  DebugP_logZoneEnable          
+0048a5bf  Flash_getAttrs                
+0048a5e1  __aeabi_ui2d                  
+0048a5e1  __floatunsidf                 
+0048a601  Flash_read                    
+0048a61f  Flash_write                   
+0048a63d  TimerP_Params_init            
+0048a65d  _DebugP_assertNoLog           
+0048a67b  memccpy                       
+0048a699  sbl_getCrc32Cpu               
+0048a6d5  main                          
+0048a6f1  QSPI_deinit                   
+0048a70b  SysTickTimerP_Params_init     
+0048a725  System_deinit                 
+0048a73f  TimerP_isr0                   
+0048a759  UART_deinit                   
+0048a773  stack_init                    
+0048a78d  Board_driversClose            
+0048a7a5  ClockP_deinit                 
+0048a7bd  QSPI_readCmdParams_init       
+0048a7d5  QSPI_writeCmdParams_init      
+0048a805  HwiP_inISR                    
+0048a81b  QSPI_transaction_init         
+0048a831  SOC_getEfusePgVersion         
+0048a847  EDMA_getRegionId              
+0048a85b  SOC_controlModuleLockMMR      
+0048a871  __aeabi_uldivmod              
+0048a885  parser_imageValidParamsInit   
+0048a899  Drivers_open                  
+0048a8ab  Flash_eraseBlk                
+0048a8bd  SOC_clocksEnable              
+0048a8cf  SysTickTimerP_start           
+0048a8e1  SysTickTimerP_stop            
+0048a8f3  putchar_                      
+0048a917  TI_memcpy_small               
+0048a929  QSPI_setAddressByteCount      
+0048a939  QSPI_setDummyBitCount         
+0048a949  QSPI_setReadCmd               
+0048a959  QSPI_setRxLines               
+0048a969  QSPI_setWriteCmd              
+0048a979  wcslen                        
+0048a989  EDMACCPaRAMEntry_init         
+0048a997  Flash_close                   
+0048a9a5  Pinmux_init                   
+0048a9b3  PowerClock_init               
+0048a9cf  SysTickTimerP_getCount        
+0048a9dd  SysTickTimerP_getReloadCount  
+0048aa15  TI_memset_small               
+0048aa23  ClockP_getTicks               
+0048aa2f  DebugP_uartSetDrvIndex        
+0048aa3b  SOC_moduleClockEnable         
+0048aa49  putchar                       
+0048aa55  ClockP_Params_init            
+0048aa5f  ClockP_isActive               
+0048aa69  TimerP_stop                   
+0048aa75  __aeabi_memset                
+0048aa75  __aeabi_memset4               
+0048aa75  __aeabi_memset8               
+0048aa89  parser_buffMgmt               
+0048aa93  EDMA_allocDmaChannel          
+0048aa9b  EDMA_allocParam               
+0048aaa3  EDMA_allocTcc                 
+0048aaab  EDMA_freeDmaChannel           
+0048aab3  EDMA_freeParam                
+0048aabb  EDMA_freeTcc                  
+0048aacb  TimerP_clearOverflowInt       
+0048aad5  __aeabi_errno_addr            
+0048aadd  __aeabi_memclr                
+0048aadd  __aeabi_memclr4               
+0048aadd  __aeabi_memclr8               
+0048aae5  malloc                        
+0048aaed  __aeabi_memcpy                
+0048aaed  __aeabi_memcpy4               
+0048aaed  __aeabi_memcpy8               
+0048aaf1  __mpu_init                    
+0048aaf5  fseek                         
+0048aaf9  remove                        
+0048aafc  C$$EXIT                       
+0048aafd  abort                         
+0048ad00  __aeabi_ctype_table_          
+0048ad00  __aeabi_ctype_table_C         
+ffffffff  __TI_pprof_out_hndl           
+ffffffff  __TI_prof_data_size           
+ffffffff  __TI_prof_data_start          
+ffffffff  __binit__                     
+ffffffff  binit                         
+UNDEFED   __TI_CINIT_Base               
+UNDEFED   __TI_CINIT_Limit              
+UNDEFED   __TI_Handler_Table_Base       
+UNDEFED   __TI_Handler_Table_Limit      
+UNDEFED   _system_post_cinit            
+
+[404 symbols]

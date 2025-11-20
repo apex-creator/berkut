@@ -1,0 +1,9 @@
+[MCSPI] Loopback example started ...
+----------------------------------------------------------
+McSPI Clock 1000000 Hz
+----------------------------------------------------------
+Data Width 	Data Length 	Transfer Time (micro sec)
+8		128		1147.40
+----------------------------------------------------------
+
+All tests have passed!!

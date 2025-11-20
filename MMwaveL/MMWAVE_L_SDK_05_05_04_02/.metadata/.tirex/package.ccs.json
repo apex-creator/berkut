@@ -1,0 +1,18 @@
+[
+    {
+        "rootMacroName": "COM_TI_MMWAVE_L_SDK_INSTALL_DIR",
+        "compilerIncludePath": [ ],
+        "compilerSymbols": [ ],
+        "linkerSearchPath": [ ],
+        "properties": {
+            "rtsc.repositories": [
+                "source",
+                "."
+            ]
+        },
+        "helpTocs": [
+        ],
+        "docs": [
+        ]
+    }
+]

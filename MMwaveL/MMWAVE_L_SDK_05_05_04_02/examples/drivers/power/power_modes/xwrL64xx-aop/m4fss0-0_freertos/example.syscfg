@@ -1,0 +1,102 @@
+/**
+ * These arguments were used when this file was generated. They will be automatically applied on subsequent loads
+ * via the GUI or CLI. Run CLI with '--help' for additional information on how to override these arguments.
+ * @cliArgs --device "XWRL64XX" --package "AOP" --part "Default" --context "m4fss0-0" --product "MMWAVE-L-SDK@05.00.00"
+ * @versions {"tool":"1.17.0+3128"}
+ */
+
+/**
+ * Import the modules used in this configuration.
+ */
+const mcspi      = scripting.addModule("/drivers/mcspi/mcspi", {}, false);
+const mcspi1     = mcspi.addInstance();
+const power      = scripting.addModule("/drivers/power/power", {}, false);
+const power1     = power.addInstance();
+const clock      = scripting.addModule("/kernel/dpl/clock");
+const debug_log  = scripting.addModule("/kernel/dpl/debug_log");
+const mpu_armv7  = scripting.addModule("/kernel/dpl/mpu_armv7", {}, false);
+const mpu_armv71 = mpu_armv7.addInstance();
+const mpu_armv72 = mpu_armv7.addInstance();
+const mpu_armv73 = mpu_armv7.addInstance();
+const timer      = scripting.addModule("/kernel/dpl/timer", {}, false);
+const timer1     = timer.addInstance();
+
+/**
+ * Write custom configuration values to the imported modules.
+ */
+mcspi1.$name                       = "CONFIG_MCSPI0";
+mcspi1.intrEnable                  = "POLLED";
+mcspi1.mode                        = "PERIPHERAL";
+mcspi1.MCSPI.$assign               = "MCSPIA";
+mcspi1.MCSPI.CLK.$assign           = "PAD_AG";
+mcspi1.MCSPI.MOSI.$assign          = "PAD_AI";
+mcspi1.MCSPI.MISO.$assign          = "PAD_AJ";
+mcspi1.mcspiChannel[0].$name       = "CONFIG_MCSPI_CH0";
+mcspi1.mcspiChannel[0].CSn.$assign = "PAD_AH";
+
+power1.$name                        = "CONFIG_POWER0";
+power1.enableSleepCounterWakeupLPDS = true;
+power1.enableSpicsWakeupLPDS        = true;
+power1.enableRtcWakeupLPDS          = true;
+power1.resumeLPDSHookFunction       = "power_LPDSresumehook";
+power1.ramRetentionMaskLPDS         = ["APP_PD_SRAM_CLUSTER_1","APP_PD_SRAM_CLUSTER_2","APP_PD_SRAM_CLUSTER_3","FEC_PD_SRAM_CLUSTER_1","FEC_PD_SRAM_CLUSTER_2"];
+power1.enableUartWakeupLPDS         = true;
+power1.enableGPIOSYNCINWakeupLPDS   = true;
+power1.thresholdForSleep            = 999999999;
+power1.thresholdForLPDS             = 30000000;
+power1.selectGpioSyncioLPDS         = "POWER_SYNCIN_IO_WAKEUP_LPDS";
+power1.wakeupSYNCIOEdgeLPDS         = "RISE_EDGE";
+power1.enteridle3HookFunction       = "power_idle3entryhook";
+power1.resumeidle3HookFunction      = "power_idle3resumehook";
+power1.parkPins.$name               = "drivers_power_v0_power_v0_pins0";
+power1.parkPins.PAD_AA              = "PARK";
+power1.parkPins.PAD_AX              = "PARK";
+power1.parkPins.changeAllPins       = "PARK";
+power1.parkPins.PAD_AH              = "DONT_PARK";
+power1.parkPins.PAD_AV              = "DONT_PARK";
+power1.parkPins.PAD_AQ              = "DONT_PARK";
+power1.parkPins.PAD_AR              = "DONT_PARK";
+power1.parkPins.PAD_AS              = "DONT_PARK";
+power1.parkPins.PAD_AT              = "DONT_PARK";
+power1.syncio.$name                 = "CONFIG_SYNCIN0";
+power1.syncio.SYNC_IN.IN.$assign    = "PAD_AV";
+
+debug_log.enableUartLog           = true;
+debug_log.enableCssLog            = false;
+debug_log.uartLog.$name           = "CONFIG_UART0";
+debug_log.uartLog.UART.RX.$assign = "PAD_AP";
+debug_log.uartLog.UART.TX.$assign = "PAD_AO";
+
+const edma                         = scripting.addModule("/drivers/edma/edma", {}, false);
+const edma1                        = edma.addInstance({}, false);
+edma1.$name                        = "CONFIG_EDMA0";
+debug_log.uartLog.edmaConfig       = edma1;
+edma1.edmaRmDmaCh[0].$name         = "CONFIG_EDMA_RM0";
+edma1.edmaRmQdmaCh[0].$name        = "CONFIG_EDMA_RM1";
+edma1.edmaRmTcc[0].$name           = "CONFIG_EDMA_RM2";
+edma1.edmaRmParam[0].$name         = "CONFIG_EDMA_RM3";
+edma1.edmaRmReservedDmaCh[0].$name = "CONFIG_EDMA_RM4";
+
+mpu_armv71.$name        = "CONFIG_MPU_REGION0";
+mpu_armv71.attributes   = "Device";
+mpu_armv71.allowExecute = false;
+
+mpu_armv72.$name    = "CONFIG_MPU_REGION1";
+mpu_armv72.baseAddr = 0x400000;
+mpu_armv72.size     = 19;
+
+mpu_armv73.$name    = "CONFIG_MPU_REGION2";
+mpu_armv73.baseAddr = 0x22400000;
+mpu_armv73.size     = 19;
+
+timer1.$name       = "CONFIG_TIMER0";
+timer1.usecPerTick = 10000000;
+
+/**
+ * Pinmux solution for unlocked pins/peripherals. This ensures that minor changes to the automatic solver in a future
+ * version of the tool will not impact the pinmux you originally saw.  These lines can be completely deleted in order to
+ * re-solve from scratch.
+ */
+power1.syncio.SYNC_IN.$suggestSolution  = "SYNC_IN0";
+debug_log.uartLog.UART.$suggestSolution = "UARTB";
+timer1.APPSS_RTI.$suggestSolution       = "APPSS_RTIA";

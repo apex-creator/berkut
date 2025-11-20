@@ -1,0 +1,76 @@
+var group__DRV__POWER__MODULE =
+[
+    [ "power_xwrLx4xx.h", "power__xwrLx4xx_8h.html", null ],
+    [ "Power_ParkInfo", "structPower__ParkInfo.html", [
+      [ "pin", "structPower__ParkInfo.html#a9cb22bbb6c2528be2b19d8109f96c562", null ],
+      [ "parkState", "structPower__ParkInfo.html#a774a913da0f8b156a07fcd0e923c9217", null ]
+    ] ],
+    [ "Power_ConfigV1", "structPower__ConfigV1.html", [
+      [ "policyInitFxn", "structPower__ConfigV1.html#a64bca5467df6628f176c0e359336d71d", null ],
+      [ "policyFxn", "structPower__ConfigV1.html#a6190608edd12696a6e5d73a297c776c3", null ],
+      [ "enterLPDSHookFxn", "structPower__ConfigV1.html#a976799542e9cd094ae0a3a0b141eb583", null ],
+      [ "resumeLPDSHookFxn", "structPower__ConfigV1.html#a29638b8ea0960e1a8cd7a39a9f390109", null ],
+      [ "enteridle3HookFxn", "structPower__ConfigV1.html#a291fe9d4d338edbcf7356cb557283d7d", null ],
+      [ "resumeidle3HookFxn", "structPower__ConfigV1.html#af38ece6223c82353bd66a87c2d49ed5b", null ],
+      [ "enablePolicy", "structPower__ConfigV1.html#a795ed923e6d5b385705fcdd30fcdf005", null ],
+      [ "enableGPIOSyncIOWakeupLPDS", "structPower__ConfigV1.html#aeee72aa1c66b7cab32942cd783a0a7da", null ],
+      [ "enableSleepCounterWakeupLPDS", "structPower__ConfigV1.html#ad007d40d9e4b68b3a1b1e4887159b45a", null ],
+      [ "enableUARTWakeupLPDS", "structPower__ConfigV1.html#a3beae175e131b8b5e70346855db0c2ff", null ],
+      [ "enableSPICSWakeupLPDS", "structPower__ConfigV1.html#a86fcf165139e84a8c67a2986b4a0f352", null ],
+      [ "enableRTCWakeupLPDS", "structPower__ConfigV1.html#a46d130f2b91b1048fe0e6aaadfac2945", null ],
+      [ "enableFRCWakeupLPDS", "structPower__ConfigV1.html#a079549da8f9993e7e6681b30dffc5216", null ],
+      [ "selectGpioSyncIOLpds", "structPower__ConfigV1.html#af7b7e806466c86f4e3c41f5f2fba51a3", null ],
+      [ "wakeupGPIOEdgeLPDS", "structPower__ConfigV1.html#a371739c0467eefd575be99bbfb461619", null ],
+      [ "wakeupSyncIOEdgeLPDS", "structPower__ConfigV1.html#accd35a72994b489c2ca51d2499528624", null ],
+      [ "wakeupSpiEdgeLPDS", "structPower__ConfigV1.html#a28428071d24b5192e7fa95ec03523383", null ],
+      [ "wakeupUartEdgeLPDS", "structPower__ConfigV1.html#a659924bc10d2e50837047bf9b927e031", null ],
+      [ "ramRetentionMaskLPDS", "structPower__ConfigV1.html#aa63f3536264037fa67c99d1c77c9e3b8", null ],
+      [ "pinParkDefs", "structPower__ConfigV1.html#a9285ee26e76bd633885d5dbe1ea43b53", null ],
+      [ "numPins", "structPower__ConfigV1.html#abb88669cc0a2f4adf899a8a6b6fa6e82", null ],
+      [ "LPDSThreshold", "structPower__ConfigV1.html#a83c12ac109d587252089ab82fb815d65", null ],
+      [ "totalLatencyForLPDS", "structPower__ConfigV1.html#a3c3c932320f4fd44381556a0bfec59df", null ],
+      [ "resumeLatencyForLPDS", "structPower__ConfigV1.html#a6561b16fbddb8c88fee14f04f4234dfd", null ],
+      [ "sleepThreshold", "structPower__ConfigV1.html#aae7eebe825f50d872196af8eefe626d8", null ],
+      [ "totalLatencyForSleep", "structPower__ConfigV1.html#ac96f32d7206645ef616b3d1d5e30f849", null ],
+      [ "resumeLatencyForSleep", "structPower__ConfigV1.html#a6b3e01110463457325c0d5716cc82545", null ],
+      [ "idleThreshold", "structPower__ConfigV1.html#a41a4045a54df229c0327832c20a30f88", null ],
+      [ "totalLatencyForIdle", "structPower__ConfigV1.html#a953d6683cd714c6c90104350d80c4777", null ],
+      [ "resumeLatencyForIdle", "structPower__ConfigV1.html#a215be35f04e4c3816bd1b4089cd8128d", null ]
+    ] ],
+    [ "Power_Wakeup", "structPower__Wakeup.html", [
+      [ "enableGPIOSyncIOWakeupLPDS", "structPower__Wakeup.html#a5c857c29c38f6d19a94e178e8b0062e4", null ],
+      [ "selectGpioSyncIOLpds", "structPower__Wakeup.html#ae8118e2ac1d89c0cfa516b6e2db0cad8", null ],
+      [ "enableSleepCounterWakeupLPDS", "structPower__Wakeup.html#a5b977c8308afb0ff493c618cddf2a850", null ],
+      [ "enableUARTWakeupLPDS", "structPower__Wakeup.html#a9ee5d442a5618d053e59176beb1be2c3", null ],
+      [ "enableSPICSWakeupLPDS", "structPower__Wakeup.html#a2da6928f9cda0c9541b0cf05f263dbfe", null ],
+      [ "enableRTCWakeupLPDS", "structPower__Wakeup.html#a221738f8dec73ced6fdbf7f4d927fc37", null ],
+      [ "enableFRCWakeupLPDS", "structPower__Wakeup.html#acf584bb07d082042dc7601388bd41e62", null ],
+      [ "wakeupGPIOEdgeLPDS", "structPower__Wakeup.html#aeeede15746754e67892b6f50cae0c87e", null ],
+      [ "wakeupSyncIOEdgeLPDS", "structPower__Wakeup.html#aa5249a8f289a39550767836650d4998a", null ],
+      [ "wakeupSpiEdgeLPDS", "structPower__Wakeup.html#a18e3d1ce63197358f5f803484e91e2d9", null ],
+      [ "wakeupUartEdgeLPDS", "structPower__Wakeup.html#a6f97e2f4e117430a65e434f44bb9a143", null ]
+    ] ],
+    [ "POWER_DISALLOW_LPDS", "group__DRV__POWER__MODULE.html#ga26cab3912a9acf7a071cc034ac34bf5a", null ],
+    [ "POWER_DISALLOW_SLEEP", "group__DRV__POWER__MODULE.html#ga70088eeff75524a65ec6a8fd2c8a809a", null ],
+    [ "POWER_DISALLOW_IDLE", "group__DRV__POWER__MODULE.html#gac313af5152637350298f448a86e319ea", null ],
+    [ "POWER_ENTERING_LPDS", "group__DRV__POWER__MODULE.html#ga25c63a020517135278f946871f582a8e", null ],
+    [ "POWER_ENTERING_SLEEP", "group__DRV__POWER__MODULE.html#gacfe4fddca7252d6f4ab566dd345a45d0", null ],
+    [ "POWER_ENTERING_IDLE", "group__DRV__POWER__MODULE.html#gac7d00e956bbe98ac25a41f5e29f69c4c", null ],
+    [ "POWER_AWAKE_LPDS", "group__DRV__POWER__MODULE.html#ga5679c5a6b6c376fab9631c52629e6f0c", null ],
+    [ "POWER_AWAKE_SLEEP", "group__DRV__POWER__MODULE.html#ga64ed5ae606bb62134caea93aa92582df", null ],
+    [ "POWER_AWAKE_IDLE", "group__DRV__POWER__MODULE.html#ga5598c84609f972fec2466170c14e6c33", null ],
+    [ "Power_GPIO_SYNCIO_Wakeup_Enable", "group__DRV__POWER__MODULE.html#ga8c6bcd3dbf29e9f2ce2f6ddcdd68f1b4", [
+      [ "POWER_GPIO_WAKEUP_LPDS", "group__DRV__POWER__MODULE.html#gga8c6bcd3dbf29e9f2ce2f6ddcdd68f1b4a39f7a0a3c7ed502119971265d6052d27", null ],
+      [ "POWER_SYNCIN_IO_WAKEUP_LPDS", "group__DRV__POWER__MODULE.html#gga8c6bcd3dbf29e9f2ce2f6ddcdd68f1b4aaff718d3b999f08a244b84424e43a5cb", null ]
+    ] ],
+    [ "Power_ParkState", "group__DRV__POWER__MODULE.html#ga9583da51ccb7eaa8453d9d3850e9c4f0", [
+      [ "POWER_PARK", "group__DRV__POWER__MODULE.html#gga9583da51ccb7eaa8453d9d3850e9c4f0a73a0656ecdc5391f11fc73d81f22f4da", null ],
+      [ "POWER_DONT_PARK", "group__DRV__POWER__MODULE.html#gga9583da51ccb7eaa8453d9d3850e9c4f0aa72c02e86665173bd7b4c93cc55fa0ec", null ]
+    ] ],
+    [ "Power_configureWakeup", "group__DRV__POWER__MODULE.html#ga8be651afeff7b42b4e84c7bf226565c8", null ],
+    [ "Power_initPolicy", "group__DRV__POWER__MODULE.html#ga8002a94a898ea43ed3eb636ddc81ce50", null ],
+    [ "Power_getWakeup", "group__DRV__POWER__MODULE.html#ga19eac73b6e075f9f909dc8d14a9f9139", null ],
+    [ "Power_sleepPolicy", "group__DRV__POWER__MODULE.html#gae3497b02ebd97e1aadcea65c6c539402", null ],
+    [ "Power_Idle3", "group__DRV__POWER__MODULE.html#ga961796569f73bb86dbd50d8d2ca6e801", null ],
+    [ "Power_idleWicIsr", "group__DRV__POWER__MODULE.html#ga3fc9e6b833da877e365e9c36f5b8e595", null ]
+];
